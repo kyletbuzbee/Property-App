@@ -241,4 +241,57 @@ export const authenticateRequest = async (
       role,
       isAuthenticated: true,
     },
-    error: n
+    error: null,
+  }
+}
+
+// Decorator-like function for requiring specific roles
+export const requireRole = (...allowedRoles: UserRole[]) => {
+  return async (
+    request: Request
+  ): Promise<{ context: AuthContext; error: Response | null }> => {
+    const { context, error } = await authenticateRequest(request)
+
+    if (error) {
+      return { context, error }
+    }
+
+    if (!context.role || !allowedRoles.includes(context.role)) {
+      return {
+        context,
+        error: new Response(
+          JSON.stringify({ error: 'Insufficient permissions' }),
+          { status: 403, headers: { 'Content-Type': 'application/json' } }
+        ),
+      }
+    }
+
+    return { context, error: null }
+  }
+}
+
+// Keep prisma export for compatibility but mark as deprecated
+// TODO: Migrate all queries to use supabase client
+import { PrismaClient } from '../../generated/client'
+import { PrismaPg } from '@prisma/adapter-pg'
+import { Pool } from 'pg'
+
+const globalForPrisma = global as unknown as { prisma: PrismaClient }
+
+function createPrismaClient() {
+  const connectionString = process.env.DATABASE_URL
+
+  if (!connectionString) {
+    console.warn('DATABASE_URL not set, Prisma client may not work')
+    return null as any
+  }
+
+  const pool = new Pool({ connectionString })
+  const adapter = new PrismaPg(pool)
+
+  return new PrismaClient({ adapter })
+}
+
+export const prisma = globalForPrisma.prisma || createPrismaClient()
+
+if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma
