@@ -110,7 +110,7 @@ export default function FinancialProjections({ property, onClose }: FinancialPro
     }
 
     return results;
-  }, [property, loanDetails, projectionYears, rentGrowthRate, appreciationRate, expenseGrowthRate]);
+  }, [property, loanDetails, projectionYears, rentGrowthRate, appreciationRate]);
 
   // Summary metrics
   const summary = useMemo(() => {

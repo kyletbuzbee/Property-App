@@ -55,7 +55,7 @@ const seedProperties = [
   },
 ];
 
-import { supabase } from '../../app/lib/db';
+import { supabase } from '../src/app/lib/db';
 
 async function main() {
   console.log('Starting seed...');
@@ -91,7 +91,4 @@ main()
   .catch((e) => {
     console.error('Seed error:', e);
     process.exit(1);
-  })
-  .finally(async () => {
-    await supabase.$disconnect();
   });

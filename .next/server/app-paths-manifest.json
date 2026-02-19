@@ -1,7 +1,20 @@
 {
-  "/api/organizations/route": "app/api/organizations/route.js",
+  "/_global-error/page": "app/_global-error/page.js",
   "/_not-found/page": "app/_not-found/page.js",
+  "/api/bank-accounts/route": "app/api/bank-accounts/route.js",
+  "/api/leases/[id]/route": "app/api/leases/[id]/route.js",
+  "/api/leases/route": "app/api/leases/route.js",
+  "/api/maintenance/[id]/route": "app/api/maintenance/[id]/route.js",
+  "/api/maintenance/route": "app/api/maintenance/route.js",
+  "/api/organizations/route": "app/api/organizations/route.js",
+  "/api/payments/[id]/route": "app/api/payments/[id]/route.js",
+  "/api/payments/route": "app/api/payments/route.js",
   "/api/properties/route": "app/api/properties/route.js",
-  "/properties/[id]/page": "app/properties/[id]/page.js",
-  "/page": "app/page.js"
+  "/api/tenants/[id]/route": "app/api/tenants/[id]/route.js",
+  "/api/tenants/route": "app/api/tenants/route.js",
+  "/api/transactions/route": "app/api/transactions/route.js",
+  "/api/vendors/[id]/route": "app/api/vendors/[id]/route.js",
+  "/api/vendors/route": "app/api/vendors/route.js",
+  "/page": "app/page.js",
+  "/properties/[id]/page": "app/properties/[id]/page.js"
 }
