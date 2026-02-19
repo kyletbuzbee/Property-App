@@ -1,0 +1,143 @@
+{
+    "mcpServers": {
+      "github.com/modelcontextprotocol/servers/tree/main/src/filesystem": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@modelcontextprotocol/server-filesystem",
+          "c:\\p4c-web",
+          "c:\\kl-recycling"
+        ],
+        "disabled": false,
+        "autoApprove": [
+          "read_file",
+          "read_text_file",
+          "read_media_file",
+          "read_multiple_files",
+          "write_file",
+          "edit_file",
+          "create_directory",
+          "list_directory",
+          "list_directory_with_sizes",
+          "directory_tree",
+          "move_file",
+          "search_files",
+          "get_file_info",
+          "list_allowed_directories"
+        ]
+      },
+      "github.com/AgentDeskAI/browser-tools-mcp": {
+        "command": "npx",
+        "args": [
+          "@agentdeskai/browser-tools-mcp@latest"
+        ],
+        "disabled": false,
+        "autoApprove": [
+          "getConsoleLogs",
+          "getConsoleErrors",
+          "getNetworkErrors",
+          "getNetworkLogs",
+          "takeScreenshot",
+          "getSelectedElement",
+          "wipeLogs",
+          "runAccessibilityAudit",
+          "runPerformanceAudit",
+          "runSEOAudit",
+          "runNextJSAudit",
+          "runDebuggerMode",
+          "runAuditMode",
+          "runBestPracticesAudit"
+        ]
+      },
+      "github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@modelcontextprotocol/server-sequential-thinking"
+        ],
+        "disabled": false,
+        "autoApprove": [
+          "sequentialthinking"
+        ]
+      },
+      "github.com/upstash/context7-mcp": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@upstash/context7-mcp"
+        ],
+        "disabled": false,
+        "autoApprove": [
+          "resolve-library-id",
+          "query-docs"
+        ]
+      },
+      "github.com/executeautomation/mcp-playwright": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@executeautomation/playwright-mcp-server"
+        ],
+        "disabled": false,
+        "autoApprove": [
+          "playwright_navigate",
+          "start_codegen_session",
+          "end_codegen_session",
+          "get_codegen_session",
+          "clear_codegen_session",
+          "playwright_screenshot",
+          "playwright_click",
+          "playwright_iframe_click",
+          "playwright_iframe_fill",
+          "playwright_fill",
+          "playwright_select",
+          "playwright_hover",
+          "playwright_upload_file",
+          "playwright_evaluate",
+          "playwright_console_logs",
+          "playwright_resize",
+          "playwright_close",
+          "playwright_get",
+          "playwright_post",
+          "playwright_put",
+          "playwright_patch",
+          "playwright_delete",
+          "playwright_expect_response",
+          "playwright_assert_response",
+          "playwright_custom_user_agent",
+          "playwright_get_visible_text",
+          "playwright_get_visible_html",
+          "playwright_go_back",
+          "playwright_go_forward",
+          "playwright_drag",
+          "playwright_press_key",
+          "playwright_save_as_pdf",
+          "playwright_click_and_switch_tab"
+        ]
+      },
+      "github.com/modelcontextprotocol/servers/tree/main/src/git": {
+        "command": "python",
+        "args": [
+          "-m",
+          "mcp_server_git",
+          "--repository",
+          "c:\\p4c-web"
+        ],
+        "disabled": false,
+        "autoApprove": [
+          "git_status",
+          "git_log",
+          "git_diff_unstaged",
+          "git_diff_staged",
+          "git_diff",
+          "git_commit",
+          "git_add",
+          "git_reset",
+          "git_create_branch",
+          "git_checkout",
+          "git_show",
+          "git_branch"
+        ]
+      }
+    }
+  }

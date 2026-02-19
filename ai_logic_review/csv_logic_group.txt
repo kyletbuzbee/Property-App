@@ -1,0 +1,144 @@
+
+================================================================================
+FILE_BEGIN: brrr-properties.csv
+TYPE: CSV
+SIZE: 7356 bytes
+DATABASE_SCHEMA (Headers): Property Address,City,List Price,Specs,Decision,Strategy,Rationale
+================================================================================
+Property Address,City,List Price,Specs,Decision,Strategy,Rationale
+309 E Brandon St,Overton,"$149,900",3bd/3ba/1700sqft,PASS (PLATINUM),Workforce Housing / MF,Multi-family potential in rental desert; high yield
+2319 Luther St,Tyler,"$99,999",4bd/2ba/1909sqft,PASS (PLATINUM),Retail Flip / Seller Finance,Massive equity gap; tax value $225k vs $100k list
+18737 Saddleback Ln,Flint,"$150,000",4bd/3ba/2200sqft,PASS (PLATINUM),Retail Flip,Mispriced at $68/sqft in high-growth Flint market
+210 N Stephens St,Quitman,"$69,000",3bd/2ba/1681sqft,PASS (PLATINUM),Wholetail,Deep value at $41/sqft; near construction cost
+2901 Sunset Ln,Kilgore,"$140,000",3bd/3ba/2510sqft,PASS (PLATINUM),Section 8 / Sober Living,High equity play ($55/sqft); 3 baths enable premium exits
+706-708 Ridgelea Ave,Longview,"$100,000",4bd/2ba/1956sqft,PASS (GOLD),Section 8 / Cash Flow,Duplex meeting 1.8% rule; vacant units allow fresh tenanting
+407 Baker St,Lindale,Auction,3bd/2ba/2003sqft,PASS (GOLD),Equity Play,Lindale ISD premium; buy for equity spread at auction
+400 E Cotton St,Longview,"$149,000",4bd/4ba/2112sqft,PASS (GOLD),Sober Living,4 Bed / 4 Bath layout perfect for rent-by-room cash flow
+10748 W Hwy 84,Rusk,"$112,990",4bd/2ba/2144sqft,PASS (GOLD),Section 8,Volume rental; 4 bedrooms scarce in Rusk market
+112 S Houston St,Longview,"$142,800",4bd/2ba/2283sqft,PASS (GOLD),Owner Finance / Rooming,FSBO volume play; potential for creative terms
+334 County Road 3523,Bullard,"$69,900",3bd/3ba/1136sqft,PASS (GOLD),Retail Flip / BRRR,Bullard ISD foreclosure; high ARV floor
+5950 County Road 486,Tyler,"$99,900",3bd/2ba/1320sqft,PASS (FRESH),Speed Play,Listed <24 hours; priced to sell instantly
+2927 New Copeland Rd,Tyler,"$99,900",3bd/2ba/1116sqft,PASS (SILVER),Rental / Flip,Owens Elementary zone; tax value matches ARV
+12379 Chapman Rd,Tyler,"$149,900",4bd/2ba/1275sqft,PASS (SILVER),Section 8 Arbitrage,4-bedroom voucher play on small footprint; oversized lot
+2472 Lovely Dr,Chandler,"$79,900",4bd/4ba/2380sqft,PASS (SILVER),Value Add,4/4 layout is rare; verify if mobile home or stick built
+307 N Longview St,Kilgore,"$110,000",3bd/2ba/1947sqft,PASS (SILVER),Section 8 BRRR,Volume play at $56/sqft; requires galvanized plumbing repipe
+1159 County Road 479d,Mt Enterprise,"$150,000",2bd/2ba/1544sqft,PASS (SILVER),Retail Flip / Lifestyle,Includes ~2 acres; appeal to rural lifestyle buyers
+1510 Ray St,Longview,"$45,000",3bd/2ba/1754sqft,PASS,BRRR Rental,High volume ($25/sqft) with recent price cut; assumes heavy rehab
+376 Sandlewood Loop,Avinger,"$45,000",3bd/2ba/1428sqft,PASS,Rural Rental,Low entry price; privacy appeal
+430 Seminole,Quitman,"$46,610",3bd/2ba,PASS,Distressed / Foreclosure,Deep discount potential; inspect for major defects
+105 Lodge St,Ore City,"$49,999",3bd/2ba/984sqft,PASS,Rental,Standard rural rental; low capital entry
+11006 Fm 225 S,Laneville,"$55,000",3bd/2ba/1590sqft,PASS,Rural Rental,Low entry price ($34/sqft); good for durable rental
+908 Burns St,Kilgore,"$64,999",3bd/2ba/1336sqft,PASS,Rental,Standard Kilgore rental inventory; fair price
+410 Timberline Dr,Longview,"$65,000",3bd/2ba/1508sqft,PASS,Rental,Volume play; 113 DOM suggests negotiation room
+12364 State Highway 43 E,Tatum,"$65,000",3bd/2ba/1219sqft,PASS,Rental,Solid price point for 3/2 in Tatum
+5961 Club Dr,Gilmer,"$77,040",2bd/2ba/1188sqft,PASS,Distressed / Flip,Foreclosure discount; potential cosmetic flip
+7227 Forest Hill Dr,Frankston,"$79,900",2bd/2ba/704sqft,PASS,Vacation / Airbnb,Lake Palestine proximity; small footprint minimizes rehab
+812 Tyler St,Jacksonville,"$84,000",4bd/2ba/2210sqft,PASS,Equity Play,Auction status suggests potential for below-market acquisition
+486 County Road 3811,Hawkins,"$84,900",3bd/2ba/1672sqft,PASS,Rental,Good square footage for price; quiet location
+4615 S Sego Lily Rd,Diana,"$85,000",4bd/2ba/1843sqft,PASS,Equity Play,Auction status; large footprint
+18958 County Road 356,Winona,"$85,500",3bd/2ba/1440sqft,PASS,Foreclosure Rehab,Winona is growing; foreclosure offers spread
+1408 Gay St,Longview,"$85,500",2bd/2ba/1020sqft,PASS,Rental,Fresh listing; standard Longview rental
+330 Francis St,Hawkins,"$91,000",3bd/3ba/1679sqft,PASS,Value Add,3 bed / 3 bath configuration is valuable; foreclosure
+2102 N Grand Ave,Tyler,"$98,000",2bd/2ba/1384sqft,PASS,Rental,Classic Tyler rental inventory; decent price per door
+19565 E County Road 2187,Tatum,"$99,900",3bd/2ba/1276sqft,PASS,Rental,Good starter home or rental in Tatum ISD
+1140 N Hamlett St,Athens,"$99,900",3bd/3ba/1500sqft,PASS,Rental,Good bath count; solid rental stock
+201 Travis St,Henderson,"$104,900",3bd/2ba/1488sqft,PASS,Foreclosure Rehab,Henderson foreclosure; room for forced appreciation
+10490 Browning St,Brownsboro,"$112,500",2bd/2ba/540sqft,HARD_FAIL,Avoid,Tiny square footage limits exit options
+309 McDaniel St,Mineola,"$115,000",4bd/2ba/1200sqft,PASS,Rental,4-bedroom in Mineola; high utility
+220 S Chandler St,Rusk,"$115,000",2bd/2ba/1232sqft,PASS,Rental,Standard Rusk rental inventory
+104 W Primrose Ln,Longview,"$140,000",4bd/2ba/1586sqft,PASS,Rental / Flip,Updated fixtures; 4 bedroom utility
+106 Allen St,Arp,"$140,000",3bd/2ba/1334sqft,PASS,Rental,Garage conversion adds space; confirm permits
+1603 E Main St,Henderson,"$140,000",3bd/3ba/1830sqft,PASS,Rental,Good square footage and bath count
+444 Geronimo,Quitman,"$140,000",2bd/2ba/1016sqft,CAUTION,Verify Value,Pricey per sqft for Quitman 2/2; check comps
+700 N Edith St,Longview,"$145,000",3bd/2ba/1480sqft,PASS,Rental,Private playground asset for family tenants
+1205 Booker St,Longview,"$146,000",3bd/2ba/1090sqft,CAUTION,Price Check,High price per sqft for Longview rental
+100 Thunderbird Dr,Athens,"$147,500",4bd/3ba/1774sqft,PASS,Rental,Strong bed/bath count for family rental
+211 Blue Bird Ln,Mineola,"$148,990",3bd/2ba/1202sqft,PASS,Turnkey Rental,New construction; low CapEx but lower yield
+1512 Crescent Dr,Tyler,"$149,000",4bd/2ba/2906sqft,PASS,Value Add,Massive square footage ($51/sqft); verify condition/layout
+613 N Newsom St,Mineola,"$149,000",3bd/2ba/1407sqft,PASS,Rental,Fresh on market; standard rental
+327 Fairview St,Rusk,"$149,000",3bd/2ba/1784sqft,PASS,Rental,Good size; hot tub is a liability/maintenance risk
+325 W 4th St,Tyler,"$149,900",3bd/2ba/2058sqft,PASS,Foreclosure Rehab,Central Tyler location; good square footage for price
+1221 Old Noonday Rd,Tyler,"$149,900",3bd/2ba/1170sqft,PASS,Rental,Large lot asset; standard Tyler rental
+106 Parsons Pkwy,Athens,"$149,900",3bd/2ba/2004sqft,PASS,Rental,Good square footage; fenced yard asset
+1812 W Main St,Henderson,"$149,900",3bd/2ba/1312sqft,PASS,Rental,Solid layout; standard Henderson rental
+8439 Hyena Rd,Gilmer,"$149,900",3bd/2ba/1664sqft,PASS,Rural Rental,Water well/spring assets; rural appeal
+233 Blue Bird Ln,Mineola,"$149,990",3bd/2ba/1202sqft,PASS,Turnkey Rental,New construction; price cut; low CapEx
+726 Swancy St,Longview,"$149,999",3bd/2ba/1268sqft,PASS,Turnkey Rental,Fresh paint; move-in ready appeal
+16053 Fm 848,Whitehouse,"$150,000",3bd/2ba/1440sqft,PASS (CONDITIONAL),BRRR / School Play,Whitehouse ISD; Hoarder house requires heavy trash-out
+13618 Indian Dr,Tyler,Auction,4bd/3ba/2425sqft,PASS,Equity Play,Auction status; large home in Tyler
+616 W Scott St,Gilmer,Auction,3bd/2ba/2652sqft,PASS,Equity Play,Auction status; massive square footage
+
+[FILE_END: brrr-properties.csv]
+################################################################################
+
+================================================================================
+FILE_BEGIN: top-properties.csv
+TYPE: CSV
+SIZE: 7356 bytes
+DATABASE_SCHEMA (Headers): Property Address,City,List Price,Specs,Decision,Strategy,Rationale
+================================================================================
+Property Address,City,List Price,Specs,Decision,Strategy,Rationale
+309 E Brandon St,Overton,"$149,900",3bd/3ba/1700sqft,PASS (PLATINUM),Workforce Housing / MF,Multi-family potential in rental desert; high yield
+2319 Luther St,Tyler,"$99,999",4bd/2ba/1909sqft,PASS (PLATINUM),Retail Flip / Seller Finance,Massive equity gap; tax value $225k vs $100k list
+18737 Saddleback Ln,Flint,"$150,000",4bd/3ba/2200sqft,PASS (PLATINUM),Retail Flip,Mispriced at $68/sqft in high-growth Flint market
+210 N Stephens St,Quitman,"$69,000",3bd/2ba/1681sqft,PASS (PLATINUM),Wholetail,Deep value at $41/sqft; near construction cost
+2901 Sunset Ln,Kilgore,"$140,000",3bd/3ba/2510sqft,PASS (PLATINUM),Section 8 / Sober Living,High equity play ($55/sqft); 3 baths enable premium exits
+706-708 Ridgelea Ave,Longview,"$100,000",4bd/2ba/1956sqft,PASS (GOLD),Section 8 / Cash Flow,Duplex meeting 1.8% rule; vacant units allow fresh tenanting
+407 Baker St,Lindale,Auction,3bd/2ba/2003sqft,PASS (GOLD),Equity Play,Lindale ISD premium; buy for equity spread at auction
+400 E Cotton St,Longview,"$149,000",4bd/4ba/2112sqft,PASS (GOLD),Sober Living,4 Bed / 4 Bath layout perfect for rent-by-room cash flow
+10748 W Hwy 84,Rusk,"$112,990",4bd/2ba/2144sqft,PASS (GOLD),Section 8,Volume rental; 4 bedrooms scarce in Rusk market
+112 S Houston St,Longview,"$142,800",4bd/2ba/2283sqft,PASS (GOLD),Owner Finance / Rooming,FSBO volume play; potential for creative terms
+334 County Road 3523,Bullard,"$69,900",3bd/3ba/1136sqft,PASS (GOLD),Retail Flip / BRRR,Bullard ISD foreclosure; high ARV floor
+5950 County Road 486,Tyler,"$99,900",3bd/2ba/1320sqft,PASS (FRESH),Speed Play,Listed <24 hours; priced to sell instantly
+2927 New Copeland Rd,Tyler,"$99,900",3bd/2ba/1116sqft,PASS (SILVER),Rental / Flip,Owens Elementary zone; tax value matches ARV
+12379 Chapman Rd,Tyler,"$149,900",4bd/2ba/1275sqft,PASS (SILVER),Section 8 Arbitrage,4-bedroom voucher play on small footprint; oversized lot
+2472 Lovely Dr,Chandler,"$79,900",4bd/4ba/2380sqft,PASS (SILVER),Value Add,4/4 layout is rare; verify if mobile home or stick built
+307 N Longview St,Kilgore,"$110,000",3bd/2ba/1947sqft,PASS (SILVER),Section 8 BRRR,Volume play at $56/sqft; requires galvanized plumbing repipe
+1159 County Road 479d,Mt Enterprise,"$150,000",2bd/2ba/1544sqft,PASS (SILVER),Retail Flip / Lifestyle,Includes ~2 acres; appeal to rural lifestyle buyers
+1510 Ray St,Longview,"$45,000",3bd/2ba/1754sqft,PASS,BRRR Rental,High volume ($25/sqft) with recent price cut; assumes heavy rehab
+376 Sandlewood Loop,Avinger,"$45,000",3bd/2ba/1428sqft,PASS,Rural Rental,Low entry price; privacy appeal
+430 Seminole,Quitman,"$46,610",3bd/2ba,PASS,Distressed / Foreclosure,Deep discount potential; inspect for major defects
+105 Lodge St,Ore City,"$49,999",3bd/2ba/984sqft,PASS,Rental,Standard rural rental; low capital entry
+11006 Fm 225 S,Laneville,"$55,000",3bd/2ba/1590sqft,PASS,Rural Rental,Low entry price ($34/sqft); good for durable rental
+908 Burns St,Kilgore,"$64,999",3bd/2ba/1336sqft,PASS,Rental,Standard Kilgore rental inventory; fair price
+410 Timberline Dr,Longview,"$65,000",3bd/2ba/1508sqft,PASS,Rental,Volume play; 113 DOM suggests negotiation room
+12364 State Highway 43 E,Tatum,"$65,000",3bd/2ba/1219sqft,PASS,Rental,Solid price point for 3/2 in Tatum
+5961 Club Dr,Gilmer,"$77,040",2bd/2ba/1188sqft,PASS,Distressed / Flip,Foreclosure discount; potential cosmetic flip
+7227 Forest Hill Dr,Frankston,"$79,900",2bd/2ba/704sqft,PASS,Vacation / Airbnb,Lake Palestine proximity; small footprint minimizes rehab
+812 Tyler St,Jacksonville,"$84,000",4bd/2ba/2210sqft,PASS,Equity Play,Auction status suggests potential for below-market acquisition
+486 County Road 3811,Hawkins,"$84,900",3bd/2ba/1672sqft,PASS,Rental,Good square footage for price; quiet location
+4615 S Sego Lily Rd,Diana,"$85,000",4bd/2ba/1843sqft,PASS,Equity Play,Auction status; large footprint
+18958 County Road 356,Winona,"$85,500",3bd/2ba/1440sqft,PASS,Foreclosure Rehab,Winona is growing; foreclosure offers spread
+1408 Gay St,Longview,"$85,500",2bd/2ba/1020sqft,PASS,Rental,Fresh listing; standard Longview rental
+330 Francis St,Hawkins,"$91,000",3bd/3ba/1679sqft,PASS,Value Add,3 bed / 3 bath configuration is valuable; foreclosure
+2102 N Grand Ave,Tyler,"$98,000",2bd/2ba/1384sqft,PASS,Rental,Classic Tyler rental inventory; decent price per door
+19565 E County Road 2187,Tatum,"$99,900",3bd/2ba/1276sqft,PASS,Rental,Good starter home or rental in Tatum ISD
+1140 N Hamlett St,Athens,"$99,900",3bd/3ba/1500sqft,PASS,Rental,Good bath count; solid rental stock
+201 Travis St,Henderson,"$104,900",3bd/2ba/1488sqft,PASS,Foreclosure Rehab,Henderson foreclosure; room for forced appreciation
+10490 Browning St,Brownsboro,"$112,500",2bd/2ba/540sqft,HARD_FAIL,Avoid,Tiny square footage limits exit options
+309 McDaniel St,Mineola,"$115,000",4bd/2ba/1200sqft,PASS,Rental,4-bedroom in Mineola; high utility
+220 S Chandler St,Rusk,"$115,000",2bd/2ba/1232sqft,PASS,Rental,Standard Rusk rental inventory
+104 W Primrose Ln,Longview,"$140,000",4bd/2ba/1586sqft,PASS,Rental / Flip,Updated fixtures; 4 bedroom utility
+106 Allen St,Arp,"$140,000",3bd/2ba/1334sqft,PASS,Rental,Garage conversion adds space; confirm permits
+1603 E Main St,Henderson,"$140,000",3bd/3ba/1830sqft,PASS,Rental,Good square footage and bath count
+444 Geronimo,Quitman,"$140,000",2bd/2ba/1016sqft,CAUTION,Verify Value,Pricey per sqft for Quitman 2/2; check comps
+700 N Edith St,Longview,"$145,000",3bd/2ba/1480sqft,PASS,Rental,Private playground asset for family tenants
+1205 Booker St,Longview,"$146,000",3bd/2ba/1090sqft,CAUTION,Price Check,High price per sqft for Longview rental
+100 Thunderbird Dr,Athens,"$147,500",4bd/3ba/1774sqft,PASS,Rental,Strong bed/bath count for family rental
+211 Blue Bird Ln,Mineola,"$148,990",3bd/2ba/1202sqft,PASS,Turnkey Rental,New construction; low CapEx but lower yield
+1512 Crescent Dr,Tyler,"$149,000",4bd/2ba/2906sqft,PASS,Value Add,Massive square footage ($51/sqft); verify condition/layout
+613 N Newsom St,Mineola,"$149,000",3bd/2ba/1407sqft,PASS,Rental,Fresh on market; standard rental
+327 Fairview St,Rusk,"$149,000",3bd/2ba/1784sqft,PASS,Rental,Good size; hot tub is a liability/maintenance risk
+325 W 4th St,Tyler,"$149,900",3bd/2ba/2058sqft,PASS,Foreclosure Rehab,Central Tyler location; good square footage for price
+1221 Old Noonday Rd,Tyler,"$149,900",3bd/2ba/1170sqft,PASS,Rental,Large lot asset; standard Tyler rental
+106 Parsons Pkwy,Athens,"$149,900",3bd/2ba/2004sqft,PASS,Rental,Good square footage; fenced yard asset
+1812 W Main St,Henderson,"$149,900",3bd/2ba/1312sqft,PASS,Rental,Solid layout; standard Henderson rental
+8439 Hyena Rd,Gilmer,"$149,900",3bd/2ba/1664sqft,PASS,Rural Rental,Water well/spring assets; rural appeal
+233 Blue Bird Ln,Mineola,"$149,990",3bd/2ba/1202sqft,PASS,Turnkey Rental,New construction; price cut; low CapEx
+726 Swancy St,Longview,"$149,999",3bd/2ba/1268sqft,PASS,Turnkey Rental,Fresh paint; move-in ready appeal
+16053 Fm 848,Whitehouse,"$150,000",3bd/2ba/1440sqft,PASS (CONDITIONAL),BRRR / School Play,Whitehouse ISD; Hoarder house requires heavy trash-out
+13618 Indian Dr,Tyler,Auction,4bd/3ba/2425sqft,PASS,Equity Play,Auction status; large home in Tyler
+616 W Scott St,Gilmer,Auction,3bd/2ba/2652sqft,PASS,Equity Play,Auction status; massive square footage
+
+[FILE_END: top-properties.csv]
+################################################################################

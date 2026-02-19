@@ -1,0 +1,604 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Property {
+  id              String   @id @default(uuid())
+  address         String
+  city            String
+  state           String   @default("TX")
+  zip             String   @default("")
+  lat             Float    @default(0)
+  lng             Float    @default(0)
+  listPrice       Int      @map("list_price")
+  equityGap       Int      @default(0) @map("equity_gap")
+  sqft            Int      @default(0)
+  bedrooms        Int      @default(0)
+  bathrooms       Float    @default(0)
+  decision        String   @default("Review")
+  strategy        String   @default("None")
+  rationale       String   @default("")
+  type            String   @default("House for sale")
+  realtor         String?
+  url             String?
+  details         String?
+  
+  // New fields to match your app logic
+  images          String[] @default([])
+  estimatedRent   Int      @default(0)
+  annualTaxes     Int      @default(0)
+  annualInsurance Int      @default(0)
+  renovationBudget Int     @default(0)
+  afterRepairValue Int     @default(0)
+  notes           String   @default("")
+  isOwned         Boolean  @default(false) @map("is_owned")
+  purchasePrice   Int      @default(0) @map("purchase_price")
+  purchaseDate    DateTime? @map("purchase_date")
+  rehabCompleted  DateTime? @map("rehab_completed")
+  isFavorite      Boolean  @default(false) @map("is_favorite")
+  favoriteNotes   String   @default("") @map("favorite_notes")
+  dealScore       Float    @default(0) @map("deal_score")
+  riskLevel       String   @default("Medium") @map("risk_level")
+
+  createdAt       DateTime @default(now()) @map("created_at")
+  updatedAt       DateTime @updatedAt @map("updated_at")
+
+  // ============================================================================
+  // PHASE 1 EXTENSIONS: Multi-tenancy and Property Management
+  // ============================================================================
+  organizationId  String?   @map("organization_id")
+  organization   Organization? @relation(fields: [organizationId], references: [id], onDelete: SetNull)
+  ownerId        String?   @map("owner_id")
+  owner          User?     @relation("PropertyOwner", fields: [ownerId], references: [id], onDelete: SetNull)
+  
+  // Property Management fields
+  isRental       Boolean   @default(false) @map("is_rental")
+  propertyStatus PropertyManagementStatus @default(AVAILABLE) @map("property_status")
+  monthlyRent    Float?    @map("monthly_rent")
+  unitNumber     String?   @map("unit_number")
+  yearBuilt      Int?      @map("year_built")
+  parkingSpaces  Int?      @map("parking_spaces")
+  
+  // Buildium sync
+  buildiumId     String?   @unique @map("buildium_id")
+
+  // Relations
+  expenses        Expense[]
+  tasks           Task[]
+  rehabItems      RehabItem[]
+  marketData      MarketData[]
+  rentComps       RentComp[]
+  projections     Projection[]
+  timelineEvents  TimelineEvent[]
+  comments        Comment[]
+  documents       Document[]
+  
+  // PHASE 2+: Property Management Relations
+  tenants            Tenant[]
+  leases             Lease[]
+  maintenanceRequests MaintenanceRequest[]
+  transactions       Transaction[]
+
+  @@map("properties")
+}
+
+model Expense {
+  id          String   @id @default(uuid())
+  propertyId  String
+  property    Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  category    String
+  amount      Float
+  description String?
+  createdAt   DateTime @default(now())
+
+  @@map("expenses")
+}
+
+model Task {
+  id          String   @id @default(uuid())
+  propertyId  String
+  property    Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  title       String
+  isCompleted Boolean  @default(false)
+  createdAt   DateTime @default(now())
+
+  @@map("tasks")
+}
+
+model RehabItem {
+  id          String   @id @default(uuid())
+  propertyId  String
+  property    Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  category    String
+  item        String
+  quantity    Int      @default(1)
+  unitCost    Float    @map("unit_cost")
+  totalCost   Float    @map("total_cost")
+  isCompleted Boolean  @default(false)
+  notes       String   @default("")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  @@map("rehab_items")
+}
+
+model MarketData {
+  id            String   @id @default(uuid())
+  propertyId    String
+  property      Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  neighborhood  String
+  avgDaysOnMarket Int    @default(0) @map("avg_days_on_market")
+  avgPricePerSqft Float  @default(0) @map("avg_price_per_sqft")
+  priceTrend    Float    @default(0) @map("price_trend")
+  inventory     Int      @default(0)
+  dataDate      DateTime @default(now()) @map("data_date")
+
+  @@map("market_data")
+}
+
+model RentComp {
+  id          String   @id @default(uuid())
+  propertyId  String
+  property    Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  address     String
+  rentAmount  Int      @map("rent_amount")
+  sqft        Int      @default(0)
+  bedrooms    Int      @default(0)
+  bathrooms   Float    @default(0)
+  distance    Float
+  source      String   @default("Manual")
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  @@map("rent_comps")
+}
+
+// Property Management Status enum
+enum PropertyManagementStatus {
+  AVAILABLE
+  UNDER_RENOVATION
+  RENTED
+  OFF_MARKET
+  SOLD
+}
+
+model Projection {
+  id              String   @id @default(uuid())
+  propertyId      String
+  property        Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  year            Int
+  monthlyRent     Float    @map("monthly_rent")
+  vacancyRate     Float    @default(0.05) @map("vacancy_rate")
+  operatingExpenses Float  @map("operating_expenses")
+  mortgagePayment Float    @map("mortgage_payment")
+  cashFlow        Float    @map("cash_flow")
+  equityBuild     Float    @map("equity_build")
+  totalReturn     Float    @map("total_return")
+  createdAt       DateTime @default(now()) @map("created_at")
+
+  @@map("projections")
+}
+
+model TimelineEvent {
+  id          String   @id @default(uuid())
+  propertyId  String
+  property    Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  title       String
+  description String   @default("")
+  eventType   String   @map("event_type")
+  startDate   DateTime @map("start_date")
+  endDate     DateTime? @map("end_date")
+  isCompleted Boolean  @default(false)
+  assignedTo  String?  @map("assigned_to")
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  @@map("timeline_events")
+}
+
+model Comment {
+  id         String   @id @default(uuid())
+  propertyId String
+  property   Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  userId     String   @map("user_id")
+  userName   String   @map("user_name")
+  content    String
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  @@map("comments")
+}
+
+model Document {
+  id          String   @id @default(uuid())
+  propertyId  String
+  property    Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  fileName    String   @map("file_name")
+  fileUrl     String   @map("file_url")
+  fileType    String   @map("file_type")
+  category    String
+  uploadedBy  String   @map("uploaded_by")
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  @@map("documents")
+}
+
+// ============================================================================
+// PHASE 1: MULTI-TENANCY & USER MANAGEMENT MODELS
+// ============================================================================
+
+model Organization {
+  id              String   @id @default(uuid())
+  name            String
+  slug            String   @unique
+  subscription    String   @default("free") // free, pro, enterprise
+  createdAt       DateTime @default(now()) @map("created_at")
+  updatedAt       DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  users           OrganizationUser[]
+  properties      Property[]
+  tenants         Tenant[]
+  leases          Lease[]
+  maintenanceRequests MaintenanceRequest[]
+  vendors         Vendor[]
+  transactions    Transaction[]
+  bankAccounts   BankAccount[]
+  activities      Activity[]
+
+  @@map("organizations")
+}
+
+model User {
+  id            String   @id @default(uuid())
+  email         String   @unique
+  firstName    String?  @map("first_name")
+  lastName     String?  @map("last_name")
+  avatarUrl    String?  @map("avatar_url")
+  phone        String?
+  createdAt     DateTime @default(now()) @map("created_at")
+  updatedAt     DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  organizations OrganizationUser[]
+  ownedProperties Property[] @relation("PropertyOwner")
+  tenants       Tenant[]
+  comments      Comment[]
+  activities   Activity[]
+  maintenanceComments MaintenanceComment[]
+  
+  // For Supabase Auth integration - stores the Supabase user ID
+  supabaseId   String?  @unique @map("supabase_id")
+
+  @@map("users")
+}
+
+model OrganizationUser {
+  id             String       @id @default(uuid())
+  userId         String       @map("user_id")
+  organizationId String      @map("organization_id")
+  role           UserRole     @default(MEMBER)
+  createdAt      DateTime     @default(now()) @map("created_at")
+
+  user           User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, organizationId])
+  @@map("organization_users")
+}
+
+enum UserRole {
+  OWNER
+  ADMIN
+  MEMBER
+  VIEWER
+  TENANT
+}
+
+// ============================================================================
+// PHASE 2: TENANT & LEASE MANAGEMENT MODELS
+// ============================================================================
+
+model Tenant {
+  id              String   @id @default(uuid())
+  organizationId  String   @map("organization_id")
+  propertyId      String?  @map("property_id")
+  firstName       String   @map("first_name")
+  lastName        String   @map("last_name")
+  email           String
+  phone           String?
+  moveInDate      DateTime? @map("move_in_date")
+  moveOutDate    DateTime? @map("move_out_date")
+  emergencyContact String? @map("emergency_contact")
+  emergencyPhone  String?  @map("emergency_phone")
+  notes           String?
+  createdAt       DateTime @default(now()) @map("created_at")
+  updatedAt       DateTime @updatedAt @map("updated_at")
+
+  organization    Organization     @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  property        Property?        @relation(fields: [propertyId], references: [id])
+  leases          Lease[]
+  payments        Payment[]
+  maintenanceRequests MaintenanceRequest[]
+
+  @@map("tenants")
+}
+
+model Lease {
+  id              String     @id @default(uuid())
+  organizationId  String     @map("organization_id")
+  tenantId        String     @map("tenant_id")
+  propertyId      String     @map("property_id")
+  startDate       DateTime   @map("start_date")
+  endDate         DateTime   @map("end_date")
+  monthlyRent     Float      @map("monthly_rent")
+  securityDeposit Float?     @map("security_deposit")
+  status          LeaseStatus @default(DRAFT)
+  terms           String?    // JSON string for additional terms
+  lateFee         Float?     @map("late_fee")
+  gracePeriod     Int?       @map("grace_period_days") // days
+  rentDueDay      Int        @default(1) @map("rent_due_day") // 1-28
+  createdAt       DateTime   @default(now()) @map("created_at")
+  updatedAt       DateTime   @updatedAt @map("updated_at")
+
+  organization    Organization  @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  tenant          Tenant       @relation(fields: [tenantId], references: [id])
+  property        Property     @relation(fields: [propertyId], references: [id])
+  payments        Payment[]
+
+  @@map("leases")
+}
+
+enum LeaseStatus {
+  DRAFT
+  ACTIVE
+  EXPIRED
+  TERMINATED
+  MONTH_TO_MONTH
+  PENDING_RENEWAL
+}
+
+// ============================================================================
+// PHASE 3: PAYMENT MODELS
+// ============================================================================
+
+model Payment {
+  id              String        @id @default(uuid())
+  organizationId  String        @map("organization_id")
+  leaseId         String        @map("lease_id")
+  tenantId        String        @map("tenant_id")
+  amount          Float
+  dueDate         DateTime      @map("due_date")
+  paidDate        DateTime?     @map("paid_date")
+  status          PaymentStatus @default(PENDING)
+  type            PaymentType   @default(RENT)
+  paymentMethod   String?       @map("payment_method")
+  reference       String?       @map("reference_number")
+  notes           String?
+  lateFeeApplied  Float?        @map("late_fee_applied")
+  createdAt       DateTime      @default(now()) @map("created_at")
+  updatedAt       DateTime      @updatedAt @map("updated_at")
+
+  organization    Organization   @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  lease           Lease         @relation(fields: [leaseId], references: [id])
+  tenant          Tenant        @relation(fields: [tenantId], references: [id])
+
+  @@map("payments")
+}
+
+enum PaymentStatus {
+  PENDING
+  PROCESSING
+  COMPLETED
+  FAILED
+  REFUNDED
+  CANCELLED
+  VOIDED
+}
+
+enum PaymentType {
+  RENT
+  LATE_FEE
+  SECURITY_DEPOSIT
+  APPLICATION_FEE
+  PET_FEE
+  MAINTENANCE
+  UTILITY
+  OTHER
+}
+
+// ============================================================================
+// PHASE 4: MAINTENANCE MANAGEMENT MODELS
+// ============================================================================
+
+model MaintenanceRequest {
+  id              String            @id @default(uuid())
+  organizationId  String            @map("organization_id")
+  propertyId      String            @map("property_id")
+  tenantId        String?           @map("tenant_id")
+  vendorId        String?           @map("vendor_id")
+  reportedBy      String?           @map("reported_by")
+  title           String
+  description     String
+  priority        MaintenancePriority @default(MEDIUM)
+  status          MaintenanceStatus @default(OPEN)
+  category        String
+  estimatedCost   Float?            @map("estimated_cost")
+  actualCost      Float?            @map("actual_cost")
+  scheduledDate   DateTime?         @map("scheduled_date")
+  completedDate   DateTime?         @map("completed_date")
+  accessInstructions String?       @map("access_instructions")
+  createdAt       DateTime          @default(now()) @map("created_at")
+  updatedAt       DateTime          @updatedAt @map("updated_at")
+
+  organization    Organization        @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  property        Property           @relation(fields: [propertyId], references: [id])
+  tenant          Tenant?             @relation(fields: [tenantId], references: [id])
+  vendor          Vendor?             @relation(fields: [vendorId], references: [id])
+  comments        MaintenanceComment[]
+  attachments     MaintenanceAttachment[]
+
+  @@map("maintenance_requests")
+}
+
+enum MaintenancePriority {
+  LOW
+  MEDIUM
+  HIGH
+  EMERGENCY
+}
+
+enum MaintenanceStatus {
+  OPEN
+  ASSIGNED
+  IN_PROGRESS
+  ON_HOLD
+  PENDING_PARTS
+  COMPLETED
+  CANCELLED
+}
+
+model MaintenanceComment {
+  id          String   @id @default(uuid())
+  requestId   String   @map("maintenance_request_id")
+  userId      String   @map("user_id")
+  content     String
+  isInternal  Boolean  @default(false) @map("is_internal")
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  request     MaintenanceRequest @relation(fields: [requestId], references: [id], onDelete: Cascade)
+  user        User               @relation(fields: [userId], references: [id])
+
+  @@map("maintenance_comments")
+}
+
+model MaintenanceAttachment {
+  id          String   @id @default(uuid())
+  requestId   String   @map("maintenance_request_id")
+  fileName    String   @map("file_name")
+  fileUrl     String   @map("file_url")
+  fileType    String   @map("file_type")
+  fileSize    Int?     @map("file_size")
+  uploadedAt  DateTime @default(now()) @map("uploaded_at")
+
+  request     MaintenanceRequest @relation(fields: [requestId], references: [id], onDelete: Cascade)
+
+  @@map("maintenance_attachments")
+}
+
+model Vendor {
+  id              String   @id @default(uuid())
+  organizationId  String   @map("organization_id")
+  name            String
+  email           String?
+  phone           String?
+  address         String?
+  city            String?
+  state           String?
+  zip             String?
+  category        String   // plumber, electrician, hvac, roofer, general, landscaper, painter
+  hourlyRate      Float?   @map("hourly_rate")
+  rating          Float?
+  isVerified      Boolean  @default(false) @map("is_verified")
+  licenseNumber   String?  @map("license_number")
+  insuranceExpiry DateTime? @map("insurance_expiry")
+  notes           String?
+  createdAt       DateTime @default(now()) @map("created_at")
+  updatedAt       DateTime @updatedAt @map("updated_at")
+
+  organization    Organization        @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  maintenanceRequests MaintenanceRequest[]
+
+  @@map("vendors")
+}
+
+// ============================================================================
+// PHASE 5: ACCOUNTING MODELS
+// ============================================================================
+
+model BankAccount {
+  id              String      @id @default(uuid())
+  organizationId   String      @map("organization_id")
+  name            String
+  type            AccountType
+  balance         Float       @default(0)
+  currency        String      @default("USD")
+  bankName        String?     @map("bank_name")
+  accountNumber   String?     @map("account_number_last4")
+  isActive        Boolean     @default(true) @map("is_active")
+  createdAt       DateTime    @default(now()) @map("created_at")
+  updatedAt       DateTime    @updatedAt @map("updated_at")
+
+  organization    Organization    @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  transactions   Transaction[]
+
+  @@map("bank_accounts")
+}
+
+enum AccountType {
+  CHECKING
+  SAVINGS
+  CREDIT_CARD
+  CASH
+  ESCROW
+}
+
+model Transaction {
+  id              String         @id @default(uuid())
+  organizationId   String         @map("organization_id")
+  bankAccountId   String         @map("bank_account_id")
+  propertyId      String?        @map("property_id")
+  tenantId        String?        @map("tenant_id")
+  leaseId         String?        @map("lease_id")
+  maintenanceRequestId String?    @map("maintenance_request_id")
+  date            DateTime
+  description     String
+  amount          Float
+  category        String
+  type            TransactionType
+  isReconciled    Boolean        @default(false) @map("is_reconciled")
+  reference       String?
+  notes           String?
+  createdAt       DateTime       @default(now()) @map("created_at")
+  updatedAt       DateTime       @updatedAt @map("updated_at")
+
+  organization    Organization     @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  bankAccount    BankAccount      @relation(fields: [bankAccountId], references: [id])
+  property       Property?        @relation(fields: [propertyId], references: [id])
+  tenant         Tenant?          @relation(fields: [tenantId], references: [id])
+  lease          Lease?           @relation(fields: [leaseId], references: [id])
+  maintenanceRequest MaintenanceRequest? @relation(fields: [maintenanceRequestId], references: [id])
+
+  @@map("transactions")
+}
+
+enum TransactionType {
+  INCOME
+  EXPENSE
+  TRANSFER
+}
+
+// ============================================================================
+// ACTIVITY LOG MODEL
+// ============================================================================
+
+model Activity {
+  id              String   @id @default(uuid())
+  organizationId  String   @map("organization_id")
+  userId          String?  @map("user_id")
+  action          String
+  targetType      String   @map("target_type")
+  targetId        String   @map("target_id")
+  details         Json?
+  ipAddress       String?  @map("ip_address")
+  createdAt       DateTime @default(now()) @map("created_at")
+
+  organization    Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  user            User?        @relation(fields: [userId], references: [id])
+
+  @@map("activities")
+  @@index([organizationId, createdAt])
+  @@index([targetType, targetId])
+}
