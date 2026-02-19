@@ -72,114 +72,20 @@ export const supabase = createClient(supabaseUrl, supabaseKey)
 
 // Get Supabase service role key for admin operations (use with caution)
 const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
-export const supabaseAdmin = supabaseServiceKey
+export const supabaseAdmin = supabaseServiceKey 
   ? createClient(supabaseUrl, supabaseServiceKey, { auth: { autoRefreshToken: false, persistSession: false } })
   : null
 
-export type UserRole = 'OWNER' | 'ADMIN' | 'MEMBER' | 'VIEWER' | 'TENANT'
-
-export interface AuthUser {
-  id: string
-  email: string
-  supabaseId: string
-  firstName?: string
-  lastName?: string
-  avatarUrl?: string
-}
-
-export interface AuthContext {
-  user: AuthUser | null
-  organizationId: string | null
-  role: UserRole | null
-  isAuthenticated: boolean
-}
-
-// Role hierarchy - higher roles have all permissions of lower roles
-const roleHierarchy: Record<UserRole, number> = {
-  OWNER: 5,
-  ADMIN: 4,
-  MEMBER: 3,
-  VIEWER: 2,
-  TENANT: 1,
-}
-
-export const hasRole = (userRole: UserRole | null, requiredRole: UserRole): boolean => {
-  if (!userRole) return false
-  return roleHierarchy[userRole] >= roleHierarchy[requiredRole]
-}
-
-export const canManageOrganization = (role: UserRole | null): boolean => {
-  return hasRole(role, 'ADMIN')
-}
-
-export const canManageProperties = (role: UserRole | null): boolean => {
-  return hasRole(role, 'MEMBER')
-}
-
-export const canViewProperties = (role: UserRole | null): boolean => {
-  return hasRole(role, 'VIEWER')
-}
-
-export const canManageTenants = (role: UserRole | null): boolean => {
-  return hasRole(role, 'MEMBER')
-}
-
-export const canManageMaintenance = (role: UserRole | null): boolean => {
-  return hasRole(role, 'MEMBER')
-}
-
-export const canManagePayments = (role: UserRole | null): boolean => {
-  return hasRole(role, 'MEMBER')
-}
-
-export const canManageAccounting = (role: UserRole | null): boolean => {
-  return hasRole(role, 'ADMIN')
-}
-
 // Authentication helper functions
 export const getAuthUser = async (
-  supabase: SupabaseClient,
+  supabaseClient: SupabaseClient,
   token: string
 ): Promise<{ user: User | null; error: Error | null }> => {
   try {
-    const { data: { user }, error } = await supabase.auth.getUser(token)
-    return { user, error }
+    const { data: { user }, error } = await supabaseClient.auth.getUser(token)
+    return { user, error: error as Error | null }
   } catch (error) {
     return { user: null, error: error as Error }
-  }
-}
-
-export const getUserOrganization = async (
-  supabase: SupabaseClient,
-  prisma: any,
-  userId: string
-): Promise<{ orgId: string | null; role: UserRole | null; error: Error | null }> => {
-  try {
-    // First try to find user in our User table
-    let dbUser = await prisma.user.findUnique({
-      where: { supabaseId: userId },
-      include: {
-        organizations: {
-          include: {
-            organization: true,
-          },
-          take: 1,
-        },
-      },
-    })
-
-    if (dbUser && dbUser.organizations.length > 0) {
-      return {
-        orgId: dbUser.organizations[0].organization.id,
-        role: dbUser.organizations[0].role as UserRole,
-        error: null,
-      }
-    }
-
-    // If no organization link, return null
-    return { orgId: null, role: null, error: null }
-  } catch (error) {
-    return { orgId: null, role: null, error: error as Error }
   }
 }
 
@@ -187,8 +93,6 @@ export const getUserOrganization = async (
 export const authenticateRequest = async (
   request: Request
 ): Promise<{ context: AuthContext; error: Response | null }> => {
-  const { supabase, prisma } = await import('./db')
-
   const authHeader = request.headers.get('authorization')
   if (!authHeader?.startsWith('Bearer ')) {
     return {
@@ -223,13 +127,6 @@ export const authenticateRequest = async (
     }
   }
 
-  // Get user's organization and role
-  const { orgId, role, error: orgError } = await getUserOrganization(
-    supabase,
-    prisma,
-    user.id
-  )
-
   return {
     context: {
       user: {
@@ -237,8 +134,8 @@ export const authenticateRequest = async (
         email: user.email || '',
         supabaseId: user.id,
       },
-      organizationId: orgId,
-      role,
+      organizationId: null, // Will be populated after checking User table
+      role: null,
       isAuthenticated: true,
     },
     error: null,
@@ -280,15 +177,15 @@ const globalForPrisma = global as unknown as { prisma: PrismaClient }
 
 function createPrismaClient() {
   const connectionString = process.env.DATABASE_URL
-
+  
   if (!connectionString) {
     console.warn('DATABASE_URL not set, Prisma client may not work')
     return null as any
   }
-
+  
   const pool = new Pool({ connectionString })
   const adapter = new PrismaPg(pool)
-
+  
   return new PrismaClient({ adapter })
 }
 
