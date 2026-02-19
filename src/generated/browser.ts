@@ -67,3 +67,68 @@ export type Comment = Prisma.CommentModel
  * 
  */
 export type Document = Prisma.DocumentModel
+/**
+ * Model Organization
+ * 
+ */
+export type Organization = Prisma.OrganizationModel
+/**
+ * Model User
+ * 
+ */
+export type User = Prisma.UserModel
+/**
+ * Model OrganizationUser
+ * 
+ */
+export type OrganizationUser = Prisma.OrganizationUserModel
+/**
+ * Model Tenant
+ * 
+ */
+export type Tenant = Prisma.TenantModel
+/**
+ * Model Lease
+ * 
+ */
+export type Lease = Prisma.LeaseModel
+/**
+ * Model Payment
+ * 
+ */
+export type Payment = Prisma.PaymentModel
+/**
+ * Model MaintenanceRequest
+ * 
+ */
+export type MaintenanceRequest = Prisma.MaintenanceRequestModel
+/**
+ * Model MaintenanceComment
+ * 
+ */
+export type MaintenanceComment = Prisma.MaintenanceCommentModel
+/**
+ * Model MaintenanceAttachment
+ * 
+ */
+export type MaintenanceAttachment = Prisma.MaintenanceAttachmentModel
+/**
+ * Model Vendor
+ * 
+ */
+export type Vendor = Prisma.VendorModel
+/**
+ * Model BankAccount
+ * 
+ */
+export type BankAccount = Prisma.BankAccountModel
+/**
+ * Model Transaction
+ * 
+ */
+export type Transaction = Prisma.TransactionModel
+/**
+ * Model Activity
+ * 
+ */
+export type Activity = Prisma.ActivityModel

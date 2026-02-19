@@ -9,7 +9,105 @@
 * 🟢 You can import this file directly.
 */
 
+export const PropertyManagementStatus = {
+  AVAILABLE: 'AVAILABLE',
+  UNDER_RENOVATION: 'UNDER_RENOVATION',
+  RENTED: 'RENTED',
+  OFF_MARKET: 'OFF_MARKET',
+  SOLD: 'SOLD'
+} as const
+
+export type PropertyManagementStatus = (typeof PropertyManagementStatus)[keyof typeof PropertyManagementStatus]
 
 
-// This file is empty because there are no enums in the schema.
-export {}
+export const UserRole = {
+  OWNER: 'OWNER',
+  ADMIN: 'ADMIN',
+  MEMBER: 'MEMBER',
+  VIEWER: 'VIEWER',
+  TENANT: 'TENANT'
+} as const
+
+export type UserRole = (typeof UserRole)[keyof typeof UserRole]
+
+
+export const LeaseStatus = {
+  DRAFT: 'DRAFT',
+  ACTIVE: 'ACTIVE',
+  EXPIRED: 'EXPIRED',
+  TERMINATED: 'TERMINATED',
+  MONTH_TO_MONTH: 'MONTH_TO_MONTH',
+  PENDING_RENEWAL: 'PENDING_RENEWAL'
+} as const
+
+export type LeaseStatus = (typeof LeaseStatus)[keyof typeof LeaseStatus]
+
+
+export const PaymentStatus = {
+  PENDING: 'PENDING',
+  PROCESSING: 'PROCESSING',
+  COMPLETED: 'COMPLETED',
+  FAILED: 'FAILED',
+  REFUNDED: 'REFUNDED',
+  CANCELLED: 'CANCELLED',
+  VOIDED: 'VOIDED'
+} as const
+
+export type PaymentStatus = (typeof PaymentStatus)[keyof typeof PaymentStatus]
+
+
+export const PaymentType = {
+  RENT: 'RENT',
+  LATE_FEE: 'LATE_FEE',
+  SECURITY_DEPOSIT: 'SECURITY_DEPOSIT',
+  APPLICATION_FEE: 'APPLICATION_FEE',
+  PET_FEE: 'PET_FEE',
+  MAINTENANCE: 'MAINTENANCE',
+  UTILITY: 'UTILITY',
+  OTHER: 'OTHER'
+} as const
+
+export type PaymentType = (typeof PaymentType)[keyof typeof PaymentType]
+
+
+export const MaintenancePriority = {
+  LOW: 'LOW',
+  MEDIUM: 'MEDIUM',
+  HIGH: 'HIGH',
+  EMERGENCY: 'EMERGENCY'
+} as const
+
+export type MaintenancePriority = (typeof MaintenancePriority)[keyof typeof MaintenancePriority]
+
+
+export const MaintenanceStatus = {
+  OPEN: 'OPEN',
+  ASSIGNED: 'ASSIGNED',
+  IN_PROGRESS: 'IN_PROGRESS',
+  ON_HOLD: 'ON_HOLD',
+  PENDING_PARTS: 'PENDING_PARTS',
+  COMPLETED: 'COMPLETED',
+  CANCELLED: 'CANCELLED'
+} as const
+
+export type MaintenanceStatus = (typeof MaintenanceStatus)[keyof typeof MaintenanceStatus]
+
+
+export const AccountType = {
+  CHECKING: 'CHECKING',
+  SAVINGS: 'SAVINGS',
+  CREDIT_CARD: 'CREDIT_CARD',
+  CASH: 'CASH',
+  ESCROW: 'ESCROW'
+} as const
+
+export type AccountType = (typeof AccountType)[keyof typeof AccountType]
+
+
+export const TransactionType = {
+  INCOME: 'INCOME',
+  EXPENSE: 'EXPENSE',
+  TRANSFER: 'TRANSFER'
+} as const
+
+export type TransactionType = (typeof TransactionType)[keyof typeof TransactionType]
