@@ -1,4 +1,4 @@
-PROJECT_ANALYSIS_DATE: 2026-02-18 20:53:46.336946
+PROJECT_ANALYSIS_DATE: 2026-02-20 09:46:55.535683
 PROJECT_STRUCTURE:
   📄 .eslintrc.json
   📄 .stylelintrc.json
@@ -9,12 +9,18 @@ PROJECT_STRUCTURE:
   📄 package.json
   📄 playwright.config.ts
   📄 postcss.config.js
+  📄 predictions_for_app.json
   📄 prisma.config.ts
   📄 raw-data.json
   📄 tailwind.config.js
   📄 take-screenshots.js
   📄 top-properties.csv
   📄 tsconfig.json
+  📁 .github/
+    📁 workflow/
+      📄 ci.yaml
+      📄 production.yaml
+      📄 staging.yaml
   📁 .kilocode/
     📄 mcp.json
   📁 prisma/
@@ -30,8 +36,39 @@ PROJECT_STRUCTURE:
       📄 layout.tsx
       📄 page.tsx
       📁 api/
+        📁 bank-accounts/
+          📄 route.ts
+        📁 enrich/
+          📁 property/
+            📄 route.ts
+        📁 leases/
+          📄 route.ts
+          📁 [id]/
+            📄 route.ts
+        📁 maintenance/
+          📄 route.ts
+          📁 [id]/
+            📄 route.ts
+        📁 organizations/
+          📄 route.ts
+        📁 payments/
+          📄 route.ts
+          📁 [id]/
+            📄 route.ts
+        📁 predictions/
+          📄 route.ts
         📁 properties/
           📄 route.ts
+        📁 tenants/
+          📄 route.ts
+          📁 [id]/
+            📄 route.ts
+        📁 transactions/
+          📄 route.ts
+        📁 vendors/
+          📄 route.ts
+          📁 [id]/
+            📄 route.ts
       📁 lib/
         📄 db.ts
       📁 properties/
@@ -73,20 +110,40 @@ PROJECT_STRUCTURE:
         📄 prismaNamespace.ts
         📄 prismaNamespaceBrowser.ts
       📁 models/
+        📄 Activity.ts
+        📄 BankAccount.ts
         📄 Comment.ts
         📄 Document.ts
         📄 Expense.ts
+        📄 Lease.ts
+        📄 MaintenanceAttachment.ts
+        📄 MaintenanceComment.ts
+        📄 MaintenanceRequest.ts
         📄 MarketData.ts
+        📄 Organization.ts
+        📄 OrganizationUser.ts
+        📄 Payment.ts
         📄 Projection.ts
         📄 Property.ts
         📄 RehabItem.ts
         📄 RentComp.ts
         📄 Task.ts
+        📄 Tenant.ts
         📄 TimelineEvent.ts
+        📄 Transaction.ts
+        📄 User.ts
+        📄 Vendor.ts
     📁 lib/
       📄 calculations.ts
+      📁 ai/
+        📄 enhancedScoring.ts
+        📄 externalAPIs.ts
+        📄 index.ts
+        📄 useEnhancedScoring.ts
   📁 supabase/
+    📁 .branches/
     📁 .temp/
+    📁 snippets/
   📁 test-results/
     📄 .last-run.json
   📁 tests/

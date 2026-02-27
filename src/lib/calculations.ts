@@ -17,6 +17,49 @@ import {
 export type { Decision, Strategy } from '@/data/properties';
 
 /**
+ * Calculate monthly cash flow for a property
+ * @param property - Property with estimated rent, taxes, insurance
+ * @param mortgagePayment - Monthly mortgage payment (optional)
+ * @returns Monthly cash flow
+ */
+export function calculateCashFlow(
+  property: { estimatedRent: number; annualTaxes: number; annualInsurance: number; listPrice?: number },
+  downPaymentPercent: number = 25,
+  interestRate: number = 7.5
+): number {
+  const monthlyRent = property.estimatedRent ?? 0;
+  const monthlyTaxes = (property.annualTaxes ?? 0) / 12;
+  const monthlyInsurance = (property.annualInsurance ?? 0) / 12;
+  
+  // Calculate mortgage if listPrice is provided
+  let monthlyMortgage = 0;
+  if (property.listPrice && property.listPrice > 0) {
+    const downPayment = property.listPrice * (downPaymentPercent / 100);
+    const loanAmount = property.listPrice - downPayment;
+    const monthlyRate = interestRate / 100 / 12;
+    const numPayments = 360; // 30-year loan
+    monthlyMortgage = (loanAmount * monthlyRate * Math.pow(1 + monthlyRate, numPayments)) / 
+                      (Math.pow(1 + monthlyRate, numPayments) - 1);
+  }
+  
+  const totalExpenses = monthlyTaxes + monthlyInsurance + monthlyMortgage;
+  return monthlyRent - totalExpenses;
+}
+
+/**
+ * Calculate NOI (Net Operating Income)
+ * @param property - Property with estimated rent, taxes, insurance
+ * @returns Annual NOI
+ */
+export function calculateNOI(
+  property: { estimatedRent: number; annualTaxes: number; annualInsurance: number }
+): number {
+  const annualRent = (property.estimatedRent ?? 0) * 12;
+  const annualExpenses = (property.annualTaxes ?? 0) + (property.annualInsurance ?? 0);
+  return annualRent - annualExpenses;
+}
+
+/**
  * Base property interface that matches Prisma schema (with Date objects)
  * Uses string types for decision and strategy since Prisma stores them as strings.
  * The frontend should validate/cast these to the proper union types when needed.

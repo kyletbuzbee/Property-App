@@ -2,13 +2,13 @@
 ================================================================================
 FILE_BEGIN: src\app\globals.css
 TYPE: CSS
-SIZE: 3235 bytes
+SIZE: 3234 bytes
 ================================================================================
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
   --foreground-rgb: 255, 255, 255;
@@ -181,7 +181,6 @@ body {
 .strategy-wholesaling {
   @apply bg-pink-500/20 text-pink-400;
 }
-
 
 [FILE_END: src\app\globals.css]
 ################################################################################

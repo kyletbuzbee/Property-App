@@ -113,19 +113,19 @@ export default function OpportunityMap({ properties, onPropertyClick }: Opportun
   const [selectedDecision, setSelectedDecision] = useState<Decision | 'all'>('all');
   const [mapKey, setMapKey] = useState(0);
   const mapContainerRef = useRef<HTMLDivElement>(null);
-  const isInitialized = useRef(false);
+  const mapInstanceRef = useRef<L.Map | null>(null);
 
   useEffect(() => {
-    // Prevent double initialization in React StrictMode
-    if (isInitialized.current) return;
-    isInitialized.current = true;
-    
-    // Clean up any existing map containers with the same ID
+    // Clean up any existing map instance before creating a new one
     if (mapContainerRef.current) {
-      const container = mapContainerRef.current.querySelector('.leaflet-container');
-      if (container && (container as any)._leaflet_id) {
-        (container as any)._leaflet_id = undefined;
-      }
+      // Remove any existing leaflet containers
+      const existingContainers = mapContainerRef.current.querySelectorAll('.leaflet-container');
+      existingContainers.forEach(container => {
+        container.remove();
+      });
+      
+      // Also try to clean up by removing all child elements
+      mapContainerRef.current.innerHTML = '';
     }
     
     // Use timestamp as unique key
@@ -134,8 +134,10 @@ export default function OpportunityMap({ properties, onPropertyClick }: Opportun
     
     return () => {
       // Cleanup on unmount
-      isInitialized.current = false;
       setIsMounted(false);
+      if (mapContainerRef.current) {
+        mapContainerRef.current.innerHTML = '';
+      }
     };
   }, []);
 

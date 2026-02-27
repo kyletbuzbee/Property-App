@@ -2,12 +2,11 @@
 ================================================================================
 FILE_BEGIN: next.config.js
 TYPE: JS
-SIZE: 135 bytes
+SIZE: 116 bytes
 ================================================================================
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
 }
 
 export default nextConfig
