@@ -868,9 +868,9 @@
         "realtor": null
       }
     ]
-},
-{
-  "address": "104 W Primrose Ln, Longview, TX 75604",
+  },
+  {
+    "address": "104 W Primrose Ln, Longview, TX 75604",
     "price": "$140,000",
     "beds_baths_sqft": "4 bds, 2 ba, 1,586 sqft",
     "type": "House for sale",

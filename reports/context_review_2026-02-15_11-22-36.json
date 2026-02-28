@@ -2,12 +2,7 @@
   "context": {
     "project_name": "Project",
     "description": "Code review analysis",
-    "tech_stack": [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS"
-    ],
+    "tech_stack": ["React", "Next.js", "TypeScript", "Tailwind CSS"],
     "architecture_layers": {},
     "dependency_map": {
       "next-env.d.ts": [],

@@ -52,24 +52,15 @@ export const AnyNull = runtime.AnyNull
 
 export const ModelName = {
   Property: 'Property',
-  Expense: 'Expense',
   Task: 'Task',
   RehabItem: 'RehabItem',
   MarketData: 'MarketData',
-  RentComp: 'RentComp',
-  Projection: 'Projection',
   TimelineEvent: 'TimelineEvent',
   Comment: 'Comment',
   Document: 'Document',
   Organization: 'Organization',
   User: 'User',
   OrganizationUser: 'OrganizationUser',
-  Tenant: 'Tenant',
-  Lease: 'Lease',
-  Payment: 'Payment',
-  MaintenanceRequest: 'MaintenanceRequest',
-  MaintenanceComment: 'MaintenanceComment',
-  MaintenanceAttachment: 'MaintenanceAttachment',
   Vendor: 'Vendor',
   BankAccount: 'BankAccount',
   Transaction: 'Transaction',
@@ -113,7 +104,6 @@ export const PropertyScalarFieldEnum = {
   url: 'url',
   details: 'details',
   images: 'images',
-  estimatedRent: 'estimatedRent',
   annualTaxes: 'annualTaxes',
   annualInsurance: 'annualInsurance',
   renovationBudget: 'renovationBudget',
@@ -127,32 +117,22 @@ export const PropertyScalarFieldEnum = {
   favoriteNotes: 'favoriteNotes',
   dealScore: 'dealScore',
   riskLevel: 'riskLevel',
+  mao25k: 'mao25k',
+  mao50k: 'mao50k',
+  holdingCosts: 'holdingCosts',
+  closingCosts: 'closingCosts',
+  rehabTier: 'rehabTier',
+  arvSource: 'arvSource',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
   organizationId: 'organizationId',
   ownerId: 'ownerId',
-  isRental: 'isRental',
   propertyStatus: 'propertyStatus',
-  monthlyRent: 'monthlyRent',
-  unitNumber: 'unitNumber',
   yearBuilt: 'yearBuilt',
-  parkingSpaces: 'parkingSpaces',
   buildiumId: 'buildiumId'
 } as const
 
 export type PropertyScalarFieldEnum = (typeof PropertyScalarFieldEnum)[keyof typeof PropertyScalarFieldEnum]
-
-
-export const ExpenseScalarFieldEnum = {
-  id: 'id',
-  propertyId: 'propertyId',
-  category: 'category',
-  amount: 'amount',
-  description: 'description',
-  createdAt: 'createdAt'
-} as const
-
-export type ExpenseScalarFieldEnum = (typeof ExpenseScalarFieldEnum)[keyof typeof ExpenseScalarFieldEnum]
 
 
 export const TaskScalarFieldEnum = {
@@ -195,39 +175,6 @@ export const MarketDataScalarFieldEnum = {
 } as const
 
 export type MarketDataScalarFieldEnum = (typeof MarketDataScalarFieldEnum)[keyof typeof MarketDataScalarFieldEnum]
-
-
-export const RentCompScalarFieldEnum = {
-  id: 'id',
-  propertyId: 'propertyId',
-  address: 'address',
-  rentAmount: 'rentAmount',
-  sqft: 'sqft',
-  bedrooms: 'bedrooms',
-  bathrooms: 'bathrooms',
-  distance: 'distance',
-  source: 'source',
-  createdAt: 'createdAt'
-} as const
-
-export type RentCompScalarFieldEnum = (typeof RentCompScalarFieldEnum)[keyof typeof RentCompScalarFieldEnum]
-
-
-export const ProjectionScalarFieldEnum = {
-  id: 'id',
-  propertyId: 'propertyId',
-  year: 'year',
-  monthlyRent: 'monthlyRent',
-  vacancyRate: 'vacancyRate',
-  operatingExpenses: 'operatingExpenses',
-  mortgagePayment: 'mortgagePayment',
-  cashFlow: 'cashFlow',
-  equityBuild: 'equityBuild',
-  totalReturn: 'totalReturn',
-  createdAt: 'createdAt'
-} as const
-
-export type ProjectionScalarFieldEnum = (typeof ProjectionScalarFieldEnum)[keyof typeof ProjectionScalarFieldEnum]
 
 
 export const TimelineEventScalarFieldEnum = {
@@ -310,118 +257,6 @@ export const OrganizationUserScalarFieldEnum = {
 export type OrganizationUserScalarFieldEnum = (typeof OrganizationUserScalarFieldEnum)[keyof typeof OrganizationUserScalarFieldEnum]
 
 
-export const TenantScalarFieldEnum = {
-  id: 'id',
-  organizationId: 'organizationId',
-  propertyId: 'propertyId',
-  firstName: 'firstName',
-  lastName: 'lastName',
-  email: 'email',
-  phone: 'phone',
-  moveInDate: 'moveInDate',
-  moveOutDate: 'moveOutDate',
-  emergencyContact: 'emergencyContact',
-  emergencyPhone: 'emergencyPhone',
-  notes: 'notes',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt',
-  userId: 'userId'
-} as const
-
-export type TenantScalarFieldEnum = (typeof TenantScalarFieldEnum)[keyof typeof TenantScalarFieldEnum]
-
-
-export const LeaseScalarFieldEnum = {
-  id: 'id',
-  organizationId: 'organizationId',
-  tenantId: 'tenantId',
-  propertyId: 'propertyId',
-  startDate: 'startDate',
-  endDate: 'endDate',
-  monthlyRent: 'monthlyRent',
-  securityDeposit: 'securityDeposit',
-  status: 'status',
-  terms: 'terms',
-  lateFee: 'lateFee',
-  gracePeriod: 'gracePeriod',
-  rentDueDay: 'rentDueDay',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type LeaseScalarFieldEnum = (typeof LeaseScalarFieldEnum)[keyof typeof LeaseScalarFieldEnum]
-
-
-export const PaymentScalarFieldEnum = {
-  id: 'id',
-  organizationId: 'organizationId',
-  leaseId: 'leaseId',
-  tenantId: 'tenantId',
-  amount: 'amount',
-  dueDate: 'dueDate',
-  paidDate: 'paidDate',
-  status: 'status',
-  type: 'type',
-  paymentMethod: 'paymentMethod',
-  reference: 'reference',
-  notes: 'notes',
-  lateFeeApplied: 'lateFeeApplied',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type PaymentScalarFieldEnum = (typeof PaymentScalarFieldEnum)[keyof typeof PaymentScalarFieldEnum]
-
-
-export const MaintenanceRequestScalarFieldEnum = {
-  id: 'id',
-  organizationId: 'organizationId',
-  propertyId: 'propertyId',
-  tenantId: 'tenantId',
-  vendorId: 'vendorId',
-  reportedBy: 'reportedBy',
-  title: 'title',
-  description: 'description',
-  priority: 'priority',
-  status: 'status',
-  category: 'category',
-  estimatedCost: 'estimatedCost',
-  actualCost: 'actualCost',
-  scheduledDate: 'scheduledDate',
-  completedDate: 'completedDate',
-  accessInstructions: 'accessInstructions',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type MaintenanceRequestScalarFieldEnum = (typeof MaintenanceRequestScalarFieldEnum)[keyof typeof MaintenanceRequestScalarFieldEnum]
-
-
-export const MaintenanceCommentScalarFieldEnum = {
-  id: 'id',
-  requestId: 'requestId',
-  userId: 'userId',
-  content: 'content',
-  isInternal: 'isInternal',
-  createdAt: 'createdAt'
-} as const
-
-export type MaintenanceCommentScalarFieldEnum = (typeof MaintenanceCommentScalarFieldEnum)[keyof typeof MaintenanceCommentScalarFieldEnum]
-
-
-export const MaintenanceAttachmentScalarFieldEnum = {
-  id: 'id',
-  requestId: 'requestId',
-  fileName: 'fileName',
-  fileUrl: 'fileUrl',
-  fileType: 'fileType',
-  fileSize: 'fileSize',
-  uploadedAt: 'uploadedAt'
-} as const
-
-export type MaintenanceAttachmentScalarFieldEnum = (typeof MaintenanceAttachmentScalarFieldEnum)[keyof typeof MaintenanceAttachmentScalarFieldEnum]
-
-
 export const VendorScalarFieldEnum = {
   id: 'id',
   organizationId: 'organizationId',
@@ -468,9 +303,6 @@ export const TransactionScalarFieldEnum = {
   organizationId: 'organizationId',
   bankAccountId: 'bankAccountId',
   propertyId: 'propertyId',
-  tenantId: 'tenantId',
-  leaseId: 'leaseId',
-  maintenanceRequestId: 'maintenanceRequestId',
   date: 'date',
   description: 'description',
   amount: 'amount',

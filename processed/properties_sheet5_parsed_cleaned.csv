@@ -1,0 +1,160 @@
+address,price,beds,baths,sqft,type,agent,details,source_file
+"115 County Road 2938, Hughes Springs, TX 75656",34999.0,3,2,1350.0,House for sale,"LPT REALTY, LLC","Price cut: $4,001 (2/19)",properties_sheet5_parsed.csv
+"1401 Gay St, Longview, TX 75602",45000.0,3,2,2418.0,House for sale,"TEXAS REAL ESTATE EXECUTIVES, THE DANIELS GROUP - GILMER",310 days on Zillow,properties_sheet5_parsed.csv
+"376 Sandlewood Loop, Avinger, TX 75630",45000.0,3,2,1428.0,House for sale,,Added privacy,properties_sheet5_parsed.csv
+"430 Seminole, Quitman, TX 75783",46610.0,3,2,,Foreclosure,"STARCREST REALTY, LLC",34 days on Zillow,properties_sheet5_parsed.csv
+"105 Lodge St, Ore City, TX 75683",49999.0,3,2,984.0,House for sale,1ST TEXAS REALTY SERVICES,28 days on Zillow,properties_sheet5_parsed.csv
+"107 Electra St, Longview, TX 75602",53999.0,3,2,1232.0,House for sale,1ST TEXAS REALTY SERVICES,247 days on Zillow,properties_sheet5_parsed.csv
+"11006 Fm 225 S, Laneville, TX 75667",55000.0,3,2,1590.0,House for sale,L4 PROPERTY GROUP,"Price cut: $10,000 (1/29)",properties_sheet5_parsed.csv
+"110 Acorn Dr, Marshall, TX 75670",58989.0,4,2,1800.0,House for sale,1ST TEXAS REALTY SERVICES,Traditional uphill look,properties_sheet5_parsed.csv
+"410 Timberline Dr, Longview, TX 75604",65000.0,3,2,1508.0,House for sale,"REAL BROKER, LLC",117 days on Zillow,properties_sheet5_parsed.csv
+"12364 State Highway 43 E, Tatum, TX 75691",65000.0,3,2,1219.0,House for sale,"JOSEPH WALTER REALTY, LLC",117 days on Zillow,properties_sheet5_parsed.csv
+"301 S Roberts St, Gilmer, TX 75644",65000.0,3,2,1064.0,House for sale,HHH PROPERTIES MANAGEMENT LLC,247 days on Zillow,properties_sheet5_parsed.csv
+"210 N Stephens St, Quitman, TX 75783",69000.0,3,2,1681.0,House for sale,QUITMAN REALTY,48 days on Zillow,properties_sheet5_parsed.csv
+"334 County Road 3523, Bullard, TX 75757",69900.0,3,3,1136.0,Foreclosure,BERKSHIRE HATHAWAY HOMESERVICES MILES REALTY-TYLER,161 days on Zillow,properties_sheet5_parsed.csv
+"829 N Prairieville St, Athens, TX 75751",69900.0,2,3,1238.0,House for sale,KELLER WILLIAMS REALTY-TYLER,Add outdoor entertaining areas,properties_sheet5_parsed.csv
+"405 S High St, Henderson, TX 75654",74400.0,3,2,1414.0,Foreclosure,COLDWELL BANKER HOME PLACE - CARTHAGE,2 days on Zillow,properties_sheet5_parsed.csv
+"5961 Club Dr, Gilmer, TX 75645",77040.0,2,2,1188.0,Foreclosure,REAL ESTATE MARKETING,Sits off the road,properties_sheet5_parsed.csv
+"507 Elder St, Kilgore, TX 75662",79900.0,3,2,1204.0,House for sale,ELITE GROUP REAL ESTATE,336 days on Zillow,properties_sheet5_parsed.csv
+"7227 Forest Hill Dr, Frankston, TX 75763",79900.0,2,2,704.0,Foreclosure,BERKSHIRE HATHAWAY HOMESERVICES MILES REALTY-TYLER,Situated on lake palestine,properties_sheet5_parsed.csv
+"2472 Lovely Dr, Chandler, TX 75758",79900.0,4,4,2380.0,House for sale,"JOSEPH WALTER REALTY, LLC","Price cut: $20,000 (2/13)",properties_sheet5_parsed.csv
+"486 County Road 3811, Hawkins, TX 75765",79900.0,3,2,1672.0,House for sale,,"Price cut: $5,000 (2/18)",properties_sheet5_parsed.csv
+"812 Tyler St, Jacksonville, TX 75766",84000.0,4,2,2210.0,Auction,STARCREST REALTY,97 days on Zillow,properties_sheet5_parsed.csv
+"304 Hillcrest Blvd, Daingerfield, TX 75638",85000.0,3,2,1445.0,House for sale,TEXAS REAL ESTATE EXECUTIVES-GILMER,21 hours ago,properties_sheet5_parsed.csv
+"4615 S Sego Lily Rd, Diana, TX 75640",85000.0,4,2,1843.0,Auction,,167 days on Zillow,properties_sheet5_parsed.csv
+"18958 County Road 356, Winona, TX 75792",85500.0,3,2,1440.0,Foreclosure,BERKSHIRE HATHAWAY HOMESERVICES MILES REALTY-TYLER,"Price cut: $4,750 (2/13)",properties_sheet5_parsed.csv
+"1408 Gay St, Longview, TX 75602",85500.0,2,2,1020.0,House for sale,"REAL BROKER, LLC",17 days on Zillow,properties_sheet5_parsed.csv
+"207 County Road 1739, Yantis, TX 75497",90000.0,4,2,2249.0,House for sale,,Brick house,properties_sheet5_parsed.csv
+"330 Francis St, Hawkins, TX 75765",91000.0,3,3,1679.0,Foreclosure,CROWNED EAGLE REALTY,Almost half an acre,properties_sheet5_parsed.csv
+"475 W Depot, Avinger, TX 75630",94500.0,3,2,1359.0,House for sale,"TEXAS REAL ESTATE EXECUTIVES, THE DANIELS GROUP - GILMER","Price cut: $4,500 (1/25)",properties_sheet5_parsed.csv
+"19565 E County Road 2187, Tatum, TX 75691",94900.0,3,2,1276.0,House for sale,JR REALTY,"Price cut: $5,000 (2/18)",properties_sheet5_parsed.csv
+"505 Levin St, Marshall, TX 75670",97500.0,3,2,2012.0,House for sale,FATHOM REALTY,"Price cut: $52,500 (2/14)",properties_sheet5_parsed.csv
+"2102 N Grand Ave, Tyler, TX 75702",98000.0,2,2,1384.0,House for sale,,Classic character throughout,properties_sheet5_parsed.csv
+"210 S Adams Ave, Tyler, TX 75702",99500.0,5,3,2808.0,Multi-family home for sale,"THE BRIAN CHINN TEAM, EXP REALTY",288 days on Zillow,properties_sheet5_parsed.csv
+"316 E Rosedale St, Tyler, TX 75702",99500.0,5,2,2420.0,Multi-family home for sale,"THE BRIAN CHINN TEAM, EXP REALTY",289 days on Zillow,properties_sheet5_parsed.csv
+"307 N Longview St, Kilgore, TX 75662",99900.0,3,2,1947.0,House for sale,JULIE WOODS & ASSOCIATE RE FIRM,"Price cut: $10,100 (2/18)",properties_sheet5_parsed.csv
+"1101 Sallie Sue Dr, Marshall, TX 75672",99900.0,3,2,1810.0,House for sale,CENTURY 21 A SELECT GROUP,"Price cut: $10,000 (2/16)",properties_sheet5_parsed.csv
+"5950 County Road 486, Tyler, TX 75706",99900.0,3,2,1320.0,House for sale,"MORA REALTY GROUP, LLC",4 days on Zillow,properties_sheet5_parsed.csv
+"380 Woodhue Dr, Bullard, TX 75757",99900.0,2,2,1152.0,New construction,MAYA PROPERTIES,2 days on Zillow,properties_sheet5_parsed.csv
+"1140 N Hamlett St, Athens, TX 75751",99900.0,3,3,1500.0,House for sale,KELLER WILLIAMS REALTY-TYLER,Open grassy area,properties_sheet5_parsed.csv
+"2319 Luther St, Tyler, TX 75701",99999.0,4,2,1909.0,House for sale,1ST TEXAS REALTY SERVICES,Brick home,properties_sheet5_parsed.csv
+"706-708 Ridgelea Ave, Longview, TX 75602",100000.0,4,2,1956.0,Multi-family home for sale,RAMSEY REALTY GROUP - LONGVIEW,Granite countertops,properties_sheet5_parsed.csv
+"22666 Lakeway Hbr, Flint, TX 75762",100000.0,3,2,1020.0,House for sale,COLDWELL BANKER APEX - TYLER,Spacious modular home,properties_sheet5_parsed.csv
+"205 N Robinson St, Big Sandy, TX 75755",100000.0,3,2,800.0,House for sale,LONE STAR REALTY - LAKE FORK,Original wood floors,properties_sheet5_parsed.csv
+"201 Travis St, Henderson, TX 75654",104900.0,3,2,1488.0,Foreclosure,TX FARMS & RANCHES/PARK VILLAGE,Some updating,properties_sheet5_parsed.csv
+"13312 Mountainview Rd S, Winona, TX 75792",105000.0,2,2,900.0,House for sale,JULIE WOODS & ASSOCIATE RE FIRM,Rare log cabin,properties_sheet5_parsed.csv
+"646 N Northaven Dr, Lone Star, TX 75668",105000.0,3,2,984.0,House for sale,MAYBEN REALTY - PITTSBURG,93 days on Zillow,properties_sheet5_parsed.csv
+"172 Sue St, Jefferson, TX 75657",112000.0,2,2,1280.0,House for sale,EXP REALTY LLC,Spacious lots,properties_sheet5_parsed.csv
+"10490 Browning St, Brownsboro, TX 75756",112500.0,2,2,540.0,House for sale,,Many mature trees,properties_sheet5_parsed.csv
+"10748 W High Way #84, Rusk, TX 75785",112990.0,4,2,2144.0,House for sale,MILLER HOMES GROUP,Solid pine floors,properties_sheet5_parsed.csv
+"235 County Road 1407, Jacksonville, TX 75766",113489.0,3,2,1395.0,House for sale,1ST TEXAS REALTY SERVICES,247 days on Zillow,properties_sheet5_parsed.csv
+"804 Evans St, Marshall, TX 75670",115000.0,2,2,896.0,House for sale,FATHOM REALTY,9 days on Zillow,properties_sheet5_parsed.csv
+"216 S Prairieville St, Athens, TX 75751",115000.0,3,3,2997.0,Auction,,262 days on Zillow,properties_sheet5_parsed.csv
+"309 McDaniel St, Mineola, TX 75773",115000.0,4,2,1200.0,House for sale,MILLER HOMES GROUP,Gorgeous east texas scenery,properties_sheet5_parsed.csv
+"220 S Chandler St, Rusk, TX 75785",115000.0,2,2,1232.0,House for sale,"EBBY HALLIDAY, REALTORS®","Price cut: $10,000 (1/28)",properties_sheet5_parsed.csv
+"126 W Forest St, Hawkins, TX 75765",115000.0,3,2,1563.0,House for sale,HASTINGS HOMES LLC,Wrap around porch,properties_sheet5_parsed.csv
+"136 Private Road 7708, Emory, TX 75440",116900.0,4,3,1092.0,House for sale,,Price cut: $600 (2/11),properties_sheet5_parsed.csv
+"2108 S Wall Ave, Tyler, TX 75701",118000.0,3,3,2498.0,Auction,STARCREST REALTY,146 days on Zillow,properties_sheet5_parsed.csv
+"201 S Post Oak St, Winnsboro, TX 75494",119000.0,2,2,1212.0,House for sale,,"Price cut: $10,000 (2/13)",properties_sheet5_parsed.csv
+"255 W Point Rd, Kilgore, TX 75662",119500.0,2,2,1707.0,House for sale,TEXAS LANE REALTY,"Price cut: $13,250 (2/12)",properties_sheet5_parsed.csv
+"1402 E Burleson St, Marshall, TX 75670",119900.0,3,2,1104.0,House for sale,USA PLUS REALTY,119 days on Zillow,properties_sheet5_parsed.csv
+"314 Blackjack St, Yantis, TX 75497",119900.0,2,2,385.0,House for sale,"PROMISED LAND GROUP, LLC",Private dock,properties_sheet5_parsed.csv
+"18111 County Road 2142, Troup, TX 75789",120000.0,2,2,1075.0,House for sale,RE/MAX PROFESSIONALS,31 days on Zillow,properties_sheet5_parsed.csv
+"615 Quitman St, Pittsburg, TX 75686",120000.0,3,2,1915.0,House for sale,TEXAS ALLY REAL ESTATE GROUP,Expansive garden,properties_sheet5_parsed.csv
+"147 Private Road 3297, Gladewater, TX 75647",120000.0,3,2,864.0,House for sale,ELITE GROUP REAL ESTATE,Charming two-story home,properties_sheet5_parsed.csv
+"806 E 1st St, Hughes Springs, TX 75656",120279.0,3,2,2173.0,House for sale,1ST TEXAS REALTY SERVICES,247 days on Zillow,properties_sheet5_parsed.csv
+"10510 Main St S, Overton, TX 75684",122500.0,3,2,1344.0,House for sale,"TEXAS REAL ESTATE EXECUTIVES, THE DANIELS GROUP - GILMER",Fenced yard,properties_sheet5_parsed.csv
+"1002 North St, Gladewater, TX 75647",122500.0,4,2,1332.0,House for sale,COLDWELL BANKER LENHART-GILMER,Metal roof,properties_sheet5_parsed.csv
+"1107 E North St, Kilgore, TX 75662",124900.0,3,2,1776.0,House for sale,TEXAS REAL ESTATE EXECUTIVES - LONGVIEW,287 days on Zillow,properties_sheet5_parsed.csv
+"3762 County Road 4325, Omaha, TX 75571",124900.0,3,3,1536.0,Foreclosure,TX FARMS & RANCHES/PARK VILLAGE,Quiet country setting,properties_sheet5_parsed.csv
+"8797 Fm 2494, Athens, TX 75751",125000.0,3,2,1680.0,House for sale,,Brick home,properties_sheet5_parsed.csv
+"143 County Road 3460, Hawkins, TX 75765",125000.0,2,2,1032.0,House for sale,COLDWELL BANKER APEX - TYLER,Little lily pond,properties_sheet5_parsed.csv
+"241 County Road 2226, Daingerfield, TX 75638",125000.0,3,2,1584.0,House for sale,UNITED COUNTRY H5 AUCTION AND REALTY,159 days on Zillow,properties_sheet5_parsed.csv
+"1543 County Road 2700, Mineola, TX 75773",125000.0,3,2,1128.0,House for sale,,Covered patio,properties_sheet5_parsed.csv
+"476 County Road Rd, Alba, TX 75410",125000.0,4,3,3434.0,House for sale,,Amazing outdoor kitchen,properties_sheet5_parsed.csv
+"15818 State Highway 149 N, Tatum, TX 75691",125000.0,3,2,1260.0,House for sale,COLDWELL BANKER LENHART,Outdoor storage closet,properties_sheet5_parsed.csv
+"11759 Fm 315 N, Larue, TX 75770",128000.0,2,2,1392.0,House for sale,,Two bedrooms,properties_sheet5_parsed.csv
+"4892 Woodcastle Dr, Chandler, TX 75758",129000.0,3,3,1760.0,House for sale,COLDWELL BANKER APEX - TYLER,"Price cut: $20,000 (2/7)",properties_sheet5_parsed.csv
+"1003 Tyler St, Jacksonville, TX 75766",129000.0,3,2,1736.0,House for sale,"EBBY HALLIDAY, REALTORS®",Fenced yard,properties_sheet5_parsed.csv
+"17022 Locust Rd, Big Sandy, TX 75755",129000.0,2,2,,For sale by owner,,New appliances,properties_sheet5_parsed.csv
+"7484 N Us Highway 69, Alba, TX 75410",129000.0,3,2,1310.0,House for sale,CENTURY 21 FIRST GROUP - LINDALE,Well for water,properties_sheet5_parsed.csv
+"13910 Fm 314 N, Brownsboro, TX 75756",129900.0,2,2,2592.0,House for sale,,Two out buildings,properties_sheet5_parsed.csv
+"405 Millie St, Longview, TX 75602",130000.0,2,2,1152.0,House for sale,"REAL BROKER, LLC",Patio doors,properties_sheet5_parsed.csv
+"1344 County Road 2746, Hughes Springs, TX 75656",130000.0,3,2,1436.0,House for sale,TERRY REAL ESTATE AGENCY,254 days on Zillow,properties_sheet5_parsed.csv
+"368 White Rd, Longview, TX 75603",130000.0,3,2,1768.0,For sale by owner,,Large metal shop,properties_sheet5_parsed.csv
+"501 N Spring St, Grand Saline, TX 75140",130000.0,4,2,2542.0,House for sale,"LESLIE CAIN REALTY, LLC",Solid wood floors,properties_sheet5_parsed.csv
+"313 Private Road 8693, Winnsboro, TX 75494",130000.0,2,2,1459.0,House for sale,MILLER HOMES GROUP,Enclosed porches,properties_sheet5_parsed.csv
+"215 Geronimo, Quitman, TX 75783",130000.0,2,2,900.0,House for sale,,Private boat ramp,properties_sheet5_parsed.csv
+"407 Kings Country Blvd, Scroggins, TX 75480",132000.0,3,2,1184.0,House for sale,CENTURY 21 BUTLER REAL ESTATE,525 days on Zillow,properties_sheet5_parsed.csv
+"1415 Church St, Sulphur Springs, TX 75482",132000.0,3,2,1540.0,House for sale,,"Price cut: $3,000 (2/18)",properties_sheet5_parsed.csv
+"2712 Flint St, Tyler, TX 75701",132500.0,4,2,2100.0,House for sale,,Two baths,properties_sheet5_parsed.csv
+"515 E Elm St, Canton, TX 75103",133000.0,2,2,1692.0,House for sale,,Beautiful half-acre lot,properties_sheet5_parsed.csv
+"206 Enola Mae Dr, Marshall, TX 75670",134900.0,3,2,1464.0,House for sale,CENTURY 21 A SELECT GROUP,"Price cut: $11,500 (2/17)",properties_sheet5_parsed.csv
+"414 W Godfrey St, Gladewater, TX 75647",135000.0,3,2,1152.0,House for sale,COLDWELL BANKER LENHART-GILMER,"Price cut: $4,000 (2/10)",properties_sheet5_parsed.csv
+"150 Danyeur Ln, Scroggins, TX 75480",137000.0,2,2,1250.0,House for sale,CENTURY 21 BUTLER REAL ESTATE,"Price cut: $8,000 (1/27)",properties_sheet5_parsed.csv
+"1504 N Alice St, Gladewater, TX 75647",139000.0,3,2,1200.0,House for sale,903 REALTY,Quiet and established neighborhood,properties_sheet5_parsed.csv
+"2641 Amos Rd, Longview, TX 75602",139000.0,2,2,1400.0,House for sale,RELIABLE REAL ESTATE,34 days on Zillow,properties_sheet5_parsed.csv
+"9701 James Ave, Tyler, TX 75706",139500.0,3,2,888.0,House for sale,CENTURY 21 FIRST GROUP - LINDALE,Water well,properties_sheet5_parsed.csv
+"891 Elizabeth Dr, Bullard, TX 75757",139500.0,3,2,1680.0,House for sale,REALEDGE REAL ESTATE - TYLER,Vinyl plank flooring,properties_sheet5_parsed.csv
+"1117 County Road 2421, Leesburg, TX 75451",139500.0,3,2,1625.0,House for sale,"JENNIFER SHARP, BROKER",Two storage buildings,properties_sheet5_parsed.csv
+"13418 County Road 2290, Arp, TX 75750",139900.0,4,2,1832.0,House for sale,MAYA PROPERTIES,Good size kitchen,properties_sheet5_parsed.csv
+"1812 W Main St, Henderson, TX 75652",139900.0,3,2,1312.0,House for sale,L4 PROPERTY GROUP,"Price cut: $10,000 (2/16)",properties_sheet5_parsed.csv
+"422 Stone St, Mineola, TX 75773",139900.0,3,2,1281.0,House for sale,,Stainless steel appliances,properties_sheet5_parsed.csv
+"106 Allen St, Arp, TX 75750",140000.0,3,2,1334.0,House for sale,,Large garage conversion,properties_sheet5_parsed.csv
+"2901 Sunset Ln, Kilgore, TX 75662",140000.0,3,3,2510.0,House for sale,COLDWELL BANKER LENHART - KILGORE,Nice lot,properties_sheet5_parsed.csv
+"1603 E Main St, Henderson, TX 75652",140000.0,3,3,1830.0,House for sale,"REAL BROKER, LLC",Spacious lot,properties_sheet5_parsed.csv
+"1205 Booker St, Longview, TX 75602",146000.0,3,2,1090.0,House for sale,EVERYSTATE INC.,"Price cut: $2,900 (2/3)",properties_sheet5_parsed.csv
+"211 Blue Bird Ln, Mineola, TX 75773",148990.0,3,2,1202.0,New construction,National Home Corporation,"Price cut: $6,000 (2/13)",properties_sheet5_parsed.csv
+"400 E Cotton St, Longview, TX 75601",149000.0,4,4,2112.0,House for sale,,Price cut: $900 (2/2),properties_sheet5_parsed.csv
+"400 Private Road 4035, Marshall, TX 75670",149000.0,4,2,1892.0,For sale by owner,,Brand new roof,properties_sheet5_parsed.csv
+"1512 Crescent Dr, Tyler, TX 75702",149000.0,4,2,2906.0,House for sale,,"Price cut: $10,000 (2/5)",properties_sheet5_parsed.csv
+"613 N Newsom St, Mineola, TX 75773",149000.0,3,2,1407.0,House for sale,MILLER HOMES GROUP,13 days on Zillow,properties_sheet5_parsed.csv
+"325 W 4th St, Tyler, TX 75701",149900.0,3,2,2058.0,Foreclosure,NE TEXAS REGIONAL REALTY,"Price cut: $10,000 (2/9)",properties_sheet5_parsed.csv
+"1221 Old Noonday Rd, Tyler, TX 75701",149900.0,3,2,1170.0,House for sale,,Large useable lot,properties_sheet5_parsed.csv
+"12379 Chapman Rd, Tyler, TX 75708",149900.0,4,2,1275.0,House for sale,"LESLIE CAIN REALTY, LLC",Oversized lot,properties_sheet5_parsed.csv
+"296 County Road 4613, Troup, TX 75789",149900.0,2,2,987.0,House for sale,L4 PROPERTY GROUP,Woodburning stove,properties_sheet5_parsed.csv
+"8439 Hyena Rd, Gilmer, TX 75644",149900.0,3,2,1664.0,House for sale,TEXAS REAL ESTATE EXECUTIVES-GILMER,Spring-fed water well,properties_sheet5_parsed.csv
+"309 E Brandon St, Overton, TX 75684",149900.0,3,3,1700.0,Multi-family home for sale,SIMPSON REALTY GROUP,"Price cut: $10,000 (2/7)",properties_sheet5_parsed.csv
+"(undisclosed Address), Emory, TX 75440",149900.0,5,3,2240.0,Multi-family home for sale,,62 days on Zillow,properties_sheet5_parsed.csv
+"726 Swancy St, Longview, TX 75602",149999.0,3,2,1268.0,House for sale,COLDWELL BANKER LENHART,Fresh interior paint throughout,properties_sheet5_parsed.csv
+"16053 Fm 848, Whitehouse, TX 75791",150000.0,3,2,1440.0,House for sale,KRISTI MARTIN REALTY,Ample outdoor space,properties_sheet5_parsed.csv
+"18737 Saddleback Ln, Flint, TX 75762",150000.0,4,3,2200.0,House for sale,STAPLES SOTHEBY'S INTERNATIONAL REALTY,Great yard,properties_sheet5_parsed.csv
+"505 Pinecrest St, Avinger, TX 75630",150000.0,3,2,1288.0,House for sale,UNITED COUNTRY H5 AUCTION AND REALTY,Big yard,properties_sheet5_parsed.csv
+"207 Pagosa Ln, Holly Lake Ranch, TX 75765",150000.0,2,2,1114.0,House for sale,LONE STAR REALTY - WINNSBORO,"Price cut: $25,000 (2/19)",properties_sheet5_parsed.csv
+"1159 County Road 479d House & 2, Mount Enterprise, TX 75681",150000.0,2,2,1544.0,House for sale,KEEBAUGH & COMPANY,Wood burning fireplace,properties_sheet5_parsed.csv
+"203 Parker St, Arp, TX 75750",153000.0,3,2,1443.0,House for sale,KRISTI MARTIN REALTOR LLC,Comfortable living space,properties_sheet5_parsed.csv
+"1931 Valleywood Trl, Holly Lake Ranch, TX 75765",154500.0,2,2,988.0,House for sale,A GRACE REAL ESTATE,113 days on Zillow,properties_sheet5_parsed.csv
+"327 Blue Bird Ln, Mineola, TX 75773",154990.0,3,2,1202.0,New construction,National Home Corporation,Split-level floorplan,properties_sheet5_parsed.csv
+"315 Blue Bird Ln, Mineola, TX 75773",154990.0,3,2,1202.0,New construction,National Home Corporation,"Price cut: $3,000 (2/13)",properties_sheet5_parsed.csv
+"216 Hickory St, Gladewater, TX 75647",155000.0,3,2,1700.0,House for sale,MASON REAL ESTATE COMPANY,Spacious backyard,properties_sheet5_parsed.csv
+"119 E Highland Ave, Longview, TX 75602",155000.0,3,2,1182.0,House for sale,KEEBAUGH & COMPANY,Fireplace insert,properties_sheet5_parsed.csv
+"801 E Austin St, Marshall, TX 75670",155000.0,3,2,1022.0,House for sale,RAMSEY REALTY GROUP,Fresh paint,properties_sheet5_parsed.csv
+"160 Vz County Road 4130, Canton, TX 75103",155000.0,3,2,1244.0,House for sale,,Quiet dead-end road,properties_sheet5_parsed.csv
+"809 Herbert St, Marshall, TX 75670",155000.0,3,3,1820.0,House for sale,UNITED COUNTRY H5 AUCTION AND REALTY,Charming front porch,properties_sheet5_parsed.csv
+"1314 Forrest Dr, Canton, TX 75103",155000.0,3,2,1506.0,House for sale,,"Price cut: $4,000 (2/13)",properties_sheet5_parsed.csv
+"918 W Kuykendall St, Grand Saline, TX 75140",155000.0,3,2,1250.0,For sale by owner,,Spacious yard,properties_sheet5_parsed.csv
+"104 N Sparrow Ct, Mineola, TX 75773",157990.0,3,2,1202.0,New construction,National Home Corporation,"Price increase: $4,000 (2/18)",properties_sheet5_parsed.csv
+"233 Blue Bird Ln, Mineola, TX 75773",157990.0,3,2,1202.0,New construction,National Home Corporation,Spacious home,properties_sheet5_parsed.csv
+"104 Sparrow Ct, Mineola, TX 75773",157990.0,4,2,1202.0,House for sale,,Split-level floorplan,properties_sheet5_parsed.csv
+"2500 Fair St, Marshall, TX 75670",158000.0,3,2,1220.0,House for sale,USA PLUS REALTY,"Price cut: $1,900 (1/30)",properties_sheet5_parsed.csv
+"219 Half St, Lindale, TX 75771",159000.0,3,2,1536.0,House for sale,RE/MAX PROFESSIONALS,Sizable backyard,properties_sheet5_parsed.csv
+"312 Willow St, Hughes Springs, TX 75656",159000.0,3,2,1320.0,House for sale,MAYBEN REALTY - PITTSBURG,"Price cut: $8,500 (2/10)",properties_sheet5_parsed.csv
+"650 Hunter Rd, Carthage, TX 75633",159000.0,3,2,1242.0,House for sale,READY REAL ESTATE LLC,Modern updates,properties_sheet5_parsed.csv
+"627 County Road 305, Carthage, TX 75633",159000.0,3,3,,For sale by owner,,Small storage building,properties_sheet5_parsed.csv
+"1221 Webb St, Daingerfield, TX 75638",159000.0,3,2,1497.0,House for sale,,"Price cut: $10,900 (2/4)",properties_sheet5_parsed.csv
+"233 Fairway Dr, Gilmer, TX 75645",159000.0,2,2,1897.0,House for sale,NOLAN PROPERTIES LLC,Extra space,properties_sheet5_parsed.csv
+"1118 S Fleishel Ave, Tyler, TX 75701",159800.0,3,2,2076.0,House for sale,KRISTI MARTIN REALTOR LLC,Single-story home,properties_sheet5_parsed.csv
+"204 Maxwell St, Sulphur Springs, TX 75482",159895.0,3,2,1076.0,House for sale,,"Price cut: $9,605 (1/21)",properties_sheet5_parsed.csv
+"127 Conway St, Longview, TX 75601",159900.0,5,2,1890.0,House for sale,TEXAS REAL ESTATE EXECUTIVES - LONGVIEW,"Price cut: $10,000 (2/9)",properties_sheet5_parsed.csv
+"322 S Clayton Ave, Tyler, TX 75702",159900.0,3,2,1736.0,House for sale,"MORA REALTY GROUP, LLC",Solid brick-veneer home,properties_sheet5_parsed.csv
+"805 S Glenwood Blvd, Tyler, TX 75701",159900.0,3,2,1907.0,House for sale,,Brick exterior,properties_sheet5_parsed.csv
+"205 Parkdale Dr W, Whitehouse, TX 75791",159900.0,3,2,1628.0,House for sale,"THE BRIAN CHINN TEAM, EXP REALTY","Price cut: $13,600 (2/19)",properties_sheet5_parsed.csv
+"201 Parkview St, Pittsburg, TX 75686",159900.0,4,4,2931.0,House for sale,CENTURY 21 PREMIER GROUP,37 days on Zillow,properties_sheet5_parsed.csv
+"1201 College St, Sulphur Springs, TX 75482",159900.0,4,3,1416.0,House for sale,,Corner lot,properties_sheet5_parsed.csv
+"100 Lynch St, Hawkins, TX 75765",159900.0,2,2,978.0,House for sale,"TEXAS REAL ESTATE EXECUTIVES, THE DANIELS GROUP - GILMER",Modern comfort,properties_sheet5_parsed.csv
+"3515 Fm 49, Mineola, TX 75773",159900.0,4,2,2343.0,House for sale,CENTURY 21 FIRST GROUP - MINEOLA,Adjoining dining,properties_sheet5_parsed.csv
+"106 Candy Dr, Pittsburg, TX 75686",159900.0,3,2,2384.0,House for sale,NE TEXAS REGIONAL REALTY,"Price cut: $20,075 (2/16)",properties_sheet5_parsed.csv
+"1176 Fm 2088, Gilmer, TX 75644",159900.0,3,2,1680.0,House for sale,TEXAS REAL ESTATE EXECUTIVES-GILMER,37 days on Zillow,properties_sheet5_parsed.csv
+"511 Woodlawn St, Henderson, TX 75652",159995.0,3,2,1499.0,House for sale,"THE GINGRICH GROUP, LLC",Sleek design,properties_sheet5_parsed.csv
+"605 E Lynnwood Ln, Longview, TX 75604",160000.0,2,3,1671.0,House for sale,COLDWELL BANKER LENHART-MARSHALL,166 days on Zillow,properties_sheet5_parsed.csv
+"506 E Longview St, Arp, TX 75750",160000.0,3,2,1776.0,For sale by owner,,Metal roof,properties_sheet5_parsed.csv

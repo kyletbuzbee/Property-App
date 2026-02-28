@@ -1,60 +1,78 @@
-import { NextRequest, NextResponse } from 'next/server'
-import { prisma, authenticateRequest, canManageTenants, AuthContext } from '../../../lib/db'
+import { NextRequest, NextResponse } from "next/server";
+import {
+  prisma,
+  authenticateRequest,
+  canManageTenants,
+  AuthContext,
+} from "../../../lib/db";
 
 // Helper to get user's organization and role
 async function getUserOrgContext(context: AuthContext) {
-  if (!context.user) return null
+  if (!context.user) return null;
 
   const orgUser = await prisma.organizationUser.findFirst({
     where: { userId: context.user.id },
     include: { organization: true },
-    orderBy: { createdAt: 'desc' },
-  })
+    orderBy: { createdAt: "desc" },
+  });
 
-  return orgUser
+  return orgUser;
 }
 
 // GET /api/tenants/[id] - Get single tenant by ID
 export async function GET(
   request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: Promise<{ id: string }> },
 ) {
   try {
-    const { id } = await params
-    const { context, error } = await authenticateRequest(request)
-    if (error) return error
+    const { id } = await params;
+    const { context, error } = await authenticateRequest(request);
+    if (error) return error;
 
     if (!canManageTenants(context.role)) {
       return NextResponse.json(
-        { error: 'Insufficient permissions to view tenant' },
-        { status: 403 }
-      )
+        { error: "Insufficient permissions to view tenant" },
+        { status: 403 },
+      );
     }
 
-    const orgUser = await getUserOrgContext(context)
+    const orgUser = await getUserOrgContext(context);
     if (!orgUser) {
       return NextResponse.json(
-        { error: 'No organization found' },
-        { status: 404 }
-      )
+        { error: "No organization found" },
+        { status: 404 },
+      );
     }
 
     const tenant = await prisma.tenant.findFirst({
       where: { id, organizationId: orgUser.organizationId },
       include: {
         property: {
-          select: { id: true, address: true, city: true, state: true, unitNumber: true, monthlyRent: true },
+          select: {
+            id: true,
+            address: true,
+            city: true,
+            state: true,
+            unitNumber: true,
+            monthlyRent: true,
+          },
         },
         leases: {
           include: {
             property: {
-              select: { id: true, address: true, city: true, state: true, unitNumber: true },
+              select: {
+                id: true,
+                address: true,
+                city: true,
+                state: true,
+                unitNumber: true,
+              },
             },
           },
-          orderBy: { startDate: 'desc' },
+          orderBy: { startDate: "desc" },
         },
         payments: {
-          orderBy: { dueDate: 'desc' },
+          orderBy: { dueDate: "desc" },
           take: 12,
           include: {
             lease: {
@@ -66,20 +84,21 @@ export async function GET(
           select: { payments: true, maintenanceRequests: true },
         },
       },
-    })
+    });
 
     if (!tenant) {
-      return NextResponse.json(
-        { error: 'Tenant not found' },
-        { status: 404 }
-      )
+      return NextResponse.json({ error: "Tenant not found" }, { status: 404 });
     }
 
     // Calculate payment stats
-    const completedPayments = tenant.payments.filter(p => p.status === 'COMPLETED')
-    const totalPaid = completedPayments.reduce((sum, p) => sum + p.amount, 0)
-    const pendingPayments = tenant.payments.filter(p => p.status === 'PENDING')
-    const totalPending = pendingPayments.reduce((sum, p) => sum + p.amount, 0)
+    const completedPayments = tenant.payments.filter(
+      (p) => p.status === "COMPLETED",
+    );
+    const totalPaid = completedPayments.reduce((sum, p) => sum + p.amount, 0);
+    const pendingPayments = tenant.payments.filter(
+      (p) => p.status === "PENDING",
+    );
+    const totalPending = pendingPayments.reduce((sum, p) => sum + p.amount, 0);
 
     return NextResponse.json({
       tenant: {
@@ -108,54 +127,51 @@ export async function GET(
         createdAt: tenant.createdAt,
         updatedAt: tenant.updatedAt,
       },
-    })
+    });
   } catch (error) {
-    console.error('Error fetching tenant:', error)
+    console.error("Error fetching tenant:", error);
     return NextResponse.json(
-      { error: 'Failed to fetch tenant' },
-      { status: 500 }
-    )
+      { error: "Failed to fetch tenant" },
+      { status: 500 },
+    );
   }
 }
 
 // PUT /api/tenants/[id] - Update a tenant
 export async function PUT(
   request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: Promise<{ id: string }> },
 ) {
   try {
-    const { id } = await params
-    const { context, error } = await authenticateRequest(request)
-    if (error) return error
+    const { id } = await params;
+    const { context, error } = await authenticateRequest(request);
+    if (error) return error;
 
     if (!canManageTenants(context.role)) {
       return NextResponse.json(
-        { error: 'Insufficient permissions to update tenant' },
-        { status: 403 }
-      )
+        { error: "Insufficient permissions to update tenant" },
+        { status: 403 },
+      );
     }
 
-    const orgUser = await getUserOrgContext(context)
+    const orgUser = await getUserOrgContext(context);
     if (!orgUser) {
       return NextResponse.json(
-        { error: 'No organization found' },
-        { status: 404 }
-      )
+        { error: "No organization found" },
+        { status: 404 },
+      );
     }
 
     // Verify tenant exists in organization
     const existingTenant = await prisma.tenant.findFirst({
       where: { id, organizationId: orgUser.organizationId },
-    })
+    });
 
     if (!existingTenant) {
-      return NextResponse.json(
-        { error: 'Tenant not found' },
-        { status: 404 }
-      )
+      return NextResponse.json({ error: "Tenant not found" }, { status: 404 });
     }
 
-    const body = await request.json()
+    const body = await request.json();
     const {
       firstName,
       lastName,
@@ -167,18 +183,18 @@ export async function PUT(
       emergencyContact,
       emergencyPhone,
       notes,
-    } = body
+    } = body;
 
     // If changing email, check for duplicates
     if (email && email !== existingTenant.email) {
       const duplicateEmail = await prisma.tenant.findFirst({
         where: { organizationId: orgUser.organizationId, email },
-      })
+      });
       if (duplicateEmail) {
         return NextResponse.json(
-          { error: 'A tenant with this email already exists' },
-          { status: 409 }
-        )
+          { error: "A tenant with this email already exists" },
+          { status: 409 },
+        );
       }
     }
 
@@ -186,12 +202,12 @@ export async function PUT(
     if (propertyId && propertyId !== existingTenant.propertyId) {
       const property = await prisma.property.findFirst({
         where: { id: propertyId, organizationId: orgUser.organizationId },
-      })
+      });
       if (!property) {
         return NextResponse.json(
-          { error: 'Property not found in your organization' },
-          { status: 404 }
-        )
+          { error: "Property not found in your organization" },
+          { status: 404 },
+        );
       }
     }
 
@@ -211,113 +227,121 @@ export async function PUT(
       },
       include: {
         property: {
-          select: { id: true, address: true, city: true, state: true, unitNumber: true },
+          select: {
+            id: true,
+            address: true,
+            city: true,
+            state: true,
+            unitNumber: true,
+          },
         },
       },
-    })
+    });
 
     // Log activity
     await prisma.activity.create({
       data: {
         organizationId: orgUser.organizationId,
         userId: context.user?.id,
-        action: 'TENANT_UPDATED',
-        targetType: 'tenant',
+        action: "TENANT_UPDATED",
+        targetType: "tenant",
         targetId: tenant.id,
         details: { tenantName: `${tenant.firstName} ${tenant.lastName}` },
       },
-    })
+    });
 
     return NextResponse.json({
       tenant: {
         ...tenant,
         fullName: `${tenant.firstName} ${tenant.lastName}`,
       },
-      message: 'Tenant updated successfully',
-    })
+      message: "Tenant updated successfully",
+    });
   } catch (error) {
-    console.error('Error updating tenant:', error)
+    console.error("Error updating tenant:", error);
     return NextResponse.json(
-      { error: 'Failed to update tenant' },
-      { status: 500 }
-    )
+      { error: "Failed to update tenant" },
+      { status: 500 },
+    );
   }
 }
 
 // DELETE /api/tenants/[id] - Delete a tenant
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: Promise<{ id: string }> },
 ) {
   try {
-    const { id } = await params
-    const { context, error } = await authenticateRequest(request)
-    if (error) return error
+    const { id } = await params;
+    const { context, error } = await authenticateRequest(request);
+    if (error) return error;
 
     // Only ADMIN and above can delete tenants
-    if (!context.role || !['OWNER', 'ADMIN'].includes(context.role)) {
+    if (!context.role || !["OWNER", "ADMIN"].includes(context.role)) {
       return NextResponse.json(
-        { error: 'Insufficient permissions to delete tenant' },
-        { status: 403 }
-      )
+        { error: "Insufficient permissions to delete tenant" },
+        { status: 403 },
+      );
     }
 
-    const orgUser = await getUserOrgContext(context)
+    const orgUser = await getUserOrgContext(context);
     if (!orgUser) {
       return NextResponse.json(
-        { error: 'No organization found' },
-        { status: 404 }
-      )
+        { error: "No organization found" },
+        { status: 404 },
+      );
     }
 
     // Verify tenant exists in organization
     const existingTenant = await prisma.tenant.findFirst({
       where: { id, organizationId: orgUser.organizationId },
-    })
+    });
 
     if (!existingTenant) {
-      return NextResponse.json(
-        { error: 'Tenant not found' },
-        { status: 404 }
-      )
+      return NextResponse.json({ error: "Tenant not found" }, { status: 404 });
     }
 
     // Check for active leases
     const activeLeases = await prisma.lease.count({
-      where: { tenantId: id, status: 'ACTIVE' },
-    })
+      where: { tenantId: id, status: "ACTIVE" },
+    });
 
     if (activeLeases > 0) {
       return NextResponse.json(
-        { error: 'Cannot delete tenant with active leases. Please terminate leases first.' },
-        { status: 400 }
-      )
+        {
+          error:
+            "Cannot delete tenant with active leases. Please terminate leases first.",
+        },
+        { status: 400 },
+      );
     }
 
     await prisma.tenant.delete({
       where: { id },
-    })
+    });
 
     // Log activity
     await prisma.activity.create({
       data: {
         organizationId: orgUser.organizationId,
         userId: context.user?.id,
-        action: 'TENANT_DELETED',
-        targetType: 'tenant',
+        action: "TENANT_DELETED",
+        targetType: "tenant",
         targetId: id,
-        details: { tenantName: `${existingTenant.firstName} ${existingTenant.lastName}` },
+        details: {
+          tenantName: `${existingTenant.firstName} ${existingTenant.lastName}`,
+        },
       },
-    })
+    });
 
     return NextResponse.json({
-      message: 'Tenant deleted successfully',
-    })
+      message: "Tenant deleted successfully",
+    });
   } catch (error) {
-    console.error('Error deleting tenant:', error)
+    console.error("Error deleting tenant:", error);
     return NextResponse.json(
-      { error: 'Failed to delete tenant' },
-      { status: 500 }
-    )
+      { error: "Failed to delete tenant" },
+      { status: 500 },
+    );
   }
 }

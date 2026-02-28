@@ -28,7 +28,9 @@ export * from "./enums"
  * Type-safe database client for TypeScript
  * @example
  * ```
- * const prisma = new PrismaClient()
+ * const prisma = new PrismaClient({
+ *   adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL })
+ * })
  * // Fetch zero or more Properties
  * const properties = await prisma.property.findMany()
  * ```
@@ -45,11 +47,6 @@ export { Prisma }
  */
 export type Property = Prisma.PropertyModel
 /**
- * Model Expense
- * 
- */
-export type Expense = Prisma.ExpenseModel
-/**
  * Model Task
  * 
  */
@@ -64,16 +61,6 @@ export type RehabItem = Prisma.RehabItemModel
  * 
  */
 export type MarketData = Prisma.MarketDataModel
-/**
- * Model RentComp
- * 
- */
-export type RentComp = Prisma.RentCompModel
-/**
- * Model Projection
- * 
- */
-export type Projection = Prisma.ProjectionModel
 /**
  * Model TimelineEvent
  * 
@@ -104,36 +91,6 @@ export type User = Prisma.UserModel
  * 
  */
 export type OrganizationUser = Prisma.OrganizationUserModel
-/**
- * Model Tenant
- * 
- */
-export type Tenant = Prisma.TenantModel
-/**
- * Model Lease
- * 
- */
-export type Lease = Prisma.LeaseModel
-/**
- * Model Payment
- * 
- */
-export type Payment = Prisma.PaymentModel
-/**
- * Model MaintenanceRequest
- * 
- */
-export type MaintenanceRequest = Prisma.MaintenanceRequestModel
-/**
- * Model MaintenanceComment
- * 
- */
-export type MaintenanceComment = Prisma.MaintenanceCommentModel
-/**
- * Model MaintenanceAttachment
- * 
- */
-export type MaintenanceAttachment = Prisma.MaintenanceAttachmentModel
 /**
  * Model Vendor
  * 

@@ -1,4 +1,4 @@
-PROJECT_ANALYSIS_DATE: 2026-02-20 09:46:55.535683
+PROJECT_ANALYSIS_DATE: 2026-02-28 11:20:36.753576
 PROJECT_STRUCTURE:
   📄 .eslintrc.json
   📄 .stylelintrc.json
@@ -25,15 +25,45 @@ PROJECT_STRUCTURE:
     📄 mcp.json
   📁 prisma/
     📄 schema.prisma
+    📄 seed-fixed.ts
+    📄 seed-service.ts
+    📄 seed-simple.ts
     📄 seed.ts
     📄 simple-seed.js
+  📁 processed/
+    📄 FHFA - County_cleaned.csv
+    📄 brrr_training_consolidated_cleaned.csv
+    📄 brrr_training_enriched_cleaned.csv
+    📄 consolidated_deals.csv
+    📄 consolidated_hud_fmr.csv
+    📄 consolidated_zillow_forecasts.csv
+    📄 consolidated_zillow_inventory.csv
+    📄 consolidated_zillow_inventory_alt.csv
+    📄 consolidated_zillow_median_sale_price.csv
+    📄 consolidated_zillow_mlp.csv
+    📄 consolidated_zillow_observed_rent.csv
+    📄 consolidated_zillow_zhvi.csv
+    📄 consolidated_zillow_zori.csv
+    📄 enriched_east_tx_cleaned.csv
+    📄 features_east_tx_final_cleaned.csv
+    📄 features_east_tx_v2_cleaned.csv
+    📄 hpi_master_cleaned.csv
+    📄 properties.json
+    📄 properties_cleaned.csv
+    📄 properties_sheet5_enriched_cleaned.csv
+    📄 properties_sheet5_parsed_cleaned.csv
+    📄 properties_with_census_cleaned.csv
   📁 reports/
     📄 context_review_2026-02-15_11-22-36.json
+    📄 context_review_2026-02-28_11-15-34.json
     📄 lighthouse-report.html
+  📁 scripts/
+    📄 convert-properties.ts
   📁 src/
     📁 app/
       📄 globals.css
       📄 layout.tsx
+      📄 not-found.tsx
       📄 page.tsx
       📁 api/
         📁 bank-accounts/
@@ -135,15 +165,21 @@ PROJECT_STRUCTURE:
         📄 Vendor.ts
     📁 lib/
       📄 calculations.ts
+      📄 marketData.ts
       📁 ai/
         📄 enhancedScoring.ts
         📄 externalAPIs.ts
         📄 index.ts
+        📄 predictionService.ts
         📄 useEnhancedScoring.ts
+    📁 types/
+      📄 marketIntelligence.ts
   📁 supabase/
     📁 .branches/
     📁 .temp/
+    📁 migrations/
     📁 snippets/
+    📁 sql/
   📁 test-results/
     📄 .last-run.json
   📁 tests/

@@ -1,0 +1,4 @@
+RegionID,SizeRank,RegionName,RegionType,BaseDate,date,value,source_file
+102001,0,United States,country,2026-01-31,2026-02-28,0.3,zillow-observed-rent.csv
+102001,0,United States,country,2026-01-31,2026-04-30,1.1,zillow-observed-rent.csv
+102001,0,United States,country,2026-01-31,2027-01-31,1.0,zillow-observed-rent.csv

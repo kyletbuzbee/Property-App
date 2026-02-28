@@ -1,119 +1,85 @@
-'use client';
+"use client";
 
-import { useMemo, useState } from 'react';
+import { useMemo, useState } from "react";
 import {
   ScatterChart,
   Scatter,
   XAxis,
   YAxis,
-  CartesianGrid,
+  ZAxis,
   Tooltip,
   ResponsiveContainer,
-  ReferenceLine,
   Cell,
-} from 'recharts';
-import { getDecisionColor, Decision } from '@/data/properties';
-import { PropertyWithCalculations } from '@/lib/calculations';
+  ReferenceLine,
+} from "recharts";
+import { Decision, getDecisionColor } from "@/data/properties";
+import { PropertyWithCalculations } from "@/lib/calculations";
 
 interface ValueScatterPlotProps {
   properties: PropertyWithCalculations[];
   onPropertyClick?: (property: PropertyWithCalculations) => void;
 }
 
-interface ChartData {
-  x: number;
-  y: number;
-  size: number;
-  property: PropertyWithCalculations;
-  isOutlier: boolean;
-}
+export default function ValueScatterPlot({
+  properties,
+  onPropertyClick,
+}: ValueScatterPlotProps) {
+  const [filter, setFilter] = useState<Decision | "all">("all");
 
-export default function ValueScatterPlot({ properties, onPropertyClick }: ValueScatterPlotProps) {
-  const [selectedDecision, setSelectedDecision] = useState<Decision | 'all'>('all');
-  const [showTrendLine, setShowTrendLine] = useState(true);
-
-  const averagePricePerSqft = useMemo(() => {
-    const validProperties = properties.filter(p => p.sqft > 0);
-    if (validProperties.length === 0) return 0;
-    const total = validProperties.reduce((sum, p) => sum + p.pricePerSqft, 0);
-    return total / validProperties.length;
-  }, [properties]);
-
-  const chartData: ChartData[] = useMemo(() => {
-    const maxPrice = Math.max(...properties.map(p => p.listPrice));
-    const minSize = 100;
-    const maxSize = 1000;
-
-    return properties
-      .filter(p => p.sqft > 0)
-      .filter(p => selectedDecision === 'all' || p.decision === selectedDecision)
-      .map(p => {
-        const pricePerSqft = p.pricePerSqft;
-        const normalizedSize = minSize + ((p.listPrice / maxPrice) * (maxSize - minSize));
-        return {
-          x: p.sqft,
-          y: pricePerSqft,
-          size: normalizedSize,
-          property: p,
-          isOutlier: pricePerSqft < averagePricePerSqft * 0.7,
-        };
-      });
-  }, [properties, selectedDecision, averagePricePerSqft]);
-
-  const outlierCount = chartData.filter(d => d.isOutlier).length;
-
-  const decisionFilters: { value: Decision | 'all'; label: string; color: string }[] = [
-    { value: 'all', label: 'All', color: '#64748b' },
-    { value: 'Pass Platinum', label: 'Platinum', color: '#10b981' },
-    { value: 'Pass Gold', label: 'Gold', color: '#f59e0b' },
-    { value: 'Pass Silver', label: 'Silver', color: '#f97316' },
-    { value: 'Hard Fail', label: 'Hard Fail', color: '#ef4444' },
-    { value: 'Caution', label: 'Caution', color: '#8b5cf6' },
+  const filterOptions: {
+    value: Decision | "all";
+    label: string;
+    color: string;
+  }[] = [
+    { value: "all", label: "All Deals", color: "#94a3b8" },
+    { value: "PASS", label: "PASS", color: "#10b981" },
+    { value: "CAUTION", label: "CAUTION", color: "#f59e0b" },
+    { value: "HARD_FAIL", label: "HARD_FAIL", color: "#ef4444" },
   ];
 
-  const CustomTooltip = ({ active, payload }: { active?: boolean; payload?: Array<{ payload: ChartData }> }) => {
+  const chartData = useMemo(() => {
+    return properties
+      .filter((p) => filter === "all" || p.decision === filter)
+      .map((p) => ({
+        id: p.id,
+        address: p.address,
+        x: p.listPrice,
+        y: p.afterRepairValue,
+        z: p.mao50k,
+        decision: p.decision,
+        color: getDecisionColor(p.decision as any),
+        original: p,
+      }));
+  }, [properties, filter]);
+
+  const CustomTooltip = ({ active, payload }: any) => {
     if (active && payload && payload.length) {
-      const data = payload[0].payload;
-      const { property } = data;
-      
+      const data = payload[0].payload.original;
       return (
-        <div className="bg-dark-800 border border-dark-600 rounded-lg p-3 shadow-xl max-w-xs">
-          <div className="font-semibold text-white mb-2">{property.address}</div>
-          <div className="space-y-1 text-sm">
-            <div className="flex justify-between gap-4">
-              <span className="text-dark-400">List Price:</span>
-              <span className="text-emerald-400 font-medium">
-                ${property.listPrice.toLocaleString()}
+        <div className="bg-dark-900 border border-dark-700 p-4 rounded-sm shadow-2xl font-sans">
+          <p className="text-[10px] font-black text-white uppercase mb-2 tracking-widest">
+            {data.address}
+          </p>
+          <div className="space-y-1">
+            <p className="text-[10px] text-dark-400 uppercase font-bold">
+              List:{" "}
+              <span className="text-white">
+                ${data.listPrice.toLocaleString()}
               </span>
-            </div>
-            <div className="flex justify-between gap-4">
-              <span className="text-dark-400">SqFt:</span>
-              <span>{property.sqft.toLocaleString()}</span>
-            </div>
-            <div className="flex justify-between gap-4">
-               <span className="text-dark-400">$/SqFt:</span>
-               <span className={data.isOutlier ? 'text-emerald-400 font-bold' : ''}>
-                 ${property.pricePerSqft.toFixed(2)}
-               </span>
-             </div>
-            <div className="flex justify-between gap-4">
-              <span className="text-dark-400">Decision:</span>
-              <span style={{ color: getDecisionColor(property.decision as Decision) }}>
-                {property.decision}
+            </p>
+            <p className="text-[10px] text-dark-400 uppercase font-bold">
+              ARV:{" "}
+              <span className="text-white">
+                ${data.afterRepairValue.toLocaleString()}
               </span>
-            </div>
-            <div className="flex justify-between gap-4">
-              <span className="text-dark-400">Strategy:</span>
-              <span className="text-primary-400">{property.strategy}</span>
-            </div>
+            </p>
+            <p className="text-[10px] text-dark-400 uppercase font-bold">
+              MAO 50k:{" "}
+              <span className="text-emerald-400">
+                ${data.mao50k.toLocaleString()}
+              </span>
+            </p>
           </div>
-          {data.isOutlier && (
-            <div className="mt-2 pt-2 border-t border-dark-600">
-              <span className="text-xs text-emerald-400 font-medium">
-                ⭐ Below Average - Potential Value!
-              </span>
-            </div>
-          )}
         </div>
       );
     }
@@ -121,144 +87,96 @@ export default function ValueScatterPlot({ properties, onPropertyClick }: ValueS
   };
 
   return (
-    <div className="w-full h-full flex flex-col">
-      {/* Controls */}
-      <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
-        <div className="flex flex-wrap gap-2">
-          {decisionFilters.map((filter) => (
+    <div className="w-full h-full flex flex-col bg-dark-950 p-6 rounded-sm border border-dark-800">
+      <div className="flex justify-between items-center mb-8">
+        <div>
+          <h2 className="text-xs font-black text-white uppercase tracking-[0.3em] mb-1">
+            Market Position Analysis
+          </h2>
+          <p className="text-[10px] text-dark-500 font-bold uppercase tracking-widest">
+            List Price vs Target ARV
+          </p>
+        </div>
+        <div className="flex gap-2">
+          {filterOptions.map((opt) => (
             <button
-              key={filter.value}
-              onClick={() => setSelectedDecision(filter.value)}
-              className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
-                selectedDecision === filter.value
-                  ? 'ring-2 ring-offset-2 ring-offset-dark-800'
-                  : 'opacity-60 hover:opacity-100'
+              key={opt.value}
+              onClick={() => setFilter(opt.value)}
+              className={`px-3 py-1 rounded-sm text-[9px] font-black uppercase tracking-tighter transition-all ${
+                filter === opt.value
+                  ? "bg-white text-dark-950"
+                  : "bg-dark-800 text-dark-400 hover:text-white"
               }`}
-              style={{ 
-                backgroundColor: `${filter.color}20`,
-                color: filter.color,
-                '--tw-ring-color': filter.color,
-              } as React.CSSProperties}
             >
-              {filter.label}
+              {opt.label}
             </button>
           ))}
         </div>
-        
-        <div className="flex items-center gap-4">
-          <label className="flex items-center gap-2 text-sm text-dark-300">
-            <input
-              type="checkbox"
-              checked={showTrendLine}
-              onChange={(e) => setShowTrendLine(e.target.checked)}
-              className="rounded border-dark-600 bg-dark-700 text-primary-500 focus:ring-primary-500"
-            />
-            Show Average Line
-          </label>
-        </div>
       </div>
 
-      {/* Stats Summary */}
-      <div className="grid grid-cols-3 gap-4 mb-4">
-        <div className="bg-dark-800 rounded-lg p-3 border border-dark-700">
-          <div className="text-xs text-dark-400 mb-1">Average $/SqFt</div>
-          <div className="text-xl font-bold text-primary-400">
-            ${averagePricePerSqft.toFixed(2)}
-          </div>
-        </div>
-        <div className="bg-dark-800 rounded-lg p-3 border border-dark-700">
-          <div className="text-xs text-dark-400 mb-1">Properties Shown</div>
-          <div className="text-xl font-bold text-white">{chartData.length}</div>
-        </div>
-        <div className="bg-dark-800 rounded-lg p-3 border border-dark-700">
-          <div className="text-xs text-dark-400 mb-1">Value Outliers</div>
-          <div className="text-xl font-bold text-emerald-400">{outlierCount}</div>
-        </div>
-      </div>
-
-      {/* Chart */}
-      <div className="flex-1 min-h-[400px] bg-dark-800 rounded-lg border border-dark-700 p-4">
+      <div className="flex-1 min-h-[400px]">
         <ResponsiveContainer width="100%" height="100%">
-          <ScatterChart
-            margin={{ top: 20, right: 20, bottom: 60, left: 60 }}
-          >
-            <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
+          <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
             <XAxis
               type="number"
               dataKey="x"
-              name="Square Footage"
-              tick={{ fill: '#94a3b8', fontSize: 12 }}
-              axisLine={{ stroke: '#475569' }}
-              tickLine={{ stroke: '#475569' }}
-              label={{ 
-                value: 'Square Footage', 
-                position: 'bottom',
-                fill: '#94a3b8',
-                fontSize: 12,
-                offset: 40,
+              name="List Price"
+              unit="$"
+              stroke="#475569"
+              fontSize={10}
+              tickFormatter={(v) => `$${v / 1000}k`}
+              label={{
+                value: "LIST PRICE",
+                position: "bottom",
+                offset: 0,
+                fill: "#475569",
+                fontSize: 9,
+                fontWeight: 900,
               }}
             />
             <YAxis
               type="number"
               dataKey="y"
-              name="Price per SqFt"
-              tick={{ fill: '#94a3b8', fontSize: 12 }}
-              axisLine={{ stroke: '#475569' }}
-              tickLine={{ stroke: '#475569' }}
-              label={{ 
-                value: 'Price per SqFt ($)', 
+              name="ARV"
+              unit="$"
+              stroke="#475569"
+              fontSize={10}
+              tickFormatter={(v) => `$${v / 1000}k`}
+              label={{
+                value: "TARGET ARV",
                 angle: -90,
-                position: 'left',
-                fill: '#94a3b8',
-                fontSize: 12,
-                offset: 40,
+                position: "left",
+                fill: "#475569",
+                fontSize: 9,
+                fontWeight: 900,
               }}
             />
+            <ZAxis type="number" dataKey="z" range={[50, 400]} name="MAO" />
             <Tooltip content={<CustomTooltip />} />
-            
-            {showTrendLine && (
-              <ReferenceLine
-                y={averagePricePerSqft}
-                stroke="#f59e0b"
-                strokeDasharray="5 5"
-                label={{
-                  value: `Avg: $${averagePricePerSqft.toFixed(0)}/sqft`,
-                  position: 'right',
-                  fill: '#f59e0b',
-                  fontSize: 11,
-                }}
-              />
-            )}
-            
+            <ReferenceLine
+              segment={[
+                { x: 0, y: 0 },
+                { x: 500000, y: 500000 },
+              ]}
+              stroke="#1e293b"
+              strokeDasharray="3 3"
+            />
             <Scatter
               name="Properties"
               data={chartData}
-              onClick={(data) => onPropertyClick?.(data.property)}
+              onClick={(data) => onPropertyClick?.(data.original)}
             >
               {chartData.map((entry, index) => (
                 <Cell
                   key={`cell-${index}`}
-                  fill={getDecisionColor(entry.property.decision as Decision)}
-                  stroke={entry.isOutlier ? '#10b981' : 'transparent'}
-                  strokeWidth={entry.isOutlier ? 2 : 0}
-                  style={{ cursor: 'pointer' }}
+                  fill={entry.color}
+                  strokeWidth={2}
+                  stroke={`${entry.color}40`}
                 />
               ))}
             </Scatter>
           </ScatterChart>
         </ResponsiveContainer>
-      </div>
-
-      {/* Legend */}
-      <div className="mt-4 flex flex-wrap items-center justify-center gap-4 text-xs text-dark-400">
-        <div className="flex items-center gap-2">
-          <div className="w-4 h-4 rounded-full bg-dark-400" />
-          <span>Bubble size = List Price</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <div className="w-4 h-4 rounded-full border-2 border-emerald-500" />
-          <span>Green border = Below average (value opportunity)</span>
-        </div>
       </div>
     </div>
   );

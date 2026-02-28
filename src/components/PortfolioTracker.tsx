@@ -1,230 +1,134 @@
-'use client';
+"use client";
 
-import { useMemo } from 'react';
-import clsx from 'clsx';
-import { PropertyWithCalculations } from '@/lib/calculations';
+import { useMemo } from "react";
+import { PropertyWithCalculations } from "@/lib/calculations";
 
 interface PortfolioTrackerProps {
   properties: PropertyWithCalculations[];
-  onPropertyClick?: (property: PropertyWithCalculations) => void;
 }
 
-// Owned properties are marked with isOwned = true
-export default function PortfolioTracker({ 
-  properties, 
-  onPropertyClick 
+export default function PortfolioTracker({
+  properties,
 }: PortfolioTrackerProps) {
-  // Filter to show only owned properties (or all for potential portfolio)
-  const ownedProperties = useMemo(() => {
-    return properties.filter(p => (p as any).isOwned === true);
-  }, [properties]);
+  const ownedProperties = properties.filter((p) => p.isOwned);
+  const prospectProperties = properties.filter((p) => !p.isOwned);
 
-  const prospectProperties = useMemo(() => {
-    return properties.filter(p => (p as any).isOwned !== true);
-  }, [properties]);
+  const stats = useMemo(() => {
+    const totalInvested = ownedProperties.reduce(
+      (sum, p) => sum + (p.purchasePrice || 0),
+      0,
+    );
+    const totalEquity = ownedProperties.reduce(
+      (sum, p) =>
+        sum +
+        (p.afterRepairValue - (p.purchasePrice || 0) - p.renovationBudget),
+      0,
+    );
 
-  // Calculate portfolio metrics
-  const portfolioMetrics = useMemo(() => {
-    const totalInvested = ownedProperties.reduce((sum, p) => sum + ((p as any).purchasePrice || p.listPrice), 0);
-    const totalEquityGap = ownedProperties.reduce((sum, p) => sum + p.equityGap, 0);
-    const totalMonthlyRent = ownedProperties.reduce((sum, p) => sum + p.estimatedRent, 0);
-    const totalValue = ownedProperties.reduce((sum, p) => sum + p.afterRepairValue || p.listPrice, 0);
-    const totalCapRate = ownedProperties.length > 0 
-      ? ownedProperties.reduce((sum, p) => sum + p.capRate, 0) / ownedProperties.length 
-      : 0;
-    
     return {
-      totalProperties: ownedProperties.length,
       totalInvested,
-      totalEquityGap,
-      totalMonthlyRent,
-      totalValue,
-      totalCapRate,
-      monthlyCashFlow: totalMonthlyRent - (totalMonthlyRent * 0.05), // Assume 5% vacancy
-      annualCashFlow: (totalMonthlyRent - (totalMonthlyRent * 0.05)) * 12,
+      totalEquity,
+      ownedCount: ownedProperties.length,
+      prospectCount: prospectProperties.length,
+      pipelineMao: prospectProperties.reduce((sum, p) => sum + p.mao50k, 0),
     };
-  }, [ownedProperties]);
-
-  // Calculate potential deal metrics
-  const potentialMetrics = useMemo(() => {
-    const avgCapRate = prospectProperties.length > 0
-      ? prospectProperties.reduce((sum, p) => sum + p.capRate, 0) / prospectProperties.length
-      : 0;
-    const avgEquityGap = prospectProperties.length > 0
-      ? prospectProperties.reduce((sum, p) => sum + p.equityGap, 0) / prospectProperties.length
-      : 0;
-    const totalEquityGap = prospectProperties.reduce((sum, p) => sum + p.equityGap, 0);
-    
-    return {
-      count: prospectProperties.length,
-      avgCapRate,
-      avgEquityGap,
-      totalEquityGap,
-    };
-  }, [prospectProperties]);
+  }, [ownedProperties, prospectProperties]);
 
   return (
-    <div className="w-full h-full flex flex-col bg-dark-900 rounded-lg overflow-hidden">
-      {/* Header Stats */}
-      <div className="p-4 border-b border-dark-700">
-        <h2 className="text-lg font-bold text-white mb-4">Investment Portfolio</h2>
-        
-        {/* Summary Cards */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="bg-dark-800 rounded-lg p-3">
-            <p className="text-xs text-dark-400 uppercase tracking-wider">Portfolio Value</p>
-            <p className="text-xl font-bold text-white">${portfolioMetrics.totalValue.toLocaleString()}</p>
-          </div>
-          <div className="bg-dark-800 rounded-lg p-3">
-            <p className="text-xs text-dark-400 uppercase tracking-wider">Total Invested</p>
-            <p className="text-xl font-bold text-emerald-400">${portfolioMetrics.totalInvested.toLocaleString()}</p>
-          </div>
-          <div className="bg-dark-800 rounded-lg p-3">
-            <p className="text-xs text-dark-400 uppercase tracking-wider">Monthly Cash Flow</p>
-            <p className={clsx(
-              'text-xl font-bold',
-              portfolioMetrics.monthlyCashFlow > 0 ? 'text-emerald-400' : 'text-red-400'
-            )}>
-              ${portfolioMetrics.monthlyCashFlow.toLocaleString()}
-            </p>
-          </div>
-          <div className="bg-dark-800 rounded-lg p-3">
-            <p className="text-xs text-dark-400 uppercase tracking-wider">Avg Cap Rate</p>
-            <p className={clsx(
-              'text-xl font-bold',
-              portfolioMetrics.totalCapRate >= 8 ? 'text-emerald-400' : 
-              portfolioMetrics.totalCapRate >= 6 ? 'text-amber-400' : 'text-red-400'
-            )}>
-              {portfolioMetrics.totalCapRate.toFixed(2)}%
-            </p>
-          </div>
+    <div className="space-y-6 font-sans">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="bg-dark-900 p-6 border border-dark-800 rounded-sm">
+          <p className="text-[10px] font-black text-dark-500 uppercase tracking-widest mb-2">
+            Total Capital Deployed
+          </p>
+          <p className="text-3xl font-black text-white">
+            ${stats.totalInvested.toLocaleString()}
+          </p>
+        </div>
+        <div className="bg-dark-900 p-6 border border-dark-800 rounded-sm">
+          <p className="text-[10px] font-black text-dark-500 uppercase tracking-widest mb-2">
+            Net Portfolio Equity
+          </p>
+          <p className="text-3xl font-black text-emerald-500">
+            ${stats.totalEquity.toLocaleString()}
+          </p>
+        </div>
+        <div className="bg-dark-900 p-6 border border-dark-800 rounded-sm">
+          <p className="text-[10px] font-black text-dark-500 uppercase tracking-widest mb-2">
+            Pipeline Buy Power (MAO)
+          </p>
+          <p className="text-3xl font-black text-blue-500">
+            ${stats.pipelineMao.toLocaleString()}
+          </p>
         </div>
       </div>
 
-      {/* Portfolio Content */}
-      <div className="flex-1 overflow-auto p-4">
-        {/* Owned Properties */}
-        <div className="mb-6">
-          <h3 className="text-sm font-semibold text-dark-400 uppercase tracking-wider mb-3">
-            Owned Properties ({ownedProperties.length})
-          </h3>
-          
-          {ownedProperties.length > 0 ? (
-            <div className="space-y-2">
-              {ownedProperties.map(property => (
-                <div
-                  key={property.id}
-                  onClick={() => onPropertyClick?.(property)}
-                  className="bg-dark-800 rounded-lg p-4 hover:bg-dark-700 cursor-pointer transition-colors"
+      <div className="bg-dark-900 border border-dark-800 rounded-sm overflow-hidden">
+        <div className="p-4 bg-dark-950 border-b border-dark-800">
+          <h2 className="text-[10px] font-black text-white uppercase tracking-[0.2em]">
+            Active Inventory
+          </h2>
+        </div>
+        <div className="p-0">
+          <table className="w-full">
+            <thead className="bg-dark-900 border-b border-dark-800">
+              <tr>
+                <th className="px-6 py-3 text-left text-[10px] font-black text-dark-500 uppercase tracking-widest">
+                  Asset
+                </th>
+                <th className="px-6 py-3 text-right text-[10px] font-black text-dark-500 uppercase tracking-widest">
+                  Basis
+                </th>
+                <th className="px-6 py-3 text-right text-[10px] font-black text-dark-500 uppercase tracking-widest">
+                  Target ARV
+                </th>
+                <th className="px-6 py-3 text-right text-[10px] font-black text-dark-500 uppercase tracking-widest">
+                  Est. Equity
+                </th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-dark-800">
+              {ownedProperties.map((p) => (
+                <tr
+                  key={p.id}
+                  className="hover:bg-dark-800/50 transition-colors"
                 >
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <p className="font-medium text-white">{property.address}</p>
-                      <p className="text-sm text-dark-400">{property.city}, {property.state}</p>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-emerald-400 font-medium">
-                        ${((property as any).purchasePrice || property.listPrice).toLocaleString()}
-                      </p>
-                      <p className="text-sm text-dark-400">
-                        ${property.estimatedRent.toLocaleString()}/mo rent
-                      </p>
-                    </div>
-                  </div>
-                  
-                  {/* Performance Metrics */}
-                  <div className="flex gap-4 mt-3 pt-3 border-t border-dark-700">
-                    <div>
-                      <p className="text-xs text-dark-500">Cap Rate</p>
-                      <p className="text-sm text-white">{property.capRate.toFixed(2)}%</p>
-                    </div>
-                    <div>
-                      <p className="text-xs text-dark-500">Cash-on-Cash</p>
-                      <p className="text-sm text-white">{property.cashOnCashReturn.toFixed(2)}%</p>
-                    </div>
-                    <div>
-                      <p className="text-xs text-dark-500">Gross Yield</p>
-                      <p className="text-sm text-white">{property.grossYield.toFixed(2)}%</p>
-                    </div>
-                    <div>
-                      <p className="text-xs text-dark-500">Equity</p>
-                      <p className="text-sm text-amber-400">${property.equityGap.toLocaleString()}</p>
-                    </div>
-                  </div>
-                </div>
+                  <td className="px-6 py-4">
+                    <p className="text-xs font-black text-white uppercase">
+                      {p.address}
+                    </p>
+                    <p className="text-[9px] font-bold text-dark-500 uppercase">
+                      {p.city}
+                    </p>
+                  </td>
+                  <td className="px-6 py-4 text-right text-xs font-bold text-dark-300">
+                    ${(p.purchasePrice + p.renovationBudget).toLocaleString()}
+                  </td>
+                  <td className="px-6 py-4 text-right text-xs font-bold text-white">
+                    ${p.afterRepairValue.toLocaleString()}
+                  </td>
+                  <td className="px-6 py-4 text-right text-xs font-black text-emerald-500">
+                    $
+                    {(
+                      p.afterRepairValue -
+                      p.purchasePrice -
+                      p.renovationBudget
+                    ).toLocaleString()}
+                  </td>
+                </tr>
               ))}
-            </div>
-          ) : (
-            <div className="bg-dark-800 rounded-lg p-6 text-center text-dark-400">
-              No owned properties yet. Mark properties as owned to track your portfolio.
-            </div>
-          )}
-        </div>
-
-        {/* Potential Deals */}
-        <div>
-          <h3 className="text-sm font-semibold text-dark-400 uppercase tracking-wider mb-3">
-            Potential Deals ({prospectProperties.length})
-          </h3>
-          
-          {/* Summary Stats */}
-          <div className="grid grid-cols-3 gap-4 mb-4">
-            <div className="bg-dark-800 rounded-lg p-3">
-              <p className="text-xs text-dark-400">Avg Cap Rate</p>
-              <p className="text-lg font-bold text-white">{potentialMetrics.avgCapRate.toFixed(2)}%</p>
-            </div>
-            <div className="bg-dark-800 rounded-lg p-3">
-              <p className="text-xs text-dark-400">Avg Equity Gap</p>
-              <p className="text-lg font-bold text-amber-400">${Math.round(potentialMetrics.avgEquityGap).toLocaleString()}</p>
-            </div>
-            <div className="bg-dark-800 rounded-lg p-3">
-              <p className="text-xs text-dark-400">Total Equity</p>
-              <p className="text-lg font-bold text-emerald-400">${potentialMetrics.totalEquityGap.toLocaleString()}</p>
-            </div>
-          </div>
-
-          {/* Top Prospects */}
-          <div className="space-y-2">
-            {prospectProperties.slice(0, 5).map(property => (
-              <div
-                key={property.id}
-                onClick={() => onPropertyClick?.(property)}
-                className="bg-dark-800 rounded-lg p-3 hover:bg-dark-700 cursor-pointer transition-colors flex justify-between items-center"
-              >
-                <div>
-                  <p className="font-medium text-white text-sm">{property.address}</p>
-                  <p className="text-xs text-dark-400">{property.city} • {property.decision}</p>
-                </div>
-                <div className="text-right">
-                  <p className="text-white font-medium">${property.listPrice.toLocaleString()}</p>
-                  <p className="text-xs text-amber-400">${property.equityGap.toLocaleString()} equity</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Footer */}
-      <div className="p-4 border-t border-dark-700 bg-dark-800/50">
-        <div className="flex flex-wrap gap-6 text-sm">
-          <div>
-            <span className="text-dark-400">Annual Cash Flow: </span>
-            <span className={clsx(
-              'font-medium',
-              portfolioMetrics.annualCashFlow > 0 ? 'text-emerald-400' : 'text-red-400'
-            )}>
-              ${portfolioMetrics.annualCashFlow.toLocaleString()}
-            </span>
-          </div>
-          <div>
-            <span className="text-dark-400">Cash-on-Cash Return: </span>
-            <span className="text-white font-medium">
-              {portfolioMetrics.totalInvested > 0 
-                ? ((portfolioMetrics.annualCashFlow / portfolioMetrics.totalInvested) * 100).toFixed(2)
-                : '0.00'}%
-            </span>
-          </div>
+              {ownedProperties.length === 0 && (
+                <tr>
+                  <td
+                    colSpan={4}
+                    className="px-6 py-12 text-center text-[10px] font-black text-dark-600 uppercase tracking-widest"
+                  >
+                    No assets in portfolio
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

@@ -1,0 +1,802 @@
+RegionID,SizeRank,RegionName,RegionType,StateName,BaseDate,date,value,source_file,zhvf,tier,State,City,Metro,CountyName
+394514,4,"Dallas, TX",msa,TX,2026-01-31,2026-02-28,-0.2,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394692,5,"Houston, TX",msa,TX,2026-01-31,2026-02-28,-0.1,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395055,24,"San Antonio, TX",msa,TX,2026-01-31,2026-02-28,-0.1,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394355,29,"Austin, TX",msa,TX,2026-01-31,2026-02-28,-0.5,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394843,67,"McAllen, TX",msa,TX,2026-01-31,2026-02-28,0.4,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394561,69,"El Paso, TX",msa,TX,2026-01-31,2026-02-28,0.3,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394746,120,"Killeen, TX",msa,TX,2026-01-31,2026-02-28,0.1,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394502,129,"Corpus Christi, TX",msa,TX,2026-01-31,2026-02-28,0.3,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394421,130,"Brownsville, TX",msa,TX,2026-01-31,2026-02-28,0.6,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394372,140,"Beaumont, TX",msa,TX,2026-01-31,2026-02-28,0.5,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394808,162,"Lubbock, TX",msa,TX,2026-01-31,2026-02-28,0.3,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394803,173,"Longview, TX",msa,TX,2026-01-31,2026-02-28,0.6,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395197,178,"Waco, TX",msa,TX,2026-01-31,2026-02-28,0.2,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394323,186,"Amarillo, TX",msa,TX,2026-01-31,2026-02-28,0.4,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394772,187,"Laredo, TX",msa,TX,2026-01-31,2026-02-28,0.3,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394483,189,"College Station, TX",msa,TX,2026-01-31,2026-02-28,0.2,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395174,201,"Tyler, TX",msa,TX,2026-01-31,2026-02-28,0.2,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394299,251,"Abilene, TX",msa,TX,2026-01-31,2026-02-28,0.8,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394860,254,"Midland, TX",msa,TX,2026-01-31,2026-02-28,0.3,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394930,271,"Odessa, TX",msa,TX,2026-01-31,2026-02-28,0.6,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395223,298,"Wichita Falls, TX",msa,TX,2026-01-31,2026-02-28,0.4,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395152,299,"Texarkana, TX",msa,TX,2026-01-31,2026-02-28,0.6,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395094,319,"Sherman, TX",msa,TX,2026-01-31,2026-02-28,0.0,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395054,344,"San Angelo, TX",msa,TX,2026-01-31,2026-02-28,0.5,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395190,400,"Victoria, TX",msa,TX,2026-01-31,2026-02-28,0.2,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394809,425,"Lufkin, TX",msa,TX,2026-01-31,2026-02-28,0.3,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394345,446,"Athens, TX",msa,TX,2026-01-31,2026-02-28,0.4,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394699,465,"Huntsville, TX",msa,TX,2026-01-31,2026-02-28,0.4,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395024,503,"Rio Grande City, TX",msa,TX,2026-01-31,2026-02-28,0.3,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394899,512,"Nacogdoches, TX",msa,TX,2026-01-31,2026-02-28,0.9,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394956,547,"Palestine, TX",msa,TX,2026-01-31,2026-02-28,0.9,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394551,552,"Eagle Pass, TX",msa,TX,2026-01-31,2026-02-28,0.5,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394742,589,"Kerrville, TX",msa,TX,2026-01-31,2026-02-28,-0.2,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394503,592,"Corsicana, TX",msa,TX,2026-01-31,2026-02-28,0.8,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394717,599,"Jacksonville, TX",msa,TX,2026-01-31,2026-02-28,0.1,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394963,602,"Paris, TX",msa,TX,2026-01-31,2026-02-28,0.5,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394316,609,"Alice, TX",msa,TX,2026-01-31,2026-02-28,-0.3,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394527,622,"Del Rio, TX",msa,TX,2026-01-31,2026-02-28,0.0,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394886,667,"Mount Pleasant, TX",msa,TX,2026-01-31,2026-02-28,0.2,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395129,680,"Stephenville, TX",msa,TX,2026-01-31,2026-02-28,0.5,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394558,685,"El Campo, TX",msa,TX,2026-01-31,2026-02-28,0.3,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394624,687,"Gainesville, TX",msa,TX,2026-01-31,2026-02-28,0.3,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394422,721,"Brownwood, TX",msa,TX,2026-01-31,2026-02-28,0.4,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395137,745,"Sulphur Springs, TX",msa,TX,2026-01-31,2026-02-28,0.3,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394370,751,"Bay City, TX",msa,TX,2026-01-31,2026-02-28,0.5,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394413,759,"Brenham, TX",msa,TX,2026-01-31,2026-02-28,0.4,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394385,770,"Big Spring, TX",msa,TX,2026-01-31,2026-02-28,0.9,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394984,795,"Plainview, TX",msa,TX,2026-01-31,2026-02-28,0.0,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394376,808,"Beeville, TX",msa,TX,2026-01-31,2026-02-28,0.6,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394749,809,"Kingsville, TX",msa,TX,2026-01-31,2026-02-28,0.5,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394864,833,"Mineral Wells, TX",msa,TX,2026-01-31,2026-02-28,0.3,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394615,847,"Fredericksburg, TX",msa,TX,2026-01-31,2026-02-28,0.1,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395181,865,"Uvalde, TX",msa,TX,2026-01-31,2026-02-28,-0.2,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394959,888,"Pampa, TX",msa,TX,2026-01-31,2026-02-28,-0.3,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394784,893,"Levelland, TX",msa,TX,2026-01-31,2026-02-28,0.8,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394544,897,"Dumas, TX",msa,TX,2026-01-31,2026-02-28,0.8,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394403,899,"Borger, TX",msa,TX,2026-01-31,2026-02-28,1.3,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395014,907,"Raymondville, TX",msa,TX,2026-01-31,2026-02-28,0.9,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+753914,908,"Port Lavaca, TX",msa,TX,2026-01-31,2026-02-28,0.5,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394678,918,"Hereford, TX",msa,TX,2026-01-31,2026-02-28,0.2,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394330,920,"Andrews, TX",msa,TX,2026-01-31,2026-02-28,1.0,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395104,926,"Snyder, TX",msa,TX,2026-01-31,2026-02-28,0.8,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395142,933,"Sweetwater, TX",msa,TX,2026-01-31,2026-02-28,0.8,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394968,934,"Pecos, TX",msa,TX,2026-01-31,2026-02-28,-0.7,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+753929,935,"Zapata, TX",msa,TX,2026-01-31,2026-02-28,0.3,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395188,938,"Vernon, TX",msa,TX,2026-01-31,2026-02-28,-0.4,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394767,939,"Lamesa, TX",msa,TX,2026-01-31,2026-02-28,1.6,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394514,4,"Dallas, TX",msa,TX,2026-01-31,2026-04-30,-0.6,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394692,5,"Houston, TX",msa,TX,2026-01-31,2026-04-30,-0.1,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395055,24,"San Antonio, TX",msa,TX,2026-01-31,2026-04-30,-0.6,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394355,29,"Austin, TX",msa,TX,2026-01-31,2026-04-30,-1.2,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394843,67,"McAllen, TX",msa,TX,2026-01-31,2026-04-30,0.8,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394561,69,"El Paso, TX",msa,TX,2026-01-31,2026-04-30,0.8,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394746,120,"Killeen, TX",msa,TX,2026-01-31,2026-04-30,0.0,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394502,129,"Corpus Christi, TX",msa,TX,2026-01-31,2026-04-30,0.4,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394421,130,"Brownsville, TX",msa,TX,2026-01-31,2026-04-30,1.5,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394372,140,"Beaumont, TX",msa,TX,2026-01-31,2026-04-30,0.6,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394808,162,"Lubbock, TX",msa,TX,2026-01-31,2026-04-30,0.7,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394803,173,"Longview, TX",msa,TX,2026-01-31,2026-04-30,1.3,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395197,178,"Waco, TX",msa,TX,2026-01-31,2026-04-30,0.3,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394323,186,"Amarillo, TX",msa,TX,2026-01-31,2026-04-30,0.7,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394772,187,"Laredo, TX",msa,TX,2026-01-31,2026-04-30,0.4,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394483,189,"College Station, TX",msa,TX,2026-01-31,2026-04-30,0.5,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395174,201,"Tyler, TX",msa,TX,2026-01-31,2026-04-30,0.8,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394299,251,"Abilene, TX",msa,TX,2026-01-31,2026-04-30,1.4,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394860,254,"Midland, TX",msa,TX,2026-01-31,2026-04-30,0.6,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394930,271,"Odessa, TX",msa,TX,2026-01-31,2026-04-30,1.1,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395223,298,"Wichita Falls, TX",msa,TX,2026-01-31,2026-04-30,0.7,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395152,299,"Texarkana, TX",msa,TX,2026-01-31,2026-04-30,0.6,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395094,319,"Sherman, TX",msa,TX,2026-01-31,2026-04-30,-0.1,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395054,344,"San Angelo, TX",msa,TX,2026-01-31,2026-04-30,0.8,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395190,400,"Victoria, TX",msa,TX,2026-01-31,2026-04-30,0.5,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394809,425,"Lufkin, TX",msa,TX,2026-01-31,2026-04-30,0.3,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394345,446,"Athens, TX",msa,TX,2026-01-31,2026-04-30,0.7,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394699,465,"Huntsville, TX",msa,TX,2026-01-31,2026-04-30,0.5,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395024,503,"Rio Grande City, TX",msa,TX,2026-01-31,2026-04-30,-0.7,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394899,512,"Nacogdoches, TX",msa,TX,2026-01-31,2026-04-30,1.7,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394956,547,"Palestine, TX",msa,TX,2026-01-31,2026-04-30,1.5,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394551,552,"Eagle Pass, TX",msa,TX,2026-01-31,2026-04-30,1.6,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394742,589,"Kerrville, TX",msa,TX,2026-01-31,2026-04-30,-0.6,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394503,592,"Corsicana, TX",msa,TX,2026-01-31,2026-04-30,1.7,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394717,599,"Jacksonville, TX",msa,TX,2026-01-31,2026-04-30,0.3,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394963,602,"Paris, TX",msa,TX,2026-01-31,2026-04-30,0.8,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394316,609,"Alice, TX",msa,TX,2026-01-31,2026-04-30,-1.7,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394527,622,"Del Rio, TX",msa,TX,2026-01-31,2026-04-30,0.4,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394886,667,"Mount Pleasant, TX",msa,TX,2026-01-31,2026-04-30,0.6,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395129,680,"Stephenville, TX",msa,TX,2026-01-31,2026-04-30,1.2,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394558,685,"El Campo, TX",msa,TX,2026-01-31,2026-04-30,0.3,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394624,687,"Gainesville, TX",msa,TX,2026-01-31,2026-04-30,0.7,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394422,721,"Brownwood, TX",msa,TX,2026-01-31,2026-04-30,0.7,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395137,745,"Sulphur Springs, TX",msa,TX,2026-01-31,2026-04-30,0.4,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394370,751,"Bay City, TX",msa,TX,2026-01-31,2026-04-30,0.9,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394413,759,"Brenham, TX",msa,TX,2026-01-31,2026-04-30,0.5,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394385,770,"Big Spring, TX",msa,TX,2026-01-31,2026-04-30,0.0,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394984,795,"Plainview, TX",msa,TX,2026-01-31,2026-04-30,-1.0,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394376,808,"Beeville, TX",msa,TX,2026-01-31,2026-04-30,0.2,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394749,809,"Kingsville, TX",msa,TX,2026-01-31,2026-04-30,0.7,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394864,833,"Mineral Wells, TX",msa,TX,2026-01-31,2026-04-30,0.6,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394615,847,"Fredericksburg, TX",msa,TX,2026-01-31,2026-04-30,0.6,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395181,865,"Uvalde, TX",msa,TX,2026-01-31,2026-04-30,-0.3,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394959,888,"Pampa, TX",msa,TX,2026-01-31,2026-04-30,-0.2,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394784,893,"Levelland, TX",msa,TX,2026-01-31,2026-04-30,1.0,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394544,897,"Dumas, TX",msa,TX,2026-01-31,2026-04-30,1.5,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394403,899,"Borger, TX",msa,TX,2026-01-31,2026-04-30,1.5,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395014,907,"Raymondville, TX",msa,TX,2026-01-31,2026-04-30,0.0,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+753914,908,"Port Lavaca, TX",msa,TX,2026-01-31,2026-04-30,0.4,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394678,918,"Hereford, TX",msa,TX,2026-01-31,2026-04-30,0.7,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394330,920,"Andrews, TX",msa,TX,2026-01-31,2026-04-30,1.3,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395104,926,"Snyder, TX",msa,TX,2026-01-31,2026-04-30,1.3,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395142,933,"Sweetwater, TX",msa,TX,2026-01-31,2026-04-30,0.2,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394968,934,"Pecos, TX",msa,TX,2026-01-31,2026-04-30,-2.3,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+753929,935,"Zapata, TX",msa,TX,2026-01-31,2026-04-30,-0.6,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395188,938,"Vernon, TX",msa,TX,2026-01-31,2026-04-30,-1.6,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394767,939,"Lamesa, TX",msa,TX,2026-01-31,2026-04-30,0.8,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394514,4,"Dallas, TX",msa,TX,2026-01-31,2027-01-31,-0.8,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394692,5,"Houston, TX",msa,TX,2026-01-31,2027-01-31,-0.6,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395055,24,"San Antonio, TX",msa,TX,2026-01-31,2027-01-31,-2.0,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394355,29,"Austin, TX",msa,TX,2026-01-31,2027-01-31,-2.9,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394843,67,"McAllen, TX",msa,TX,2026-01-31,2027-01-31,2.1,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394561,69,"El Paso, TX",msa,TX,2026-01-31,2027-01-31,2.4,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394746,120,"Killeen, TX",msa,TX,2026-01-31,2027-01-31,0.1,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394502,129,"Corpus Christi, TX",msa,TX,2026-01-31,2027-01-31,-1.8,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394421,130,"Brownsville, TX",msa,TX,2026-01-31,2027-01-31,2.8,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394372,140,"Beaumont, TX",msa,TX,2026-01-31,2027-01-31,-2.7,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394808,162,"Lubbock, TX",msa,TX,2026-01-31,2027-01-31,0.0,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394803,173,"Longview, TX",msa,TX,2026-01-31,2027-01-31,0.7,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395197,178,"Waco, TX",msa,TX,2026-01-31,2027-01-31,0.6,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394323,186,"Amarillo, TX",msa,TX,2026-01-31,2027-01-31,1.4,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394772,187,"Laredo, TX",msa,TX,2026-01-31,2027-01-31,-1.2,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394483,189,"College Station, TX",msa,TX,2026-01-31,2027-01-31,0.1,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395174,201,"Tyler, TX",msa,TX,2026-01-31,2027-01-31,1.4,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394299,251,"Abilene, TX",msa,TX,2026-01-31,2027-01-31,1.1,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394860,254,"Midland, TX",msa,TX,2026-01-31,2027-01-31,-1.1,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394930,271,"Odessa, TX",msa,TX,2026-01-31,2027-01-31,-0.9,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395223,298,"Wichita Falls, TX",msa,TX,2026-01-31,2027-01-31,1.0,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395152,299,"Texarkana, TX",msa,TX,2026-01-31,2027-01-31,-1.8,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395094,319,"Sherman, TX",msa,TX,2026-01-31,2027-01-31,-0.1,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395054,344,"San Angelo, TX",msa,TX,2026-01-31,2027-01-31,0.8,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395190,400,"Victoria, TX",msa,TX,2026-01-31,2027-01-31,-0.6,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394809,425,"Lufkin, TX",msa,TX,2026-01-31,2027-01-31,-1.0,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394345,446,"Athens, TX",msa,TX,2026-01-31,2027-01-31,0.1,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394699,465,"Huntsville, TX",msa,TX,2026-01-31,2027-01-31,-0.8,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395024,503,"Rio Grande City, TX",msa,TX,2026-01-31,2027-01-31,-6.6,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394899,512,"Nacogdoches, TX",msa,TX,2026-01-31,2027-01-31,1.1,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394956,547,"Palestine, TX",msa,TX,2026-01-31,2027-01-31,1.1,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394551,552,"Eagle Pass, TX",msa,TX,2026-01-31,2027-01-31,2.2,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394742,589,"Kerrville, TX",msa,TX,2026-01-31,2027-01-31,-1.6,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394503,592,"Corsicana, TX",msa,TX,2026-01-31,2027-01-31,2.7,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394717,599,"Jacksonville, TX",msa,TX,2026-01-31,2027-01-31,-0.3,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394963,602,"Paris, TX",msa,TX,2026-01-31,2027-01-31,0.7,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394316,609,"Alice, TX",msa,TX,2026-01-31,2027-01-31,-9.2,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394527,622,"Del Rio, TX",msa,TX,2026-01-31,2027-01-31,-0.6,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394886,667,"Mount Pleasant, TX",msa,TX,2026-01-31,2027-01-31,-0.4,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395129,680,"Stephenville, TX",msa,TX,2026-01-31,2027-01-31,3.0,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394558,685,"El Campo, TX",msa,TX,2026-01-31,2027-01-31,-2.4,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394624,687,"Gainesville, TX",msa,TX,2026-01-31,2027-01-31,0.6,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394422,721,"Brownwood, TX",msa,TX,2026-01-31,2027-01-31,-0.5,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395137,745,"Sulphur Springs, TX",msa,TX,2026-01-31,2027-01-31,-2.1,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394370,751,"Bay City, TX",msa,TX,2026-01-31,2027-01-31,-0.6,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394413,759,"Brenham, TX",msa,TX,2026-01-31,2027-01-31,-0.1,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394385,770,"Big Spring, TX",msa,TX,2026-01-31,2027-01-31,-6.8,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394984,795,"Plainview, TX",msa,TX,2026-01-31,2027-01-31,-4.9,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394376,808,"Beeville, TX",msa,TX,2026-01-31,2027-01-31,-5.9,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394749,809,"Kingsville, TX",msa,TX,2026-01-31,2027-01-31,-1.8,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394864,833,"Mineral Wells, TX",msa,TX,2026-01-31,2027-01-31,0.2,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394615,847,"Fredericksburg, TX",msa,TX,2026-01-31,2027-01-31,0.2,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395181,865,"Uvalde, TX",msa,TX,2026-01-31,2027-01-31,-3.1,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394959,888,"Pampa, TX",msa,TX,2026-01-31,2027-01-31,-3.0,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394784,893,"Levelland, TX",msa,TX,2026-01-31,2027-01-31,-2.0,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394544,897,"Dumas, TX",msa,TX,2026-01-31,2027-01-31,0.2,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394403,899,"Borger, TX",msa,TX,2026-01-31,2027-01-31,-1.5,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395014,907,"Raymondville, TX",msa,TX,2026-01-31,2027-01-31,-7.4,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+753914,908,"Port Lavaca, TX",msa,TX,2026-01-31,2027-01-31,-2.0,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394678,918,"Hereford, TX",msa,TX,2026-01-31,2027-01-31,-0.2,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394330,920,"Andrews, TX",msa,TX,2026-01-31,2027-01-31,-0.6,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395104,926,"Snyder, TX",msa,TX,2026-01-31,2027-01-31,-1.8,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395142,933,"Sweetwater, TX",msa,TX,2026-01-31,2027-01-31,-6.5,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394968,934,"Pecos, TX",msa,TX,2026-01-31,2027-01-31,-12.0,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+753929,935,"Zapata, TX",msa,TX,2026-01-31,2027-01-31,-8.0,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+395188,938,"Vernon, TX",msa,TX,2026-01-31,2027-01-31,-7.2,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+394767,939,"Lamesa, TX",msa,TX,2026-01-31,2027-01-31,-4.9,Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,,,,
+91046,1736,75703,zip,TX,2026-01-31,2026-02-28,0.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91127,2783,75904,zip,TX,2026-01-31,2026-02-28,-0.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Lufkin,"Lufkin, TX",Angelina County
+91044,2811,75701,zip,TX,2026-01-31,2026-02-28,0.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+90991,3066,75605,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+90990,3395,75604,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+91124,3860,75901,zip,TX,2026-01-31,2026-02-28,-0.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Lufkin,"Lufkin, TX",Angelina County
+91045,4046,75702,zip,TX,2026-01-31,2026-02-28,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91071,4488,75766,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Jacksonville,"Jacksonville, TX",Cherokee County
+91021,4906,75662,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Kilgore,"Longview, TX",Gregg County
+91160,6074,75964,zip,TX,2026-01-31,2026-02-28,0.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Nacogdoches,"Nacogdoches, TX",Nacogdoches County
+91073,6080,75771,zip,TX,2026-01-31,2026-02-28,0.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Lindale,"Tyler, TX",Smith County
+91093,6088,75803,zip,TX,2026-01-31,2026-02-28,-0.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Palestine,"Palestine, TX",Anderson County
+90988,6240,75602,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+91161,6305,75965,zip,TX,2026-01-31,2026-02-28,0.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Nacogdoches,"Nacogdoches, TX",Nacogdoches County
+91027,6783,75670,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Marshall,"Longview, TX",Harrison County
+91058,7100,75751,zip,TX,2026-01-31,2026-02-28,-0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Athens,"Athens, TX",Henderson County
+91091,7128,75801,zip,TX,2026-01-31,2026-02-28,-0.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Palestine,"Palestine, TX",Anderson County
+91029,7227,75672,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Marshall,"Longview, TX",Harrison County
+90987,7515,75601,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+90733,7550,75156,zip,TX,2026-01-31,2026-02-28,-0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Payne Springs,"Athens, TX",Henderson County
+91157,7657,75961,zip,TX,2026-01-31,2026-02-28,0.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Nacogdoches,"Nacogdoches, TX",Nacogdoches County
+91086,7963,75791,zip,TX,2026-01-31,2026-02-28,0.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Whitehouse,"Tyler, TX",Smith County
+91012,7969,75652,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Longview, TX",Rusk County
+91067,8045,75762,zip,TX,2026-01-31,2026-02-28,0.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Flint,"Tyler, TX",Smith County
+91036,8214,75686,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Pittsburg,"Mount Pleasant, TX",Camp County
+91050,8245,75707,zip,TX,2026-01-31,2026-02-28,0.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91063,8498,75757,zip,TX,2026-01-31,2026-02-28,0.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Bullard,"Jacksonville, TX",Cherokee County
+91014,8726,75654,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Longview, TX",Rusk County
+91009,8888,75647,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Gladewater,"Longview, TX",Gregg County
+91007,8891,75644,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Longview, TX",Upshur County
+91047,9240,75704,zip,TX,2026-01-31,2026-02-28,0.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91082,9302,75785,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Jacksonville, TX",Cherokee County
+91010,9482,75650,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Hallsville,"Longview, TX",Harrison County
+91049,9500,75706,zip,TX,2026-01-31,2026-02-28,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91008,9862,75645,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Longview, TX",Upshur County
+91051,9946,75708,zip,TX,2026-01-31,2026-02-28,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91084,10112,75789,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Troup,"Jacksonville, TX",Cherokee County
+91064,10524,75758,zip,TX,2026-01-31,2026-02-28,-0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Chandler,"Athens, TX",Henderson County
+91150,10596,75949,zip,TX,2026-01-31,2026-02-28,-0.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Huntington,"Lufkin, TX",Angelina County
+91143,10904,75941,zip,TX,2026-01-31,2026-02-28,-0.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Diboll,"Lufkin, TX",Angelina County
+91034,11114,75684,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Longview, TX",Rusk County
+91059,11235,75752,zip,TX,2026-01-31,2026-02-28,-0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Athens,"Athens, TX",Henderson County
+90989,11443,75603,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+91117,11600,75861,zip,TX,2026-01-31,2026-02-28,-0.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tennessee Colony,"Palestine, TX",Anderson County
+90725,11674,75148,zip,TX,2026-01-31,2026-02-28,-0.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Malakoff,"Athens, TX",Henderson County
+91061,12129,75755,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Big Sandy,"Longview, TX",Upshur County
+91042,12352,75693,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,White Oak,"Longview, TX",Gregg County
+91068,12423,75763,zip,TX,2026-01-31,2026-02-28,-0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Athens, TX",Henderson County
+91003,13106,75640,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Diana,"Longview, TX",Upshur County
+91041,13566,75692,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Waskom,"Longview, TX",Harrison County
+91062,13693,75756,zip,TX,2026-01-31,2026-02-28,-0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Brownsboro,"Athens, TX",Henderson County
+91100,13752,75839,zip,TX,2026-01-31,2026-02-28,-0.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Elkhart,"Palestine, TX",Anderson County
+91052,13787,75709,zip,TX,2026-01-31,2026-02-28,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91147,13897,75946,zip,TX,2026-01-31,2026-02-28,0.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Garrison,"Nacogdoches, TX",Nacogdoches County
+91040,14244,75691,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Longview, TX",Rusk County
+91164,14322,75969,zip,TX,2026-01-31,2026-02-28,-0.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Pollok,"Lufkin, TX",Angelina County
+91033,14367,75683,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Ore City,"Longview, TX",Upshur County
+91129,14476,75925,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Alto,"Jacksonville, TX",Cherokee County
+91087,14778,75792,zip,TX,2026-01-31,2026-02-28,0.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Winona,"Tyler, TX",Smith County
+91057,15255,75750,zip,TX,2026-01-31,2026-02-28,0.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Tyler, TX",Smith County
+91020,15672,75661,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Longview, TX",Harrison County
+91048,16085,75705,zip,TX,2026-01-31,2026-02-28,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91072,16703,75770,zip,TX,2026-01-31,2026-02-28,-0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Athens, TX",Henderson County
+91076,16851,75778,zip,TX,2026-01-31,2026-02-28,-0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Murchison,"Athens, TX",Henderson County
+91173,17045,75980,zip,TX,2026-01-31,2026-02-28,-0.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Zavalla,"Lufkin, TX",Angelina County
+91066,17297,75760,zip,TX,2026-01-31,2026-02-28,0.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Cushing,"Nacogdoches, TX",Nacogdoches County
+91031,17736,75681,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Mount Enterprise,"Longview, TX",Rusk County
+90739,18008,75163,zip,TX,2026-01-31,2026-02-28,-0.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Trinidad,"Athens, TX",Henderson County
+91011,19394,75651,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Harleton,"Longview, TX",Harrison County
+91111,19769,75853,zip,TX,2026-01-31,2026-02-28,-0.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Montalba,"Palestine, TX",Anderson County
+91024,20456,75667,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Laneville,"Longview, TX",Rusk County
+91145,20817,75943,zip,TX,2026-01-31,2026-02-28,0.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Douglass,"Nacogdoches, TX",Nacogdoches County
+90918,20873,75451,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Leesburg,"Mount Pleasant, TX",Camp County
+91140,21105,75937,zip,TX,2026-01-31,2026-02-28,0.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Etoile,"Nacogdoches, TX",Nacogdoches County
+91146,23642,75944,zip,TX,2026-01-31,2026-02-28,0.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Etoile,"Nacogdoches, TX",Nacogdoches County
+91081,24959,75784,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Reklaw,"Longview, TX",Rusk County
+91090,25261,75799,zip,TX,2026-01-31,2026-02-28,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+90992,30490,75606,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+90993,30490,75607,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+90994,30490,75608,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+90995,30490,75615,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+91004,30490,75641,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Easton,"Longview, TX",Gregg County
+91013,30490,75653,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Henderson,"Longview, TX",Rusk County
+91017,30490,75658,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Joinerville,"Longview, TX",Rusk County
+91018,30490,75659,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Waskom,"Longview, TX",Harrison County
+91019,30490,75660,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+91022,30490,75663,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Kilgore,"Longview, TX",Gregg County
+91023,30490,75666,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Kilgore,"Longview, TX",Rusk County
+91028,30490,75671,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Marshall,"Longview, TX",Harrison County
+91030,30490,75680,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Henderson,"Longview, TX",Rusk County
+91032,30490,75682,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Longview, TX",Rusk County
+91037,30490,75687,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Longview, TX",Rusk County
+91038,30490,75688,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Marshall,"Longview, TX",Harrison County
+91039,30490,75689,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Longview, TX",Rusk County
+91043,30490,75694,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Marshall,"Longview, TX",Harrison County
+91053,30490,75710,zip,TX,2026-01-31,2026-02-28,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91054,30490,75711,zip,TX,2026-01-31,2026-02-28,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91055,30490,75712,zip,TX,2026-01-31,2026-02-28,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91056,30490,75713,zip,TX,2026-01-31,2026-02-28,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91069,30490,75764,zip,TX,2026-01-31,2026-02-28,-0.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Gallatin,"Jacksonville, TX",Cherokee County
+91074,30490,75772,zip,TX,2026-01-31,2026-02-28,-0.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Maydelle,"Jacksonville, TX",Cherokee County
+91077,30490,75779,zip,TX,2026-01-31,2026-02-28,-0.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Neches,"Palestine, TX",Anderson County
+91078,30490,75780,zip,TX,2026-01-31,2026-02-28,-0.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,New Summerfield,"Jacksonville, TX",Cherokee County
+91079,30490,75782,zip,TX,2026-01-31,2026-02-28,-0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Poynor,"Athens, TX",Henderson County
+91083,30490,75788,zip,TX,2026-01-31,2026-02-28,0.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Cushing,"Nacogdoches, TX",Nacogdoches County
+91088,30490,75797,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Big Sandy,"Longview, TX",Upshur County
+91089,30490,75798,zip,TX,2026-01-31,2026-02-28,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91092,30490,75802,zip,TX,2026-01-31,2026-02-28,-0.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Palestine,"Palestine, TX",Anderson County
+91095,30490,75832,zip,TX,2026-01-31,2026-02-28,-0.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Athens,"Palestine, TX",Anderson County
+91120,30490,75880,zip,TX,2026-01-31,2026-02-28,-0.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Palestine,"Palestine, TX",Anderson County
+91121,30490,75882,zip,TX,2026-01-31,2026-02-28,-0.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Palestine,"Palestine, TX",Anderson County
+91122,30490,75884,zip,TX,2026-01-31,2026-02-28,-0.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tennessee Colony,"Palestine, TX",Anderson County
+91123,30490,75886,zip,TX,2026-01-31,2026-02-28,-0.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tennessee Colony,"Palestine, TX",Anderson County
+91125,30490,75902,zip,TX,2026-01-31,2026-02-28,-0.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Lufkin,"Lufkin, TX",Angelina County
+91126,30490,75903,zip,TX,2026-01-31,2026-02-28,-0.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Lufkin,"Lufkin, TX",Angelina County
+91128,30490,75915,zip,TX,2026-01-31,2026-02-28,-0.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Lufkin,"Lufkin, TX",Angelina County
+91154,30490,75958,zip,TX,2026-01-31,2026-02-28,0.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Center,"Nacogdoches, TX",Nacogdoches County
+91158,30490,75962,zip,TX,2026-01-31,2026-02-28,0.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Nacogdoches,"Nacogdoches, TX",Nacogdoches County
+91159,30490,75963,zip,TX,2026-01-31,2026-02-28,0.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Nacogdoches,"Nacogdoches, TX",Nacogdoches County
+91169,30490,75976,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Pollok,"Jacksonville, TX",Cherokee County
+91171,30490,75978,zip,TX,2026-01-31,2026-02-28,0.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Nacogdoches,"Nacogdoches, TX",Nacogdoches County
+91005,39992,75642,zip,TX,2026-01-31,2026-02-28,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Marshall,"Longview, TX",Harrison County
+91065,39992,75759,zip,TX,2026-01-31,2026-02-28,-0.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Jacksonville, TX",Cherokee County
+91046,1736,75703,zip,TX,2026-01-31,2026-04-30,1.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91127,2783,75904,zip,TX,2026-01-31,2026-04-30,1.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Lufkin,"Lufkin, TX",Angelina County
+91044,2811,75701,zip,TX,2026-01-31,2026-04-30,1.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+90991,3066,75605,zip,TX,2026-01-31,2026-04-30,1.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+90990,3395,75604,zip,TX,2026-01-31,2026-04-30,1.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+91124,3860,75901,zip,TX,2026-01-31,2026-04-30,1.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Lufkin,"Lufkin, TX",Angelina County
+91045,4046,75702,zip,TX,2026-01-31,2026-04-30,1.7,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91071,4488,75766,zip,TX,2026-01-31,2026-04-30,1.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Jacksonville,"Jacksonville, TX",Cherokee County
+91021,4906,75662,zip,TX,2026-01-31,2026-04-30,1.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Kilgore,"Longview, TX",Gregg County
+91160,6074,75964,zip,TX,2026-01-31,2026-04-30,1.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Nacogdoches,"Nacogdoches, TX",Nacogdoches County
+91073,6080,75771,zip,TX,2026-01-31,2026-04-30,1.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Lindale,"Tyler, TX",Smith County
+91093,6088,75803,zip,TX,2026-01-31,2026-04-30,0.9,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Palestine,"Palestine, TX",Anderson County
+90988,6240,75602,zip,TX,2026-01-31,2026-04-30,1.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+91161,6305,75965,zip,TX,2026-01-31,2026-04-30,1.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Nacogdoches,"Nacogdoches, TX",Nacogdoches County
+91027,6783,75670,zip,TX,2026-01-31,2026-04-30,1.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Marshall,"Longview, TX",Harrison County
+91058,7100,75751,zip,TX,2026-01-31,2026-04-30,0.7,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Athens,"Athens, TX",Henderson County
+91091,7128,75801,zip,TX,2026-01-31,2026-04-30,1.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Palestine,"Palestine, TX",Anderson County
+91029,7227,75672,zip,TX,2026-01-31,2026-04-30,1.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Marshall,"Longview, TX",Harrison County
+90987,7515,75601,zip,TX,2026-01-31,2026-04-30,1.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+90733,7550,75156,zip,TX,2026-01-31,2026-04-30,0.8,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Payne Springs,"Athens, TX",Henderson County
+91157,7657,75961,zip,TX,2026-01-31,2026-04-30,1.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Nacogdoches,"Nacogdoches, TX",Nacogdoches County
+91086,7963,75791,zip,TX,2026-01-31,2026-04-30,1.6,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Whitehouse,"Tyler, TX",Smith County
+91012,7969,75652,zip,TX,2026-01-31,2026-04-30,1.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Longview, TX",Rusk County
+91067,8045,75762,zip,TX,2026-01-31,2026-04-30,1.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Flint,"Tyler, TX",Smith County
+91036,8214,75686,zip,TX,2026-01-31,2026-04-30,1.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Pittsburg,"Mount Pleasant, TX",Camp County
+91050,8245,75707,zip,TX,2026-01-31,2026-04-30,1.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91063,8498,75757,zip,TX,2026-01-31,2026-04-30,1.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Bullard,"Jacksonville, TX",Cherokee County
+91014,8726,75654,zip,TX,2026-01-31,2026-04-30,1.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Longview, TX",Rusk County
+91009,8888,75647,zip,TX,2026-01-31,2026-04-30,1.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Gladewater,"Longview, TX",Gregg County
+91007,8891,75644,zip,TX,2026-01-31,2026-04-30,1.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Longview, TX",Upshur County
+91047,9240,75704,zip,TX,2026-01-31,2026-04-30,1.6,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91082,9302,75785,zip,TX,2026-01-31,2026-04-30,1.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Jacksonville, TX",Cherokee County
+91010,9482,75650,zip,TX,2026-01-31,2026-04-30,1.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Hallsville,"Longview, TX",Harrison County
+91049,9500,75706,zip,TX,2026-01-31,2026-04-30,1.6,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91008,9862,75645,zip,TX,2026-01-31,2026-04-30,1.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Longview, TX",Upshur County
+91051,9946,75708,zip,TX,2026-01-31,2026-04-30,1.6,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91084,10112,75789,zip,TX,2026-01-31,2026-04-30,1.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Troup,"Jacksonville, TX",Cherokee County
+91064,10524,75758,zip,TX,2026-01-31,2026-04-30,0.7,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Chandler,"Athens, TX",Henderson County
+91150,10596,75949,zip,TX,2026-01-31,2026-04-30,1.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Huntington,"Lufkin, TX",Angelina County
+91143,10904,75941,zip,TX,2026-01-31,2026-04-30,1.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Diboll,"Lufkin, TX",Angelina County
+91034,11114,75684,zip,TX,2026-01-31,2026-04-30,1.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Longview, TX",Rusk County
+91059,11235,75752,zip,TX,2026-01-31,2026-04-30,0.7,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Athens,"Athens, TX",Henderson County
+90989,11443,75603,zip,TX,2026-01-31,2026-04-30,1.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+91117,11600,75861,zip,TX,2026-01-31,2026-04-30,0.9,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tennessee Colony,"Palestine, TX",Anderson County
+90725,11674,75148,zip,TX,2026-01-31,2026-04-30,0.8,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Malakoff,"Athens, TX",Henderson County
+91061,12129,75755,zip,TX,2026-01-31,2026-04-30,1.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Big Sandy,"Longview, TX",Upshur County
+91042,12352,75693,zip,TX,2026-01-31,2026-04-30,1.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,White Oak,"Longview, TX",Gregg County
+91068,12423,75763,zip,TX,2026-01-31,2026-04-30,0.7,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Athens, TX",Henderson County
+91003,13106,75640,zip,TX,2026-01-31,2026-04-30,1.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Diana,"Longview, TX",Upshur County
+91041,13566,75692,zip,TX,2026-01-31,2026-04-30,1.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Waskom,"Longview, TX",Harrison County
+91062,13693,75756,zip,TX,2026-01-31,2026-04-30,0.7,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Brownsboro,"Athens, TX",Henderson County
+91100,13752,75839,zip,TX,2026-01-31,2026-04-30,0.8,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Elkhart,"Palestine, TX",Anderson County
+91052,13787,75709,zip,TX,2026-01-31,2026-04-30,1.6,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91147,13897,75946,zip,TX,2026-01-31,2026-04-30,1.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Garrison,"Nacogdoches, TX",Nacogdoches County
+91040,14244,75691,zip,TX,2026-01-31,2026-04-30,1.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Longview, TX",Rusk County
+91164,14322,75969,zip,TX,2026-01-31,2026-04-30,1.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Pollok,"Lufkin, TX",Angelina County
+91033,14367,75683,zip,TX,2026-01-31,2026-04-30,1.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Ore City,"Longview, TX",Upshur County
+91129,14476,75925,zip,TX,2026-01-31,2026-04-30,1.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Alto,"Jacksonville, TX",Cherokee County
+91087,14778,75792,zip,TX,2026-01-31,2026-04-30,1.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Winona,"Tyler, TX",Smith County
+91057,15255,75750,zip,TX,2026-01-31,2026-04-30,1.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Tyler, TX",Smith County
+91020,15672,75661,zip,TX,2026-01-31,2026-04-30,1.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Longview, TX",Harrison County
+91048,16085,75705,zip,TX,2026-01-31,2026-04-30,1.6,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91072,16703,75770,zip,TX,2026-01-31,2026-04-30,0.8,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Athens, TX",Henderson County
+91076,16851,75778,zip,TX,2026-01-31,2026-04-30,0.7,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Murchison,"Athens, TX",Henderson County
+91173,17045,75980,zip,TX,2026-01-31,2026-04-30,1.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Zavalla,"Lufkin, TX",Angelina County
+91066,17297,75760,zip,TX,2026-01-31,2026-04-30,1.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Cushing,"Nacogdoches, TX",Nacogdoches County
+91031,17736,75681,zip,TX,2026-01-31,2026-04-30,1.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Mount Enterprise,"Longview, TX",Rusk County
+90739,18008,75163,zip,TX,2026-01-31,2026-04-30,0.8,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Trinidad,"Athens, TX",Henderson County
+91011,19394,75651,zip,TX,2026-01-31,2026-04-30,1.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Harleton,"Longview, TX",Harrison County
+91111,19769,75853,zip,TX,2026-01-31,2026-04-30,0.9,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Montalba,"Palestine, TX",Anderson County
+91024,20456,75667,zip,TX,2026-01-31,2026-04-30,1.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Laneville,"Longview, TX",Rusk County
+91145,20817,75943,zip,TX,2026-01-31,2026-04-30,1.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Douglass,"Nacogdoches, TX",Nacogdoches County
+90918,20873,75451,zip,TX,2026-01-31,2026-04-30,1.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Leesburg,"Mount Pleasant, TX",Camp County
+91140,21105,75937,zip,TX,2026-01-31,2026-04-30,1.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Etoile,"Nacogdoches, TX",Nacogdoches County
+91146,23642,75944,zip,TX,2026-01-31,2026-04-30,1.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Etoile,"Nacogdoches, TX",Nacogdoches County
+91081,24959,75784,zip,TX,2026-01-31,2026-04-30,1.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Reklaw,"Longview, TX",Rusk County
+91090,25261,75799,zip,TX,2026-01-31,2026-04-30,1.8,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+90992,30490,75606,zip,TX,2026-01-31,2026-04-30,1.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+90993,30490,75607,zip,TX,2026-01-31,2026-04-30,1.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+90994,30490,75608,zip,TX,2026-01-31,2026-04-30,1.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+90995,30490,75615,zip,TX,2026-01-31,2026-04-30,1.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+91004,30490,75641,zip,TX,2026-01-31,2026-04-30,1.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Easton,"Longview, TX",Gregg County
+91013,30490,75653,zip,TX,2026-01-31,2026-04-30,1.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Henderson,"Longview, TX",Rusk County
+91017,30490,75658,zip,TX,2026-01-31,2026-04-30,1.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Joinerville,"Longview, TX",Rusk County
+91018,30490,75659,zip,TX,2026-01-31,2026-04-30,1.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Waskom,"Longview, TX",Harrison County
+91019,30490,75660,zip,TX,2026-01-31,2026-04-30,1.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+91022,30490,75663,zip,TX,2026-01-31,2026-04-30,1.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Kilgore,"Longview, TX",Gregg County
+91023,30490,75666,zip,TX,2026-01-31,2026-04-30,1.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Kilgore,"Longview, TX",Rusk County
+91028,30490,75671,zip,TX,2026-01-31,2026-04-30,1.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Marshall,"Longview, TX",Harrison County
+91030,30490,75680,zip,TX,2026-01-31,2026-04-30,1.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Henderson,"Longview, TX",Rusk County
+91032,30490,75682,zip,TX,2026-01-31,2026-04-30,1.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Longview, TX",Rusk County
+91037,30490,75687,zip,TX,2026-01-31,2026-04-30,1.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Longview, TX",Rusk County
+91038,30490,75688,zip,TX,2026-01-31,2026-04-30,1.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Marshall,"Longview, TX",Harrison County
+91039,30490,75689,zip,TX,2026-01-31,2026-04-30,1.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Longview, TX",Rusk County
+91043,30490,75694,zip,TX,2026-01-31,2026-04-30,1.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Marshall,"Longview, TX",Harrison County
+91053,30490,75710,zip,TX,2026-01-31,2026-04-30,1.8,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91054,30490,75711,zip,TX,2026-01-31,2026-04-30,1.8,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91055,30490,75712,zip,TX,2026-01-31,2026-04-30,1.8,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91056,30490,75713,zip,TX,2026-01-31,2026-04-30,1.8,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91069,30490,75764,zip,TX,2026-01-31,2026-04-30,1.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Gallatin,"Jacksonville, TX",Cherokee County
+91074,30490,75772,zip,TX,2026-01-31,2026-04-30,1.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Maydelle,"Jacksonville, TX",Cherokee County
+91077,30490,75779,zip,TX,2026-01-31,2026-04-30,1.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Neches,"Palestine, TX",Anderson County
+91078,30490,75780,zip,TX,2026-01-31,2026-04-30,1.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,New Summerfield,"Jacksonville, TX",Cherokee County
+91079,30490,75782,zip,TX,2026-01-31,2026-04-30,0.8,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Poynor,"Athens, TX",Henderson County
+91083,30490,75788,zip,TX,2026-01-31,2026-04-30,1.7,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Cushing,"Nacogdoches, TX",Nacogdoches County
+91088,30490,75797,zip,TX,2026-01-31,2026-04-30,1.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Big Sandy,"Longview, TX",Upshur County
+91089,30490,75798,zip,TX,2026-01-31,2026-04-30,1.8,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91092,30490,75802,zip,TX,2026-01-31,2026-04-30,1.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Palestine,"Palestine, TX",Anderson County
+91095,30490,75832,zip,TX,2026-01-31,2026-04-30,1.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Athens,"Palestine, TX",Anderson County
+91120,30490,75880,zip,TX,2026-01-31,2026-04-30,1.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Palestine,"Palestine, TX",Anderson County
+91121,30490,75882,zip,TX,2026-01-31,2026-04-30,1.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Palestine,"Palestine, TX",Anderson County
+91122,30490,75884,zip,TX,2026-01-31,2026-04-30,1.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tennessee Colony,"Palestine, TX",Anderson County
+91123,30490,75886,zip,TX,2026-01-31,2026-04-30,1.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tennessee Colony,"Palestine, TX",Anderson County
+91125,30490,75902,zip,TX,2026-01-31,2026-04-30,1.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Lufkin,"Lufkin, TX",Angelina County
+91126,30490,75903,zip,TX,2026-01-31,2026-04-30,1.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Lufkin,"Lufkin, TX",Angelina County
+91128,30490,75915,zip,TX,2026-01-31,2026-04-30,1.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Lufkin,"Lufkin, TX",Angelina County
+91154,30490,75958,zip,TX,2026-01-31,2026-04-30,1.7,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Center,"Nacogdoches, TX",Nacogdoches County
+91158,30490,75962,zip,TX,2026-01-31,2026-04-30,1.7,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Nacogdoches,"Nacogdoches, TX",Nacogdoches County
+91159,30490,75963,zip,TX,2026-01-31,2026-04-30,1.7,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Nacogdoches,"Nacogdoches, TX",Nacogdoches County
+91169,30490,75976,zip,TX,2026-01-31,2026-04-30,1.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Pollok,"Jacksonville, TX",Cherokee County
+91171,30490,75978,zip,TX,2026-01-31,2026-04-30,1.7,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Nacogdoches,"Nacogdoches, TX",Nacogdoches County
+91005,39992,75642,zip,TX,2026-01-31,2026-04-30,1.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Marshall,"Longview, TX",Harrison County
+91065,39992,75759,zip,TX,2026-01-31,2026-04-30,1.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Jacksonville, TX",Cherokee County
+91046,1736,75703,zip,TX,2026-01-31,2027-01-31,1.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91127,2783,75904,zip,TX,2026-01-31,2027-01-31,-0.9,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Lufkin,"Lufkin, TX",Angelina County
+91044,2811,75701,zip,TX,2026-01-31,2027-01-31,1.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+90991,3066,75605,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+90990,3395,75604,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+91124,3860,75901,zip,TX,2026-01-31,2027-01-31,-0.9,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Lufkin,"Lufkin, TX",Angelina County
+91045,4046,75702,zip,TX,2026-01-31,2027-01-31,1.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91071,4488,75766,zip,TX,2026-01-31,2027-01-31,0.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Jacksonville,"Jacksonville, TX",Cherokee County
+91021,4906,75662,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Kilgore,"Longview, TX",Gregg County
+91160,6074,75964,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Nacogdoches,"Nacogdoches, TX",Nacogdoches County
+91073,6080,75771,zip,TX,2026-01-31,2027-01-31,1.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Lindale,"Tyler, TX",Smith County
+91093,6088,75803,zip,TX,2026-01-31,2027-01-31,0.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Palestine,"Palestine, TX",Anderson County
+90988,6240,75602,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+91161,6305,75965,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Nacogdoches,"Nacogdoches, TX",Nacogdoches County
+91027,6783,75670,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Marshall,"Longview, TX",Harrison County
+91058,7100,75751,zip,TX,2026-01-31,2027-01-31,-0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Athens,"Athens, TX",Henderson County
+91091,7128,75801,zip,TX,2026-01-31,2027-01-31,0.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Palestine,"Palestine, TX",Anderson County
+91029,7227,75672,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Marshall,"Longview, TX",Harrison County
+90987,7515,75601,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+90733,7550,75156,zip,TX,2026-01-31,2027-01-31,-0.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Payne Springs,"Athens, TX",Henderson County
+91157,7657,75961,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Nacogdoches,"Nacogdoches, TX",Nacogdoches County
+91086,7963,75791,zip,TX,2026-01-31,2027-01-31,1.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Whitehouse,"Tyler, TX",Smith County
+91012,7969,75652,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Longview, TX",Rusk County
+91067,8045,75762,zip,TX,2026-01-31,2027-01-31,1.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Flint,"Tyler, TX",Smith County
+91036,8214,75686,zip,TX,2026-01-31,2027-01-31,-0.6,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Pittsburg,"Mount Pleasant, TX",Camp County
+91050,8245,75707,zip,TX,2026-01-31,2027-01-31,1.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91063,8498,75757,zip,TX,2026-01-31,2027-01-31,1.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Bullard,"Jacksonville, TX",Cherokee County
+91014,8726,75654,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Longview, TX",Rusk County
+91009,8888,75647,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Gladewater,"Longview, TX",Gregg County
+91007,8891,75644,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Longview, TX",Upshur County
+91047,9240,75704,zip,TX,2026-01-31,2027-01-31,1.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91082,9302,75785,zip,TX,2026-01-31,2027-01-31,0.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Jacksonville, TX",Cherokee County
+91010,9482,75650,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Hallsville,"Longview, TX",Harrison County
+91049,9500,75706,zip,TX,2026-01-31,2027-01-31,1.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91008,9862,75645,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Longview, TX",Upshur County
+91051,9946,75708,zip,TX,2026-01-31,2027-01-31,1.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91084,10112,75789,zip,TX,2026-01-31,2027-01-31,0.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Troup,"Jacksonville, TX",Cherokee County
+91064,10524,75758,zip,TX,2026-01-31,2027-01-31,-0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Chandler,"Athens, TX",Henderson County
+91150,10596,75949,zip,TX,2026-01-31,2027-01-31,-0.9,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Huntington,"Lufkin, TX",Angelina County
+91143,10904,75941,zip,TX,2026-01-31,2027-01-31,-1.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Diboll,"Lufkin, TX",Angelina County
+91034,11114,75684,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Longview, TX",Rusk County
+91059,11235,75752,zip,TX,2026-01-31,2027-01-31,-0.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Athens,"Athens, TX",Henderson County
+90989,11443,75603,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+91117,11600,75861,zip,TX,2026-01-31,2027-01-31,0.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tennessee Colony,"Palestine, TX",Anderson County
+90725,11674,75148,zip,TX,2026-01-31,2027-01-31,-0.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Malakoff,"Athens, TX",Henderson County
+91061,12129,75755,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Big Sandy,"Longview, TX",Upshur County
+91042,12352,75693,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,White Oak,"Longview, TX",Gregg County
+91068,12423,75763,zip,TX,2026-01-31,2027-01-31,-0.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Athens, TX",Henderson County
+91003,13106,75640,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Diana,"Longview, TX",Upshur County
+91041,13566,75692,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Waskom,"Longview, TX",Harrison County
+91062,13693,75756,zip,TX,2026-01-31,2027-01-31,-0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Brownsboro,"Athens, TX",Henderson County
+91100,13752,75839,zip,TX,2026-01-31,2027-01-31,0.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Elkhart,"Palestine, TX",Anderson County
+91052,13787,75709,zip,TX,2026-01-31,2027-01-31,1.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91147,13897,75946,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Garrison,"Nacogdoches, TX",Nacogdoches County
+91040,14244,75691,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Longview, TX",Rusk County
+91164,14322,75969,zip,TX,2026-01-31,2027-01-31,-1.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Pollok,"Lufkin, TX",Angelina County
+91033,14367,75683,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Ore City,"Longview, TX",Upshur County
+91129,14476,75925,zip,TX,2026-01-31,2027-01-31,0.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Alto,"Jacksonville, TX",Cherokee County
+91087,14778,75792,zip,TX,2026-01-31,2027-01-31,1.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Winona,"Tyler, TX",Smith County
+91057,15255,75750,zip,TX,2026-01-31,2027-01-31,1.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Tyler, TX",Smith County
+91020,15672,75661,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Longview, TX",Harrison County
+91048,16085,75705,zip,TX,2026-01-31,2027-01-31,1.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91072,16703,75770,zip,TX,2026-01-31,2027-01-31,-0.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Athens, TX",Henderson County
+91076,16851,75778,zip,TX,2026-01-31,2027-01-31,-0.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Murchison,"Athens, TX",Henderson County
+91173,17045,75980,zip,TX,2026-01-31,2027-01-31,-1.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Zavalla,"Lufkin, TX",Angelina County
+91066,17297,75760,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Cushing,"Nacogdoches, TX",Nacogdoches County
+91031,17736,75681,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Mount Enterprise,"Longview, TX",Rusk County
+90739,18008,75163,zip,TX,2026-01-31,2027-01-31,-0.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Trinidad,"Athens, TX",Henderson County
+91011,19394,75651,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Harleton,"Longview, TX",Harrison County
+91111,19769,75853,zip,TX,2026-01-31,2027-01-31,0.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Montalba,"Palestine, TX",Anderson County
+91024,20456,75667,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Laneville,"Longview, TX",Rusk County
+91145,20817,75943,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Douglass,"Nacogdoches, TX",Nacogdoches County
+90918,20873,75451,zip,TX,2026-01-31,2027-01-31,-0.7,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Leesburg,"Mount Pleasant, TX",Camp County
+91140,21105,75937,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Etoile,"Nacogdoches, TX",Nacogdoches County
+91146,23642,75944,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Etoile,"Nacogdoches, TX",Nacogdoches County
+91081,24959,75784,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Reklaw,"Longview, TX",Rusk County
+91090,25261,75799,zip,TX,2026-01-31,2027-01-31,1.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+90992,30490,75606,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+90993,30490,75607,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+90994,30490,75608,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+90995,30490,75615,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+91004,30490,75641,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Easton,"Longview, TX",Gregg County
+91013,30490,75653,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Henderson,"Longview, TX",Rusk County
+91017,30490,75658,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Joinerville,"Longview, TX",Rusk County
+91018,30490,75659,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Waskom,"Longview, TX",Harrison County
+91019,30490,75660,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+91022,30490,75663,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Kilgore,"Longview, TX",Gregg County
+91023,30490,75666,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Kilgore,"Longview, TX",Rusk County
+91028,30490,75671,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Marshall,"Longview, TX",Harrison County
+91030,30490,75680,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Henderson,"Longview, TX",Rusk County
+91032,30490,75682,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Longview, TX",Rusk County
+91037,30490,75687,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Longview, TX",Rusk County
+91038,30490,75688,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Marshall,"Longview, TX",Harrison County
+91039,30490,75689,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Longview, TX",Rusk County
+91043,30490,75694,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Marshall,"Longview, TX",Harrison County
+91053,30490,75710,zip,TX,2026-01-31,2027-01-31,1.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91054,30490,75711,zip,TX,2026-01-31,2027-01-31,1.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91055,30490,75712,zip,TX,2026-01-31,2027-01-31,1.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91056,30490,75713,zip,TX,2026-01-31,2027-01-31,1.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91069,30490,75764,zip,TX,2026-01-31,2027-01-31,0.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Gallatin,"Jacksonville, TX",Cherokee County
+91074,30490,75772,zip,TX,2026-01-31,2027-01-31,0.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Maydelle,"Jacksonville, TX",Cherokee County
+91077,30490,75779,zip,TX,2026-01-31,2027-01-31,0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Neches,"Palestine, TX",Anderson County
+91078,30490,75780,zip,TX,2026-01-31,2027-01-31,0.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,New Summerfield,"Jacksonville, TX",Cherokee County
+91079,30490,75782,zip,TX,2026-01-31,2027-01-31,-0.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Poynor,"Athens, TX",Henderson County
+91083,30490,75788,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Cushing,"Nacogdoches, TX",Nacogdoches County
+91088,30490,75797,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Big Sandy,"Longview, TX",Upshur County
+91089,30490,75798,zip,TX,2026-01-31,2027-01-31,1.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91092,30490,75802,zip,TX,2026-01-31,2027-01-31,0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Palestine,"Palestine, TX",Anderson County
+91095,30490,75832,zip,TX,2026-01-31,2027-01-31,0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Athens,"Palestine, TX",Anderson County
+91120,30490,75880,zip,TX,2026-01-31,2027-01-31,0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Palestine,"Palestine, TX",Anderson County
+91121,30490,75882,zip,TX,2026-01-31,2027-01-31,0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Palestine,"Palestine, TX",Anderson County
+91122,30490,75884,zip,TX,2026-01-31,2027-01-31,0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tennessee Colony,"Palestine, TX",Anderson County
+91123,30490,75886,zip,TX,2026-01-31,2027-01-31,0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Tennessee Colony,"Palestine, TX",Anderson County
+91125,30490,75902,zip,TX,2026-01-31,2027-01-31,-1.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Lufkin,"Lufkin, TX",Angelina County
+91126,30490,75903,zip,TX,2026-01-31,2027-01-31,-1.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Lufkin,"Lufkin, TX",Angelina County
+91128,30490,75915,zip,TX,2026-01-31,2027-01-31,-1.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Lufkin,"Lufkin, TX",Angelina County
+91154,30490,75958,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Center,"Nacogdoches, TX",Nacogdoches County
+91158,30490,75962,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Nacogdoches,"Nacogdoches, TX",Nacogdoches County
+91159,30490,75963,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Nacogdoches,"Nacogdoches, TX",Nacogdoches County
+91169,30490,75976,zip,TX,2026-01-31,2027-01-31,0.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Pollok,"Jacksonville, TX",Cherokee County
+91171,30490,75978,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Nacogdoches,"Nacogdoches, TX",Nacogdoches County
+91005,39992,75642,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,Marshall,"Longview, TX",Harrison County
+91065,39992,75759,zip,TX,2026-01-31,2027-01-31,0.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_month.csv,growth,0,TX,,"Jacksonville, TX",Cherokee County
+91046,1736,75703,zip,TX,2026-01-31,2026-02-28,0.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91127,2783,75904,zip,TX,2026-01-31,2026-02-28,0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Lufkin,"Lufkin, TX",Angelina County
+91044,2811,75701,zip,TX,2026-01-31,2026-02-28,0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+90991,3066,75605,zip,TX,2026-01-31,2026-02-28,0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+90990,3395,75604,zip,TX,2026-01-31,2026-02-28,0.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+91124,3860,75901,zip,TX,2026-01-31,2026-02-28,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Lufkin,"Lufkin, TX",Angelina County
+91045,4046,75702,zip,TX,2026-01-31,2026-02-28,0.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91071,4488,75766,zip,TX,2026-01-31,2026-02-28,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Jacksonville,"Jacksonville, TX",Cherokee County
+91021,4906,75662,zip,TX,2026-01-31,2026-02-28,0.7,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Kilgore,"Longview, TX",Gregg County
+91160,6074,75964,zip,TX,2026-01-31,2026-02-28,0.8,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Nacogdoches,"Nacogdoches, TX",Nacogdoches County
+91073,6080,75771,zip,TX,2026-01-31,2026-02-28,0.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Lindale,"Tyler, TX",Smith County
+91093,6088,75803,zip,TX,2026-01-31,2026-02-28,0.9,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Palestine,"Palestine, TX",Anderson County
+90988,6240,75602,zip,TX,2026-01-31,2026-02-28,0.6,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+91161,6305,75965,zip,TX,2026-01-31,2026-02-28,0.8,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Nacogdoches,"Nacogdoches, TX",Nacogdoches County
+91027,6783,75670,zip,TX,2026-01-31,2026-02-28,0.7,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Marshall,"Longview, TX",Harrison County
+91058,7100,75751,zip,TX,2026-01-31,2026-02-28,0.7,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Athens,"Athens, TX",Henderson County
+91091,7128,75801,zip,TX,2026-01-31,2026-02-28,0.9,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Palestine,"Palestine, TX",Anderson County
+91029,7227,75672,zip,TX,2026-01-31,2026-02-28,0.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Marshall,"Longview, TX",Harrison County
+90987,7515,75601,zip,TX,2026-01-31,2026-02-28,0.6,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+90733,7550,75156,zip,TX,2026-01-31,2026-02-28,0.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Payne Springs,"Athens, TX",Henderson County
+91157,7657,75961,zip,TX,2026-01-31,2026-02-28,1.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Nacogdoches,"Nacogdoches, TX",Nacogdoches County
+91086,7963,75791,zip,TX,2026-01-31,2026-02-28,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Whitehouse,"Tyler, TX",Smith County
+91012,7969,75652,zip,TX,2026-01-31,2026-02-28,0.8,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,,"Longview, TX",Rusk County
+91067,8045,75762,zip,TX,2026-01-31,2026-02-28,0.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Flint,"Tyler, TX",Smith County
+91036,8214,75686,zip,TX,2026-01-31,2026-02-28,0.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Pittsburg,"Mount Pleasant, TX",Camp County
+91050,8245,75707,zip,TX,2026-01-31,2026-02-28,0.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91063,8498,75757,zip,TX,2026-01-31,2026-02-28,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Bullard,"Jacksonville, TX",Cherokee County
+91014,8726,75654,zip,TX,2026-01-31,2026-02-28,0.6,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,,"Longview, TX",Rusk County
+91009,8888,75647,zip,TX,2026-01-31,2026-02-28,0.8,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Gladewater,"Longview, TX",Gregg County
+91007,8891,75644,zip,TX,2026-01-31,2026-02-28,0.7,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,,"Longview, TX",Upshur County
+91047,9240,75704,zip,TX,2026-01-31,2026-02-28,0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91082,9302,75785,zip,TX,2026-01-31,2026-02-28,0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,,"Jacksonville, TX",Cherokee County
+91010,9482,75650,zip,TX,2026-01-31,2026-02-28,0.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Hallsville,"Longview, TX",Harrison County
+91049,9500,75706,zip,TX,2026-01-31,2026-02-28,0.6,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91008,9862,75645,zip,TX,2026-01-31,2026-02-28,0.6,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,,"Longview, TX",Upshur County
+91051,9946,75708,zip,TX,2026-01-31,2026-02-28,0.8,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91084,10112,75789,zip,TX,2026-01-31,2026-02-28,0.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Troup,"Jacksonville, TX",Cherokee County
+91064,10524,75758,zip,TX,2026-01-31,2026-02-28,0.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Chandler,"Athens, TX",Henderson County
+91150,10596,75949,zip,TX,2026-01-31,2026-02-28,0.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Huntington,"Lufkin, TX",Angelina County
+91143,10904,75941,zip,TX,2026-01-31,2026-02-28,0.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Diboll,"Lufkin, TX",Angelina County
+91034,11114,75684,zip,TX,2026-01-31,2026-02-28,0.8,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,,"Longview, TX",Rusk County
+91059,11235,75752,zip,TX,2026-01-31,2026-02-28,0.6,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Athens,"Athens, TX",Henderson County
+90989,11443,75603,zip,TX,2026-01-31,2026-02-28,1.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+91117,11600,75861,zip,TX,2026-01-31,2026-02-28,0.7,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Tennessee Colony,"Palestine, TX",Anderson County
+90725,11674,75148,zip,TX,2026-01-31,2026-02-28,0.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Malakoff,"Athens, TX",Henderson County
+91061,12129,75755,zip,TX,2026-01-31,2026-02-28,0.7,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Big Sandy,"Longview, TX",Upshur County
+91042,12352,75693,zip,TX,2026-01-31,2026-02-28,0.6,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,White Oak,"Longview, TX",Gregg County
+91068,12423,75763,zip,TX,2026-01-31,2026-02-28,0.8,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,,"Athens, TX",Henderson County
+91003,13106,75640,zip,TX,2026-01-31,2026-02-28,0.6,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Diana,"Longview, TX",Upshur County
+91041,13566,75692,zip,TX,2026-01-31,2026-02-28,0.7,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Waskom,"Longview, TX",Harrison County
+91062,13693,75756,zip,TX,2026-01-31,2026-02-28,0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Brownsboro,"Athens, TX",Henderson County
+91100,13752,75839,zip,TX,2026-01-31,2026-02-28,0.7,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Elkhart,"Palestine, TX",Anderson County
+91052,13787,75709,zip,TX,2026-01-31,2026-02-28,0.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91147,13897,75946,zip,TX,2026-01-31,2026-02-28,1.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Garrison,"Nacogdoches, TX",Nacogdoches County
+91040,14244,75691,zip,TX,2026-01-31,2026-02-28,0.8,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,,"Longview, TX",Rusk County
+91164,14322,75969,zip,TX,2026-01-31,2026-02-28,0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Pollok,"Lufkin, TX",Angelina County
+91033,14367,75683,zip,TX,2026-01-31,2026-02-28,1.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Ore City,"Longview, TX",Upshur County
+91129,14476,75925,zip,TX,2026-01-31,2026-02-28,0.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Alto,"Jacksonville, TX",Cherokee County
+91087,14778,75792,zip,TX,2026-01-31,2026-02-28,0.8,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Winona,"Tyler, TX",Smith County
+91057,15255,75750,zip,TX,2026-01-31,2026-02-28,0.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,,"Tyler, TX",Smith County
+91020,15672,75661,zip,TX,2026-01-31,2026-02-28,1.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,,"Longview, TX",Harrison County
+91048,16085,75705,zip,TX,2026-01-31,2026-02-28,0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91072,16703,75770,zip,TX,2026-01-31,2026-02-28,0.8,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,,"Athens, TX",Henderson County
+91076,16851,75778,zip,TX,2026-01-31,2026-02-28,0.8,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Murchison,"Athens, TX",Henderson County
+91173,17045,75980,zip,TX,2026-01-31,2026-02-28,0.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Zavalla,"Lufkin, TX",Angelina County
+91066,17297,75760,zip,TX,2026-01-31,2026-02-28,0.8,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Cushing,"Nacogdoches, TX",Nacogdoches County
+91031,17736,75681,zip,TX,2026-01-31,2026-02-28,1.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Mount Enterprise,"Longview, TX",Rusk County
+90739,18008,75163,zip,TX,2026-01-31,2026-02-28,0.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Trinidad,"Athens, TX",Henderson County
+91011,19394,75651,zip,TX,2026-01-31,2026-02-28,0.7,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Harleton,"Longview, TX",Harrison County
+91111,19769,75853,zip,TX,2026-01-31,2026-02-28,0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Montalba,"Palestine, TX",Anderson County
+91024,20456,75667,zip,TX,2026-01-31,2026-02-28,1.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Laneville,"Longview, TX",Rusk County
+91145,20817,75943,zip,TX,2026-01-31,2026-02-28,0.7,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Douglass,"Nacogdoches, TX",Nacogdoches County
+90918,20873,75451,zip,TX,2026-01-31,2026-02-28,0.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Leesburg,"Mount Pleasant, TX",Camp County
+91140,21105,75937,zip,TX,2026-01-31,2026-02-28,0.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Etoile,"Nacogdoches, TX",Nacogdoches County
+91146,23642,75944,zip,TX,2026-01-31,2026-02-28,1.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Etoile,"Nacogdoches, TX",Nacogdoches County
+91081,24959,75784,zip,TX,2026-01-31,2026-02-28,1.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Reklaw,"Longview, TX",Rusk County
+91169,30490,75976,zip,TX,2026-01-31,2026-02-28,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Pollok,"Jacksonville, TX",Cherokee County
+91046,1736,75703,zip,TX,2026-01-31,2026-04-30,0.6,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91127,2783,75904,zip,TX,2026-01-31,2026-04-30,0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Lufkin,"Lufkin, TX",Angelina County
+91044,2811,75701,zip,TX,2026-01-31,2026-04-30,0.9,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+90991,3066,75605,zip,TX,2026-01-31,2026-04-30,0.6,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+90990,3395,75604,zip,TX,2026-01-31,2026-04-30,0.9,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+91124,3860,75901,zip,TX,2026-01-31,2026-04-30,0.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Lufkin,"Lufkin, TX",Angelina County
+91045,4046,75702,zip,TX,2026-01-31,2026-04-30,0.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91071,4488,75766,zip,TX,2026-01-31,2026-04-30,0.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Jacksonville,"Jacksonville, TX",Cherokee County
+91021,4906,75662,zip,TX,2026-01-31,2026-04-30,1.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Kilgore,"Longview, TX",Gregg County
+91160,6074,75964,zip,TX,2026-01-31,2026-04-30,1.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Nacogdoches,"Nacogdoches, TX",Nacogdoches County
+91073,6080,75771,zip,TX,2026-01-31,2026-04-30,0.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Lindale,"Tyler, TX",Smith County
+91093,6088,75803,zip,TX,2026-01-31,2026-04-30,1.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Palestine,"Palestine, TX",Anderson County
+90988,6240,75602,zip,TX,2026-01-31,2026-04-30,0.7,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+91161,6305,75965,zip,TX,2026-01-31,2026-04-30,1.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Nacogdoches,"Nacogdoches, TX",Nacogdoches County
+91027,6783,75670,zip,TX,2026-01-31,2026-04-30,0.8,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Marshall,"Longview, TX",Harrison County
+91058,7100,75751,zip,TX,2026-01-31,2026-04-30,0.8,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Athens,"Athens, TX",Henderson County
+91091,7128,75801,zip,TX,2026-01-31,2026-04-30,1.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Palestine,"Palestine, TX",Anderson County
+91029,7227,75672,zip,TX,2026-01-31,2026-04-30,0.9,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Marshall,"Longview, TX",Harrison County
+90987,7515,75601,zip,TX,2026-01-31,2026-04-30,0.9,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+90733,7550,75156,zip,TX,2026-01-31,2026-04-30,0.7,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Payne Springs,"Athens, TX",Henderson County
+91157,7657,75961,zip,TX,2026-01-31,2026-04-30,1.9,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Nacogdoches,"Nacogdoches, TX",Nacogdoches County
+91086,7963,75791,zip,TX,2026-01-31,2026-04-30,0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Whitehouse,"Tyler, TX",Smith County
+91012,7969,75652,zip,TX,2026-01-31,2026-04-30,1.7,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,,"Longview, TX",Rusk County
+91067,8045,75762,zip,TX,2026-01-31,2026-04-30,0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Flint,"Tyler, TX",Smith County
+91036,8214,75686,zip,TX,2026-01-31,2026-04-30,0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Pittsburg,"Mount Pleasant, TX",Camp County
+91050,8245,75707,zip,TX,2026-01-31,2026-04-30,0.6,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91063,8498,75757,zip,TX,2026-01-31,2026-04-30,0.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Bullard,"Jacksonville, TX",Cherokee County
+91014,8726,75654,zip,TX,2026-01-31,2026-04-30,1.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,,"Longview, TX",Rusk County
+91009,8888,75647,zip,TX,2026-01-31,2026-04-30,1.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Gladewater,"Longview, TX",Gregg County
+91007,8891,75644,zip,TX,2026-01-31,2026-04-30,1.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,,"Longview, TX",Upshur County
+91047,9240,75704,zip,TX,2026-01-31,2026-04-30,1.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91082,9302,75785,zip,TX,2026-01-31,2026-04-30,0.6,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,,"Jacksonville, TX",Cherokee County
+91010,9482,75650,zip,TX,2026-01-31,2026-04-30,0.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Hallsville,"Longview, TX",Harrison County
+91049,9500,75706,zip,TX,2026-01-31,2026-04-30,1.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91008,9862,75645,zip,TX,2026-01-31,2026-04-30,1.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,,"Longview, TX",Upshur County
+91051,9946,75708,zip,TX,2026-01-31,2026-04-30,1.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91084,10112,75789,zip,TX,2026-01-31,2026-04-30,0.7,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Troup,"Jacksonville, TX",Cherokee County
+91064,10524,75758,zip,TX,2026-01-31,2026-04-30,0.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Chandler,"Athens, TX",Henderson County
+91150,10596,75949,zip,TX,2026-01-31,2026-04-30,0.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Huntington,"Lufkin, TX",Angelina County
+91143,10904,75941,zip,TX,2026-01-31,2026-04-30,-0.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Diboll,"Lufkin, TX",Angelina County
+91034,11114,75684,zip,TX,2026-01-31,2026-04-30,2.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,,"Longview, TX",Rusk County
+91059,11235,75752,zip,TX,2026-01-31,2026-04-30,0.8,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Athens,"Athens, TX",Henderson County
+90989,11443,75603,zip,TX,2026-01-31,2026-04-30,1.9,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+91117,11600,75861,zip,TX,2026-01-31,2026-04-30,1.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Tennessee Colony,"Palestine, TX",Anderson County
+90725,11674,75148,zip,TX,2026-01-31,2026-04-30,0.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Malakoff,"Athens, TX",Henderson County
+91061,12129,75755,zip,TX,2026-01-31,2026-04-30,1.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Big Sandy,"Longview, TX",Upshur County
+91042,12352,75693,zip,TX,2026-01-31,2026-04-30,1.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,White Oak,"Longview, TX",Gregg County
+91068,12423,75763,zip,TX,2026-01-31,2026-04-30,1.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,,"Athens, TX",Henderson County
+91003,13106,75640,zip,TX,2026-01-31,2026-04-30,1.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Diana,"Longview, TX",Upshur County
+91041,13566,75692,zip,TX,2026-01-31,2026-04-30,1.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Waskom,"Longview, TX",Harrison County
+91062,13693,75756,zip,TX,2026-01-31,2026-04-30,0.8,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Brownsboro,"Athens, TX",Henderson County
+91100,13752,75839,zip,TX,2026-01-31,2026-04-30,1.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Elkhart,"Palestine, TX",Anderson County
+91052,13787,75709,zip,TX,2026-01-31,2026-04-30,1.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91147,13897,75946,zip,TX,2026-01-31,2026-04-30,2.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Garrison,"Nacogdoches, TX",Nacogdoches County
+91040,14244,75691,zip,TX,2026-01-31,2026-04-30,1.8,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,,"Longview, TX",Rusk County
+91164,14322,75969,zip,TX,2026-01-31,2026-04-30,0.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Pollok,"Lufkin, TX",Angelina County
+91033,14367,75683,zip,TX,2026-01-31,2026-04-30,2.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Ore City,"Longview, TX",Upshur County
+91129,14476,75925,zip,TX,2026-01-31,2026-04-30,0.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Alto,"Jacksonville, TX",Cherokee County
+91087,14778,75792,zip,TX,2026-01-31,2026-04-30,1.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Winona,"Tyler, TX",Smith County
+91057,15255,75750,zip,TX,2026-01-31,2026-04-30,1.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,,"Tyler, TX",Smith County
+91020,15672,75661,zip,TX,2026-01-31,2026-04-30,1.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,,"Longview, TX",Harrison County
+91048,16085,75705,zip,TX,2026-01-31,2026-04-30,1.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91072,16703,75770,zip,TX,2026-01-31,2026-04-30,1.6,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,,"Athens, TX",Henderson County
+91076,16851,75778,zip,TX,2026-01-31,2026-04-30,1.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Murchison,"Athens, TX",Henderson County
+91173,17045,75980,zip,TX,2026-01-31,2026-04-30,-0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Zavalla,"Lufkin, TX",Angelina County
+91066,17297,75760,zip,TX,2026-01-31,2026-04-30,1.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Cushing,"Nacogdoches, TX",Nacogdoches County
+91031,17736,75681,zip,TX,2026-01-31,2026-04-30,2.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Mount Enterprise,"Longview, TX",Rusk County
+90739,18008,75163,zip,TX,2026-01-31,2026-04-30,0.7,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Trinidad,"Athens, TX",Henderson County
+91011,19394,75651,zip,TX,2026-01-31,2026-04-30,1.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Harleton,"Longview, TX",Harrison County
+91111,19769,75853,zip,TX,2026-01-31,2026-04-30,0.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Montalba,"Palestine, TX",Anderson County
+91024,20456,75667,zip,TX,2026-01-31,2026-04-30,2.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Laneville,"Longview, TX",Rusk County
+91145,20817,75943,zip,TX,2026-01-31,2026-04-30,1.8,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Douglass,"Nacogdoches, TX",Nacogdoches County
+90918,20873,75451,zip,TX,2026-01-31,2026-04-30,1.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Leesburg,"Mount Pleasant, TX",Camp County
+91140,21105,75937,zip,TX,2026-01-31,2026-04-30,1.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Etoile,"Nacogdoches, TX",Nacogdoches County
+91146,23642,75944,zip,TX,2026-01-31,2026-04-30,2.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Etoile,"Nacogdoches, TX",Nacogdoches County
+91081,24959,75784,zip,TX,2026-01-31,2026-04-30,2.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Reklaw,"Longview, TX",Rusk County
+91169,30490,75976,zip,TX,2026-01-31,2026-04-30,0.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Pollok,"Jacksonville, TX",Cherokee County
+91046,1736,75703,zip,TX,2026-01-31,2027-01-31,1.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91127,2783,75904,zip,TX,2026-01-31,2027-01-31,-0.7,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Lufkin,"Lufkin, TX",Angelina County
+91044,2811,75701,zip,TX,2026-01-31,2027-01-31,1.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+90991,3066,75605,zip,TX,2026-01-31,2027-01-31,0.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+90990,3395,75604,zip,TX,2026-01-31,2027-01-31,0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+91124,3860,75901,zip,TX,2026-01-31,2027-01-31,-1.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Lufkin,"Lufkin, TX",Angelina County
+91045,4046,75702,zip,TX,2026-01-31,2027-01-31,0.9,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91071,4488,75766,zip,TX,2026-01-31,2027-01-31,-0.6,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Jacksonville,"Jacksonville, TX",Cherokee County
+91021,4906,75662,zip,TX,2026-01-31,2027-01-31,0.6,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Kilgore,"Longview, TX",Gregg County
+91160,6074,75964,zip,TX,2026-01-31,2027-01-31,0.7,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Nacogdoches,"Nacogdoches, TX",Nacogdoches County
+91073,6080,75771,zip,TX,2026-01-31,2027-01-31,1.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Lindale,"Tyler, TX",Smith County
+91093,6088,75803,zip,TX,2026-01-31,2027-01-31,0.7,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Palestine,"Palestine, TX",Anderson County
+90988,6240,75602,zip,TX,2026-01-31,2027-01-31,0.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+91161,6305,75965,zip,TX,2026-01-31,2027-01-31,1.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Nacogdoches,"Nacogdoches, TX",Nacogdoches County
+91027,6783,75670,zip,TX,2026-01-31,2027-01-31,0.9,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Marshall,"Longview, TX",Harrison County
+91058,7100,75751,zip,TX,2026-01-31,2027-01-31,0.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Athens,"Athens, TX",Henderson County
+91091,7128,75801,zip,TX,2026-01-31,2027-01-31,0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Palestine,"Palestine, TX",Anderson County
+91029,7227,75672,zip,TX,2026-01-31,2027-01-31,0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Marshall,"Longview, TX",Harrison County
+90987,7515,75601,zip,TX,2026-01-31,2027-01-31,0.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+90733,7550,75156,zip,TX,2026-01-31,2027-01-31,-0.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Payne Springs,"Athens, TX",Henderson County
+91157,7657,75961,zip,TX,2026-01-31,2027-01-31,0.9,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Nacogdoches,"Nacogdoches, TX",Nacogdoches County
+91086,7963,75791,zip,TX,2026-01-31,2027-01-31,1.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Whitehouse,"Tyler, TX",Smith County
+91012,7969,75652,zip,TX,2026-01-31,2027-01-31,0.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,,"Longview, TX",Rusk County
+91067,8045,75762,zip,TX,2026-01-31,2027-01-31,1.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Flint,"Tyler, TX",Smith County
+91036,8214,75686,zip,TX,2026-01-31,2027-01-31,-0.9,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Pittsburg,"Mount Pleasant, TX",Camp County
+91050,8245,75707,zip,TX,2026-01-31,2027-01-31,1.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91063,8498,75757,zip,TX,2026-01-31,2027-01-31,0.9,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Bullard,"Jacksonville, TX",Cherokee County
+91014,8726,75654,zip,TX,2026-01-31,2027-01-31,0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,,"Longview, TX",Rusk County
+91009,8888,75647,zip,TX,2026-01-31,2027-01-31,0.8,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Gladewater,"Longview, TX",Gregg County
+91007,8891,75644,zip,TX,2026-01-31,2027-01-31,0.9,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,,"Longview, TX",Upshur County
+91047,9240,75704,zip,TX,2026-01-31,2027-01-31,1.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91082,9302,75785,zip,TX,2026-01-31,2027-01-31,-0.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,,"Jacksonville, TX",Cherokee County
+91010,9482,75650,zip,TX,2026-01-31,2027-01-31,0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Hallsville,"Longview, TX",Harrison County
+91049,9500,75706,zip,TX,2026-01-31,2027-01-31,1.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91008,9862,75645,zip,TX,2026-01-31,2027-01-31,0.6,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,,"Longview, TX",Upshur County
+91051,9946,75708,zip,TX,2026-01-31,2027-01-31,1.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91084,10112,75789,zip,TX,2026-01-31,2027-01-31,-0.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Troup,"Jacksonville, TX",Cherokee County
+91064,10524,75758,zip,TX,2026-01-31,2027-01-31,0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Chandler,"Athens, TX",Henderson County
+91150,10596,75949,zip,TX,2026-01-31,2027-01-31,-0.8,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Huntington,"Lufkin, TX",Angelina County
+91143,10904,75941,zip,TX,2026-01-31,2027-01-31,-1.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Diboll,"Lufkin, TX",Angelina County
+91034,11114,75684,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,,"Longview, TX",Rusk County
+91059,11235,75752,zip,TX,2026-01-31,2027-01-31,0.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Athens,"Athens, TX",Henderson County
+90989,11443,75603,zip,TX,2026-01-31,2027-01-31,0.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Longview,"Longview, TX",Gregg County
+91117,11600,75861,zip,TX,2026-01-31,2027-01-31,0.6,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Tennessee Colony,"Palestine, TX",Anderson County
+90725,11674,75148,zip,TX,2026-01-31,2027-01-31,-0.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Malakoff,"Athens, TX",Henderson County
+91061,12129,75755,zip,TX,2026-01-31,2027-01-31,0.7,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Big Sandy,"Longview, TX",Upshur County
+91042,12352,75693,zip,TX,2026-01-31,2027-01-31,0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,White Oak,"Longview, TX",Gregg County
+91068,12423,75763,zip,TX,2026-01-31,2027-01-31,0.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,,"Athens, TX",Henderson County
+91003,13106,75640,zip,TX,2026-01-31,2027-01-31,0.8,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Diana,"Longview, TX",Upshur County
+91041,13566,75692,zip,TX,2026-01-31,2027-01-31,0.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Waskom,"Longview, TX",Harrison County
+91062,13693,75756,zip,TX,2026-01-31,2027-01-31,0.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Brownsboro,"Athens, TX",Henderson County
+91100,13752,75839,zip,TX,2026-01-31,2027-01-31,0.6,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Elkhart,"Palestine, TX",Anderson County
+91052,13787,75709,zip,TX,2026-01-31,2027-01-31,1.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91147,13897,75946,zip,TX,2026-01-31,2027-01-31,0.9,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Garrison,"Nacogdoches, TX",Nacogdoches County
+91040,14244,75691,zip,TX,2026-01-31,2027-01-31,0.5,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,,"Longview, TX",Rusk County
+91164,14322,75969,zip,TX,2026-01-31,2027-01-31,-1.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Pollok,"Lufkin, TX",Angelina County
+91033,14367,75683,zip,TX,2026-01-31,2027-01-31,1.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Ore City,"Longview, TX",Upshur County
+91129,14476,75925,zip,TX,2026-01-31,2027-01-31,-0.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Alto,"Jacksonville, TX",Cherokee County
+91087,14778,75792,zip,TX,2026-01-31,2027-01-31,1.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Winona,"Tyler, TX",Smith County
+91057,15255,75750,zip,TX,2026-01-31,2027-01-31,1.0,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,,"Tyler, TX",Smith County
+91020,15672,75661,zip,TX,2026-01-31,2027-01-31,0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,,"Longview, TX",Harrison County
+91048,16085,75705,zip,TX,2026-01-31,2027-01-31,0.8,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Tyler,"Tyler, TX",Smith County
+91072,16703,75770,zip,TX,2026-01-31,2027-01-31,0.7,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,,"Athens, TX",Henderson County
+91076,16851,75778,zip,TX,2026-01-31,2027-01-31,0.1,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Murchison,"Athens, TX",Henderson County
+91173,17045,75980,zip,TX,2026-01-31,2027-01-31,-1.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Zavalla,"Lufkin, TX",Angelina County
+91066,17297,75760,zip,TX,2026-01-31,2027-01-31,0.9,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Cushing,"Nacogdoches, TX",Nacogdoches County
+91031,17736,75681,zip,TX,2026-01-31,2027-01-31,0.8,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Mount Enterprise,"Longview, TX",Rusk County
+90739,18008,75163,zip,TX,2026-01-31,2027-01-31,-0.2,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Trinidad,"Athens, TX",Henderson County
+91011,19394,75651,zip,TX,2026-01-31,2027-01-31,0.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Harleton,"Longview, TX",Harrison County
+91111,19769,75853,zip,TX,2026-01-31,2027-01-31,0.4,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Montalba,"Palestine, TX",Anderson County
+91024,20456,75667,zip,TX,2026-01-31,2027-01-31,0.7,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Laneville,"Longview, TX",Rusk County
+91145,20817,75943,zip,TX,2026-01-31,2027-01-31,0.9,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Douglass,"Nacogdoches, TX",Nacogdoches County
+90918,20873,75451,zip,TX,2026-01-31,2027-01-31,-1.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Leesburg,"Mount Pleasant, TX",Camp County
+91140,21105,75937,zip,TX,2026-01-31,2027-01-31,0.7,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Etoile,"Nacogdoches, TX",Nacogdoches County
+91146,23642,75944,zip,TX,2026-01-31,2027-01-31,0.9,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Etoile,"Nacogdoches, TX",Nacogdoches County
+91081,24959,75784,zip,TX,2026-01-31,2027-01-31,0.8,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Reklaw,"Longview, TX",Rusk County
+91169,30490,75976,zip,TX,2026-01-31,2027-01-31,-1.3,Zip_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv,growth,0,TX,Pollok,"Jacksonville, TX",Cherokee County

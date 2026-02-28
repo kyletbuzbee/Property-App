@@ -1,336 +1,200 @@
-'use client';
+"use client";
 
-import { useState, useMemo } from 'react';
-import clsx from 'clsx';
-import { PropertyWithCalculations } from '@/lib/calculations';
+import { useState, useMemo } from "react";
+import { PropertyWithCalculations } from "@/lib/calculations";
+import clsx from "clsx";
+import { 
+  SparklesIcon, 
+  ShieldCheckIcon, 
+  ExclamationTriangleIcon,
+  ScaleIcon,
+  CurrencyDollarIcon,
+  ChartBarIcon
+} from "@heroicons/react/24/outline";
 
 interface AIDealScoringProps {
   properties: PropertyWithCalculations[];
-  onPropertyClick?: (property: PropertyWithCalculations) => void;
-  onUpdateScore?: (propertyId: string, score: number) => void;
 }
 
-// Scoring factors with weights
-interface ScoringFactor {
-  name: string;
-  weight: number;
-  evaluate: (property: PropertyWithCalculations) => number;
-}
+export default function AIDealScoring({ properties }: AIDealScoringProps) {
+  const [selectedId, setSelectedId] = useState<string | null>(
+    properties.length > 0 ? properties[0].id : null
+  );
 
-const SCORING_FACTORS: ScoringFactor[] = [
-  {
-    name: 'Cap Rate',
-    weight: 0.20,
-    evaluate: (p) => {
-      if (p.capRate >= 10) return 100;
-      if (p.capRate >= 8) return 80;
-      if (p.capRate >= 6) return 60;
-      if (p.capRate >= 4) return 40;
-      return 20;
-    },
-  },
-  {
-    name: 'Cash-on-Cash Return',
-    weight: 0.20,
-    evaluate: (p) => {
-      if (p.cashOnCashReturn >= 20) return 100;
-      if (p.cashOnCashReturn >= 15) return 80;
-      if (p.cashOnCashReturn >= 10) return 60;
-      if (p.cashOnCashReturn >= 5) return 40;
-      return 20;
-    },
-  },
-  {
-    name: 'Equity Gap',
-    weight: 0.15,
-    evaluate: (p) => {
-      const ratio = p.equityGap / p.listPrice;
-      if (ratio >= 0.30) return 100;
-      if (ratio >= 0.20) return 80;
-      if (ratio >= 0.15) return 60;
-      if (ratio >= 0.10) return 40;
-      return 20;
-    },
-  },
-  {
-    name: '1% Rule',
-    weight: 0.15,
-    evaluate: (p) => p.onePercentRule ? 100 : 30,
-  },
-  {
-    name: 'Gross Yield',
-    weight: 0.10,
-    evaluate: (p) => {
-      if (p.grossYield >= 15) return 100;
-      if (p.grossYield >= 12) return 80;
-      if (p.grossYield >= 8) return 60;
-      if (p.grossYield >= 5) return 40;
-      return 20;
-    },
-  },
-  {
-    name: 'Price per SqFt',
-    weight: 0.10,
-    evaluate: (p) => {
-      // Lower is better - compare to average of $150/sqft
-      const avgPricePerSqft = 150;
-      const ratio = p.pricePerSqft / avgPricePerSqft;
-      if (ratio <= 0.7) return 100;
-      if (ratio <= 0.85) return 80;
-      if (ratio <= 1.0) return 60;
-      if (ratio <= 1.2) return 40;
-      return 20;
-    },
-  },
-  {
-    name: 'Decision Quality',
-    weight: 0.10,
-    evaluate: (p) => {
-      switch (p.decision) {
-        case 'Pass Platinum': return 100;
-        case 'Pass Gold': return 85;
-        case 'Pass Silver': return 70;
-        case 'Caution': return 40;
-        case 'Hard Fail': return 10;
-        default: return 50;
-      }
-    },
-  },
-];
+  const selectedProperty = useMemo(() => 
+    properties.find(p => p.id === selectedId) || properties[0],
+  [properties, selectedId]);
 
-// Calculate overall score for a property
-const calculateDealScore = (property: PropertyWithCalculations): number => {
-  let totalWeight = 0;
-  let weightedScore = 0;
+  if (!selectedProperty) {
+    return (
+      <div className="h-full flex items-center justify-center bg-white border border-slate-200 rounded-sm">
+        <div className="text-center">
+          <SparklesIcon className="w-12 h-12 text-slate-300 mx-auto mb-4" />
+          <h3 className="text-lg font-semibold text-slate-900">No properties analyzed</h3>
+          <p className="text-slate-500">Add properties to trigger institutional AI audits.</p>
+        </div>
+      </div>
+    );
+  }
 
-  SCORING_FACTORS.forEach(factor => {
-    const score = factor.evaluate(property);
-    weightedScore += score * factor.weight;
-    totalWeight += factor.weight;
-  });
+  const score = selectedProperty.dealScore || 0;
+  
+  const riskLevel = () => {
+    if (selectedProperty.decision === "HARD_FAIL")
+      return { label: "CRITICAL RISK", color: "text-danger", bg: "bg-danger/10", border: "border-danger/20", icon: ExclamationTriangleIcon };
+    if (selectedProperty.decision === "CAUTION")
+      return { label: "ELEVATED RISK", color: "text-warning", bg: "bg-warning/10", border: "border-warning/20", icon: ExclamationTriangleIcon };
+    return { label: "LOW RISK", color: "text-success", bg: "bg-success/10", border: "border-success/20", icon: ShieldCheckIcon };
+  };
 
-  return Math.round(weightedScore / totalWeight);
-};
-
-// Get risk level based on score
-const getRiskLevel = (score: number): { label: string; color: string } => {
-  if (score >= 80) return { label: 'Low Risk', color: 'text-emerald-400' };
-  if (score >= 60) return { label: 'Medium Risk', color: 'text-amber-400' };
-  if (score >= 40) return { label: 'High Risk', color: 'text-orange-400' };
-  return { label: 'Very High Risk', color: 'text-red-400' };
-};
-
-export default function AIDealScoring({ 
-  properties, 
-  onPropertyClick,
-  onUpdateScore 
-}: AIDealScoringProps) {
-  const [selectedPropertyId, setSelectedPropertyId] = useState<string | null>(null);
-  const [showDetails, setShowDetails] = useState(false);
-
-  // Calculate scores for all properties
-  const scoredProperties = useMemo(() => {
-    return properties.map(property => {
-      const score = calculateDealScore(property);
-      const risk = getRiskLevel(score);
-      return {
-        ...property,
-        dealScore: score,
-        riskLevel: risk.label,
-        riskColor: risk.color,
-      };
-    }).sort((a, b) => b.dealScore - a.dealScore);
-  }, [properties]);
-
-  // Get selected property details
-  const selectedProperty = useMemo(() => {
-    if (!selectedPropertyId) return null;
-    return scoredProperties.find(p => p.id === selectedPropertyId);
-  }, [selectedPropertyId, scoredProperties]);
-
-  // Calculate factor scores for selected property
-  const factorScores = useMemo(() => {
-    if (!selectedProperty) return [];
-    return SCORING_FACTORS.map(factor => ({
-      name: factor.name,
-      weight: factor.weight,
-      score: factor.evaluate(selectedProperty),
-    }));
-  }, [selectedProperty]);
+  const risk = riskLevel();
+  const RiskIcon = risk.icon;
 
   return (
-    <div className="w-full h-full flex flex-col bg-dark-900 rounded-lg overflow-hidden">
-      {/* Header */}
-      <div className="flex items-center justify-between p-4 border-b border-dark-700">
-        <div>
-          <h2 className="text-lg font-bold text-white">AI Deal Scoring</h2>
-          <p className="text-sm text-dark-400">Automated investment analysis</p>
-        </div>
-        <div className="flex items-center gap-2">
+    <div className="h-full grid grid-cols-12 gap-4">
+      {/* Sidebar - Property List */}
+      <div className="col-span-3 flex flex-col gap-2 overflow-y-auto pr-2">
+        <h3 className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2 px-1">Analyzed Deals</h3>
+        {properties.map((p) => (
           <button
-            onClick={() => setShowDetails(!showDetails)}
+            key={p.id}
+            onClick={() => setSelectedId(p.id)}
             className={clsx(
-              'px-3 py-1.5 rounded-lg text-sm font-medium transition-colors',
-              showDetails 
-                ? 'bg-primary-500 text-white' 
-                : 'bg-dark-700 text-dark-300 hover:bg-dark-600'
+              "flex flex-col p-3 rounded-sm border transition-all text-left",
+              selectedId === p.id
+                ? "bg-white border-primary-500 shadow-sm ring-1 ring-primary-500/10"
+                : "bg-slate-50 border-slate-200 hover:border-slate-300"
             )}
           >
-            {showDetails ? 'Hide Details' : 'Show Details'}
+            <span className="text-[13px] font-bold text-slate-900 truncate">{p.address}</span>
+            <div className="flex justify-between items-center mt-1">
+              <span className="text-[10px] font-mono font-bold text-slate-500 uppercase">{p.city}</span>
+              <span className={clsx(
+                "text-[10px] font-bold tabular-nums",
+                p.dealScore >= 80 ? "text-success" : p.dealScore >= 60 ? "text-warning" : "text-danger"
+              )}>
+                Score: {Math.round(p.dealScore)}
+              </span>
+            </div>
           </button>
-        </div>
+        ))}
       </div>
 
-      <div className="flex-1 overflow-auto p-4">
-        {/* Score Distribution */}
-        <div className="grid grid-cols-4 gap-3 mb-6">
-          <div className="bg-dark-800 rounded-lg p-3 text-center">
-            <p className="text-2xl font-bold text-emerald-400">
-              {scoredProperties.filter(p => p.dealScore >= 80).length}
-            </p>
-            <p className="text-xs text-dark-400">Excellent (80+)</p>
-          </div>
-          <div className="bg-dark-800 rounded-lg p-3 text-center">
-            <p className="text-2xl font-bold text-blue-400">
-              {scoredProperties.filter(p => p.dealScore >= 60 && p.dealScore < 80).length}
-            </p>
-            <p className="text-xs text-dark-400">Good (60-79)</p>
-          </div>
-          <div className="bg-dark-800 rounded-lg p-3 text-center">
-            <p className="text-2xl font-bold text-amber-400">
-              {scoredProperties.filter(p => p.dealScore >= 40 && p.dealScore < 60).length}
-            </p>
-            <p className="text-xs text-dark-400">Fair (40-59)</p>
-          </div>
-          <div className="bg-dark-800 rounded-lg p-3 text-center">
-            <p className="text-2xl font-bold text-red-400">
-              {scoredProperties.filter(p => p.dealScore < 40).length}
-            </p>
-            <p className="text-xs text-dark-400">Poor ({'<'}40)</p>
-          </div>
-        </div>
-
-        {/* Property List */}
-        <div className="space-y-2">
-          {scoredProperties.slice(0, 15).map((property, index) => (
-            <div
-              key={property.id}
-              onClick={() => setSelectedPropertyId(property.id)}
-              className={clsx(
-                'bg-dark-800 rounded-lg p-4 cursor-pointer transition-colors',
-                selectedPropertyId === property.id 
-                  ? 'ring-2 ring-primary-500' 
-                  : 'hover:bg-dark-700'
-              )}
-            >
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className={clsx(
-                    'w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold',
-                    property.dealScore >= 80 ? 'bg-emerald-500/20 text-emerald-400' :
-                    property.dealScore >= 60 ? 'bg-blue-500/20 text-blue-400' :
-                    property.dealScore >= 40 ? 'bg-amber-500/20 text-amber-400' :
-                    'bg-red-500/20 text-red-400'
-                  )}>
-                    {property.dealScore}
-                  </div>
-                  <div>
-                    <p className="font-medium text-white">{property.address}</p>
-                    <p className="text-sm text-dark-400">{property.city} • {property.strategy}</p>
-                  </div>
-                </div>
-                <div className="text-right">
-                  <p className={clsx('font-medium', property.riskColor)}>
-                    {property.riskLevel}
-                  </p>
-                  <p className="text-sm text-dark-400">
-                    ${property.listPrice.toLocaleString()}
-                  </p>
-                </div>
-              </div>
-
-              {/* Score Bar */}
-              <div className="mt-3">
-                <div className="h-2 bg-dark-700 rounded-full overflow-hidden">
-                  <div 
-                    className={clsx(
-                      'h-full rounded-full transition-all',
-                      property.dealScore >= 80 ? 'bg-emerald-500' :
-                      property.dealScore >= 60 ? 'bg-blue-500' :
-                      property.dealScore >= 40 ? 'bg-amber-500' :
-                      'bg-red-500'
-                    )}
-                    style={{ width: `${property.dealScore}%` }}
-                  />
-                </div>
-              </div>
+      {/* Main Analysis View */}
+      <div className="col-span-9 flex flex-col gap-4 overflow-y-auto pb-4">
+        {/* Header Section */}
+        <div className="bento-card flex justify-between items-center py-6">
+          <div className="flex items-center gap-4">
+            <div className={clsx("p-3 rounded-sm", risk.bg, risk.border, "border shadow-sm")}>
+              <RiskIcon className={clsx("w-8 h-8", risk.color)} />
             </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Detail Panel */}
-      {selectedProperty && (
-        <div className="p-4 border-t border-dark-700 bg-dark-800">
-          <div className="flex justify-between items-start mb-4">
             <div>
-              <h3 className="font-bold text-white">{selectedProperty.address}</h3>
-              <p className="text-sm text-dark-400">{selectedProperty.city}, {selectedProperty.state}</p>
+              <h2 className="text-xl font-bold text-slate-900 tracking-tight">{selectedProperty.address}</h2>
+              <div className="flex items-center gap-3 mt-1">
+                <span className={clsx("px-2 py-0.5 rounded-sm text-[10px] font-black tracking-tight", risk.bg, risk.color, risk.border, "border")}>
+                  {risk.label}
+                </span>
+                <span className="text-[11px] text-slate-500 font-bold uppercase tracking-wider">
+                  Audit Confidence: {Math.round(score)}%
+                </span>
+              </div>
             </div>
-            <button
-              onClick={() => onPropertyClick?.(selectedProperty)}
-              className="px-3 py-1.5 bg-primary-500 text-white rounded-lg text-sm hover:bg-primary-600 transition-colors"
-            >
-              View Property
-            </button>
+          </div>
+          <div className="text-right">
+            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Audit Score</p>
+            <p className={clsx("text-5xl font-black italic tracking-tighter tabular-nums", 
+              score >= 80 ? "text-success" : score >= 60 ? "text-warning" : "text-danger")}>
+              {Math.round(score)}
+            </p>
+          </div>
+        </div>
+
+        {/* Bento Grid Metrics */}
+        <div className="grid grid-cols-3 gap-4">
+          <div className="bento-card flex flex-col justify-between">
+            <div className="flex items-center gap-2 mb-4">
+              <ScaleIcon className="w-4 h-4 text-primary-500" />
+              <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Acquisition Targets</span>
+            </div>
+            <div className="space-y-3">
+              <div className="flex justify-between items-baseline border-b border-slate-50 pb-2">
+                <span className="text-[11px] font-medium text-slate-500">Target MAO (25k)</span>
+                <span className="text-sm font-mono font-bold text-slate-900 tabular-nums">${selectedProperty.mao25k.toLocaleString()}</span>
+              </div>
+              <div className="flex justify-between items-baseline border-b border-slate-50 pb-2">
+                <span className="text-[11px] font-medium text-slate-500">Target MAO (50k)</span>
+                <span className="text-sm font-mono font-bold text-slate-900 tabular-nums">${selectedProperty.mao50k.toLocaleString()}</span>
+              </div>
+            </div>
           </div>
 
-          {showDetails && (
-            <div className="space-y-2">
-              {factorScores.map((factor, index) => (
-                <div key={index} className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <span className="text-sm text-dark-400">{factor.name}</span>
-                    <span className="text-xs text-dark-500">({(factor.weight * 100).toFixed(0)}%)</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-20 h-1.5 bg-dark-700 rounded-full overflow-hidden">
-                      <div 
-                        className={clsx(
-                          'h-full rounded-full',
-                          factor.score >= 80 ? 'bg-emerald-500' :
-                          factor.score >= 60 ? 'bg-blue-500' :
-                          factor.score >= 40 ? 'bg-amber-500' :
-                          'bg-red-500'
-                        )}
-                        style={{ width: `${factor.score}%` }}
-                      />
-                    </div>
-                    <span className="text-sm text-white w-8 text-right">{factor.score}</span>
-                  </div>
-                </div>
-              ))}
+          <div className="bento-card flex flex-col justify-between">
+            <div className="flex items-center gap-2 mb-4">
+              <CurrencyDollarIcon className="w-4 h-4 text-success" />
+              <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Valuation Model</span>
             </div>
-          )}
+            <div className="space-y-3">
+              <div className="flex justify-between items-baseline border-b border-slate-50 pb-2">
+                <span className="text-[11px] font-medium text-slate-500">After Repair Value</span>
+                <span className="text-sm font-mono font-bold text-slate-900 tabular-nums">${selectedProperty.afterRepairValue.toLocaleString()}</span>
+              </div>
+              <div className="flex justify-between items-baseline border-b border-slate-50 pb-2">
+                <span className="text-[11px] font-medium text-slate-500">Rehab Budget</span>
+                <span className="text-sm font-mono font-bold text-slate-900 tabular-nums">${selectedProperty.renovationBudget.toLocaleString()}</span>
+              </div>
+            </div>
+          </div>
 
-          {!showDetails && (
-            <div className="grid grid-cols-3 gap-4 text-sm">
-              <div>
-                <p className="text-dark-500">Cap Rate</p>
-                <p className="text-white">{selectedProperty.capRate.toFixed(2)}%</p>
+          <div className="bento-card flex flex-col justify-between">
+            <div className="flex items-center gap-2 mb-4">
+              <ChartBarIcon className="w-4 h-4 text-warning" />
+              <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Risk Analysis</span>
+            </div>
+            <div className="space-y-3">
+              <div className="flex justify-between items-baseline border-b border-slate-50 pb-2">
+                <span className="text-[11px] font-medium text-slate-500">Rehab Tier</span>
+                <span className="text-sm font-bold text-warning uppercase tracking-tight">{selectedProperty.rehabTier}</span>
               </div>
-              <div>
-                <p className="text-dark-500">Cash-on-Cash</p>
-                <p className="text-white">{selectedProperty.cashOnCashReturn.toFixed(2)}%</p>
-              </div>
-              <div>
-                <p className="text-dark-500">Equity Gap</p>
-                <p className="text-amber-400">${selectedProperty.equityGap.toLocaleString()}</p>
+              <div className="flex justify-between items-baseline border-b border-slate-50 pb-2">
+                <span className="text-[11px] font-medium text-slate-500">Decision Signal</span>
+                <span className={clsx("text-sm font-bold uppercase tracking-tight", risk.color)}>{selectedProperty.decision}</span>
               </div>
             </div>
-          )}
+          </div>
         </div>
-      )}
+
+        {/* Narrative Block (Terminal Card) */}
+        <div className="narrative-block shadow-lg">
+          <div className="flex items-center gap-2 mb-4 pb-2 border-b border-slate-800">
+            <div className="flex gap-1.5">
+              <div className="w-2.5 h-2.5 rounded-full bg-slate-700" />
+              <div className="w-2.5 h-2.5 rounded-full bg-slate-700" />
+              <div className="w-2.5 h-2.5 rounded-full bg-slate-700" />
+            </div>
+            <span className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] ml-2">Audit Narrative Output v4.2</span>
+          </div>
+          
+          <div className="space-y-4 font-mono">
+            {selectedProperty.rationale.split('\n').map((line, i) => {
+              if (line.includes(':')) {
+                const [header, content] = line.split(':');
+                return (
+                  <div key={i}>
+                    <span className="text-slate-500 font-bold uppercase mr-2">{header}:</span>
+                    <span className="text-slate-300">{content}</span>
+                  </div>
+                );
+              }
+              return <p key={i} className="text-slate-300">{line}</p>;
+            })}
+          </div>
+          
+          <div className="mt-6 flex items-center gap-2 text-primary-500 animate-pulse">
+            <span className="text-xs font-black">_</span>
+            <span className="text-[10px] font-bold uppercase tracking-widest">End of Audit Report</span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

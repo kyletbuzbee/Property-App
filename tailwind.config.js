@@ -1,50 +1,51 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  darkMode: 'class',
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
+        institutional: {
+          slate: "#0f172a", // Slate-900
+          navy: "#1e293b", // Slate-800
+          charcoal: "#334155", // Slate-700
+          border: "#e2e8f0", // Slate-200
+          bg: "#f8fafc", // Slate-50
+          card: "#ffffff",
+        },
         primary: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#0ea5e9',
-          600: '#0284c7',
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c4a6e',
+          50: "#f0f9ff",
+          100: "#e0f2fe",
+          200: "#bae6fd",
+          300: "#7dd3fc",
+          400: "#38bdf8",
+          500: "#0ea5e9",
+          600: "#0284c7",
+          700: "#0369a1",
+          800: "#075985",
+          900: "#0c4a6e",
         },
-        dark: {
-          50: '#f8fafc',
-          100: '#f1f5f9',
-          200: '#e2e8f0',
-          300: '#cbd5e1',
-          400: '#94a3b8',
-          500: '#64748b',
-          600: '#475569',
-          700: '#334155',
-          800: '#1e293b',
-          900: '#0f172a',
-          950: '#020617',
-        },
-        platinum: '#10b981',
-        gold: '#f59e0b',
-        silver: '#f97316',
-        hardfail: '#ef4444',
-        caution: '#8b5cf6',
+        // Muted semantic colors
+        success: "#059669", // emerald-600
+        danger: "#be123c", // rose-700
+        warning: "#d97706", // amber-600
+        info: "#2563eb", // blue-600
+
+        platinum: "#059669",
+        gold: "#d97706",
+        silver: "#ea580c",
+        hardfail: "#be123c",
+        caution: "#7c3aed",
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
+        sans: ["Inter", "system-ui", "sans-serif"],
+        mono: ["JetBrains Mono", "monospace"],
       },
     },
   },
   plugins: [],
-}
+};

@@ -1,43 +1,47 @@
-
-import { NextRequest, NextResponse } from 'next/server'
-import { prisma, authenticateRequest, canManageMaintenance, AuthContext } from '../../../lib/db'
+import { NextRequest, NextResponse } from "next/server";
+import {
+  prisma,
+  authenticateRequest,
+  canManageMaintenance,
+  AuthContext,
+} from "../../../lib/db";
 
 // Helper to get user's organization and role
 async function getUserOrgContext(context: AuthContext) {
-  if (!context.user) return null
+  if (!context.user) return null;
 
   const orgUser = await prisma.organizationUser.findFirst({
     where: { userId: context.user.id },
     include: { organization: true },
-    orderBy: { createdAt: 'desc' },
-  })
+    orderBy: { createdAt: "desc" },
+  });
 
-  return orgUser
+  return orgUser;
 }
 
 // GET /api/vendors/[id] - Get single vendor
 export async function GET(
   request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: Promise<{ id: string }> },
 ) {
   try {
-    const { id } = await params
-    const { context, error } = await authenticateRequest(request)
-    if (error) return error
+    const { id } = await params;
+    const { context, error } = await authenticateRequest(request);
+    if (error) return error;
 
     if (!canManageMaintenance(context.role)) {
       return NextResponse.json(
-        { error: 'Insufficient permissions to view vendor' },
-        { status: 403 }
-      )
+        { error: "Insufficient permissions to view vendor" },
+        { status: 403 },
+      );
     }
 
-    const orgUser = await getUserOrgContext(context)
+    const orgUser = await getUserOrgContext(context);
     if (!orgUser) {
       return NextResponse.json(
-        { error: 'No organization found' },
-        { status: 404 }
-      )
+        { error: "No organization found" },
+        { status: 404 },
+      );
     }
 
     const vendor = await prisma.vendor.findFirst({
@@ -45,7 +49,7 @@ export async function GET(
       include: {
         maintenanceRequests: {
           take: 10,
-          orderBy: { createdAt: 'desc' },
+          orderBy: { createdAt: "desc" },
           include: {
             property: {
               select: { id: true, address: true, city: true, state: true },
@@ -53,18 +57,20 @@ export async function GET(
           },
         },
       },
-    })
+    });
 
     if (!vendor) {
-      return NextResponse.json(
-        { error: 'Vendor not found' },
-        { status: 404 }
-      )
+      return NextResponse.json({ error: "Vendor not found" }, { status: 404 });
     }
 
     // Calculate vendor stats
-    const completedJobs = vendor.maintenanceRequests.filter(j => j.status === 'COMPLETED')
-    const totalSpent = completedJobs.reduce((sum, j) => sum + (j.actualCost || 0), 0)
+    const completedJobs = vendor.maintenanceRequests.filter(
+      (j) => j.status === "COMPLETED",
+    );
+    const totalSpent = completedJobs.reduce(
+      (sum, j) => sum + (j.actualCost || 0),
+      0,
+    );
 
     return NextResponse.json({
       vendor: {
@@ -92,53 +98,50 @@ export async function GET(
         createdAt: vendor.createdAt,
         updatedAt: vendor.updatedAt,
       },
-    })
+    });
   } catch (error) {
-    console.error('Error fetching vendor:', error)
+    console.error("Error fetching vendor:", error);
     return NextResponse.json(
-      { error: 'Failed to fetch vendor' },
-      { status: 500 }
-    )
+      { error: "Failed to fetch vendor" },
+      { status: 500 },
+    );
   }
 }
 
 // PUT /api/vendors/[id] - Update a vendor
 export async function PUT(
   request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: Promise<{ id: string }> },
 ) {
   try {
-    const { id } = await params
-    const { context, error } = await authenticateRequest(request)
-    if (error) return error
+    const { id } = await params;
+    const { context, error } = await authenticateRequest(request);
+    if (error) return error;
 
     if (!canManageMaintenance(context.role)) {
       return NextResponse.json(
-        { error: 'Insufficient permissions to update vendor' },
-        { status: 403 }
-      )
+        { error: "Insufficient permissions to update vendor" },
+        { status: 403 },
+      );
     }
 
-    const orgUser = await getUserOrgContext(context)
+    const orgUser = await getUserOrgContext(context);
     if (!orgUser) {
       return NextResponse.json(
-        { error: 'No organization found' },
-        { status: 404 }
-      )
+        { error: "No organization found" },
+        { status: 404 },
+      );
     }
 
     const existingVendor = await prisma.vendor.findFirst({
       where: { id, organizationId: orgUser.organizationId },
-    })
+    });
 
     if (!existingVendor) {
-      return NextResponse.json(
-        { error: 'Vendor not found' },
-        { status: 404 }
-      )
+      return NextResponse.json({ error: "Vendor not found" }, { status: 404 });
     }
 
-    const body = await request.json()
+    const body = await request.json();
     const {
       name,
       email,
@@ -154,7 +157,7 @@ export async function PUT(
       licenseNumber,
       insuranceExpiry,
       notes,
-    } = body
+    } = body;
 
     const vendor = await prisma.vendor.update({
       where: { id },
@@ -171,108 +174,107 @@ export async function PUT(
         rating,
         isVerified,
         licenseNumber,
-        insuranceExpiry: insuranceExpiry ? new Date(insuranceExpiry) : undefined,
+        insuranceExpiry: insuranceExpiry
+          ? new Date(insuranceExpiry)
+          : undefined,
         notes,
       },
-    })
+    });
 
     // Log activity
     await prisma.activity.create({
       data: {
         organizationId: orgUser.organizationId,
         userId: context.user?.id,
-        action: 'VENDOR_UPDATED',
-        targetType: 'vendor',
+        action: "VENDOR_UPDATED",
+        targetType: "vendor",
         targetId: vendor.id,
         details: { name: vendor.name },
       },
-    })
+    });
 
     return NextResponse.json({
       vendor,
-      message: 'Vendor updated successfully',
-    })
+      message: "Vendor updated successfully",
+    });
   } catch (error) {
-    console.error('Error updating vendor:', error)
+    console.error("Error updating vendor:", error);
     return NextResponse.json(
-      { error: 'Failed to update vendor' },
-      { status: 500 }
-    )
+      { error: "Failed to update vendor" },
+      { status: 500 },
+    );
   }
 }
 
 // DELETE /api/vendors/[id] - Delete a vendor
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: Promise<{ id: string }> },
 ) {
   try {
-    const { id } = await params
-    const { context, error } = await authenticateRequest(request)
-    if (error) return error
+    const { id } = await params;
+    const { context, error } = await authenticateRequest(request);
+    if (error) return error;
 
     // Only ADMIN and above can delete
-    if (!context.role || !['OWNER', 'ADMIN'].includes(context.role)) {
+    if (!context.role || !["OWNER", "ADMIN"].includes(context.role)) {
       return NextResponse.json(
-        { error: 'Insufficient permissions to delete vendor' },
-        { status: 403 }
-      )
+        { error: "Insufficient permissions to delete vendor" },
+        { status: 403 },
+      );
     }
 
-    const orgUser = await getUserOrgContext(context)
+    const orgUser = await getUserOrgContext(context);
     if (!orgUser) {
       return NextResponse.json(
-        { error: 'No organization found' },
-        { status: 404 }
-      )
+        { error: "No organization found" },
+        { status: 404 },
+      );
     }
 
     const existingVendor = await prisma.vendor.findFirst({
       where: { id, organizationId: orgUser.organizationId },
-    })
+    });
 
     if (!existingVendor) {
-      return NextResponse.json(
-        { error: 'Vendor not found' },
-        { status: 404 }
-      )
+      return NextResponse.json({ error: "Vendor not found" }, { status: 404 });
     }
 
     // Check for associated maintenance requests
     const jobCount = await prisma.maintenanceRequest.count({
       where: { vendorId: id },
-    })
+    });
 
     if (jobCount > 0) {
       return NextResponse.json({
-        message: 'Cannot delete vendor with associated jobs',
-      })
+        message: "Cannot delete vendor with associated jobs",
+      });
     }
 
     await prisma.vendor.delete({
       where: { id },
-    })
+    });
 
     // Log activity
     await prisma.activity.create({
       data: {
         organizationId: orgUser.organizationId,
         userId: context.user?.id,
-        action: 'VENDOR_DELETED',
-        targetType: 'vendor',
+        action: "VENDOR_DELETED",
+        targetType: "vendor",
         targetId: id,
         details: { name: existingVendor.name },
       },
-    })
+    });
 
     return NextResponse.json({
-      message: 'Vendor deleted successfully',
-    })
+      message: "Vendor deleted successfully",
+    });
   } catch (error) {
-    console.error('Error deleting vendor:', error)
+    console.error("Error deleting vendor:", error);
     return NextResponse.json(
-      { error: 'Failed to delete vendor' },
-      { status: 500 }
-    )
+      { error: "Failed to delete vendor" },
+      { status: 500 },
+    );
   }
 }

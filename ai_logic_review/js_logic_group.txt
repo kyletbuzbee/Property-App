@@ -2,14 +2,14 @@
 ================================================================================
 FILE_BEGIN: next.config.js
 TYPE: JS
-SIZE: 116 bytes
+SIZE: 118 bytes
 ================================================================================
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-}
+};
 
-export default nextConfig
+export default nextConfig;
 
 
 [FILE_END: next.config.js]
@@ -18,14 +18,14 @@ export default nextConfig
 ================================================================================
 FILE_BEGIN: postcss.config.js
 TYPE: JS
-SIZE: 80 bytes
+SIZE: 81 bytes
 ================================================================================
 export default {
   plugins: {
     tailwindcss: {},
     autoprefixer: {},
   },
-}
+};
 
 
 [FILE_END: postcss.config.js]
@@ -34,28 +34,28 @@ export default {
 ================================================================================
 FILE_BEGIN: prisma\simple-seed.js
 TYPE: JS
-SIZE: 1463 bytes
+SIZE: 1464 bytes
 ================================================================================
-import pkg from '@prisma/client';
+import pkg from "@prisma/client";
 const { PrismaClient } = pkg;
 
 const prisma = new PrismaClient();
 
 async function main() {
-  console.log('Starting seed...');
+  console.log("Starting seed...");
 
   // Clear existing properties
   await prisma.property.deleteMany({});
-  console.log('Cleared existing properties');
+  console.log("Cleared existing properties");
 
   // Insert properties from the data file
   const properties = [
     {
-      id: 'brrr-1',
-      address: '309 E Brandon St',
-      city: 'Overton',
-      state: 'TX',
-      zip: '75684',
+      id: "brrr-1",
+      address: "309 E Brandon St",
+      city: "Overton",
+      state: "TX",
+      zip: "75684",
       lat: 32.2757,
       lng: -94.9427,
       listPrice: 149900,
@@ -63,10 +63,10 @@ async function main() {
       sqft: 1700,
       bedrooms: 3,
       bathrooms: 3,
-      decision: 'Pass Platinum',
-      strategy: 'Section 8',
-      rationale: 'Multi-family potential in rental desert; high yield',
-      type: 'Multi-family home for sale',
+      decision: "Pass Platinum",
+      strategy: "Section 8",
+      rationale: "Multi-family potential in rental desert; high yield",
+      type: "Multi-family home for sale",
       realtor: null,
       url: null,
       details: null,
@@ -76,7 +76,7 @@ async function main() {
       annualInsurance: 0,
       renovationBudget: 0,
       afterRepairValue: 0,
-      notes: '',
+      notes: "",
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
     },
@@ -94,12 +94,13 @@ async function main() {
 
 main()
   .catch((e) => {
-    console.error('Seed error:', e);
+    console.error("Seed error:", e);
     process.exit(1);
   })
   .finally(async () => {
     await prisma.$disconnect();
   });
+
 
 [FILE_END: prisma\simple-seed.js]
 ################################################################################
@@ -107,58 +108,59 @@ main()
 ================================================================================
 FILE_BEGIN: tailwind.config.js
 TYPE: JS
-SIZE: 1180 bytes
+SIZE: 1182 bytes
 ================================================================================
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  darkMode: 'class',
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
         primary: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#0ea5e9',
-          600: '#0284c7',
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c4a6e',
+          50: "#f0f9ff",
+          100: "#e0f2fe",
+          200: "#bae6fd",
+          300: "#7dd3fc",
+          400: "#38bdf8",
+          500: "#0ea5e9",
+          600: "#0284c7",
+          700: "#0369a1",
+          800: "#075985",
+          900: "#0c4a6e",
         },
         dark: {
-          50: '#f8fafc',
-          100: '#f1f5f9',
-          200: '#e2e8f0',
-          300: '#cbd5e1',
-          400: '#94a3b8',
-          500: '#64748b',
-          600: '#475569',
-          700: '#334155',
-          800: '#1e293b',
-          900: '#0f172a',
-          950: '#020617',
+          50: "#f8fafc",
+          100: "#f1f5f9",
+          200: "#e2e8f0",
+          300: "#cbd5e1",
+          400: "#94a3b8",
+          500: "#64748b",
+          600: "#475569",
+          700: "#334155",
+          800: "#1e293b",
+          900: "#0f172a",
+          950: "#020617",
         },
-        platinum: '#10b981',
-        gold: '#f59e0b',
-        silver: '#f97316',
-        hardfail: '#ef4444',
-        caution: '#8b5cf6',
+        platinum: "#10b981",
+        gold: "#f59e0b",
+        silver: "#f97316",
+        hardfail: "#ef4444",
+        caution: "#8b5cf6",
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
+        sans: ["Inter", "system-ui", "sans-serif"],
+        mono: ["JetBrains Mono", "monospace"],
       },
     },
   },
   plugins: [],
-}
+};
+
 
 [FILE_END: tailwind.config.js]
 ################################################################################
@@ -166,9 +168,9 @@ export default {
 ================================================================================
 FILE_BEGIN: take-screenshots.js
 TYPE: JS
-SIZE: 945 bytes
+SIZE: 947 bytes
 ================================================================================
-import { chromium } from 'playwright';
+import { chromium } from "playwright";
 
 (async () => {
   const browser = await chromium.launch();
@@ -176,24 +178,29 @@ import { chromium } from 'playwright';
   const page = await context.newPage();
 
   const viewports = [
-    { width: 375, height: 667, name: 'mobile' },
-    { width: 768, height: 1024, name: 'tablet' },
-    { width: 1024, height: 768, name: 'tablet-landscape' },
-    { width: 1920, height: 1080, name: 'desktop' },
+    { width: 375, height: 667, name: "mobile" },
+    { width: 768, height: 1024, name: "tablet" },
+    { width: 1024, height: 768, name: "tablet-landscape" },
+    { width: 1920, height: 1080, name: "desktop" },
   ];
 
   for (const viewport of viewports) {
-    await page.setViewportSize({ width: viewport.width, height: viewport.height });
-    await page.goto('http://localhost:3001');
-    await page.screenshot({ 
-      path: `reports/screenshot-${viewport.name}-${viewport.width}x${viewport.height}.png`,
-      fullPage: true 
+    await page.setViewportSize({
+      width: viewport.width,
+      height: viewport.height,
     });
-    console.log(`Screenshot taken: ${viewport.name} (${viewport.width}x${viewport.height})`);
+    await page.goto("http://localhost:3001");
+    await page.screenshot({
+      path: `reports/screenshot-${viewport.name}-${viewport.width}x${viewport.height}.png`,
+      fullPage: true,
+    });
+    console.log(
+      `Screenshot taken: ${viewport.name} (${viewport.width}x${viewport.height})`,
+    );
   }
 
   await browser.close();
-  console.log('All screenshots completed!');
+  console.log("All screenshots completed!");
 })();
 
 

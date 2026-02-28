@@ -1,0 +1,1504 @@
+metropolitan_area_name,efficiency,one_bedroom,two_bedroom,three_bedroom,four_bedroom,fmr_percentile,unnamed:_7,year
+"Abilene, TX MSA",$688,$732,$945,"$1,288","$1,598",40,,2025
+"Amarillo, TX HUD Metro FMR Area",$621,$713,$908,"$1,230","$1,421",40,,2025
+"Atascosa County, TX HUD Metro FMR Area",$640,$801,$913,"$1,129","$1,505",40,,2025
+"Austin County, TX HUD Metro FMR Area",$606,$778,$912,"$1,258","$1,561",40,,2025
+"Austin-Round Rock, TX MSA","$1,092","$1,236","$1,451","$1,867","$2,194",40,,2025
+"Beaumont-Port Arthur, TX MSA",$747,$798,$982,"$1,281","$1,332",40,,2025
+"Brazoria County, TX HUD Metro FMR Area",$783,"$1,035","$1,179","$1,543","$2,018",40,,2025
+"Brownsville-Harlingen, TX MSA",$598,$631,$803,"$1,043","$1,206",40,,2025
+"College Station-Bryan, TX MSA",$759,$841,$975,"$1,385","$1,582",40,,2025
+"Corpus Christi, TX MSA",$822,$909,"$1,118","$1,474","$1,720",40,,2025
+"Dallas, TX HUD Metro FMR Area","$1,076","$1,150","$1,362","$1,736","$2,280",40,,2025
+"El Paso, TX HUD Metro FMR Area",$558,$701,$840,"$1,174","$1,438",40,,2025
+"Falls County, TX HUD Metro FMR Area",$556,$633,$757,"$1,075","$1,296",40,,2025
+"Fort Worth-Arlington, TX HUD Metro FMR Area",$939,"$1,064","$1,269","$1,685","$2,098",40,,2025
+"Harrison County, TX HUD Metro FMR Area",$630,$712,$899,"$1,112","$1,219",40,,2025
+"Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area",$944,"$1,014","$1,208","$1,603","$2,058",40,,2025
+"Hudspeth County, TX HUD Metro FMR Area",$503,$631,$757,$936,"$1,296",40,,2025
+"Kendall County, TX HUD Metro FMR Area",$902,"$1,087","$1,358","$1,679","$2,130",40,,2025
+"Killeen-Temple, TX HUD Metro FMR Area",$637,$641,$815,"$1,158","$1,395",40,,2025
+"Lampasas County, TX HUD Metro FMR Area",$601,$605,$796,"$1,083","$1,087",40,,2025
+"Laredo, TX MSA",$756,$760,$942,"$1,222","$1,349",40,,2025
+"Longview, TX HUD Metro FMR Area",$687,$786,$924,"$1,276","$1,467",40,,2025
+"Lubbock, TX HUD Metro FMR Area",$670,$773,$951,"$1,348","$1,618",40,,2025
+"Lynn County, TX HUD Metro FMR Area",$534,$616,$757,"$1,075","$1,284",40,,2025
+"Martin County, TX HUD Metro FMR Area",$611,$615,$757,"$1,075","$1,296",40,,2025
+"McAllen-Edinburg-Mission, TX MSA",$633,$637,$817,"$1,062","$1,176",40,,2025
+"Medina County, TX HUD Metro FMR Area",$637,$692,$910,"$1,170","$1,309",40,,2025
+"Midland, TX HUD Metro FMR Area","$1,158","$1,165","$1,433","$1,771","$2,453",40,,2025
+"Odessa, TX MSA",$884,$934,"$1,229","$1,519","$1,771",40,,2025
+"Oldham County, TX HUD Metro FMR Area",$676,$775,$988,"$1,221","$1,546",40,,2025
+"Rusk County, TX HUD Metro FMR Area",$638,$642,$845,"$1,070","$1,289",40,,2025
+"San Angelo, TX HUD Metro FMR Area",$659,$790,$992,"$1,314","$1,629",40,,2025
+"San Antonio-New Braunfels, TX HUD Metro FMR Area",$815,$961,"$1,165","$1,500","$1,849",40,,2025
+"Sherman-Denison, TX MSA",$661,$830,$985,"$1,316","$1,570",40,,2025
+"Sterling County, TX HUD Metro FMR Area",$659,$790,$992,"$1,314","$1,629",40,,2025
+"Texarkana, TX-Texarkana, AR HUD Metro FMR Area",$669,$670,$838,"$1,046","$1,344",40,,2025
+"Tyler, TX MSA",$852,$857,"$1,037","$1,308","$1,669",40,,2025
+"Victoria, TX MSA",$788,$861,"$1,068","$1,367","$1,563",40,,2025
+"Waco, TX HUD Metro FMR Area",$673,$716,$915,"$1,215","$1,300",40,,2025
+"Wichita Falls, TX MSA",$641,$707,$878,"$1,197","$1,362",40,,2025
+"Wise County, TX HUD Metro FMR Area",$857,$872,$994,"$1,335","$1,399",40,,2025
+FY2022 Texas FMR Local Area Summary,,,,,,,,2025
+Locality Name,Metropolitan Area Name,Efficiency,One-Bedroom,Two-Bedroom,Three-Bedroom,Four-Bedroom,FMR Percentile,2025
+Anderson County,"Anderson County, TX",$615,$685,$831,"$1,164","$1,388",40,2025
+Andrews County,"Andrews County, TX",$798,$902,"$1,079","$1,398","$1,625",40,2025
+Angelina County,"Angelina County, TX",$737,$741,$881,"$1,101","$1,195",40,2025
+Aransas County,"Aransas County, TX",$730,$844,$986,"$1,401","$1,440",40,2025
+Archer County,"Wichita Falls, TX MSA",$641,$707,$878,"$1,197","$1,362",40,2025
+Armstrong County,"Amarillo, TX HUD Metro FMR Area",$621,$713,$908,"$1,230","$1,421",40,2025
+Atascosa County,"Atascosa County, TX HUD Metro FMR Area",$640,$801,$913,"$1,129","$1,505",40,2025
+Austin County,"Austin County, TX HUD Metro FMR Area",$606,$778,$912,"$1,258","$1,561",40,2025
+Bailey County,"Bailey County, TX",$560,$600,$757,$996,"$1,105",40,2025
+Bandera County,"San Antonio-New Braunfels, TX HUD Metro FMR Area",$815,$961,"$1,165","$1,500","$1,849",40,2025
+Bastrop County,"Austin-Round Rock, TX MSA","$1,092","$1,236","$1,451","$1,867","$2,194",40,2025
+Baylor County,"Baylor County, TX",$560,$650,$757,"$1,075","$1,105",40,2025
+Bee County,"Bee County, TX",$715,$735,$967,"$1,340","$1,529",40,2025
+Bell County,"Killeen-Temple, TX HUD Metro FMR Area",$637,$641,$815,"$1,158","$1,395",40,2025
+Bexar County,"San Antonio-New Braunfels, TX HUD Metro FMR Area",$815,$961,"$1,165","$1,500","$1,849",40,2025
+Blanco County,"Blanco County, TX",$719,$770,$972,"$1,202","$1,344",40,2025
+Borden County,"Borden County, TX",$608,$652,$822,"$1,084","$1,200",40,2025
+Bosque County,"Bosque County, TX",$574,$590,$776,"$1,007","$1,052",40,2025
+Bowie County,"Texarkana, TX-Texarkana, AR HUD Metro FMR Area",$669,$670,$838,"$1,046","$1,344",40,2025
+Brazoria County,"Brazoria County, TX HUD Metro FMR Area",$783,"$1,035","$1,179","$1,543","$2,018",40,2025
+Brazos County,"College Station-Bryan, TX MSA",$759,$841,$975,"$1,385","$1,582",40,2025
+Brewster County,"Brewster County, TX",$644,$698,$871,"$1,081","$1,271",40,2025
+Briscoe County,"Briscoe County, TX",$560,$600,$757,"$1,075","$1,105",40,2025
+Brooks County,"Brooks County, TX",$560,$600,$757,$937,"$1,105",40,2025
+Brown County,"Brown County, TX",$567,$648,$853,"$1,138","$1,259",40,2025
+Burleson County,"College Station-Bryan, TX MSA",$759,$841,$975,"$1,385","$1,582",40,2025
+Burnet County,"Burnet County, TX",$696,$779,$908,"$1,264","$1,269",40,2025
+Caldwell County,"Austin-Round Rock, TX MSA","$1,092","$1,236","$1,451","$1,867","$2,194",40,2025
+Calhoun County,"Calhoun County, TX",$548,$724,$825,"$1,154","$1,205",40,2025
+Callahan County,"Abilene, TX MSA",$688,$732,$945,"$1,288","$1,598",40,2025
+Cameron County,"Brownsville-Harlingen, TX MSA",$598,$631,$803,"$1,043","$1,206",40,2025
+Camp County,"Camp County, TX",$560,$611,$757,"$1,075","$1,244",40,2025
+Carson County,"Amarillo, TX HUD Metro FMR Area",$621,$713,$908,"$1,230","$1,421",40,2025
+Cass County,"Cass County, TX",$560,$575,$757,"$1,061","$1,216",40,2025
+Castro County,"Castro County, TX",$560,$664,$757,"$1,075","$1,105",40,2025
+Chambers County,"Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area",$944,"$1,014","$1,208","$1,603","$2,058",40,2025
+Cherokee County,"Cherokee County, TX",$514,$591,$773,"$1,044","$1,048",40,2025
+Childress County,"Childress County, TX",$652,$670,$881,"$1,089","$1,286",40,2025
+Clay County,"Wichita Falls, TX MSA",$641,$707,$878,"$1,197","$1,362",40,2025
+Cochran County,"Cochran County, TX",$560,$600,$757,$936,"$1,128",40,2025
+Coke County,"Coke County, TX",$560,$575,$757,$936,"$1,105",40,2025
+Coleman County,"Coleman County, TX",$602,$618,$813,"$1,009","$1,102",40,2025
+Collin County,"Dallas, TX HUD Metro FMR Area","$1,076","$1,150","$1,362","$1,736","$2,280",40,2025
+Collingsworth County,"Collingsworth County, TX",$560,$600,$757,$996,"$1,105",40,2025
+Colorado County,"Colorado County, TX",$602,$618,$813,"$1,081","$1,187",40,2025
+Comal County,"San Antonio-New Braunfels, TX HUD Metro FMR Area",$815,$961,"$1,165","$1,500","$1,849",40,2025
+Comanche County,"Comanche County, TX",$560,$664,$757,"$1,075","$1,148",40,2025
+Concho County,"Concho County, TX",$693,$743,$937,"$1,236","$1,368",40,2025
+Cooke County,"Cooke County, TX",$690,$766,$933,"$1,261","$1,265",40,2025
+Coryell County,"Killeen-Temple, TX HUD Metro FMR Area",$637,$641,$815,"$1,158","$1,395",40,2025
+Cottle County,"Cottle County, TX",$560,$600,$757,$936,"$1,296",40,2025
+Crane County,"Crane County, TX",$572,$613,$773,"$1,060","$1,129",40,2025
+Crockett County,"Crockett County, TX",$560,$600,$757,$998,"$1,105",40,2025
+Crosby County,"Lubbock, TX HUD Metro FMR Area",$670,$773,$951,"$1,348","$1,618",40,2025
+Culberson County,"Culberson County, TX",$608,$652,$822,"$1,084","$1,200",40,2025
+Dallam County,"Dallam County, TX",$566,$671,$765,$946,"$1,178",40,2025
+Dallas County,"Dallas, TX HUD Metro FMR Area","$1,076","$1,150","$1,362","$1,736","$2,280",40,2025
+Dawson County,"Dawson County, TX",$560,$664,$757,"$1,023","$1,027",40,2025
+Deaf Smith County,"Deaf Smith County, TX",$680,$685,$901,"$1,114","$1,222",40,2025
+Delta County,"Delta County, TX",$560,$640,$757,"$1,075","$1,105",40,2025
+Denton County,"Dallas, TX HUD Metro FMR Area","$1,076","$1,150","$1,362","$1,736","$2,280",40,2025
+DeWitt County,"DeWitt County, TX",$651,$761,$880,"$1,157","$1,268",40,2025
+Dickens County,"Dickens County, TX",$560,$600,$757,$998,"$1,105",40,2025
+Dimmit County,"Dimmit County, TX",$580,$596,$784,"$1,034","$1,145",40,2025
+Donley County,"Donley County, TX",$560,$575,$757,"$1,014","$1,105",40,2025
+Duval County,"Duval County, TX",$560,$600,$757,"$1,060","$1,064",40,2025
+Eastland County,"Eastland County, TX",$503,$664,$757,$936,"$1,027",40,2025
+Ector County,"Odessa, TX MSA",$884,$934,"$1,229","$1,519","$1,771",40,2025
+Edwards County,"Edwards County, TX",$608,$652,$822,"$1,084","$1,200",40,2025
+El Paso County,"El Paso, TX HUD Metro FMR Area",$558,$701,$840,"$1,174","$1,438",40,2025
+Ellis County,"Dallas, TX HUD Metro FMR Area","$1,076","$1,150","$1,362","$1,736","$2,280",40,2025
+Erath County,"Erath County, TX",$717,$722,$875,"$1,182","$1,187",40,2025
+Falls County,"Falls County, TX HUD Metro FMR Area",$556,$633,$757,"$1,075","$1,296",40,2025
+Fannin County,"Fannin County, TX",$607,$623,$820,"$1,165","$1,235",40,2025
+Fayette County,"Fayette County, TX",$624,$641,$843,"$1,139","$1,143",40,2025
+Fisher County,"Fisher County, TX",$560,$600,$757,"$1,021","$1,105",40,2025
+Floyd County,"Floyd County, TX",$609,$625,$823,"$1,017","$1,202",40,2025
+Foard County,"Foard County, TX",$608,$652,$822,"$1,084","$1,200",40,2025
+Fort Bend County,"Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area",$944,"$1,014","$1,208","$1,603","$2,058",40,2025
+Franklin County,"Franklin County, TX",$639,$661,$864,"$1,094","$1,314",40,2025
+Freestone County,"Freestone County, TX",$560,$575,$757,"$1,024","$1,144",40,2025
+Frio County,"Frio County, TX",$636,$754,$859,"$1,153","$1,254",40,2025
+Gaines County,"Gaines County, TX",$560,$600,$757,"$1,054","$1,105",40,2025
+Galveston County,"Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area",$944,"$1,014","$1,208","$1,603","$2,058",40,2025
+Garza County,"Garza County, TX",$588,$630,$795,$984,"$1,224",40,2025
+Gillespie County,"Gillespie County, TX",$760,$765,"$1,007","$1,430","$1,559",40,2025
+Glasscock County,"Glasscock County, TX",$608,$652,$822,"$1,084","$1,200",40,2025
+Goliad County,"Victoria, TX MSA",$788,$861,"$1,068","$1,367","$1,563",40,2025
+Gonzales County,"Gonzales County, TX",$641,$662,$789,"$1,121","$1,152",40,2025
+Gray County,"Gray County, TX",$574,$654,$861,"$1,067","$1,168",40,2025
+Grayson County,"Sherman-Denison, TX MSA",$661,$830,$985,"$1,316","$1,570",40,2025
+Gregg County,"Longview, TX HUD Metro FMR Area",$687,$786,$924,"$1,276","$1,467",40,2025
+Grimes County,"Grimes County, TX",$603,$619,$815,"$1,007","$1,105",40,2025
+Guadalupe County,"San Antonio-New Braunfels, TX HUD Metro FMR Area",$815,$961,"$1,165","$1,500","$1,849",40,2025
+Hale County,"Hale County, TX",$560,$660,$757,"$1,075","$1,296",40,2025
+Hall County,"Hall County, TX",$560,$576,$757,"$1,003","$1,105",40,2025
+Hamilton County,"Hamilton County, TX",$576,$683,$778,$962,"$1,055",40,2025
+Hansford County,"Hansford County, TX",$662,$703,$895,"$1,106","$1,307",40,2025
+Hardeman County,"Hardeman County, TX",$560,$575,$757,"$1,022","$1,105",40,2025
+Hardin County,"Beaumont-Port Arthur, TX MSA",$747,$798,$982,"$1,281","$1,332",40,2025
+Harris County,"Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area",$944,"$1,014","$1,208","$1,603","$2,058",40,2025
+Harrison County,"Harrison County, TX HUD Metro FMR Area",$630,$712,$899,"$1,112","$1,219",40,2025
+Hartley County,"Hartley County, TX",$717,$768,$969,"$1,309","$1,314",40,2025
+Haskell County,"Haskell County, TX",$560,$664,$757,"$1,075","$1,105",40,2025
+Hays County,"Austin-Round Rock, TX MSA","$1,092","$1,236","$1,451","$1,867","$2,194",40,2025
+Hemphill County,"Hemphill County, TX",$735,$755,$993,"$1,227","$1,450",40,2025
+Henderson County,"Henderson County, TX",$628,$632,$832,"$1,082","$1,201",40,2025
+Hidalgo County,"McAllen-Edinburg-Mission, TX MSA",$633,$637,$817,"$1,062","$1,176",40,2025
+Hill County,"Hill County, TX",$538,$635,$810,"$1,070","$1,098",40,2025
+Hockley County,"Hockley County, TX",$560,$664,$757,"$1,075","$1,296",40,2025
+Hood County,"Hood County, TX",$833,$881,"$1,046","$1,293","$1,527",40,2025
+Hopkins County,"Hopkins County, TX",$556,$652,$837,"$1,189","$1,275",40,2025
+Houston County,"Houston County, TX",$563,$578,$761,$941,"$1,032",40,2025
+Howard County,"Howard County, TX",$675,$851,"$1,006","$1,244","$1,587",40,2025
+Hudspeth County,"Hudspeth County, TX HUD Metro FMR Area",$503,$631,$757,$936,"$1,296",40,2025
+Hunt County,"Dallas, TX HUD Metro FMR Area","$1,076","$1,150","$1,362","$1,736","$2,280",40,2025
+Hutchinson County,"Hutchinson County, TX",$637,$654,$861,"$1,095","$1,267",40,2025
+Irion County,"San Angelo, TX HUD Metro FMR Area",$659,$790,$992,"$1,314","$1,629",40,2025
+Jack County,"Jack County, TX",$560,$600,$757,"$1,075","$1,296",40,2025
+Jackson County,"Jackson County, TX",$635,$753,$858,"$1,219","$1,253",40,2025
+Jasper County,"Jasper County, TX",$655,$660,$868,"$1,173","$1,177",40,2025
+Jeff Davis County,"Jeff Davis County, TX",$608,$652,$822,"$1,084","$1,200",40,2025
+Jefferson County,"Beaumont-Port Arthur, TX MSA",$747,$798,$982,"$1,281","$1,332",40,2025
+Jim Hogg County,"Jim Hogg County, TX",$560,$600,$757,"$1,075","$1,105",40,2025
+Jim Wells County,"Jim Wells County, TX",$675,$693,$912,"$1,127","$1,281",40,2025
+Johnson County,"Fort Worth-Arlington, TX HUD Metro FMR Area",$939,"$1,064","$1,269","$1,685","$2,098",40,2025
+Jones County,"Abilene, TX MSA",$688,$732,$945,"$1,288","$1,598",40,2025
+Karnes County,"Karnes County, TX",$559,$633,$799,"$1,084","$1,167",40,2025
+Kaufman County,"Dallas, TX HUD Metro FMR Area","$1,076","$1,150","$1,362","$1,736","$2,280",40,2025
+Kendall County,"Kendall County, TX HUD Metro FMR Area",$902,"$1,087","$1,358","$1,679","$2,130",40,2025
+Kenedy County,"Kenedy County, TX",$608,$652,$822,"$1,084","$1,200",40,2025
+Kent County,"Kent County, TX",$608,$652,$822,"$1,084","$1,200",40,2025
+Kerr County,"Kerr County, TX",$670,$766,$906,"$1,253","$1,338",40,2025
+Kimble County,"Kimble County, TX",$586,$676,$792,$979,"$1,156",40,2025
+King County,"King County, TX",$608,$652,$822,"$1,084","$1,200",40,2025
+Kinney County,"Kinney County, TX",$644,$690,$871,"$1,077","$1,272",40,2025
+Kleberg County,"Kleberg County, TX",$656,$743,$977,"$1,249","$1,427",40,2025
+Knox County,"Knox County, TX",$560,$600,$757,$936,"$1,105",40,2025
+La Salle County,"La Salle County, TX",$560,$664,$757,"$1,075","$1,105",40,2025
+Lamar County,"Lamar County, TX",$555,$621,$801,"$1,081","$1,371",40,2025
+Lamb County,"Lamb County, TX",$560,$575,$757,$969,"$1,027",40,2025
+Lampasas County,"Lampasas County, TX HUD Metro FMR Area",$601,$605,$796,"$1,083","$1,087",40,2025
+Lavaca County,"Lavaca County, TX",$616,$642,$833,"$1,080","$1,216",40,2025
+Lee County,"Lee County, TX",$729,$828,$985,"$1,218","$1,438",40,2025
+Leon County,"Leon County, TX",$576,$591,$778,"$1,003","$1,055",40,2025
+Liberty County,"Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area",$944,"$1,014","$1,208","$1,603","$2,058",40,2025
+Limestone County,"Limestone County, TX",$545,$623,$820,"$1,014","$1,138",40,2025
+Lipscomb County,"Lipscomb County, TX",$593,$636,$802,"$1,003","$1,171",40,2025
+Live Oak County,"Live Oak County, TX",$578,$594,$781,"$1,109","$1,140",40,2025
+Llano County,"Llano County, TX",$718,$737,$970,"$1,199","$1,449",40,2025
+Loving County,"Loving County, TX",$608,$652,$822,"$1,084","$1,200",40,2025
+Lubbock County,"Lubbock, TX HUD Metro FMR Area",$670,$773,$951,"$1,348","$1,618",40,2025
+Lynn County,"Lynn County, TX HUD Metro FMR Area",$534,$616,$757,"$1,075","$1,284",40,2025
+Madison County,"Madison County, TX",$648,$732,$876,"$1,083","$1,279",40,2025
+Marion County,"Marion County, TX",$560,$606,$757,"$1,011","$1,105",40,2025
+Martin County,"Martin County, TX HUD Metro FMR Area",$611,$615,$757,"$1,075","$1,296",40,2025
+Mason County,"Mason County, TX",$602,$644,$813,"$1,133","$1,187",40,2025
+Matagorda County,"Matagorda County, TX",$670,$675,$888,"$1,229","$1,520",40,2025
+Maverick County,"Maverick County, TX",$599,$603,$779,$988,"$1,056",40,2025
+McCulloch County,"McCulloch County, TX",$658,$676,$890,"$1,100","$1,299",40,2025
+McLennan County,"Waco, TX HUD Metro FMR Area",$673,$716,$915,"$1,215","$1,300",40,2025
+McMullen County,"McMullen County, TX",$608,$652,$822,"$1,084","$1,200",40,2025
+Medina County,"Medina County, TX HUD Metro FMR Area",$637,$692,$910,"$1,170","$1,309",40,2025
+Menard County,"Menard County, TX",$560,$600,$757,"$1,075","$1,105",40,2025
+Midland County,"Midland, TX HUD Metro FMR Area","$1,158","$1,165","$1,433","$1,771","$2,453",40,2025
+Milam County,"Milam County, TX",$560,$615,$757,"$1,073","$1,296",40,2025
+Mills County,"Mills County, TX",$560,$600,$757,$936,"$1,105",40,2025
+Mitchell County,"Mitchell County, TX",$560,$664,$757,"$1,064","$1,262",40,2025
+Montague County,"Montague County, TX",$676,$694,$913,"$1,230","$1,333",40,2025
+Montgomery County,"Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area",$944,"$1,014","$1,208","$1,603","$2,058",40,2025
+Moore County,"Moore County, TX",$659,$677,$891,"$1,101","$1,301",40,2025
+Morris County,"Morris County, TX",$503,$575,$757,"$1,075","$1,258",40,2025
+Motley County,"Motley County, TX",$560,$600,$757,$995,"$1,105",40,2025
+Nacogdoches County,"Nacogdoches County, TX",$602,$690,$835,"$1,095","$1,284",40,2025
+Navarro County,"Navarro County, TX",$578,$647,$851,"$1,207","$1,406",40,2025
+Newton County,"Newton County, TX",$560,$600,$757,"$1,065","$1,105",40,2025
+Nolan County,"Nolan County, TX",$579,$595,$783,"$1,112","$1,149",40,2025
+Nueces County,"Corpus Christi, TX MSA",$822,$909,"$1,118","$1,474","$1,720",40,2025
+Ochiltree County,"Ochiltree County, TX",$619,$663,$837,"$1,035","$1,222",40,2025
+Oldham County,"Oldham County, TX HUD Metro FMR Area",$676,$775,$988,"$1,221","$1,546",40,2025
+Orange County,"Beaumont-Port Arthur, TX MSA",$747,$798,$982,"$1,281","$1,332",40,2025
+Palo Pinto County,"Palo Pinto County, TX",$580,$638,$839,"$1,116","$1,199",40,2025
+Panola County,"Panola County, TX",$618,$635,$835,"$1,032","$1,132",40,2025
+Parker County,"Fort Worth-Arlington, TX HUD Metro FMR Area",$939,"$1,064","$1,269","$1,685","$2,098",40,2025
+Parmer County,"Parmer County, TX",$564,$669,$762,"$1,010","$1,113",40,2025
+Pecos County,"Pecos County, TX",$623,$805,$926,"$1,315","$1,400",40,2025
+Polk County,"Polk County, TX",$556,$692,$788,"$1,119","$1,148",40,2025
+Potter County,"Amarillo, TX HUD Metro FMR Area",$621,$713,$908,"$1,230","$1,421",40,2025
+Presidio County,"Presidio County, TX",$560,$600,$757,"$1,075","$1,105",40,2025
+Rains County,"Rains County, TX",$572,$650,$773,"$1,041","$1,129",40,2025
+Randall County,"Amarillo, TX HUD Metro FMR Area",$621,$713,$908,"$1,230","$1,421",40,2025
+Reagan County,"Reagan County, TX",$753,$807,"$1,018","$1,258","$1,486",40,2025
+Real County,"Real County, TX",$641,$687,$867,"$1,221","$1,266",40,2025
+Red River County,"Red River County, TX",$560,$575,$757,$936,"$1,105",40,2025
+Reeves County,"Reeves County, TX",$619,$734,$836,"$1,188","$1,221",40,2025
+Refugio County,"Refugio County, TX",$575,$681,$777,$960,"$1,230",40,2025
+Roberts County,"Roberts County, TX",$608,$652,$822,"$1,084","$1,200",40,2025
+Robertson County,"College Station-Bryan, TX MSA",$759,$841,$975,"$1,385","$1,582",40,2025
+Rockwall County,"Dallas, TX HUD Metro FMR Area","$1,076","$1,150","$1,362","$1,736","$2,280",40,2025
+Runnels County,"Runnels County, TX",$589,$605,$796,$984,"$1,079",40,2025
+Rusk County,"Rusk County, TX HUD Metro FMR Area",$638,$642,$845,"$1,070","$1,289",40,2025
+Sabine County,"Sabine County, TX",$560,$664,$757,"$1,075","$1,105",40,2025
+San Augustine County,"San Augustine County, TX",$614,$631,$830,"$1,026","$1,212",40,2025
+San Jacinto County,"San Jacinto County, TX",$560,$664,$757,"$1,023","$1,027",40,2025
+San Patricio County,"Corpus Christi, TX MSA",$822,$909,"$1,118","$1,474","$1,720",40,2025
+San Saba County,"San Saba County, TX",$609,$625,$823,"$1,017","$1,202",40,2025
+Schleicher County,"Schleicher County, TX",$608,$652,$822,"$1,084","$1,200",40,2025
+Scurry County,"Scurry County, TX",$647,$761,$874,"$1,080","$1,443",40,2025
+Shackelford County,"Shackelford County, TX",$608,$652,$822,"$1,084","$1,200",40,2025
+Shelby County,"Shelby County, TX",$560,$597,$757,"$1,068","$1,221",40,2025
+Sherman County,"Sherman County, TX",$560,$664,$757,"$1,075","$1,150",40,2025
+Smith County,"Tyler, TX MSA",$852,$857,"$1,037","$1,308","$1,669",40,2025
+Somervell County,"Somervell County, TX",$616,$694,$833,"$1,183","$1,358",40,2025
+Starr County,"Starr County, TX",$560,$582,$757,$980,"$1,105",40,2025
+Stephens County,"Stephens County, TX",$560,$595,$757,"$1,075","$1,105",40,2025
+Sterling County,"Sterling County, TX HUD Metro FMR Area",$659,$790,$992,"$1,314","$1,629",40,2025
+Stonewall County,"Stonewall County, TX",$608,$652,$822,"$1,084","$1,200",40,2025
+Sutton County,"Sutton County, TX",$560,$640,$757,$998,"$1,105",40,2025
+Swisher County,"Swisher County, TX",$560,$582,$757,"$1,023","$1,027",40,2025
+Tarrant County,"Fort Worth-Arlington, TX HUD Metro FMR Area",$939,"$1,064","$1,269","$1,685","$2,098",40,2025
+Taylor County,"Abilene, TX MSA",$688,$732,$945,"$1,288","$1,598",40,2025
+Terrell County,"Terrell County, TX",$608,$652,$822,"$1,084","$1,200",40,2025
+Terry County,"Terry County, TX",$573,$588,$774,"$1,046","$1,050",40,2025
+Throckmorton County,"Throckmorton County, TX",$560,$600,$757,"$1,070","$1,105",40,2025
+Titus County,"Titus County, TX",$575,$608,$757,"$1,008","$1,124",40,2025
+Tom Green County,"San Angelo, TX HUD Metro FMR Area",$659,$790,$992,"$1,314","$1,629",40,2025
+Travis County,"Austin-Round Rock, TX MSA","$1,092","$1,236","$1,451","$1,867","$2,194",40,2025
+Trinity County,"Trinity County, TX",$642,$660,$868,"$1,073","$1,329",40,2025
+Tyler County,"Tyler County, TX",$560,$664,$757,"$1,004","$1,105",40,2025
+Upshur County,"Longview, TX HUD Metro FMR Area",$687,$786,$924,"$1,276","$1,467",40,2025
+Upton County,"Upton County, TX",$560,$664,$757,$998,"$1,105",40,2025
+Uvalde County,"Uvalde County, TX",$567,$664,$757,"$1,028","$1,296",40,2025
+Val Verde County,"Val Verde County, TX",$616,$620,$816,"$1,134","$1,191",40,2025
+Van Zandt County,"Van Zandt County, TX",$621,$640,$840,"$1,193","$1,211",40,2025
+Victoria County,"Victoria, TX MSA",$788,$861,"$1,068","$1,367","$1,563",40,2025
+Walker County,"Walker County, TX",$685,$849,"$1,031","$1,274","$1,765",40,2025
+Waller County,"Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area",$944,"$1,014","$1,208","$1,603","$2,058",40,2025
+Ward County,"Ward County, TX",$705,$724,$953,"$1,181","$1,391",40,2025
+Washington County,"Washington County, TX",$749,$801,$913,"$1,227","$1,477",40,2025
+Webb County,"Laredo, TX MSA",$756,$760,$942,"$1,222","$1,349",40,2025
+Wharton County,"Wharton County, TX",$598,$676,$808,"$1,141","$1,383",40,2025
+Wheeler County,"Wheeler County, TX",$560,$617,$757,$959,"$1,105",40,2025
+Wichita County,"Wichita Falls, TX MSA",$641,$707,$878,"$1,197","$1,362",40,2025
+Wilbarger County,"Wilbarger County, TX",$560,$575,$757,$936,"$1,105",40,2025
+Willacy County,"Willacy County, TX",$560,$575,$757,"$1,023","$1,027",40,2025
+Williamson County,"Austin-Round Rock, TX MSA","$1,092","$1,236","$1,451","$1,867","$2,194",40,2025
+Wilson County,"San Antonio-New Braunfels, TX HUD Metro FMR Area",$815,$961,"$1,165","$1,500","$1,849",40,2025
+Winkler County,"Winkler County, TX",$566,$606,$765,"$1,087","$1,117",40,2025
+Wise County,"Wise County, TX HUD Metro FMR Area",$857,$872,$994,"$1,335","$1,399",40,2025
+Wood County,"Wood County, TX",$652,$657,$864,"$1,068","$1,262",40,2025
+Yoakum County,"Yoakum County, TX",$630,$747,$851,"$1,052","$1,243",40,2025
+Young County,"Young County, TX",$563,$634,$761,"$1,003","$1,111",40,2025
+Zapata County,"Zapata County, TX",$560,$629,$757,"$1,002","$1,105",40,2025
+Zavala County,"Zavala County, TX",$560,$664,$757,$955,"$1,105",40,2025
+"Abilene, TX MSA",$732,$779,"$1,006","$1,360","$1,649",40,,2025
+"Amarillo, TX HUD Metro FMR Area",$670,$778,$972,"$1,322","$1,542",40,,2025
+"Atascosa County, TX HUD Metro FMR Area",$725,$897,"$1,013","$1,233","$1,670",40,,2025
+"Austin County, TX HUD Metro FMR Area",$639,$826,$955,"$1,357","$1,627",40,,2025
+"Austin-Round Rock, TX MSA","$1,253","$1,386","$1,626","$2,088","$2,416",40,,2025
+"Beaumont-Port Arthur, TX MSA",$792,$849,"$1,027","$1,343","$1,402",40,,2025
+"Brazoria County, TX HUD Metro FMR Area",$836,"$1,108","$1,251","$1,612","$2,131",40,,2025
+"Brownsville-Harlingen, TX MSA",$632,$702,$893,"$1,156","$1,304",40,,2025
+"College Station-Bryan, TX MSA",$839,$904,"$1,024","$1,455","$1,571",40,,2025
+"Corpus Christi, TX MSA",$950,"$1,034","$1,262","$1,647","$1,927",40,,2025
+"Dallas, TX HUD Metro FMR Area","$1,259","$1,326","$1,565","$1,972","$2,572",40,,2025
+"El Paso, TX HUD Metro FMR Area",$672,$824,$977,"$1,361","$1,664",40,,2025
+"Falls County, TX HUD Metro FMR Area",$589,$687,$826,"$1,174","$1,407",40,,2025
+"Fort Worth-Arlington, TX HUD Metro FMR Area","$1,101","$1,234","$1,456","$1,927","$2,385",40,,2025
+"Harrison County, TX HUD Metro FMR Area",$738,$760,"$1,000","$1,217","$1,343",40,,2025
+"Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area","$1,030","$1,095","$1,307","$1,722","$2,226",40,,2025
+"Hudspeth County, TX HUD Metro FMR Area",$631,$774,$918,"$1,117","$1,564",40,,2025
+"Kendall County, TX HUD Metro FMR Area","$1,004","$1,216","$1,502","$1,828","$2,299",40,,2025
+"Killeen-Temple, TX HUD Metro FMR Area",$749,$754,$957,"$1,360","$1,630",40,,2025
+"Lampasas County, TX HUD Metro FMR Area",$681,$685,$902,"$1,272","$1,536",40,,2025
+"Laredo, TX MSA",$791,$796,$995,"$1,276","$1,380",40,,2025
+"Longview, TX HUD Metro FMR Area",$771,$848,"$1,009","$1,406","$1,561",40,,2025
+"Lubbock, TX HUD Metro FMR Area",$726,$838,"$1,017","$1,425","$1,672",40,,2025
+"Lynn County, TX HUD Metro FMR Area",$591,$681,$826,"$1,174","$1,407",40,,2025
+"Martin County, TX HUD Metro FMR Area",$690,$694,$826,"$1,174","$1,407",40,,2025
+"McAllen-Edinburg-Mission, TX MSA",$689,$693,$877,"$1,141","$1,257",40,,2025
+"Medina County, TX HUD Metro FMR Area",$720,$763,"$1,005","$1,318","$1,350",40,,2025
+"Midland, TX HUD Metro FMR Area","$1,111","$1,118","$1,330","$1,681","$2,265",40,,2025
+"Odessa, TX MSA",$909,$915,"$1,205","$1,467","$1,688",40,,2025
+"Oldham County, TX HUD Metro FMR Area",$678,$788,$984,"$1,198","$1,561",40,,2025
+"Rusk County, TX HUD Metro FMR Area",$692,$697,$917,"$1,153","$1,302",40,,2025
+"San Angelo, TX HUD Metro FMR Area",$713,$851,"$1,066","$1,395","$1,801",40,,2025
+"San Antonio-New Braunfels, TX HUD Metro FMR Area",$918,"$1,057","$1,282","$1,631","$1,987",40,,2025
+"Sherman-Denison, TX MSA",$733,$900,"$1,050","$1,419","$1,753",40,,2025
+"Sterling County, TX HUD Metro FMR Area",$714,$853,"$1,068","$1,396","$1,803",40,,2025
+"Texarkana, TX-Texarkana, AR HUD Metro FMR Area",$704,$709,$890,"$1,109","$1,444",40,,2025
+"Tyler, TX MSA",$923,$927,"$1,133","$1,460","$1,787",40,,2025
+"Victoria, TX MSA",$876,$949,"$1,180","$1,503","$1,696",40,,2025
+"Waco, TX HUD Metro FMR Area",$710,$787,$996,"$1,307","$1,354",40,,2025
+"Wichita Falls, TX MSA",$712,$771,$943,"$1,274","$1,459",40,,2025
+"Wise County, TX HUD Metro FMR Area",$925,$946,"$1,068","$1,517","$1,544",40,,2025
+FY2023 Texas FMR Local Area Summary,,,,,,,,2025
+Locality Name,Metropolitan Area Name,Efficiency,One-Bedroom,Two-Bedroom,Three-Bedroom,Four-Bedroom,FMR Percentile,2025
+Anderson County,"Anderson County, TX",$684,$755,$907,"$1,223","$1,434",40,2025
+Andrews County,"Andrews County, TX",$874,"$1,006","$1,159","$1,506","$1,705",40,2025
+Angelina County,"Angelina County, TX",$787,$790,$932,"$1,151","$1,252",40,2025
+Aransas County,"Aransas County, TX",$798,$930,"$1,059","$1,505","$1,558",40,2025
+Archer County,"Wichita Falls, TX MSA",$712,$771,$943,"$1,274","$1,459",40,2025
+Armstrong County,"Amarillo, TX HUD Metro FMR Area",$670,$778,$972,"$1,322","$1,542",40,2025
+Atascosa County,"Atascosa County, TX HUD Metro FMR Area",$725,$897,"$1,013","$1,233","$1,670",40,2025
+Austin County,"Austin County, TX HUD Metro FMR Area",$639,$826,$955,"$1,357","$1,627",40,2025
+Bailey County,"Bailey County, TX",$623,$658,$826,"$1,005","$1,215",40,2025
+Bandera County,"San Antonio-New Braunfels, TX HUD Metro FMR Area",$918,"$1,057","$1,282","$1,631","$1,987",40,2025
+Bastrop County,"Austin-Round Rock, TX MSA","$1,253","$1,386","$1,626","$2,088","$2,416",40,2025
+Baylor County,"Baylor County, TX",$623,$636,$826,"$1,174","$1,215",40,2025
+Bee County,"Bee County, TX",$794,$800,"$1,053","$1,395","$1,551",40,2025
+Bell County,"Killeen-Temple, TX HUD Metro FMR Area",$749,$754,$957,"$1,360","$1,630",40,2025
+Bexar County,"San Antonio-New Braunfels, TX HUD Metro FMR Area",$918,"$1,057","$1,282","$1,631","$1,987",40,2025
+Blanco County,"Blanco County, TX",$817,$862,"$1,083","$1,318","$1,479",40,2025
+Borden County,"Borden County, TX",$667,$705,$885,"$1,161","$1,302",40,2025
+Bosque County,"Bosque County, TX",$623,$628,$826,"$1,143","$1,162",40,2025
+Bowie County,"Texarkana, TX-Texarkana, AR HUD Metro FMR Area",$704,$709,$890,"$1,109","$1,444",40,2025
+Brazoria County,"Brazoria County, TX HUD Metro FMR Area",$836,"$1,108","$1,251","$1,612","$2,131",40,2025
+Brazos County,"College Station-Bryan, TX MSA",$839,$904,"$1,024","$1,455","$1,571",40,2025
+Brewster County,"Brewster County, TX",$726,$787,$963,"$1,172","$1,533",40,2025
+Briscoe County,"Briscoe County, TX",$623,$658,$826,"$1,174","$1,215",40,2025
+Brooks County,"Brooks County, TX",$623,$658,$826,"$1,005","$1,215",40,2025
+Brown County,"Brown County, TX",$609,$692,$911,"$1,186","$1,326",40,2025
+Burleson County,"College Station-Bryan, TX MSA",$839,$904,"$1,024","$1,455","$1,571",40,2025
+Burnet County,"Burnet County, TX",$657,$793,$983,"$1,352","$1,357",40,2025
+Caldwell County,"Austin-Round Rock, TX MSA","$1,253","$1,386","$1,626","$2,088","$2,416",40,2025
+Calhoun County,"Calhoun County, TX",$557,$731,$826,"$1,174","$1,215",40,2025
+Callahan County,"Abilene, TX MSA",$732,$779,"$1,006","$1,360","$1,649",40,2025
+Cameron County,"Brownsville-Harlingen, TX MSA",$632,$702,$893,"$1,156","$1,304",40,2025
+Camp County,"Camp County, TX",$623,$628,$826,"$1,174","$1,247",40,2025
+Carson County,"Amarillo, TX HUD Metro FMR Area",$670,$778,$972,"$1,322","$1,542",40,2025
+Cass County,"Cass County, TX",$623,$628,$826,"$1,125","$1,407",40,2025
+Castro County,"Castro County, TX",$623,$731,$826,"$1,174","$1,215",40,2025
+Chambers County,"Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area","$1,030","$1,095","$1,307","$1,722","$2,226",40,2025
+Cherokee County,"Cherokee County, TX",$570,$647,$852,"$1,211","$1,253",40,2025
+Childress County,"Childress County, TX",$712,$720,$944,"$1,149","$1,389",40,2025
+Clay County,"Wichita Falls, TX MSA",$712,$771,$943,"$1,274","$1,459",40,2025
+Cochran County,"Cochran County, TX",$623,$658,$826,"$1,005","$1,110",40,2025
+Coke County,"Coke County, TX",$623,$628,$826,"$1,005","$1,215",40,2025
+Coleman County,"Coleman County, TX",$680,$685,$902,"$1,098","$1,212",40,2025
+Collin County,"Dallas, TX HUD Metro FMR Area","$1,259","$1,326","$1,565","$1,972","$2,572",40,2025
+Collingsworth County,"Collingsworth County, TX",$623,$731,$826,"$1,039","$1,215",40,2025
+Colorado County,"Colorado County, TX",$672,$677,$891,"$1,115","$1,311",40,2025
+Comal County,"San Antonio-New Braunfels, TX HUD Metro FMR Area",$918,"$1,057","$1,282","$1,631","$1,987",40,2025
+Comanche County,"Comanche County, TX",$623,$731,$826,"$1,174","$1,231",40,2025
+Concho County,"Concho County, TX",$777,$821,"$1,031","$1,352","$1,517",40,2025
+Cooke County,"Cooke County, TX",$794,$799,"$1,013","$1,356","$1,506",40,2025
+Coryell County,"Killeen-Temple, TX HUD Metro FMR Area",$749,$754,$957,"$1,360","$1,630",40,2025
+Cottle County,"Cottle County, TX",$623,$658,$826,"$1,005","$1,407",40,2025
+Crane County,"Crane County, TX",$692,$731,$918,"$1,117","$1,350",40,2025
+Crockett County,"Crockett County, TX",$623,$658,$826,"$1,084","$1,215",40,2025
+Crosby County,"Lubbock, TX HUD Metro FMR Area",$726,$838,"$1,017","$1,425","$1,672",40,2025
+Culberson County,"Culberson County, TX",$667,$705,$885,"$1,161","$1,302",40,2025
+Dallam County,"Dallam County, TX",$623,$731,$826,"$1,164","$1,272",40,2025
+Dallas County,"Dallas, TX HUD Metro FMR Area","$1,259","$1,326","$1,565","$1,972","$2,572",40,2025
+Dawson County,"Dawson County, TX",$623,$706,$826,"$1,105","$1,110",40,2025
+Deaf Smith County,"Deaf Smith County, TX",$718,$722,$951,"$1,160","$1,409",40,2025
+Delta County,"Delta County, TX",$623,$707,$826,"$1,168","$1,215",40,2025
+Denton County,"Dallas, TX HUD Metro FMR Area","$1,259","$1,326","$1,565","$1,972","$2,572",40,2025
+DeWitt County,"DeWitt County, TX",$731,$828,$969,"$1,200","$1,446",40,2025
+Dickens County,"Dickens County, TX",$623,$658,$826,"$1,084","$1,215",40,2025
+Dimmit County,"Dimmit County, TX",$623,$651,$826,"$1,174","$1,215",40,2025
+Donley County,"Donley County, TX",$623,$628,$826,"$1,151","$1,215",40,2025
+Duval County,"Duval County, TX",$623,$658,$826,"$1,147","$1,151",40,2025
+Eastland County,"Eastland County, TX",$552,$731,$826,"$1,082","$1,407",40,2025
+Ector County,"Odessa, TX MSA",$909,$915,"$1,205","$1,467","$1,688",40,2025
+Edwards County,"Edwards County, TX",$667,$705,$885,"$1,161","$1,302",40,2025
+El Paso County,"El Paso, TX HUD Metro FMR Area",$672,$824,$977,"$1,361","$1,664",40,2025
+Ellis County,"Dallas, TX HUD Metro FMR Area","$1,259","$1,326","$1,565","$1,972","$2,572",40,2025
+Erath County,"Erath County, TX",$766,$771,$949,"$1,349","$1,485",40,2025
+Falls County,"Falls County, TX HUD Metro FMR Area",$589,$687,$826,"$1,174","$1,407",40,2025
+Fannin County,"Fannin County, TX",$661,$666,$877,"$1,246","$1,406",40,2025
+Fayette County,"Fayette County, TX",$688,$726,$912,"$1,253","$1,330",40,2025
+Fisher County,"Fisher County, TX",$623,$628,$826,"$1,083","$1,215",40,2025
+Floyd County,"Floyd County, TX",$690,$695,$915,"$1,114","$1,346",40,2025
+Foard County,"Foard County, TX",$667,$705,$885,"$1,161","$1,302",40,2025
+Fort Bend County,"Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area","$1,030","$1,095","$1,307","$1,722","$2,226",40,2025
+Franklin County,"Franklin County, TX",$734,$739,$973,"$1,184","$1,353",40,2025
+Freestone County,"Freestone County, TX",$623,$628,$826,"$1,017","$1,215",40,2025
+Frio County,"Frio County, TX",$711,$835,$943,"$1,177","$1,606",40,2025
+Gaines County,"Gaines County, TX",$624,$659,$828,"$1,008","$1,218",40,2025
+Galveston County,"Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area","$1,030","$1,095","$1,307","$1,722","$2,226",40,2025
+Garza County,"Garza County, TX",$626,$661,$830,"$1,064","$1,293",40,2025
+Gillespie County,"Gillespie County, TX",$835,$841,"$1,107","$1,573","$1,628",40,2025
+Glasscock County,"Glasscock County, TX",$667,$705,$885,"$1,161","$1,302",40,2025
+Goliad County,"Victoria, TX MSA",$876,$949,"$1,180","$1,503","$1,696",40,2025
+Gonzales County,"Gonzales County, TX",$633,$711,$839,"$1,192","$1,429",40,2025
+Gray County,"Gray County, TX",$610,$693,$912,"$1,110","$1,227",40,2025
+Grayson County,"Sherman-Denison, TX MSA",$733,$900,"$1,050","$1,419","$1,753",40,2025
+Gregg County,"Longview, TX HUD Metro FMR Area",$771,$848,"$1,009","$1,406","$1,561",40,2025
+Grimes County,"Grimes County, TX",$665,$702,$882,"$1,073","$1,239",40,2025
+Guadalupe County,"San Antonio-New Braunfels, TX HUD Metro FMR Area",$918,"$1,057","$1,282","$1,631","$1,987",40,2025
+Hale County,"Hale County, TX",$623,$721,$826,"$1,160","$1,407",40,2025
+Hall County,"Hall County, TX",$623,$628,$826,"$1,106","$1,215",40,2025
+Hamilton County,"Hamilton County, TX",$663,$674,$880,"$1,071","$1,182",40,2025
+Hansford County,"Hansford County, TX",$724,$755,$960,"$1,168","$1,412",40,2025
+Hardeman County,"Hardeman County, TX",$623,$628,$826,"$1,157","$1,215",40,2025
+Hardin County,"Beaumont-Port Arthur, TX MSA",$792,$849,"$1,027","$1,343","$1,402",40,2025
+Harris County,"Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area","$1,030","$1,095","$1,307","$1,722","$2,226",40,2025
+Harrison County,"Harrison County, TX HUD Metro FMR Area",$738,$760,"$1,000","$1,217","$1,343",40,2025
+Hartley County,"Hartley County, TX",$826,$872,"$1,095","$1,466","$1,471",40,2025
+Haskell County,"Haskell County, TX",$623,$658,$826,"$1,174","$1,215",40,2025
+Hays County,"Austin-Round Rock, TX MSA","$1,253","$1,386","$1,626","$2,088","$2,416",40,2025
+Hemphill County,"Hemphill County, TX",$803,$809,"$1,065","$1,296","$1,567",40,2025
+Henderson County,"Henderson County, TX",$691,$696,$906,"$1,203","$1,294",40,2025
+Hidalgo County,"McAllen-Edinburg-Mission, TX MSA",$689,$693,$877,"$1,141","$1,257",40,2025
+Hill County,"Hill County, TX",$590,$695,$882,"$1,171","$1,373",40,2025
+Hockley County,"Hockley County, TX",$623,$731,$826,"$1,174","$1,407",40,2025
+Hood County,"Hood County, TX",$831,$992,"$1,210","$1,473","$1,780",40,2025
+Hopkins County,"Hopkins County, TX",$612,$732,$916,"$1,302","$1,370",40,2025
+Houston County,"Houston County, TX",$623,$635,$826,"$1,007","$1,110",40,2025
+Howard County,"Howard County, TX",$755,$883,"$1,074","$1,307","$1,829",40,2025
+Hudspeth County,"Hudspeth County, TX HUD Metro FMR Area",$631,$774,$918,"$1,117","$1,564",40,2025
+Hunt County,"Dallas, TX HUD Metro FMR Area","$1,259","$1,326","$1,565","$1,972","$2,572",40,2025
+Hutchinson County,"Hutchinson County, TX",$709,$714,$940,"$1,192","$1,341",40,2025
+Irion County,"San Angelo, TX HUD Metro FMR Area",$713,$851,"$1,066","$1,395","$1,801",40,2025
+Jack County,"Jack County, TX",$623,$658,$826,"$1,174","$1,407",40,2025
+Jackson County,"Jackson County, TX",$703,$825,$932,"$1,293","$1,371",40,2025
+Jasper County,"Jasper County, TX",$688,$701,$913,"$1,222","$1,226",40,2025
+Jeff Davis County,"Jeff Davis County, TX",$667,$705,$885,"$1,161","$1,302",40,2025
+Jefferson County,"Beaumont-Port Arthur, TX MSA",$792,$849,"$1,027","$1,343","$1,402",40,2025
+Jim Hogg County,"Jim Hogg County, TX",$623,$658,$826,"$1,174","$1,215",40,2025
+Jim Wells County,"Jim Wells County, TX",$680,$728,$902,"$1,142","$1,536",40,2025
+Johnson County,"Fort Worth-Arlington, TX HUD Metro FMR Area","$1,101","$1,234","$1,456","$1,927","$2,385",40,2025
+Jones County,"Abilene, TX MSA",$732,$779,"$1,006","$1,360","$1,649",40,2025
+Karnes County,"Karnes County, TX",$647,$778,$879,"$1,234","$1,340",40,2025
+Kaufman County,"Dallas, TX HUD Metro FMR Area","$1,259","$1,326","$1,565","$1,972","$2,572",40,2025
+Kendall County,"Kendall County, TX HUD Metro FMR Area","$1,004","$1,216","$1,502","$1,828","$2,299",40,2025
+Kenedy County,"Kenedy County, TX",$667,$705,$885,"$1,161","$1,302",40,2025
+Kent County,"Kent County, TX",$667,$705,$885,"$1,161","$1,302",40,2025
+Kerr County,"Kerr County, TX",$777,$848,"$1,031","$1,367","$1,579",40,2025
+Kimble County,"Kimble County, TX",$650,$718,$862,"$1,049","$1,268",40,2025
+King County,"King County, TX",$667,$705,$885,"$1,161","$1,302",40,2025
+Kinney County,"Kinney County, TX",$667,$705,$885,"$1,161","$1,302",40,2025
+Kleberg County,"Kleberg County, TX",$756,$822,"$1,082","$1,317","$1,630",40,2025
+Knox County,"Knox County, TX",$623,$658,$826,"$1,005","$1,215",40,2025
+La Salle County,"La Salle County, TX",$623,$731,$826,"$1,174","$1,215",40,2025
+Lamar County,"Lamar County, TX",$562,$655,$841,"$1,136","$1,433",40,2025
+Lamb County,"Lamb County, TX",$623,$628,$826,"$1,110","$1,171",40,2025
+Lampasas County,"Lampasas County, TX HUD Metro FMR Area",$681,$685,$902,"$1,272","$1,536",40,2025
+Lavaca County,"Lavaca County, TX",$700,$720,$929,"$1,151","$1,248",40,2025
+Lee County,"Lee County, TX",$814,$896,"$1,079","$1,313","$1,587",40,2025
+Leon County,"Leon County, TX",$662,$667,$878,"$1,136","$1,292",40,2025
+Liberty County,"Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area","$1,030","$1,095","$1,307","$1,722","$2,226",40,2025
+Limestone County,"Limestone County, TX",$590,$670,$882,"$1,073","$1,353",40,2025
+Lipscomb County,"Lipscomb County, TX",$650,$686,$862,"$1,059","$1,268",40,2025
+Live Oak County,"Live Oak County, TX",$627,$632,$832,"$1,182","$1,224",40,2025
+Llano County,"Llano County, TX",$804,$810,"$1,066","$1,297","$1,577",40,2025
+Loving County,"Loving County, TX",$667,$705,$885,"$1,161","$1,302",40,2025
+Lubbock County,"Lubbock, TX HUD Metro FMR Area",$726,$838,"$1,017","$1,425","$1,672",40,2025
+Lynn County,"Lynn County, TX HUD Metro FMR Area",$591,$681,$826,"$1,174","$1,407",40,2025
+Madison County,"Madison County, TX",$666,$769,$884,"$1,121","$1,300",40,2025
+Marion County,"Marion County, TX",$623,$687,$826,"$1,148","$1,215",40,2025
+Martin County,"Martin County, TX HUD Metro FMR Area",$690,$694,$826,"$1,174","$1,407",40,2025
+Mason County,"Mason County, TX",$636,$672,$844,"$1,134","$1,242",40,2025
+Matagorda County,"Matagorda County, TX",$760,$765,"$1,007","$1,328","$1,715",40,2025
+Maverick County,"Maverick County, TX",$671,$676,$844,"$1,071","$1,134",40,2025
+McCulloch County,"McCulloch County, TX",$707,$747,$938,"$1,142","$1,380",40,2025
+McLennan County,"Waco, TX HUD Metro FMR Area",$710,$787,$996,"$1,307","$1,354",40,2025
+McMullen County,"McMullen County, TX",$667,$705,$885,"$1,161","$1,302",40,2025
+Medina County,"Medina County, TX HUD Metro FMR Area",$720,$763,"$1,005","$1,318","$1,350",40,2025
+Menard County,"Menard County, TX",$623,$658,$826,"$1,161","$1,215",40,2025
+Midland County,"Midland, TX HUD Metro FMR Area","$1,111","$1,118","$1,330","$1,681","$2,265",40,2025
+Milam County,"Milam County, TX",$623,$631,$826,"$1,074","$1,407",40,2025
+Mills County,"Mills County, TX",$623,$658,$826,"$1,005","$1,215",40,2025
+Mitchell County,"Mitchell County, TX",$623,$731,$826,"$1,174","$1,215",40,2025
+Montague County,"Montague County, TX",$765,$771,"$1,015","$1,358","$1,364",40,2025
+Montgomery County,"Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area","$1,030","$1,095","$1,307","$1,722","$2,226",40,2025
+Moore County,"Moore County, TX",$733,$738,$971,"$1,182","$1,428",40,2025
+Morris County,"Morris County, TX",$552,$628,$826,"$1,174","$1,324",40,2025
+Motley County,"Motley County, TX",$623,$658,$826,"$1,062","$1,215",40,2025
+Nacogdoches County,"Nacogdoches County, TX",$682,$769,$905,"$1,176","$1,439",40,2025
+Navarro County,"Navarro County, TX",$595,$672,$885,"$1,252","$1,507",40,2025
+Newton County,"Newton County, TX",$623,$658,$826,"$1,143","$1,215",40,2025
+Nolan County,"Nolan County, TX",$637,$642,$845,"$1,201","$1,439",40,2025
+Nueces County,"Corpus Christi, TX MSA",$950,"$1,034","$1,262","$1,647","$1,927",40,2025
+Ochiltree County,"Ochiltree County, TX",$700,$739,$928,"$1,139","$1,365",40,2025
+Oldham County,"Oldham County, TX HUD Metro FMR Area",$678,$788,$984,"$1,198","$1,561",40,2025
+Orange County,"Beaumont-Port Arthur, TX MSA",$792,$849,"$1,027","$1,343","$1,402",40,2025
+Palo Pinto County,"Palo Pinto County, TX",$636,$696,$916,"$1,199","$1,288",40,2025
+Panola County,"Panola County, TX",$651,$656,$864,"$1,052","$1,216",40,2025
+Parker County,"Fort Worth-Arlington, TX HUD Metro FMR Area","$1,101","$1,234","$1,456","$1,927","$2,385",40,2025
+Parmer County,"Parmer County, TX",$632,$725,$838,"$1,040","$1,421",40,2025
+Pecos County,"Pecos County, TX",$623,$813,$918,"$1,305","$1,350",40,2025
+Polk County,"Polk County, TX",$653,$763,$862,"$1,183","$1,249",40,2025
+Potter County,"Amarillo, TX HUD Metro FMR Area",$670,$778,$972,"$1,322","$1,542",40,2025
+Presidio County,"Presidio County, TX",$623,$731,$826,"$1,174","$1,215",40,2025
+Rains County,"Rains County, TX",$623,$728,$826,"$1,139","$1,215",40,2025
+Randall County,"Amarillo, TX HUD Metro FMR Area",$670,$778,$972,"$1,322","$1,542",40,2025
+Reagan County,"Reagan County, TX",$750,$792,$995,"$1,211","$1,464",40,2025
+Real County,"Real County, TX",$698,$737,$926,"$1,316","$1,362",40,2025
+Red River County,"Red River County, TX",$623,$696,$826,"$1,005","$1,215",40,2025
+Reeves County,"Reeves County, TX",$688,$726,$912,"$1,265","$1,342",40,2025
+Refugio County,"Refugio County, TX",$634,$713,$841,"$1,024","$1,315",40,2025
+Roberts County,"Roberts County, TX",$667,$705,$885,"$1,161","$1,302",40,2025
+Robertson County,"College Station-Bryan, TX MSA",$839,$904,"$1,024","$1,455","$1,571",40,2025
+Rockwall County,"Dallas, TX HUD Metro FMR Area","$1,259","$1,326","$1,565","$1,972","$2,572",40,2025
+Runnels County,"Runnels County, TX",$670,$675,$889,"$1,082","$1,194",40,2025
+Rusk County,"Rusk County, TX HUD Metro FMR Area",$692,$697,$917,"$1,153","$1,302",40,2025
+Sabine County,"Sabine County, TX",$623,$700,$826,"$1,174","$1,407",40,2025
+San Augustine County,"San Augustine County, TX",$688,$694,$913,"$1,111","$1,343",40,2025
+San Jacinto County,"San Jacinto County, TX",$623,$731,$826,"$1,105","$1,110",40,2025
+San Patricio County,"Corpus Christi, TX MSA",$950,"$1,034","$1,262","$1,647","$1,927",40,2025
+San Saba County,"San Saba County, TX",$692,$697,$918,"$1,117","$1,350",40,2025
+Schleicher County,"Schleicher County, TX",$667,$705,$885,"$1,161","$1,302",40,2025
+Scurry County,"Scurry County, TX",$679,$797,$900,"$1,222","$1,532",40,2025
+Shackelford County,"Shackelford County, TX",$667,$705,$885,"$1,161","$1,302",40,2025
+Shelby County,"Shelby County, TX",$623,$698,$826,"$1,174","$1,299",40,2025
+Sherman County,"Sherman County, TX",$623,$658,$826,"$1,174","$1,277",40,2025
+Smith County,"Tyler, TX MSA",$923,$927,"$1,133","$1,460","$1,787",40,2025
+Somervell County,"Somervell County, TX",$722,$785,$957,"$1,360","$1,408",40,2025
+Starr County,"Starr County, TX",$623,$628,$826,"$1,125","$1,215",40,2025
+Stephens County,"Stephens County, TX",$623,$644,$826,"$1,174","$1,215",40,2025
+Sterling County,"Sterling County, TX HUD Metro FMR Area",$714,$853,"$1,068","$1,396","$1,803",40,2025
+Stonewall County,"Stonewall County, TX",$667,$705,$885,"$1,161","$1,302",40,2025
+Sutton County,"Sutton County, TX",$623,$670,$826,"$1,084","$1,215",40,2025
+Swisher County,"Swisher County, TX",$623,$649,$826,"$1,174","$1,215",40,2025
+Tarrant County,"Fort Worth-Arlington, TX HUD Metro FMR Area","$1,101","$1,234","$1,456","$1,927","$2,385",40,2025
+Taylor County,"Abilene, TX MSA",$732,$779,"$1,006","$1,360","$1,649",40,2025
+Terrell County,"Terrell County, TX",$667,$705,$885,"$1,161","$1,302",40,2025
+Terry County,"Terry County, TX",$628,$633,$833,"$1,115","$1,119",40,2025
+Throckmorton County,"Throckmorton County, TX",$623,$658,$826,"$1,009","$1,215",40,2025
+Titus County,"Titus County, TX",$636,$640,$830,"$1,108","$1,124",40,2025
+Tom Green County,"San Angelo, TX HUD Metro FMR Area",$713,$851,"$1,066","$1,395","$1,801",40,2025
+Travis County,"Austin-Round Rock, TX MSA","$1,253","$1,386","$1,626","$2,088","$2,416",40,2025
+Trinity County,"Trinity County, TX",$688,$724,$913,"$1,111","$1,520",40,2025
+Tyler County,"Tyler County, TX",$623,$731,$826,"$1,093","$1,215",40,2025
+Upshur County,"Longview, TX HUD Metro FMR Area",$771,$848,"$1,009","$1,406","$1,561",40,2025
+Upton County,"Upton County, TX",$623,$731,$826,"$1,084","$1,215",40,2025
+Uvalde County,"Uvalde County, TX",$663,$778,$879,"$1,220","$1,435",40,2025
+Val Verde County,"Val Verde County, TX",$679,$684,$900,"$1,207","$1,324",40,2025
+Van Zandt County,"Van Zandt County, TX",$613,$716,$917,"$1,303","$1,350",40,2025
+Victoria County,"Victoria, TX MSA",$876,$949,"$1,180","$1,503","$1,696",40,2025
+Walker County,"Walker County, TX",$730,$917,"$1,092","$1,329","$1,860",40,2025
+Waller County,"Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area","$1,030","$1,095","$1,307","$1,722","$2,226",40,2025
+Ward County,"Ward County, TX",$775,$865,"$1,028","$1,251","$1,512",40,2025
+Washington County,"Washington County, TX",$817,$850,$971,"$1,341","$1,480",40,2025
+Webb County,"Laredo, TX MSA",$791,$796,$995,"$1,276","$1,380",40,2025
+Wharton County,"Wharton County, TX",$658,$713,$873,"$1,241","$1,439",40,2025
+Wheeler County,"Wheeler County, TX",$623,$628,$826,"$1,005","$1,215",40,2025
+Wichita County,"Wichita Falls, TX MSA",$712,$771,$943,"$1,274","$1,459",40,2025
+Wilbarger County,"Wilbarger County, TX",$632,$637,$838,"$1,020","$1,233",40,2025
+Willacy County,"Willacy County, TX",$623,$628,$826,"$1,105","$1,110",40,2025
+Williamson County,"Austin-Round Rock, TX MSA","$1,253","$1,386","$1,626","$2,088","$2,416",40,2025
+Wilson County,"San Antonio-New Braunfels, TX HUD Metro FMR Area",$918,"$1,057","$1,282","$1,631","$1,987",40,2025
+Winkler County,"Winkler County, TX",$688,$726,$912,"$1,226","$1,342",40,2025
+Wise County,"Wise County, TX HUD Metro FMR Area",$925,$946,"$1,068","$1,517","$1,544",40,2025
+Wood County,"Wood County, TX",$633,$719,$947,"$1,153","$1,393",40,2025
+Yoakum County,"Yoakum County, TX",$761,$855,"$1,009","$1,228","$1,484",40,2025
+Young County,"Young County, TX",$630,$731,$835,"$1,104","$1,422",40,2025
+Zapata County,"Zapata County, TX",$623,$667,$826,"$1,031","$1,215",40,2025
+Zavala County,"Zavala County, TX",$623,$658,$826,"$1,172","$1,215",40,2025
+"Abilene, TX MSA",$860,$876,"$1,117","$1,488","$1,789",40,,2025
+"Amarillo, TX HUD Metro FMR Area",$754,$879,"$1,082","$1,482","$1,728",40,,2025
+"Atascosa County, TX HUD Metro FMR Area",$831,"$1,011","$1,135","$1,405","$1,583",40,,2025
+"Austin County, TX HUD Metro FMR Area",$727,$821,$922,"$1,299","$1,565",40,,2025
+"Austin-Round Rock, TX MSA","$1,519","$1,635","$1,924","$2,470","$2,840",40,,2025
+"Beaumont-Port Arthur, TX MSA",$892,$932,"$1,126","$1,470","$1,575",40,,2025
+"Brazoria County, TX HUD Metro FMR Area",$960,"$1,194","$1,340","$1,744","$2,274",40,,2025
+"Brownsville-Harlingen, TX MSA",$660,$761,$965,"$1,270","$1,374",40,,2025
+"College Station-Bryan, TX MSA",$958,"$1,015","$1,140","$1,606","$1,710",40,,2025
+"Corpus Christi, TX MSA","$1,030","$1,104","$1,355","$1,763","$2,066",40,,2025
+"Dallas, TX HUD Metro FMR Area","$1,426","$1,500","$1,758","$2,212","$2,847",40,,2025
+"El Paso, TX HUD Metro FMR Area",$804,$980,"$1,150","$1,594","$1,952",40,,2025
+"Falls County, TX HUD Metro FMR Area",$627,$737,$905,"$1,275","$1,536",40,,2025
+"Fort Worth-Arlington, TX HUD Metro FMR Area","$1,266","$1,384","$1,617","$2,144","$2,615",40,,2025
+"Harrison County, TX HUD Metro FMR Area",$800,$840,"$1,104","$1,335","$1,500",40,,2025
+"Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area","$1,073","$1,135","$1,357","$1,792","$2,303",40,,2025
+"Hudspeth County, TX HUD Metro FMR Area",$736,$897,"$1,053","$1,273","$1,787",40,,2025
+"Kendall County, TX HUD Metro FMR Area","$1,229","$1,360","$1,677","$2,204","$2,500",40,,2025
+"Killeen-Temple, TX HUD Metro FMR Area",$895,$900,"$1,135","$1,599","$1,926",40,,2025
+"Lampasas County, TX HUD Metro FMR Area",$789,$795,"$1,044","$1,405","$1,772",40,,2025
+"Laredo, TX MSA",$876,$881,"$1,087","$1,384","$1,449",40,,2025
+"Longview, TX HUD Metro FMR Area",$889,$930,"$1,102","$1,537","$1,665",40,,2025
+"Lubbock, TX HUD Metro FMR Area",$778,$931,"$1,113","$1,551","$1,829",40,,2025
+"Lynn County, TX HUD Metro FMR Area",$633,$758,$905,"$1,264","$1,462",40,,2025
+"Martin County, TX HUD Metro FMR Area",$765,$770,$905,"$1,275","$1,536",40,,2025
+"McAllen-Edinburg-Mission, TX MSA",$777,$781,$977,"$1,277","$1,409",40,,2025
+"Medina County, TX HUD Metro FMR Area",$834,$866,"$1,138","$1,513","$1,516",40,,2025
+"Midland, TX HUD Metro FMR Area","$1,364","$1,372","$1,612","$2,059","$2,723",40,,2025
+"Odessa, TX MSA","$1,120","$1,127","$1,481","$1,791","$2,108",40,,2025
+"Oldham County, TX HUD Metro FMR Area",$703,$821,"$1,010","$1,221","$1,613",40,,2025
+"Rusk County, TX HUD Metro FMR Area",$764,$769,"$1,011","$1,286","$1,421",40,,2025
+"San Angelo, TX HUD Metro FMR Area",$779,$927,"$1,149","$1,523","$1,912",40,,2025
+"San Antonio-New Braunfels, TX HUD Metro FMR Area","$1,067","$1,197","$1,458","$1,846","$2,206",40,,2025
+"Sherman-Denison, TX MSA",$897,"$1,045","$1,227","$1,678","$2,082",40,,2025
+"Sterling County, TX HUD Metro FMR Area",$777,$925,"$1,146","$1,516","$1,906",40,,2025
+"Texarkana, TX-Texarkana, AR HUD Metro FMR Area",$779,$784,$982,"$1,221","$1,601",40,,2025
+"Tyler, TX MSA",$966,"$1,009","$1,235","$1,621","$1,912",40,,2025
+"Victoria, TX MSA","$1,010","$1,016","$1,276","$1,588","$1,753",40,,2025
+"Waco, TX HUD Metro FMR Area",$875,"$1,011","$1,266","$1,632","$1,686",40,,2025
+"Wichita Falls, TX MSA",$800,$843,"$1,037","$1,418","$1,611",40,,2025
+"Wise County, TX HUD Metro FMR Area",$946,"$1,047","$1,175","$1,656","$1,800",40,,2025
+FY2024 Texas FMR Local Area Summary,,,,,,,,2025
+Locality Name,Metropolitan Area Name,Efficiency,One-Bedroom,Two-Bedroom,Three-Bedroom,Four-Bedroom,FMR Percentile,2025
+Anderson County,"Anderson County, TX",$879,$885,"$1,035","$1,298","$1,663",40,2025
+Andrews County,"Andrews County, TX","$1,057","$1,210","$1,358","$1,704","$2,018",40,2025
+Angelina County,"Angelina County, TX",$891,$935,"$1,074","$1,361","$1,430",40,2025
+Aransas County,"Aransas County, TX",$982,"$1,025","$1,261","$1,525","$1,874",40,2025
+Archer County,"Wichita Falls, TX MSA",$800,$843,"$1,037","$1,418","$1,611",40,2025
+Armstrong County,"Amarillo, TX HUD Metro FMR Area",$754,$879,"$1,082","$1,482","$1,728",40,2025
+Atascosa County,"Atascosa County, TX HUD Metro FMR Area",$831,"$1,011","$1,135","$1,405","$1,583",40,2025
+Austin County,"Austin County, TX HUD Metro FMR Area",$727,$821,$922,"$1,299","$1,565",40,2025
+Bailey County,"Bailey County, TX",$727,$752,$934,"$1,225","$1,388",40,2025
+Bandera County,"San Antonio-New Braunfels, TX HUD Metro FMR Area","$1,067","$1,197","$1,458","$1,846","$2,206",40,2025
+Bastrop County,"Austin-Round Rock, TX MSA","$1,519","$1,635","$1,924","$2,470","$2,840",40,2025
+Baylor County,"Baylor County, TX",$696,$701,$905,"$1,275","$1,345",40,2025
+Bee County,"Bee County, TX",$884,$890,"$1,169","$1,538","$1,665",40,2025
+Bell County,"Killeen-Temple, TX HUD Metro FMR Area",$895,$900,"$1,135","$1,599","$1,926",40,2025
+Bexar County,"San Antonio-New Braunfels, TX HUD Metro FMR Area","$1,067","$1,197","$1,458","$1,846","$2,206",40,2025
+Blanco County,"Blanco County, TX",$951,$954,"$1,221","$1,476","$1,649",40,2025
+Borden County,"Borden County, TX",$791,$818,"$1,016","$1,332","$1,510",40,2025
+Bosque County,"Bosque County, TX",$684,$689,$905,"$1,275","$1,358",40,2025
+Bowie County,"Texarkana, TX-Texarkana, AR HUD Metro FMR Area",$779,$784,$982,"$1,221","$1,601",40,2025
+Brazoria County,"Brazoria County, TX HUD Metro FMR Area",$960,"$1,194","$1,340","$1,744","$2,274",40,2025
+Brazos County,"College Station-Bryan, TX MSA",$958,"$1,015","$1,140","$1,606","$1,710",40,2025
+Brewster County,"Brewster County, TX",$833,$869,"$1,070","$1,294","$1,693",40,2025
+Briscoe County,"Briscoe County, TX",$705,$729,$905,"$1,275","$1,345",40,2025
+Brooks County,"Brooks County, TX",$705,$729,$905,"$1,275","$1,345",40,2025
+Brown County,"Brown County, TX",$731,$820,"$1,078","$1,367","$1,552",40,2025
+Burleson County,"College Station-Bryan, TX MSA",$958,"$1,015","$1,140","$1,606","$1,710",40,2025
+Burnet County,"Burnet County, TX",$879,$885,"$1,138","$1,604","$1,637",40,2025
+Caldwell County,"Austin-Round Rock, TX MSA","$1,519","$1,635","$1,924","$2,470","$2,840",40,2025
+Calhoun County,"Calhoun County, TX",$653,$806,$905,"$1,275","$1,336",40,2025
+Callahan County,"Abilene, TX MSA",$860,$876,"$1,117","$1,488","$1,789",40,2025
+Cameron County,"Brownsville-Harlingen, TX MSA",$660,$761,$965,"$1,270","$1,374",40,2025
+Camp County,"Camp County, TX",$694,$698,$905,"$1,275","$1,376",40,2025
+Carson County,"Amarillo, TX HUD Metro FMR Area",$754,$879,"$1,082","$1,482","$1,728",40,2025
+Cass County,"Cass County, TX",$684,$689,$905,"$1,199","$1,345",40,2025
+Castro County,"Castro County, TX",$705,$806,$905,"$1,201","$1,345",40,2025
+Chambers County,"Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area","$1,073","$1,135","$1,357","$1,792","$2,303",40,2025
+Cherokee County,"Cherokee County, TX",$654,$734,$965,"$1,360","$1,434",40,2025
+Childress County,"Childress County, TX",$810,$886,"$1,041","$1,286","$1,547",40,2025
+Clay County,"Wichita Falls, TX MSA",$800,$843,"$1,037","$1,418","$1,611",40,2025
+Cochran County,"Cochran County, TX",$705,$729,$905,"$1,096","$1,205",40,2025
+Coke County,"Coke County, TX",$684,$689,$905,"$1,193","$1,345",40,2025
+Coleman County,"Coleman County, TX",$856,$886,"$1,100","$1,330","$1,612",40,2025
+Collin County,"Dallas, TX HUD Metro FMR Area","$1,426","$1,500","$1,758","$2,212","$2,847",40,2025
+Collingsworth County,"Collingsworth County, TX",$705,$729,$905,"$1,187","$1,345",40,2025
+Colorado County,"Colorado County, TX",$776,$782,"$1,027","$1,269","$1,526",40,2025
+Comal County,"San Antonio-New Braunfels, TX HUD Metro FMR Area","$1,067","$1,197","$1,458","$1,846","$2,206",40,2025
+Comanche County,"Comanche County, TX",$791,$818,"$1,016","$1,332","$1,510",40,2025
+Concho County,"Concho County, TX",$925,$957,"$1,188","$1,436","$1,766",40,2025
+Cooke County,"Cooke County, TX",$901,$907,"$1,192","$1,523","$1,877",40,2025
+Coryell County,"Killeen-Temple, TX HUD Metro FMR Area",$895,$900,"$1,135","$1,599","$1,926",40,2025
+Cottle County,"Cottle County, TX",$791,$818,"$1,016","$1,332","$1,510",40,2025
+Crane County,"Crane County, TX",$839,$868,"$1,078","$1,303","$1,602",40,2025
+Crockett County,"Crockett County, TX",$705,$729,$905,"$1,187","$1,345",40,2025
+Crosby County,"Lubbock, TX HUD Metro FMR Area",$778,$931,"$1,113","$1,551","$1,829",40,2025
+Culberson County,"Culberson County, TX",$791,$818,"$1,016","$1,332","$1,510",40,2025
+Dallam County,"Dallam County, TX",$705,$806,$905,"$1,275","$1,345",40,2025
+Dallas County,"Dallas, TX HUD Metro FMR Area","$1,426","$1,500","$1,758","$2,212","$2,847",40,2025
+Dawson County,"Dawson County, TX",$707,$708,$908,"$1,156","$1,209",40,2025
+Deaf Smith County,"Deaf Smith County, TX",$796,$801,"$1,053","$1,273","$1,666",40,2025
+Delta County,"Delta County, TX",$705,$759,$905,"$1,221","$1,238",40,2025
+Denton County,"Dallas, TX HUD Metro FMR Area","$1,426","$1,500","$1,758","$2,212","$2,847",40,2025
+DeWitt County,"DeWitt County, TX",$861,$891,"$1,106","$1,367","$1,627",40,2025
+Dickens County,"Dickens County, TX",$705,$729,$905,"$1,187","$1,345",40,2025
+Dimmit County,"Dimmit County, TX",$705,$806,$905,"$1,275","$1,345",40,2025
+Donley County,"Donley County, TX",$684,$689,$905,"$1,243","$1,345",40,2025
+Duval County,"Duval County, TX",$705,$729,$905,"$1,275","$1,345",40,2025
+Eastland County,"Eastland County, TX",$705,$801,$905,"$1,275","$1,536",40,2025
+Ector County,"Odessa, TX MSA","$1,120","$1,127","$1,481","$1,791","$2,108",40,2025
+Edwards County,"Edwards County, TX",$791,$818,"$1,016","$1,332","$1,510",40,2025
+El Paso County,"El Paso, TX HUD Metro FMR Area",$804,$980,"$1,150","$1,594","$1,952",40,2025
+Ellis County,"Dallas, TX HUD Metro FMR Area","$1,426","$1,500","$1,758","$2,212","$2,847",40,2025
+Erath County,"Erath County, TX",$851,$857,"$1,082","$1,525","$1,836",40,2025
+Falls County,"Falls County, TX HUD Metro FMR Area",$627,$737,$905,"$1,275","$1,536",40,2025
+Fannin County,"Fannin County, TX",$754,$759,$997,"$1,405","$1,665",40,2025
+Fayette County,"Fayette County, TX",$794,$821,"$1,020","$1,412","$1,567",40,2025
+Fisher County,"Fisher County, TX",$684,$689,$905,"$1,189","$1,345",40,2025
+Floyd County,"Floyd County, TX",$766,$771,"$1,013","$1,225","$1,505",40,2025
+Foard County,"Foard County, TX",$791,$818,"$1,016","$1,332","$1,510",40,2025
+Fort Bend County,"Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area","$1,073","$1,135","$1,357","$1,792","$2,303",40,2025
+Franklin County,"Franklin County, TX",$836,$842,"$1,106","$1,337","$1,644",40,2025
+Freestone County,"Freestone County, TX",$703,$708,$930,"$1,124","$1,382",40,2025
+Frio County,"Frio County, TX",$819,$937,"$1,052","$1,313","$1,785",40,2025
+Gaines County,"Gaines County, TX",$735,$760,$944,"$1,141","$1,403",40,2025
+Galveston County,"Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area","$1,073","$1,135","$1,357","$1,792","$2,303",40,2025
+Garza County,"Garza County, TX",$705,$729,$905,"$1,275","$1,457",40,2025
+Gillespie County,"Gillespie County, TX",$959,$966,"$1,269","$1,783","$1,886",40,2025
+Glasscock County,"Glasscock County, TX",$791,$818,"$1,016","$1,332","$1,510",40,2025
+Goliad County,"Victoria, TX MSA","$1,010","$1,016","$1,276","$1,588","$1,753",40,2025
+Gonzales County,"Gonzales County, TX",$647,$749,$905,"$1,275","$1,536",40,2025
+Gray County,"Gray County, TX",$773,$779,"$1,023","$1,237","$1,362",40,2025
+Grayson County,"Sherman-Denison, TX MSA",$897,"$1,045","$1,227","$1,678","$2,082",40,2025
+Gregg County,"Longview, TX HUD Metro FMR Area",$889,$930,"$1,102","$1,537","$1,665",40,2025
+Grimes County,"Grimes County, TX",$788,$815,"$1,012","$1,224","$1,504",40,2025
+Guadalupe County,"San Antonio-New Braunfels, TX HUD Metro FMR Area","$1,067","$1,197","$1,458","$1,846","$2,206",40,2025
+Hale County,"Hale County, TX",$613,$806,$905,"$1,222","$1,499",40,2025
+Hall County,"Hall County, TX",$684,$689,$905,"$1,254","$1,345",40,2025
+Hamilton County,"Hamilton County, TX",$755,$760,$992,"$1,199","$1,321",40,2025
+Hansford County,"Hansford County, TX",$801,$807,"$1,060","$1,315","$1,412",40,2025
+Hardeman County,"Hardeman County, TX",$705,$705,$905,"$1,216","$1,345",40,2025
+Hardin County,"Beaumont-Port Arthur, TX MSA",$892,$932,"$1,126","$1,470","$1,575",40,2025
+Harris County,"Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area","$1,073","$1,135","$1,357","$1,792","$2,303",40,2025
+Harrison County,"Harrison County, TX HUD Metro FMR Area",$800,$840,"$1,104","$1,335","$1,500",40,2025
+Hartley County,"Hartley County, TX",$948,$980,"$1,217","$1,615","$1,621",40,2025
+Haskell County,"Haskell County, TX",$705,$729,$905,"$1,275","$1,521",40,2025
+Hays County,"Austin-Round Rock, TX MSA","$1,519","$1,635","$1,924","$2,470","$2,840",40,2025
+Hemphill County,"Hemphill County, TX",$833,$862,"$1,070","$1,380","$1,590",40,2025
+Henderson County,"Henderson County, TX",$781,$808,"$1,016","$1,346","$1,491",40,2025
+Hidalgo County,"McAllen-Edinburg-Mission, TX MSA",$777,$781,$977,"$1,277","$1,409",40,2025
+Hill County,"Hill County, TX",$680,$789,"$1,003","$1,313","$1,595",40,2025
+Hockley County,"Hockley County, TX",$705,$806,$905,"$1,275","$1,536",40,2025
+Hood County,"Hood County, TX",$912,"$1,101","$1,345","$1,626","$2,091",40,2025
+Hopkins County,"Hopkins County, TX",$718,$869,"$1,059","$1,469","$1,475",40,2025
+Houston County,"Houston County, TX",$708,$712,$926,"$1,148","$1,233",40,2025
+Howard County,"Howard County, TX",$942,$959,"$1,189","$1,438","$1,767",40,2025
+Hudspeth County,"Hudspeth County, TX HUD Metro FMR Area",$736,$897,"$1,053","$1,273","$1,787",40,2025
+Hunt County,"Dallas, TX HUD Metro FMR Area","$1,426","$1,500","$1,758","$2,212","$2,847",40,2025
+Hutchinson County,"Hutchinson County, TX",$777,$782,"$1,028","$1,381","$1,546",40,2025
+Irion County,"San Angelo, TX HUD Metro FMR Area",$779,$927,"$1,149","$1,523","$1,912",40,2025
+Jack County,"Jack County, TX",$705,$729,$905,"$1,275","$1,536",40,2025
+Jackson County,"Jackson County, TX",$807,$923,"$1,036","$1,340","$1,540",40,2025
+Jasper County,"Jasper County, TX",$775,$789,$995,"$1,275","$1,325",40,2025
+Jeff Davis County,"Jeff Davis County, TX",$791,$818,"$1,016","$1,332","$1,510",40,2025
+Jefferson County,"Beaumont-Port Arthur, TX MSA",$892,$932,"$1,126","$1,470","$1,575",40,2025
+Jim Hogg County,"Jim Hogg County, TX",$705,$729,$905,"$1,275","$1,345",40,2025
+Jim Wells County,"Jim Wells County, TX",$795,$811,$939,"$1,275","$1,593",40,2025
+Johnson County,"Fort Worth-Arlington, TX HUD Metro FMR Area","$1,266","$1,384","$1,617","$2,144","$2,615",40,2025
+Jones County,"Abilene, TX MSA",$860,$876,"$1,117","$1,488","$1,789",40,2025
+Karnes County,"Karnes County, TX",$811,$954,"$1,074","$1,429","$1,638",40,2025
+Kaufman County,"Dallas, TX HUD Metro FMR Area","$1,426","$1,500","$1,758","$2,212","$2,847",40,2025
+Kendall County,"Kendall County, TX HUD Metro FMR Area","$1,229","$1,360","$1,677","$2,204","$2,500",40,2025
+Kenedy County,"Kenedy County, TX",$791,$818,"$1,016","$1,332","$1,510",40,2025
+Kent County,"Kent County, TX",$791,$818,"$1,016","$1,332","$1,510",40,2025
+Kerr County,"Kerr County, TX",$902,$942,"$1,158","$1,548","$1,880",40,2025
+Kimble County,"Kimble County, TX",$693,$698,$912,"$1,139","$1,355",40,2025
+King County,"King County, TX",$791,$818,"$1,016","$1,332","$1,510",40,2025
+Kinney County,"Kinney County, TX",$791,$818,"$1,016","$1,332","$1,510",40,2025
+Kleberg County,"Kleberg County, TX",$923,$929,"$1,221","$1,476","$1,815",40,2025
+Knox County,"Knox County, TX",$705,$729,$905,"$1,187","$1,345",40,2025
+La Salle County,"La Salle County, TX",$713,$738,$916,"$1,291","$1,361",40,2025
+Lamar County,"Lamar County, TX",$629,$745,$928,"$1,254","$1,570",40,2025
+Lamb County,"Lamb County, TX",$684,$689,$905,"$1,231","$1,484",40,2025
+Lampasas County,"Lampasas County, TX HUD Metro FMR Area",$789,$795,"$1,044","$1,405","$1,772",40,2025
+Lavaca County,"Lavaca County, TX",$831,$858,"$1,067","$1,290","$1,580",40,2025
+Lee County,"Lee County, TX",$935,"$1,002","$1,201","$1,452","$1,599",40,2025
+Leon County,"Leon County, TX",$629,$706,$928,"$1,231","$1,236",40,2025
+Liberty County,"Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area","$1,073","$1,135","$1,357","$1,792","$2,303",40,2025
+Limestone County,"Limestone County, TX",$651,$731,$961,"$1,162","$1,605",40,2025
+Lipscomb County,"Lipscomb County, TX",$742,$767,$953,"$1,152","$1,416",40,2025
+Live Oak County,"Live Oak County, TX",$707,$712,$935,"$1,318","$1,390",40,2025
+Llano County,"Llano County, TX",$890,$896,"$1,177","$1,423","$1,829",40,2025
+Loving County,"Loving County, TX",$791,$818,"$1,016","$1,332","$1,510",40,2025
+Lubbock County,"Lubbock, TX HUD Metro FMR Area",$778,$931,"$1,113","$1,551","$1,829",40,2025
+Lynn County,"Lynn County, TX HUD Metro FMR Area",$633,$758,$905,"$1,264","$1,462",40,2025
+Madison County,"Madison County, TX",$743,$748,$963,"$1,285","$1,431",40,2025
+Marion County,"Marion County, TX",$705,$723,$905,"$1,217","$1,345",40,2025
+Martin County,"Martin County, TX HUD Metro FMR Area",$765,$770,$905,"$1,275","$1,536",40,2025
+Mason County,"Mason County, TX",$747,$772,$959,"$1,291","$1,425",40,2025
+Matagorda County,"Matagorda County, TX",$868,$874,"$1,148","$1,484","$1,948",40,2025
+Maverick County,"Maverick County, TX",$753,$758,$928,"$1,192","$1,236",40,2025
+McCulloch County,"McCulloch County, TX",$807,$835,"$1,037","$1,254","$1,541",40,2025
+McLennan County,"Waco, TX HUD Metro FMR Area",$875,"$1,011","$1,266","$1,632","$1,686",40,2025
+McMullen County,"McMullen County, TX",$791,$818,"$1,016","$1,332","$1,510",40,2025
+Medina County,"Medina County, TX HUD Metro FMR Area",$834,$866,"$1,138","$1,513","$1,516",40,2025
+Menard County,"Menard County, TX",$705,$729,$905,"$1,275","$1,345",40,2025
+Midland County,"Midland, TX HUD Metro FMR Area","$1,364","$1,372","$1,612","$2,059","$2,723",40,2025
+Milam County,"Milam County, TX",$735,$794,$944,"$1,185","$1,513",40,2025
+Mills County,"Mills County, TX",$705,$729,$905,"$1,275","$1,345",40,2025
+Mitchell County,"Mitchell County, TX",$751,$848,$964,"$1,358","$1,433",40,2025
+Montague County,"Montague County, TX",$868,$874,"$1,148","$1,553","$1,706",40,2025
+Montgomery County,"Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area","$1,073","$1,135","$1,357","$1,792","$2,303",40,2025
+Moore County,"Moore County, TX",$811,$817,"$1,073","$1,297","$1,595",40,2025
+Morris County,"Morris County, TX",$684,$689,$905,"$1,249","$1,443",40,2025
+Motley County,"Motley County, TX",$705,$729,$905,"$1,103","$1,345",40,2025
+Nacogdoches County,"Nacogdoches County, TX",$834,$926,"$1,069","$1,372","$1,814",40,2025
+Navarro County,"Navarro County, TX",$700,$772,"$1,015","$1,430","$1,722",40,2025
+Newton County,"Newton County, TX",$705,$729,$905,"$1,201","$1,345",40,2025
+Nolan County,"Nolan County, TX",$733,$750,$942,"$1,327","$1,599",40,2025
+Nueces County,"Corpus Christi, TX MSA","$1,030","$1,104","$1,355","$1,763","$2,066",40,2025
+Ochiltree County,"Ochiltree County, TX",$839,$867,"$1,077","$1,305","$1,601",40,2025
+Oldham County,"Oldham County, TX HUD Metro FMR Area",$703,$821,"$1,010","$1,221","$1,613",40,2025
+Orange County,"Beaumont-Port Arthur, TX MSA",$892,$932,"$1,126","$1,470","$1,575",40,2025
+Palo Pinto County,"Palo Pinto County, TX",$795,$800,"$1,051","$1,305","$1,705",40,2025
+Panola County,"Panola County, TX",$725,$730,$959,"$1,189","$1,365",40,2025
+Parker County,"Fort Worth-Arlington, TX HUD Metro FMR Area","$1,266","$1,384","$1,617","$2,144","$2,615",40,2025
+Parmer County,"Parmer County, TX",$766,$785,$984,"$1,190","$1,656",40,2025
+Pecos County,"Pecos County, TX",$744,$851,$955,"$1,346","$1,419",40,2025
+Polk County,"Polk County, TX",$775,$877,$995,"$1,274","$1,425",40,2025
+Potter County,"Amarillo, TX HUD Metro FMR Area",$754,$879,"$1,082","$1,482","$1,728",40,2025
+Presidio County,"Presidio County, TX",$705,$806,$905,"$1,275","$1,345",40,2025
+Rains County,"Rains County, TX",$722,$826,$927,"$1,296","$1,380",40,2025
+Randall County,"Amarillo, TX HUD Metro FMR Area",$754,$879,"$1,082","$1,482","$1,728",40,2025
+Reagan County,"Reagan County, TX",$829,$857,"$1,065","$1,288","$1,583",40,2025
+Real County,"Real County, TX",$829,$857,"$1,065","$1,397","$1,583",40,2025
+Red River County,"Red River County, TX",$705,$806,$905,"$1,094","$1,345",40,2025
+Reeves County,"Reeves County, TX",$788,$815,"$1,012","$1,378","$1,504",40,2025
+Refugio County,"Refugio County, TX",$705,$754,$906,"$1,188","$1,346",40,2025
+Roberts County,"Roberts County, TX",$791,$818,"$1,016","$1,332","$1,510",40,2025
+Robertson County,"College Station-Bryan, TX MSA",$958,"$1,015","$1,140","$1,606","$1,710",40,2025
+Rockwall County,"Dallas, TX HUD Metro FMR Area","$1,426","$1,500","$1,758","$2,212","$2,847",40,2025
+Runnels County,"Runnels County, TX",$783,$788,"$1,035","$1,251","$1,378",40,2025
+Rusk County,"Rusk County, TX HUD Metro FMR Area",$764,$769,"$1,011","$1,286","$1,421",40,2025
+Sabine County,"Sabine County, TX",$705,$722,$905,"$1,253","$1,536",40,2025
+San Augustine County,"San Augustine County, TX",$791,$818,"$1,016","$1,332","$1,510",40,2025
+San Jacinto County,"San Jacinto County, TX",$706,$808,$907,"$1,203","$1,208",40,2025
+San Patricio County,"Corpus Christi, TX MSA","$1,030","$1,104","$1,355","$1,763","$2,066",40,2025
+San Saba County,"San Saba County, TX",$771,$776,"$1,020","$1,233","$1,516",40,2025
+Schleicher County,"Schleicher County, TX",$791,$818,"$1,016","$1,332","$1,510",40,2025
+Scurry County,"Scurry County, TX",$748,$856,$961,"$1,354","$1,631",40,2025
+Shackelford County,"Shackelford County, TX",$791,$818,"$1,016","$1,332","$1,510",40,2025
+Shelby County,"Shelby County, TX",$705,$806,$905,"$1,275","$1,373",40,2025
+Sherman County,"Sherman County, TX",$705,$729,$905,"$1,233","$1,237",40,2025
+Smith County,"Tyler, TX MSA",$966,"$1,009","$1,235","$1,621","$1,912",40,2025
+Somervell County,"Somervell County, TX",$786,$813,"$1,010","$1,423","$1,501",40,2025
+Starr County,"Starr County, TX",$684,$689,$905,"$1,275","$1,345",40,2025
+Stephens County,"Stephens County, TX",$705,$729,$905,"$1,275","$1,345",40,2025
+Sterling County,"Sterling County, TX HUD Metro FMR Area",$777,$925,"$1,146","$1,516","$1,906",40,2025
+Stonewall County,"Stonewall County, TX",$791,$818,"$1,016","$1,332","$1,510",40,2025
+Sutton County,"Sutton County, TX",$689,$694,$905,"$1,275","$1,345",40,2025
+Swisher County,"Swisher County, TX",$705,$723,$905,"$1,275","$1,345",40,2025
+Tarrant County,"Fort Worth-Arlington, TX HUD Metro FMR Area","$1,266","$1,384","$1,617","$2,144","$2,615",40,2025
+Taylor County,"Abilene, TX MSA",$860,$876,"$1,117","$1,488","$1,789",40,2025
+Terrell County,"Terrell County, TX",$791,$818,"$1,016","$1,332","$1,510",40,2025
+Terry County,"Terry County, TX",$718,$742,$922,"$1,296","$1,370",40,2025
+Throckmorton County,"Throckmorton County, TX",$721,$746,$926,"$1,120","$1,376",40,2025
+Titus County,"Titus County, TX",$717,$722,$926,"$1,229","$1,233",40,2025
+Tom Green County,"San Angelo, TX HUD Metro FMR Area",$779,$927,"$1,149","$1,523","$1,912",40,2025
+Travis County,"Austin-Round Rock, TX MSA","$1,519","$1,635","$1,924","$2,470","$2,840",40,2025
+Trinity County,"Trinity County, TX",$786,$799,"$1,009","$1,220","$1,712",40,2025
+Tyler County,"Tyler County, TX",$705,$725,$905,"$1,094","$1,345",40,2025
+Upshur County,"Longview, TX HUD Metro FMR Area",$889,$930,"$1,102","$1,537","$1,665",40,2025
+Upton County,"Upton County, TX",$705,$806,$905,"$1,187","$1,345",40,2025
+Uvalde County,"Uvalde County, TX",$794,$881,"$1,020","$1,437","$1,653",40,2025
+Val Verde County,"Val Verde County, TX",$764,$769,"$1,011","$1,341","$1,346",40,2025
+Van Zandt County,"Van Zandt County, TX",$711,$798,"$1,049","$1,478","$1,547",40,2025
+Victoria County,"Victoria, TX MSA","$1,010","$1,016","$1,276","$1,588","$1,753",40,2025
+Walker County,"Walker County, TX",$807,"$1,035","$1,190","$1,441","$2,019",40,2025
+Waller County,"Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area","$1,073","$1,135","$1,357","$1,792","$2,303",40,2025
+Ward County,"Ward County, TX",$831,$950,"$1,067","$1,410","$1,586",40,2025
+Washington County,"Washington County, TX",$919,$973,"$1,181","$1,586","$1,730",40,2025
+Webb County,"Laredo, TX MSA",$876,$881,"$1,087","$1,384","$1,449",40,2025
+Wharton County,"Wharton County, TX",$677,$803,$999,"$1,408","$1,558",40,2025
+Wheeler County,"Wheeler County, TX",$729,$730,$936,"$1,132","$1,391",40,2025
+Wichita County,"Wichita Falls, TX MSA",$800,$843,"$1,037","$1,418","$1,611",40,2025
+Wilbarger County,"Wilbarger County, TX",$702,$706,$928,"$1,122","$1,379",40,2025
+Willacy County,"Willacy County, TX",$684,$689,$905,"$1,201","$1,205",40,2025
+Williamson County,"Austin-Round Rock, TX MSA","$1,519","$1,635","$1,924","$2,470","$2,840",40,2025
+Wilson County,"San Antonio-New Braunfels, TX HUD Metro FMR Area","$1,067","$1,197","$1,458","$1,846","$2,206",40,2025
+Winkler County,"Winkler County, TX",$791,$818,"$1,016","$1,332","$1,510",40,2025
+Wise County,"Wise County, TX HUD Metro FMR Area",$946,"$1,047","$1,175","$1,656","$1,800",40,2025
+Wood County,"Wood County, TX",$740,$831,"$1,092","$1,320","$1,623",40,2025
+Yoakum County,"Yoakum County, TX",$907,$951,"$1,165","$1,409","$1,731",40,2025
+Young County,"Young County, TX",$744,$799,$955,"$1,261","$1,393",40,2025
+Zapata County,"Zapata County, TX",$705,$721,$905,"$1,094","$1,345",40,2025
+Zavala County,"Zavala County, TX",$705,$729,$905,"$1,275","$1,345",40,2025
+"Abilene, TX MSA",$944,$950,"$1,207","$1,571","$1,899",40,,2025
+"Amarillo, TX HUD Metro FMR Area",$813,$952,"$1,158","$1,592","$1,848",40,,2025
+"Atascosa County, TX HUD Metro FMR Area",$879,"$1,068","$1,182","$1,482","$1,567",40,,2025
+"Austin County, TX HUD Metro FMR Area",$802,$891,"$1,001","$1,403","$1,635",40,,2025
+"Austin-Round Rock, TX MSA","$1,549","$1,650","$1,949","$2,484","$2,882",40,,2025
+"Beaumont-Port Arthur, TX MSA",$915,$920,"$1,113","$1,460","$1,676",40,,2025
+"Brazoria County, TX HUD Metro FMR Area",$951,"$1,138","$1,260","$1,683","$2,116",40,,2025
+"Brownsville-Harlingen, TX MSA",$666,$757,$948,"$1,264","$1,310",40,,2025
+"College Station-Bryan, TX MSA","$1,034","$1,089","$1,206","$1,690","$1,863",40,,2025
+"Corpus Christi, TX MSA","$1,051","$1,128","$1,390","$1,816","$2,119",40,,2025
+"Dallas, TX HUD Metro FMR Area","$1,531","$1,606","$1,884","$2,361","$3,033",40,,2025
+"El Paso, TX HUD Metro FMR Area",$821,"$1,020","$1,192","$1,647","$2,002",40,,2025
+"Falls County, TX HUD Metro FMR Area",$640,$711,$933,"$1,307","$1,567",40,,2025
+"Fort Worth-Arlington, TX HUD Metro FMR Area","$1,371","$1,461","$1,705","$2,256","$2,752",40,,2025
+"Harrison County, TX HUD Metro FMR Area",$820,$912,"$1,196","$1,441","$1,586",40,,2025
+"Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area","$1,226","$1,279","$1,529","$2,038","$2,568",40,,2025
+"Hudspeth County, TX HUD Metro FMR Area",$726,$902,"$1,054","$1,270","$1,770",40,,2025
+"Kendall County, TX HUD Metro FMR Area","$1,285","$1,408","$1,728","$2,282","$2,291",40,,2025
+"Killeen-Temple, TX HUD Metro FMR Area",$924,$930,"$1,172","$1,631","$1,968",40,,2025
+"Lampasas County, TX HUD Metro FMR Area",$781,$787,"$1,032","$1,360","$1,733",40,,2025
+"Laredo, TX MSA",$953,$959,"$1,173","$1,493","$1,556",40,,2025
+"Longview, TX HUD Metro FMR Area",$989,$995,"$1,193","$1,621","$1,709",40,,2025
+"Lubbock, TX HUD Metro FMR Area",$832,"$1,007","$1,192","$1,658","$1,947",40,,2025
+"Lynn County, TX HUD Metro FMR Area",$652,$742,$933,"$1,268","$1,567",40,,2025
+"Martin County, TX HUD Metro FMR Area","$1,579","$1,589","$1,868","$2,352","$3,024",40,,2025
+"McAllen-Edinburg-Mission, TX MSA",$793,$798,$992,"$1,290","$1,430",40,,2025
+"Medina County, TX HUD Metro FMR Area",$885,$908,"$1,191","$1,573","$1,579",40,,2025
+"Midland, TX HUD Metro FMR Area","$1,582","$1,591","$1,867","$2,398","$2,963",40,,2025
+"Odessa, TX MSA","$1,286","$1,295","$1,669","$2,011","$2,359",40,,2025
+"Oldham County, TX HUD Metro FMR Area",$781,$915,"$1,113","$1,387","$1,776",40,,2025
+"Rusk County, TX HUD Metro FMR Area",$832,$840,"$1,102","$1,396","$1,489",40,,2025
+"San Angelo, TX HUD Metro FMR Area",$863,$998,"$1,258","$1,691","$2,078",40,,2025
+"San Antonio-New Braunfels, TX HUD Metro FMR Area","$1,116","$1,231","$1,501","$1,907","$2,243",40,,2025
+"Sherman-Denison, TX MSA","$1,068","$1,113","$1,342","$1,872","$2,254",40,,2025
+"Sterling County, TX HUD Metro FMR Area",$863,$998,"$1,258","$1,687","$2,078",40,,2025
+"Texarkana, TX-Texarkana, AR HUD Metro FMR Area",$848,$853,"$1,071","$1,327","$1,677",40,,2025
+"Tyler, TX MSA",$995,"$1,084","$1,333","$1,776","$2,011",40,,2025
+"Victoria, TX MSA","$1,092","$1,099","$1,392","$1,678","$1,846",40,,2025
+"Waco, TX HUD Metro FMR Area",$944,"$1,106","$1,377","$1,776","$1,826",40,,2025
+"Wichita Falls, TX MSA",$823,$896,"$1,102","$1,506","$1,709",40,,2025
+"Wise County, TX HUD Metro FMR Area",$974,"$1,006","$1,196","$1,676","$1,910",40,,2025
+FY2025 Texas FMR Local Area Summary,,,,,,,,2025
+Locality Name,Metropolitan Area Name,Efficiency,One-Bedroom,Two-Bedroom,Three-Bedroom,Four-Bedroom,FMR Percentile,2025
+Anderson County,"Anderson County, TX",$846,$851,"$1,033","$1,245","$1,563",40,2025
+Andrews County,"Andrews County, TX","$1,087","$1,252","$1,386","$1,670","$2,073",40,2025
+Angelina County,"Angelina County, TX",$855,$900,"$1,038","$1,330","$1,434",40,2025
+Aransas County,"Aransas County, TX",$969,$976,"$1,280","$1,670","$1,914",40,2025
+Archer County,"Wichita Falls, TX MSA",$823,$896,"$1,102","$1,506","$1,709",40,2025
+Armstrong County,"Amarillo, TX HUD Metro FMR Area",$813,$952,"$1,158","$1,592","$1,848",40,2025
+Atascosa County,"Atascosa County, TX HUD Metro FMR Area",$879,"$1,068","$1,182","$1,482","$1,567",40,2025
+Austin County,"Austin County, TX HUD Metro FMR Area",$802,$891,"$1,001","$1,403","$1,635",40,2025
+Bailey County,"Bailey County, TX",$732,$752,$933,"$1,217","$1,395",40,2025
+Bandera County,"San Antonio-New Braunfels, TX HUD Metro FMR Area","$1,116","$1,231","$1,501","$1,907","$2,243",40,2025
+Bastrop County,"Austin-Round Rock, TX MSA","$1,549","$1,650","$1,949","$2,484","$2,882",40,2025
+Baylor County,"Baylor County, TX",$708,$713,$933,"$1,307","$1,395",40,2025
+Bee County,"Bee County, TX",$844,$849,"$1,114","$1,421","$1,513",40,2025
+Bell County,"Killeen-Temple, TX HUD Metro FMR Area",$924,$930,"$1,172","$1,631","$1,968",40,2025
+Bexar County,"San Antonio-New Braunfels, TX HUD Metro FMR Area","$1,116","$1,231","$1,501","$1,907","$2,243",40,2025
+Blanco County,"Blanco County, TX",$870,$875,"$1,120","$1,509","$1,675",40,2025
+Borden County,"Borden County, TX",$766,$786,$976,"$1,273","$1,459",40,2025
+Bosque County,"Bosque County, TX",$707,$711,$933,"$1,297","$1,301",40,2025
+Bowie County,"Texarkana, TX-Texarkana, AR HUD Metro FMR Area",$848,$853,"$1,071","$1,327","$1,677",40,2025
+Brazoria County,"Brazoria County, TX HUD Metro FMR Area",$951,"$1,138","$1,260","$1,683","$2,116",40,2025
+Brazos County,"College Station-Bryan, TX MSA","$1,034","$1,089","$1,206","$1,690","$1,863",40,2025
+Brewster County,"Brewster County, TX",$765,$804,$975,"$1,366","$1,524",40,2025
+Briscoe County,"Briscoe County, TX",$732,$752,$933,"$1,307","$1,395",40,2025
+Brooks County,"Brooks County, TX",$732,$752,$933,"$1,307","$1,395",40,2025
+Brown County,"Brown County, TX",$690,$761,$999,"$1,274","$1,467",40,2025
+Burleson County,"College Station-Bryan, TX MSA","$1,034","$1,089","$1,206","$1,690","$1,863",40,2025
+Burnet County,"Burnet County, TX",$864,$869,"$1,124","$1,507","$1,513",40,2025
+Caldwell County,"Austin-Round Rock, TX MSA","$1,549","$1,650","$1,949","$2,484","$2,882",40,2025
+Calhoun County,"Calhoun County, TX",$732,$843,$933,"$1,307","$1,378",40,2025
+Callahan County,"Abilene, TX MSA",$944,$950,"$1,207","$1,571","$1,899",40,2025
+Cameron County,"Brownsville-Harlingen, TX MSA",$666,$757,$948,"$1,264","$1,310",40,2025
+Camp County,"Camp County, TX",$727,$731,$933,"$1,307","$1,440",40,2025
+Carson County,"Amarillo, TX HUD Metro FMR Area",$813,$952,"$1,158","$1,592","$1,848",40,2025
+Cass County,"Cass County, TX",$707,$711,$933,"$1,238","$1,395",40,2025
+Castro County,"Castro County, TX",$732,$750,$933,"$1,124","$1,395",40,2025
+Chambers County,"Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area","$1,226","$1,279","$1,529","$2,038","$2,568",40,2025
+Cherokee County,"Cherokee County, TX",$677,$712,$934,"$1,309","$1,397",40,2025
+Childress County,"Childress County, TX",$766,$828,$976,"$1,275","$1,459",40,2025
+Clay County,"Wichita Falls, TX MSA",$823,$896,"$1,102","$1,506","$1,709",40,2025
+Cochran County,"Cochran County, TX",$732,$752,$933,"$1,124","$1,395",40,2025
+Coke County,"Coke County, TX",$707,$711,$933,"$1,171","$1,395",40,2025
+Coleman County,"Coleman County, TX",$771,$798,$990,"$1,197","$1,452",40,2025
+Collin County,"Dallas, TX HUD Metro FMR Area","$1,531","$1,606","$1,884","$2,361","$3,033",40,2025
+Collingsworth County,"Collingsworth County, TX",$732,$843,$933,"$1,217","$1,395",40,2025
+Colorado County,"Colorado County, TX",$792,$814,"$1,010","$1,247","$1,510",40,2025
+Comal County,"San Antonio-New Braunfels, TX HUD Metro FMR Area","$1,116","$1,231","$1,501","$1,907","$2,243",40,2025
+Comanche County,"Comanche County, TX",$766,$786,$976,"$1,273","$1,459",40,2025
+Concho County,"Concho County, TX",$857,$880,"$1,092","$1,316","$1,633",40,2025
+Cooke County,"Cooke County, TX",$889,$895,"$1,174","$1,447","$1,753",40,2025
+Coryell County,"Killeen-Temple, TX HUD Metro FMR Area",$924,$930,"$1,172","$1,631","$1,968",40,2025
+Cottle County,"Cottle County, TX",$766,$786,$976,"$1,273","$1,459",40,2025
+Crane County,"Crane County, TX",$774,$795,$987,"$1,189","$1,476",40,2025
+Crockett County,"Crockett County, TX",$732,$752,$933,"$1,217","$1,395",40,2025
+Crosby County,"Lubbock, TX HUD Metro FMR Area",$832,"$1,007","$1,192","$1,658","$1,947",40,2025
+Culberson County,"Culberson County, TX",$766,$786,$976,"$1,273","$1,459",40,2025
+Dallam County,"Dallam County, TX",$759,$874,$968,"$1,356","$1,448",40,2025
+Dallas County,"Dallas, TX HUD Metro FMR Area","$1,531","$1,606","$1,884","$2,361","$3,033",40,2025
+Dawson County,"Dawson County, TX",$713,$718,$942,"$1,135","$1,249",40,2025
+Deaf Smith County,"Deaf Smith County, TX",$745,$760,$997,"$1,201","$1,655",40,2025
+Delta County,"Delta County, TX",$732,$786,$933,"$1,274","$1,284",40,2025
+Denton County,"Dallas, TX HUD Metro FMR Area","$1,531","$1,606","$1,884","$2,361","$3,033",40,2025
+DeWitt County,"DeWitt County, TX",$825,$848,"$1,052","$1,292","$1,573",40,2025
+Dickens County,"Dickens County, TX",$732,$752,$933,"$1,254","$1,395",40,2025
+Dimmit County,"Dimmit County, TX",$732,$843,$933,"$1,307","$1,395",40,2025
+Donley County,"Donley County, TX",$707,$711,$933,"$1,273","$1,319",40,2025
+Duval County,"Duval County, TX",$732,$752,$933,"$1,307","$1,395",40,2025
+Eastland County,"Eastland County, TX",$732,$843,$933,"$1,307","$1,567",40,2025
+Ector County,"Odessa, TX MSA","$1,286","$1,295","$1,669","$2,011","$2,359",40,2025
+Edwards County,"Edwards County, TX",$766,$786,$976,"$1,273","$1,459",40,2025
+El Paso County,"El Paso, TX HUD Metro FMR Area",$821,"$1,020","$1,192","$1,647","$2,002",40,2025
+Ellis County,"Dallas, TX HUD Metro FMR Area","$1,531","$1,606","$1,884","$2,361","$3,033",40,2025
+Erath County,"Erath County, TX",$803,$809,"$1,061","$1,487","$1,782",40,2025
+Falls County,"Falls County, TX HUD Metro FMR Area",$640,$711,$933,"$1,307","$1,567",40,2025
+Fannin County,"Fannin County, TX",$714,$719,$943,"$1,321","$1,584",40,2025
+Fayette County,"Fayette County, TX",$725,$772,$958,"$1,316","$1,515",40,2025
+Fisher County,"Fisher County, TX",$707,$711,$933,"$1,180","$1,395",40,2025
+Floyd County,"Floyd County, TX",$707,$711,$933,"$1,124","$1,395",40,2025
+Foard County,"Foard County, TX",$714,$737,$933,"$1,217","$1,395",40,2025
+Fort Bend County,"Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area","$1,226","$1,279","$1,529","$2,038","$2,568",40,2025
+Franklin County,"Franklin County, TX",$797,$802,"$1,052","$1,267","$1,573",40,2025
+Freestone County,"Freestone County, TX",$707,$711,$933,"$1,142","$1,395",40,2025
+Frio County,"Frio County, TX",$750,$844,$990,"$1,291","$1,662",40,2025
+Gaines County,"Gaines County, TX",$732,$808,$933,"$1,124","$1,395",40,2025
+Galveston County,"Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area","$1,226","$1,279","$1,529","$2,038","$2,568",40,2025
+Garza County,"Garza County, TX",$732,$752,$933,"$1,307","$1,478",40,2025
+Gillespie County,"Gillespie County, TX",$965,$971,"$1,274","$1,688","$1,905",40,2025
+Glasscock County,"Glasscock County, TX",$766,$786,$976,"$1,273","$1,459",40,2025
+Goliad County,"Victoria, TX MSA","$1,092","$1,099","$1,392","$1,678","$1,846",40,2025
+Gonzales County,"Gonzales County, TX",$644,$711,$933,"$1,307","$1,383",40,2025
+Gray County,"Gray County, TX",$732,$737,$967,"$1,165","$1,282",40,2025
+Grayson County,"Sherman-Denison, TX MSA","$1,068","$1,113","$1,342","$1,872","$2,254",40,2025
+Gregg County,"Longview, TX HUD Metro FMR Area",$989,$995,"$1,193","$1,621","$1,709",40,2025
+Grimes County,"Grimes County, TX",$764,$785,$974,"$1,173","$1,456",40,2025
+Guadalupe County,"San Antonio-New Braunfels, TX HUD Metro FMR Area","$1,116","$1,231","$1,501","$1,907","$2,243",40,2025
+Hale County,"Hale County, TX",$640,$843,$933,"$1,243","$1,461",40,2025
+Hall County,"Hall County, TX",$707,$711,$933,"$1,307","$1,395",40,2025
+Hamilton County,"Hamilton County, TX",$716,$721,$946,"$1,189","$1,415",40,2025
+Hansford County,"Hansford County, TX",$760,$765,$988,"$1,294","$1,310",40,2025
+Hardeman County,"Hardeman County, TX",$726,$731,$933,"$1,259","$1,395",40,2025
+Hardin County,"Beaumont-Port Arthur, TX MSA",$915,$920,"$1,113","$1,460","$1,676",40,2025
+Harris County,"Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area","$1,226","$1,279","$1,529","$2,038","$2,568",40,2025
+Harrison County,"Harrison County, TX HUD Metro FMR Area",$820,$912,"$1,196","$1,441","$1,586",40,2025
+Hartley County,"Hartley County, TX",$859,$882,"$1,096","$1,454","$1,459",40,2025
+Haskell County,"Haskell County, TX",$732,$752,$933,"$1,307","$1,537",40,2025
+Hays County,"Austin-Round Rock, TX MSA","$1,549","$1,650","$1,949","$2,484","$2,882",40,2025
+Hemphill County,"Hemphill County, TX",$750,$776,$963,"$1,307","$1,431",40,2025
+Henderson County,"Henderson County, TX",$736,$816,"$1,004","$1,328","$1,475",40,2025
+Hidalgo County,"McAllen-Edinburg-Mission, TX MSA",$793,$798,$992,"$1,290","$1,430",40,2025
+Hill County,"Hill County, TX",$649,$749,$947,"$1,248","$1,571",40,2025
+Hockley County,"Hockley County, TX",$811,$843,$933,"$1,307","$1,567",40,2025
+Hood County,"Hood County, TX","$1,047","$1,122","$1,334","$1,607","$2,113",40,2025
+Hopkins County,"Hopkins County, TX",$716,$886,"$1,026","$1,402","$1,408",40,2025
+Houston County,"Houston County, TX",$707,$711,$933,"$1,149","$1,237",40,2025
+Howard County,"Howard County, TX",$873,$879,"$1,127","$1,358","$1,685",40,2025
+Hudspeth County,"Hudspeth County, TX HUD Metro FMR Area",$726,$902,"$1,054","$1,270","$1,770",40,2025
+Hunt County,"Dallas, TX HUD Metro FMR Area","$1,531","$1,606","$1,884","$2,361","$3,033",40,2025
+Hutchinson County,"Hutchinson County, TX",$707,$711,$933,"$1,307","$1,567",40,2025
+Irion County,"San Angelo, TX HUD Metro FMR Area",$863,$998,"$1,258","$1,691","$2,078",40,2025
+Jack County,"Jack County, TX",$732,$843,$933,"$1,307","$1,395",40,2025
+Jackson County,"Jackson County, TX",$777,$894,$990,"$1,206","$1,480",40,2025
+Jasper County,"Jasper County, TX",$732,$789,$933,"$1,155","$1,237",40,2025
+Jeff Davis County,"Jeff Davis County, TX",$766,$786,$976,"$1,273","$1,459",40,2025
+Jefferson County,"Beaumont-Port Arthur, TX MSA",$915,$920,"$1,113","$1,460","$1,676",40,2025
+Jim Hogg County,"Jim Hogg County, TX",$732,$752,$933,"$1,148","$1,395",40,2025
+Jim Wells County,"Jim Wells County, TX",$766,$771,$933,"$1,307","$1,567",40,2025
+Johnson County,"Fort Worth-Arlington, TX HUD Metro FMR Area","$1,371","$1,461","$1,705","$2,256","$2,752",40,2025
+Jones County,"Abilene, TX MSA",$944,$950,"$1,207","$1,571","$1,899",40,2025
+Karnes County,"Karnes County, TX",$774,$861,"$1,129","$1,400","$1,664",40,2025
+Kaufman County,"Dallas, TX HUD Metro FMR Area","$1,531","$1,606","$1,884","$2,361","$3,033",40,2025
+Kendall County,"Kendall County, TX HUD Metro FMR Area","$1,285","$1,408","$1,728","$2,282","$2,291",40,2025
+Kenedy County,"Kenedy County, TX",$766,$786,$976,"$1,273","$1,459",40,2025
+Kent County,"Kent County, TX",$766,$786,$976,"$1,273","$1,459",40,2025
+Kerr County,"Kerr County, TX",$859,$925,"$1,095","$1,488","$1,692",40,2025
+Kimble County,"Kimble County, TX",$707,$711,$933,"$1,185","$1,395",40,2025
+King County,"King County, TX",$766,$786,$976,"$1,273","$1,459",40,2025
+Kinney County,"Kinney County, TX",$766,$786,$976,"$1,273","$1,459",40,2025
+Kleberg County,"Kleberg County, TX",$888,$899,"$1,179","$1,420","$1,763",40,2025
+Knox County,"Knox County, TX",$732,$752,$933,"$1,217","$1,395",40,2025
+La Salle County,"La Salle County, TX",$735,$755,$937,"$1,313","$1,401",40,2025
+Lamar County,"Lamar County, TX",$732,$756,$933,"$1,254","$1,416",40,2025
+Lamb County,"Lamb County, TX",$707,$711,$933,"$1,260","$1,550",40,2025
+Lampasas County,"Lampasas County, TX HUD Metro FMR Area",$781,$787,"$1,032","$1,360","$1,733",40,2025
+Lavaca County,"Lavaca County, TX",$798,$839,"$1,017","$1,225","$1,585",40,2025
+Lee County,"Lee County, TX",$883,$907,"$1,126","$1,381","$1,493",40,2025
+Leon County,"Leon County, TX",$646,$711,$933,"$1,232","$1,237",40,2025
+Liberty County,"Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area","$1,226","$1,279","$1,529","$2,038","$2,568",40,2025
+Limestone County,"Limestone County, TX",$707,$711,$933,"$1,124","$1,445",40,2025
+Lipscomb County,"Lipscomb County, TX",$732,$752,$933,"$1,124","$1,395",40,2025
+Live Oak County,"Live Oak County, TX",$707,$711,$933,"$1,287","$1,395",40,2025
+Llano County,"Llano County, TX",$811,$816,"$1,071","$1,400","$1,738",40,2025
+Loving County,"Loving County, TX",$766,$786,$976,"$1,273","$1,459",40,2025
+Lubbock County,"Lubbock, TX HUD Metro FMR Area",$832,"$1,007","$1,192","$1,658","$1,947",40,2025
+Lynn County,"Lynn County, TX HUD Metro FMR Area",$652,$742,$933,"$1,268","$1,567",40,2025
+Madison County,"Madison County, TX",$707,$711,$933,"$1,296","$1,395",40,2025
+Marion County,"Marion County, TX",$726,$730,$933,"$1,212","$1,395",40,2025
+Martin County,"Martin County, TX HUD Metro FMR Area","$1,579","$1,589","$1,868","$2,352","$3,024",40,2025
+Mason County,"Mason County, TX",$732,$752,$933,"$1,217","$1,395",40,2025
+Matagorda County,"Matagorda County, TX",$863,$867,"$1,100","$1,372","$1,812",40,2025
+Maverick County,"Maverick County, TX",$732,$797,$933,"$1,227","$1,282",40,2025
+McCulloch County,"McCulloch County, TX",$765,$805,$975,"$1,175","$1,458",40,2025
+McLennan County,"Waco, TX HUD Metro FMR Area",$944,"$1,106","$1,377","$1,776","$1,826",40,2025
+McMullen County,"McMullen County, TX",$766,$786,$976,"$1,273","$1,459",40,2025
+Medina County,"Medina County, TX HUD Metro FMR Area",$885,$908,"$1,191","$1,573","$1,579",40,2025
+Menard County,"Menard County, TX",$732,$752,$933,"$1,307","$1,395",40,2025
+Midland County,"Midland, TX HUD Metro FMR Area","$1,582","$1,591","$1,867","$2,398","$2,963",40,2025
+Milam County,"Milam County, TX",$732,$750,$933,"$1,135","$1,517",40,2025
+Mills County,"Mills County, TX",$732,$752,$933,"$1,307","$1,395",40,2025
+Mitchell County,"Mitchell County, TX",$750,$838,$956,"$1,247","$1,430",40,2025
+Montague County,"Montague County, TX",$830,$835,"$1,096","$1,433","$1,639",40,2025
+Montgomery County,"Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area","$1,226","$1,279","$1,529","$2,038","$2,568",40,2025
+Moore County,"Moore County, TX",$763,$768,"$1,008","$1,215","$1,507",40,2025
+Morris County,"Morris County, TX",$707,$711,$933,"$1,226","$1,509",40,2025
+Motley County,"Motley County, TX",$732,$752,$933,"$1,124","$1,395",40,2025
+Nacogdoches County,"Nacogdoches County, TX",$799,$859,"$1,009","$1,237","$1,694",40,2025
+Navarro County,"Navarro County, TX",$709,$805,$966,"$1,354","$1,550",40,2025
+Newton County,"Newton County, TX",$732,$752,$933,"$1,286","$1,395",40,2025
+Nolan County,"Nolan County, TX",$732,$780,$933,"$1,307","$1,567",40,2025
+Nueces County,"Corpus Christi, TX MSA","$1,051","$1,128","$1,390","$1,816","$2,119",40,2025
+Ochiltree County,"Ochiltree County, TX",$774,$795,$987,"$1,244","$1,476",40,2025
+Oldham County,"Oldham County, TX HUD Metro FMR Area",$781,$915,"$1,113","$1,387","$1,776",40,2025
+Orange County,"Beaumont-Port Arthur, TX MSA",$915,$920,"$1,113","$1,460","$1,676",40,2025
+Palo Pinto County,"Palo Pinto County, TX",$762,$767,"$1,006","$1,259","$1,689",40,2025
+Panola County,"Panola County, TX",$707,$711,$933,"$1,192","$1,376",40,2025
+Parker County,"Fort Worth-Arlington, TX HUD Metro FMR Area","$1,371","$1,461","$1,705","$2,256","$2,752",40,2025
+Parmer County,"Parmer County, TX",$722,$727,$954,"$1,149","$1,590",40,2025
+Pecos County,"Pecos County, TX",$732,$843,$933,"$1,307","$1,395",40,2025
+Polk County,"Polk County, TX",$771,$790,$983,"$1,187","$1,470",40,2025
+Potter County,"Amarillo, TX HUD Metro FMR Area",$813,$952,"$1,158","$1,592","$1,848",40,2025
+Presidio County,"Presidio County, TX",$766,$786,$976,"$1,273","$1,459",40,2025
+Rains County,"Rains County, TX",$732,$843,$933,"$1,307","$1,466",40,2025
+Randall County,"Amarillo, TX HUD Metro FMR Area",$813,$952,"$1,158","$1,592","$1,848",40,2025
+Reagan County,"Reagan County, TX",$766,$786,$976,"$1,273","$1,459",40,2025
+Real County,"Real County, TX",$792,$911,"$1,009","$1,316","$1,509",40,2025
+Red River County,"Red River County, TX",$640,$837,$933,"$1,243","$1,567",40,2025
+Reeves County,"Reeves County, TX",$774,$891,$987,"$1,241","$1,476",40,2025
+Refugio County,"Refugio County, TX",$707,$711,$933,"$1,299","$1,395",40,2025
+Roberts County,"Roberts County, TX",$766,$786,$976,"$1,273","$1,459",40,2025
+Robertson County,"College Station-Bryan, TX MSA","$1,034","$1,089","$1,206","$1,690","$1,863",40,2025
+Rockwall County,"Dallas, TX HUD Metro FMR Area","$1,531","$1,606","$1,884","$2,361","$3,033",40,2025
+Runnels County,"Runnels County, TX",$781,$786,"$1,031","$1,242","$1,542",40,2025
+Rusk County,"Rusk County, TX HUD Metro FMR Area",$832,$840,"$1,102","$1,396","$1,489",40,2025
+Sabine County,"Sabine County, TX",$707,$711,$933,"$1,128","$1,395",40,2025
+San Augustine County,"San Augustine County, TX",$766,$786,$976,"$1,273","$1,459",40,2025
+San Jacinto County,"San Jacinto County, TX",$732,$843,$933,"$1,232","$1,237",40,2025
+San Patricio County,"Corpus Christi, TX MSA","$1,051","$1,128","$1,390","$1,816","$2,119",40,2025
+San Saba County,"San Saba County, TX",$713,$718,$942,"$1,214","$1,409",40,2025
+Schleicher County,"Schleicher County, TX",$732,$752,$933,"$1,217","$1,395",40,2025
+Scurry County,"Scurry County, TX",$756,$871,$964,"$1,351","$1,619",40,2025
+Shackelford County,"Shackelford County, TX",$732,$752,$933,"$1,217","$1,395",40,2025
+Shelby County,"Shelby County, TX",$732,$843,$933,"$1,307","$1,381",40,2025
+Sherman County,"Sherman County, TX",$732,$752,$933,"$1,217","$1,395",40,2025
+Smith County,"Tyler, TX MSA",$995,"$1,084","$1,333","$1,776","$2,011",40,2025
+Somervell County,"Somervell County, TX",$732,$752,$933,"$1,307","$1,395",40,2025
+Starr County,"Starr County, TX",$707,$711,$933,"$1,307","$1,470",40,2025
+Stephens County,"Stephens County, TX",$766,$786,$976,"$1,273","$1,459",40,2025
+Sterling County,"Sterling County, TX HUD Metro FMR Area",$863,$998,"$1,258","$1,687","$2,078",40,2025
+Stonewall County,"Stonewall County, TX",$766,$786,$976,"$1,273","$1,459",40,2025
+Sutton County,"Sutton County, TX",$707,$711,$933,"$1,164","$1,395",40,2025
+Swisher County,"Swisher County, TX",$720,$724,$933,"$1,307","$1,395",40,2025
+Tarrant County,"Fort Worth-Arlington, TX HUD Metro FMR Area","$1,371","$1,461","$1,705","$2,256","$2,752",40,2025
+Taylor County,"Abilene, TX MSA",$944,$950,"$1,207","$1,571","$1,899",40,2025
+Terrell County,"Terrell County, TX",$766,$786,$976,"$1,273","$1,459",40,2025
+Terry County,"Terry County, TX",$732,$752,$933,"$1,307","$1,395",40,2025
+Throckmorton County,"Throckmorton County, TX",$732,$752,$933,"$1,124","$1,395",40,2025
+Titus County,"Titus County, TX",$707,$711,$933,"$1,204","$1,237",40,2025
+Tom Green County,"San Angelo, TX HUD Metro FMR Area",$863,$998,"$1,258","$1,691","$2,078",40,2025
+Travis County,"Austin-Round Rock, TX MSA","$1,549","$1,650","$1,949","$2,484","$2,882",40,2025
+Trinity County,"Trinity County, TX",$744,$776,$948,"$1,142","$1,592",40,2025
+Tyler County,"Tyler County, TX",$717,$721,$934,"$1,125","$1,397",40,2025
+Upshur County,"Longview, TX HUD Metro FMR Area",$989,$995,"$1,193","$1,621","$1,709",40,2025
+Upton County,"Upton County, TX",$732,$843,$933,"$1,217","$1,395",40,2025
+Uvalde County,"Uvalde County, TX",$818,$823,"$1,080","$1,408","$1,610",40,2025
+Val Verde County,"Val Verde County, TX",$761,$766,$980,"$1,294","$1,299",40,2025
+Van Zandt County,"Van Zandt County, TX",$760,$780,"$1,023","$1,419","$1,424",40,2025
+Victoria County,"Victoria, TX MSA","$1,092","$1,099","$1,392","$1,678","$1,846",40,2025
+Walker County,"Walker County, TX",$766,$981,"$1,117","$1,384","$1,876",40,2025
+Waller County,"Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area","$1,226","$1,279","$1,529","$2,038","$2,568",40,2025
+Ward County,"Ward County, TX",$835,$961,"$1,064","$1,377","$1,591",40,2025
+Washington County,"Washington County, TX",$905,$910,"$1,177","$1,540","$1,560",40,2025
+Webb County,"Laredo, TX MSA",$953,$959,"$1,173","$1,493","$1,556",40,2025
+Wharton County,"Wharton County, TX",$761,$766,$982,"$1,376","$1,524",40,2025
+Wheeler County,"Wheeler County, TX",$735,$755,$937,"$1,129","$1,401",40,2025
+Wichita County,"Wichita Falls, TX MSA",$823,$896,"$1,102","$1,506","$1,709",40,2025
+Wilbarger County,"Wilbarger County, TX",$707,$711,$933,"$1,124","$1,421",40,2025
+Willacy County,"Willacy County, TX",$707,$711,$933,"$1,232","$1,237",40,2025
+Williamson County,"Austin-Round Rock, TX MSA","$1,549","$1,650","$1,949","$2,484","$2,882",40,2025
+Wilson County,"San Antonio-New Braunfels, TX HUD Metro FMR Area","$1,116","$1,231","$1,501","$1,907","$2,243",40,2025
+Winkler County,"Winkler County, TX",$751,$771,$957,"$1,199","$1,431",40,2025
+Wise County,"Wise County, TX HUD Metro FMR Area",$974,"$1,006","$1,196","$1,676","$1,910",40,2025
+Wood County,"Wood County, TX",$688,$765,"$1,003","$1,209","$1,500",40,2025
+Yoakum County,"Yoakum County, TX",$862,$993,"$1,099","$1,324","$1,643",40,2025
+Young County,"Young County, TX",$732,$752,$933,"$1,301","$1,361",40,2025
+Zapata County,"Zapata County, TX",$707,$711,$933,"$1,124","$1,395",40,2025
+Zavala County,"Zavala County, TX",$732,$752,$933,"$1,307","$1,395",40,2025
+NOTE: Locality Names are links to the Final FY2025 FMR Documentation System for the specific area.,,,,,,,,2025
+Select a different area,,,,,,,,2025
+"Press Below to select a different State:Or select a Final FY 2025 Metropolitan FMR Area  Abilene, TX MSA  Acadia Parish, LA HUD Metro FMR Area  Aguadilla-Isabela, PR MSA  Akron, OH MSA  Albany, GA MSA  Albany, OR MSA  Albany-Schenectady-Troy, NY MSA  Albuquerque, NM MSA  Alexandria, LA MSA  Allen County, KY HUD Metro FMR Area  Allentown-Bethlehem-Easton, PA HUD Metro FMR Area  Altoona, PA MSA  Amarillo, TX HUD Metro FMR Area  Ames, IA HUD Metro FMR Area  Anchorage, AK HUD Metro FMR Area  Anderson, IN HUD Metro FMR Area  Anderson, SC HUD Metro FMR Area  Ann Arbor, MI MSA  Anniston-Oxford-Jacksonville, AL MSA  Anson County, NC HUD Metro FMR Area  Appleton, WI MSA  Arecibo, PR MSA  Armstrong County, PA HUD Metro FMR Area  Asheville, NC HUD Metro FMR Area  Assumption Parish, LA HUD Metro FMR Area  Atascosa County, TX HUD Metro FMR Area  Athens-Clarke County, GA MSA  Atlanta-Sandy Springs-Roswell, GA HUD Metro FMR Area  Atlantic City-Hammonton, NJ MSA  Auburn-Opelika, AL MSA  Augusta-Richmond County, GA-SC HUD Metro FMR Area  Austin County, TX HUD Metro FMR Area  Austin-Round Rock, TX MSA  Baker County, FL HUD Metro FMR Area  Bakersfield, CA MSA  Baltimore-Columbia-Towson, MD MSA  Bangor, ME HUD Metro FMR Area  Barnstable Town, MA MSA  Barranquitas-Aibonito, PR HUD Metro FMR Area  Bates County, MO HUD Metro FMR Area  Baton Rouge, LA HUD Metro FMR Area  Battle Creek, MI MSA  Bay City, MI MSA  Beaufort County, SC HUD Metro FMR Area  Beaumont-Port Arthur, TX MSA  Bellingham, WA MSA  Bend-Redmond, OR MSA  Benton County, IA HUD Metro FMR Area  Bergen-Passaic, NJ HUD Metro FMR Area  Berkshire County, MA (part) HUD Metro FMR Area  Billings, MT HUD Metro FMR Area  Binghamton, NY MSA  Birmingham-Hoover, AL HUD Metro FMR Area  Bismarck, ND MSA  Blacksburg-Christiansburg-Radford, VA HUD Metro FMR Area  Bloomington, IL MSA  Bloomington, IN HUD Metro FMR Area  Boise City, ID HUD Metro FMR Area  Bond County, IL HUD Metro FMR Area  Boone County, IA HUD Metro FMR Area  Boone County, WV HUD Metro FMR Area  Boston-Cambridge-Quincy, MA-NH HUD Metro FMR Area  Boulder, CO MSA  Bowling Green, KY HUD Metro FMR Area  Box Elder County, UT HUD Metro FMR Area  Brazoria County, TX HUD Metro FMR Area  Bremer County, IA HUD Metro FMR Area  Bremerton-Silverdale, WA MSA  Bridgeport, CT HUD Metro FMR Area  Brockton, MA HUD Metro FMR Area  Brown County, OH HUD Metro FMR Area  Brownsville-Harlingen, TX MSA  Brunswick County, NC HUD Metro FMR Area  Brunswick, GA MSA  Buffalo-Cheektowaga-Niagara Falls, NY MSA  Burlington, NC MSA  Burlington-South Burlington, VT MSA  Butler County, KY HUD Metro FMR Area  Butte County, ID HUD Metro FMR Area  Butts County, GA HUD Metro FMR Area  Caguas, PR HUD Metro FMR Area  California-Lexington Park, MD MSA  Callaway County, MO HUD Metro FMR Area  Camden County, NC HUD Metro FMR Area  Campbell County, TN HUD Metro FMR Area  Canton-Massillon, OH MSA  Cape Coral-Fort Myers, FL MSA  Cape Girardeau, MO-IL MSA  Carroll County, IN HUD Metro FMR Area  Carson City, NV MSA  Carter County, KY HUD Metro FMR Area  Casper, WY MSA  Cass County, MI HUD Metro FMR Area  Cedar Rapids, IA HUD Metro FMR Area  Chambersburg-Waynesboro, PA MSA  Champaign-Urbana, IL MSA  Charleston, WV HUD Metro FMR Area  Charleston-North Charleston, SC MSA  Charlotte-Concord-Gastonia, NC-SC HUD Metro FMR Area  Charlottesville, VA MSA  Chattanooga, TN-GA MSA  Chester County, SC HUD Metro FMR Area  Cheyenne, WY MSA  Chicago-Joliet-Naperville, IL HUD Metro FMR Area  Chico, CA MSA  Chilton County, AL HUD Metro FMR Area  Cincinnati, OH-KY-IN  HUD Metro FMR Area  Clarendon County, SC HUD Metro FMR Area  Clarksville, TN-KY HUD Metro FMR Area  Cleveland, TN MSA  Cleveland-Elyria, OH MSA  Coeur d'Alene, ID MSA  Colchester-Lebanon, CT HUD Metro FMR Area  College Station-Bryan, TX MSA  Colorado Springs, CO HUD Metro FMR Area  Columbia County, PA HUD Metro FMR Area  Columbia County, WI HUD Metro FMR Area  Columbia, MO HUD Metro FMR Area  Columbia, SC HUD Metro FMR Area  Columbus, GA-AL HUD Metro FMR Area  Columbus, IN MSA  Columbus, OH HUD Metro FMR Area  Cooper County, MO HUD Metro FMR Area  Corpus Christi, TX MSA  Corvallis, OR MSA  Cotton County, OK HUD Metro FMR Area  Covington County, MS HUD Metro FMR Area  Craven County, NC HUD Metro FMR Area  Crestview-Fort Walton Beach-Destin, FL HUD Metro FMR Area  Crockett County, TN HUD Metro FMR Area  Culpeper County, VA HUD Metro FMR Area  Cumberland County, ME (part) HUD Metro FMR Area  Cumberland, MD-WV MSA  Dallas County, MO HUD Metro FMR Area  Dallas, TX HUD Metro FMR Area  Dalton, GA HUD Metro FMR Area  Danbury, CT HUD Metro FMR Area  Danville, IL MSA  Daphne-Fairhope-Foley, AL MSA  Darlington County, SC HUD Metro FMR Area  Davenport-Moline-Rock Island, IA-IL MSA  Davidson County, NC HUD Metro FMR Area  Dayton-Kettering, OH MSA  Decatur, AL MSA  Decatur, IL MSA  DeKalb County, IL HUD Metro FMR Area  Deltona-Daytona Beach-Ormond Beach, FL HUD Metro FMR Area  Denver-Aurora-Lakewood, CO MSA  Des Moines-West Des Moines, IA HUD Metro FMR Area  Detroit-Warren-Livonia, MI HUD Metro FMR Area  Dothan, AL HUD Metro FMR Area  Dover, DE MSA  Dubuque, IA MSA  Duluth, MN-WI HUD Metro FMR Area  Durham-Chapel Hill, NC HUD Metro FMR Area  East Stroudsburg, PA MSA  Eastern Worcester County, MA HUD Metro FMR Area  Easton-Raynham, MA HUD Metro FMR Area  Eau Claire, WI MSA  El Centro, CA MSA  El Paso, TX HUD Metro FMR Area  Elizabethtown, KY HUD Metro FMR Area  Elkhart-Goshen, IN MSA  Elmira, NY MSA  Enid, OK MSA  Erie, PA MSA  Eugene-Springfield, OR MSA  Evansville, IN-KY MSA  Fairbanks, AK MSA  Fajardo, PR HUD Metro FMR Area  Falls County, TX HUD Metro FMR Area  Fargo, ND-MN MSA  Farmington, NM MSA  Fayette County, WV HUD Metro FMR Area  Fayetteville, NC HUD Metro FMR Area  Fayetteville-Springdale-Rogers, AR MSA  Fillmore County, MN HUD Metro FMR Area  Fitchburg-Leominster, MA HUD Metro FMR Area  Flagstaff, AZ MSA  Flint, MI MSA  Florence, SC HUD Metro FMR Area  Florence-Muscle Shoals, AL MSA  Fond du Lac, WI MSA  Fort Collins, CO MSA  Fort Lauderdale, FL HUD Metro FMR Area  Fort Smith, AR-OK HUD Metro FMR Area  Fort Wayne, IN MSA  Fort Worth-Arlington, TX HUD Metro FMR Area  Franklin County, AR HUD Metro FMR Area  Franklin County, IN HUD Metro FMR Area  Franklin County, MA HUD Metro FMR Area  Franklin County, VA HUD Metro FMR Area  Fresno, CA MSA  Fulton County, IL HUD Metro FMR Area  Gadsden, AL MSA  Gainesville, FL HUD Metro FMR Area  Gainesville, GA MSA  Gary, IN HUD Metro FMR Area  Gates County, NC HUD Metro FMR Area  Geary County, KS HUD Metro FMR Area  Gem County, ID HUD Metro FMR Area  Gettysburg, PA MSA  Gibson County, TN HUD Metro FMR Area  Giles County, VA HUD Metro FMR Area  Glens Falls, NY MSA  Goldsboro, NC MSA  Grady County, OK HUD Metro FMR Area  Grainger County, TN HUD Metro FMR Area  Grand Forks, ND-MN MSA  Grand Junction, CO MSA  Grand Rapids-Wyoming, MI HUD Metro FMR Area  Grant County, AR HUD Metro FMR Area  Grant County, KY HUD Metro FMR Area  Grants Pass, OR MSA  Granville County, NC HUD Metro FMR Area  Great Falls, MT MSA  Greeley, CO MSA  Green Bay, WI HUD Metro FMR Area  Green County, WI HUD Metro FMR Area  Greene County, AL HUD Metro FMR Area  Greensboro-High Point, NC HUD Metro FMR Area  Greenville, NC MSA  Greenville-Mauldin-Easley, SC HUD Metro FMR Area  Grundy County, IL HUD Metro FMR Area  Guayama, PR MSA  Gulfport-Biloxi, MS HUD Metro FMR Area  Hagerstown, MD HUD Metro FMR Area  Hall County, NE HUD Metro FMR Area  Hammond, LA MSA  Hanford-Corcoran, CA MSA  Haralson County, GA HUD Metro FMR Area  Harnett County, NC HUD Metro FMR Area  Harrisburg-Carlisle, PA MSA  Harrison County, TX HUD Metro FMR Area  Harrisonburg, VA MSA  Hartford-West Hartford-East Hartford, CT HUD Metro FMR Area  Hattiesburg, MS HUD Metro FMR Area  Haywood County, NC HUD Metro FMR Area  Henry County, AL HUD Metro FMR Area  Hickory-Lenoir-Morganton, NC MSA  Hillsborough County, NH (part) HUD Metro FMR Area  Hinesville, GA HUD Metro FMR Area  Hocking County, OH HUD Metro FMR Area  Hoke County, NC HUD Metro FMR Area  Holland-Grand Haven, MI HUD Metro FMR Area  Holmes County, MS HUD Metro FMR Area  Homosassa Springs, FL MSA  Hot Springs, AR MSA  Houma-Thibodaux, LA MSA  Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area  Howard County, MO HUD Metro FMR Area  Howard County, NE HUD Metro FMR Area  Hudspeth County, TX HUD Metro FMR Area  Huntington-Ashland, WV-KY-OH HUD Metro FMR Area  Huntsville, AL MSA  Iberia Parish, LA HUD Metro FMR Area  Iberville Parish, LA HUD Metro FMR Area  Idaho Falls, ID HUD Metro FMR Area  Indianapolis-Carmel, IN HUD Metro FMR Area  Ionia County, MI HUD Metro FMR Area  Iowa City, IA HUD Metro FMR Area  Iowa County, WI HUD Metro FMR Area  Iredell County, NC HUD Metro FMR Area  Ithaca, NY MSA  Jackson County, IL HUD Metro FMR Area  Jackson County, WV HUD Metro FMR Area  Jackson, MI MSA  Jackson, MS HUD Metro FMR Area  Jackson, TN HUD Metro FMR Area  Jacksonville, FL HUD Metro FMR Area  Jacksonville, NC MSA  Janesville-Beloit, WI MSA  Jasper County, IA HUD Metro FMR Area  Jasper County, IN HUD Metro FMR Area  Jasper County, SC HUD Metro FMR Area  Jefferson City, MO HUD Metro FMR Area  Jefferson County, WV HUD Metro FMR Area  Jerome County, ID HUD Metro FMR Area  Jersey City, NJ HUD Metro FMR Area  Johnson City, TN MSA  Johnson County, IL HUD Metro FMR Area  Johnstown, PA MSA  Jones County, IA HUD Metro FMR Area  Jones County, NC HUD Metro FMR Area  Jonesboro, AR HUD Metro FMR Area  Joplin, MO MSA  Kahului-Wailuku-Lahaina, HI MSA  Kalamazoo-Portage, MI MSA  Kankakee, IL MSA  Kansas City, MO-KS HUD Metro FMR Area  Kendall County, IL HUD Metro FMR Area  Kendall County, TX HUD Metro FMR Area  Kennewick-Richland, WA MSA  Kenosha County, WI HUD Metro FMR Area  Kershaw County, SC HUD Metro FMR Area  Killeen-Temple, TX HUD Metro FMR Area  King and Queen County, VA HUD Metro FMR Area  Kingsport-Bristol-Bristol, TN-VA MSA  Kingston, NY MSA  Knoxville, TN HUD Metro FMR Area  Kokomo, IN MSA  La Crosse-Onalaska, WI-MN MSA  Lafayette, LA HUD Metro FMR Area  Lafayette-West Lafayette, IN HUD Metro FMR Area  Lake Charles, LA MSA  Lake County, MN HUD Metro FMR Area  Lake Havasu City-Kingman, AZ MSA  Lakeland-Winter Haven, FL MSA  Lamar County, GA HUD Metro FMR Area  Lampasas County, TX HUD Metro FMR Area  Lancaster County, SC HUD Metro FMR Area  Lancaster, PA MSA  Lansing-East Lansing, MI HUD Metro FMR Area  Laredo, TX MSA  Las Cruces, NM MSA  Las Vegas-Henderson-Paradise, NV MSA  Laurens County, SC HUD Metro FMR Area  Lawrence, KS MSA  Lawrence, MA-NH HUD Metro FMR Area  Lawton, OK HUD Metro FMR Area  Le Sueur County, MN HUD Metro FMR Area  Lebanon, PA MSA  Levy County, FL HUD Metro FMR Area  Lewiston, ID-WA MSA  Lewiston-Auburn, ME MSA  Lexington-Fayette, KY MSA  Lima, OH MSA  Lincoln County, GA HUD Metro FMR Area  Lincoln County, NC HUD Metro FMR Area  Lincoln County, OK HUD Metro FMR Area  Lincoln County, WI HUD Metro FMR Area  Lincoln County, WV HUD Metro FMR Area  Lincoln, NE HUD Metro FMR Area  Little River County, AR HUD Metro FMR Area  Little Rock-North Little Rock-Conway, AR HUD Metro FMR Area  Livingston County, MI HUD Metro FMR Area  Logan, UT-ID MSA  Long County, GA HUD Metro FMR Area  Longview, TX HUD Metro FMR Area  Longview, WA MSA  Los Angeles-Long Beach-Glendale, CA HUD Metro FMR Area  Louisville, KY-IN HUD Metro FMR Area  Lowell, MA HUD Metro FMR Area  Lubbock, TX HUD Metro FMR Area  Lynchburg, VA MSA  Lynn County, TX HUD Metro FMR Area  Macon County, TN HUD Metro FMR Area  Macon-Bibb County, GA HUD Metro FMR Area  Macoupin County, IL HUD Metro FMR Area  Madera, CA MSA  Madison County, VA HUD Metro FMR Area  Madison, WI HUD Metro FMR Area  Manchester, NH HUD Metro FMR Area  Manhattan, KS HUD Metro FMR Area  Mankato-North Mankato, MN MSA  Mansfield, OH MSA  Marshall County, MS HUD Metro FMR Area  Martin County, TX HUD Metro FMR Area  Martinsburg, WV HUD Metro FMR Area  Matanuska-Susitna Borough, AK HUD Metro FMR Area  Maury County, TN HUD Metro FMR Area  Mayagüez, PR MSA  McAllen-Edinburg-Mission, TX MSA  Meade County, KY HUD Metro FMR Area  Meade County, SD HUD Metro FMR Area  Medford, OR MSA  Medina County, TX HUD Metro FMR Area  Memphis, TN-MS-AR HUD Metro FMR Area  Merced, CA MSA  Meriwether County, GA HUD Metro FMR Area  Merrick County, NE HUD Metro FMR Area  Miami-Miami Beach-Kendall, FL HUD Metro FMR Area  Michigan City-La Porte, IN MSA  Middlesex-Somerset-Hunterdon, NJ HUD Metro FMR Area  Midland, MI MSA  Midland, TX HUD Metro FMR Area  Milford-Ansonia-Seymour, CT HUD Metro FMR Area  Mille Lacs County, MN HUD Metro FMR Area  Milwaukee-Waukesha-West Allis, WI MSA  Minneapolis-St. Paul-Bloomington, MN-WI HUD Metro FMR Area  Missoula, MT MSA  Mobile, AL HUD Metro FMR Area  Modesto, CA MSA  Moniteau County, MO HUD Metro FMR Area  Monmouth-Ocean, NJ HUD Metro FMR Area  Monroe County, GA HUD Metro FMR Area  Monroe, LA HUD Metro FMR Area  Monroe, MI MSA  Montcalm County, MI HUD Metro FMR Area  Montgomery, AL MSA  Montour County, PA HUD Metro FMR Area  Morehouse Parish, LA HUD Metro FMR Area  Morgan County, GA HUD Metro FMR Area  Morgan County, TN HUD Metro FMR Area  Morgan County, WV HUD Metro FMR Area  Morgantown, WV MSA  Morristown, TN HUD Metro FMR Area  Mount Vernon-Anacortes, WA MSA  Muncie, IN MSA  Murray County, GA HUD Metro FMR Area  Muskegon, MI MSA  Myrtle Beach-North Myrtle Beach-Conway, SC HUD Metro FMR Area  Napa, CA MSA  Naples-Immokalee-Marco Island, FL MSA  Nashua, NH HUD Metro FMR Area  Nashville-Davidson--Murfreesboro--Franklin, TN HUD Metro FMR Area  Nassau-Suffolk, NY HUD Metro FMR Area  New Bedford, MA HUD Metro FMR Area  New Haven-Meriden, CT HUD Metro FMR Area  New Orleans-Metairie, LA HUD Metro FMR Area  New York, NY HUD Metro FMR Area  Newark, NJ HUD Metro FMR Area  Newport-Middleton-Portsmouth, RI HUD Metro FMR Area  Niles-Benton Harbor, MI MSA  North Port-Sarasota-Bradenton, FL MSA  Norwich-New London, CT HUD Metro FMR Area  Oakland-Fremont, CA HUD Metro FMR Area  Ocala, FL MSA  Ocean City, NJ MSA  Oconto County, WI HUD Metro FMR Area  Odessa, TX MSA  Ogden-Clearfield, UT HUD Metro FMR Area  Oklahoma City, OK HUD Metro FMR Area  Okmulgee County, OK HUD Metro FMR Area  Oldham County, TX HUD Metro FMR Area  Olympia-Tumwater, WA MSA  Omaha-Council Bluffs, NE-IA HUD Metro FMR Area  Orlando-Kissimmee-Sanford, FL MSA  Oshkosh-Neenah, WI MSA  Ottawa County, OH HUD Metro FMR Area  Owen County, IN HUD Metro FMR Area  Owensboro, KY MSA  Oxnard-Thousand Oaks-Ventura, CA MSA  Palm Bay-Melbourne-Titusville, FL MSA  Palm Coast, FL HUD Metro FMR Area  Pamlico County, NC HUD Metro FMR Area  Panama City, FL MSA  Parke County, IN HUD Metro FMR Area  Parkersburg-Vienna, WV MSA  Pascagoula, MS HUD Metro FMR Area  Pawnee County, OK HUD Metro FMR Area  Peach County, GA HUD Metro FMR Area  Pender County, NC HUD Metro FMR Area  Penobscot County, ME (part) HUD Metro FMR Area  Pensacola-Ferry Pass-Brent, FL MSA  Peoria, IL HUD Metro FMR Area  Perry County, OH HUD Metro FMR Area  Person County, NC HUD Metro FMR Area  Philadelphia-Camden-Wilmington, PA-NJ-DE-MD MSA  Phoenix-Mesa-Scottsdale, AZ MSA  Pickens County, AL HUD Metro FMR Area  Pike County, PA HUD Metro FMR Area  Pine Bluff, AR MSA  Pittsburgh, PA HUD Metro FMR Area  Pittsfield, MA HUD Metro FMR Area  Pocatello, ID HUD Metro FMR Area  Poinsett County, AR HUD Metro FMR Area  Polk County, MO HUD Metro FMR Area  Ponce, PR MSA  Port St. Lucie, FL MSA  Portland, ME HUD Metro FMR Area  Portland-Vancouver-Hillsboro, OR-WA MSA  Portsmouth-Rochester, NH HUD Metro FMR Area  Poughkeepsie-Newburgh-Middletown, NY MSA  Power County, ID HUD Metro FMR Area  Prescott Valley-Prescott, AZ MSA  Providence-Fall River, RI-MA HUD Metro FMR Area  Provo-Orem, UT MSA  Pueblo, CO MSA  Pulaski County, VA HUD Metro FMR Area  Punta Gorda, FL MSA  Putnam County, IN HUD Metro FMR Area  Putnam County, WV HUD Metro FMR Area  Racine, WI MSA  Raleigh County, WV HUD Metro FMR Area  Raleigh, NC MSA  Rapid City, SD HUD Metro FMR Area  Rappahannock County, VA HUD Metro FMR Area  Reading, PA MSA  Redding, CA MSA  Reno, NV MSA  Richmond, VA MSA  Riverside-San Bernardino-Ontario, CA MSA  Roane County, TN HUD Metro FMR Area  Roanoke, VA HUD Metro FMR Area  Rochester, MN HUD Metro FMR Area  Rochester, NY HUD Metro FMR Area  Rockford, IL MSA  Rockingham County, NC HUD Metro FMR Area  Rocky Mount, NC MSA  Rome, GA MSA  Rowan County, NC HUD Metro FMR Area  Rusk County, TX HUD Metro FMR Area  Sacramento--Roseville--Arden-Arcade, CA HUD Metro FMR Area  Sagadahoc County, ME HUD Metro FMR Area  Saginaw, MI MSA  Salem, OR MSA  Salinas, CA MSA  Salisbury, MD HUD Metro FMR Area  Salt Lake City, UT HUD Metro FMR Area  San Angelo, TX HUD Metro FMR Area  San Antonio-New Braunfels, TX HUD Metro FMR Area  San Benito County, CA HUD Metro FMR Area  San Diego-Carlsbad, CA MSA  San Francisco, CA HUD Metro FMR Area  San German, PR MSA  San Jose-Sunnyvale-Santa Clara, CA HUD Metro FMR Area  San Juan-Guaynabo, PR HUD Metro FMR Area  San Luis Obispo-Paso Robles-Arroyo Grande, CA MSA  Santa Ana-Anaheim-Irvine, CA HUD Metro FMR Area  Santa Cruz-Watsonville, CA MSA  Santa Fe, NM MSA  Santa Maria-Santa Barbara, CA MSA  Santa Rosa, CA MSA  Saunders County, NE HUD Metro FMR Area  Savannah, GA MSA  Scranton--Wilkes-Barre, PA MSA  Seattle-Bellevue, WA HUD Metro FMR Area  Sebastian-Vero Beach, FL MSA  Sebring, FL MSA  Seward County, NE HUD Metro FMR Area  Sharon, PA HUD Metro FMR Area  Sheboygan, WI MSA  Shelby County, KY HUD Metro FMR Area  Sherman-Denison, TX MSA  Shiawassee County, MI HUD Metro FMR Area  Shreveport-Bossier City, LA MSA  Sierra Vista-Douglas, AZ MSA  Simpson County, MS HUD Metro FMR Area  Sioux City, IA-NE-SD MSA  Sioux Falls, SD MSA  Smith County, TN HUD Metro FMR Area  Somerset County, MD HUD Metro FMR Area  South Bend-Mishawaka, IN HUD Metro FMR Area  Southampton County-Franklin city, VA HUD Metro FMR Area  Southern Middlesex County, CT HUD Metro FMR Area  Spartanburg, SC MSA  Spokane, WA HUD Metro FMR Area  Springfield, IL MSA  Springfield, MA HUD Metro FMR Area  Springfield, MO HUD Metro FMR Area  Springfield, OH MSA  St. Cloud, MN MSA  St. George, UT MSA  St. James Parish, LA HUD Metro FMR Area  St. Joseph, MO-KS MSA  St. Louis, MO-IL HUD Metro FMR Area  Stamford-Norwalk, CT HUD Metro FMR Area  State College, PA MSA  Staunton-Waynesboro, VA MSA  Sterling County, TX HUD Metro FMR Area  Stevens County, WA HUD Metro FMR Area  Stewart County, GA HUD Metro FMR Area  Stewart County, TN HUD Metro FMR Area  Stillwater County, MT HUD Metro FMR Area  Stockton-Lodi, CA MSA  Stone County, MS HUD Metro FMR Area  Sullivan County, IN HUD Metro FMR Area  Sumner County, KS HUD Metro FMR Area  Sumter, SC HUD Metro FMR Area  Sussex County, DE HUD Metro FMR Area  Syracuse, NY MSA  Tacoma, WA HUD Metro FMR Area  Talbot County, GA HUD Metro FMR Area  Tallahassee, FL HUD Metro FMR Area  Tampa-St. Petersburg-Clearwater, FL MSA  Tate County, MS HUD Metro FMR Area  Taunton-Mansfield-Norton, MA HUD Metro FMR Area  Teller County, CO HUD Metro FMR Area  Terre Haute, IN HUD Metro FMR Area  Texarkana, TX-Texarkana, AR HUD Metro FMR Area  The Villages, FL MSA  Toledo, OH HUD Metro FMR Area  Tooele County, UT HUD Metro FMR Area  Topeka, KS MSA  Trenton, NJ MSA  Tucson, AZ MSA  Tulsa, OK HUD Metro FMR Area  Tunica County, MS HUD Metro FMR Area  Tuscaloosa, AL HUD Metro FMR Area  Twin Falls County, ID HUD Metro FMR Area  Tyler, TX MSA  Union County, IN HUD Metro FMR Area  Union County, OH HUD Metro FMR Area  Urban Honolulu, HI MSA  Utica-Rome, NY MSA  Valdosta, GA MSA  Vallejo-Fairfield, CA MSA  Vermilion Parish, LA HUD Metro FMR Area  Victoria, TX MSA  Vineland-Bridgeton, NJ MSA  Virginia Beach-Norfolk-Newport News, VA-NC HUD Metro FMR Area  Visalia-Porterville, CA MSA  Wabasha County, MN HUD Metro FMR Area  Waco, TX HUD Metro FMR Area  Wakulla County, FL HUD Metro FMR Area  Walla Walla, WA MSA  Walton County, FL HUD Metro FMR Area  Warner Robins, GA HUD Metro FMR Area  Warren County, IN HUD Metro FMR Area  Warren County, NJ HUD Metro FMR Area  Warren County, VA HUD Metro FMR Area  Washington County, AL HUD Metro FMR Area  Washington County, IA HUD Metro FMR Area  Washington County, IN HUD Metro FMR Area  Washington-Arlington-Alexandria, DC-VA-MD HUD Metro FMR Area  Waterbury, CT HUD Metro FMR Area  Waterloo-Cedar Falls, IA HUD Metro FMR Area  Watertown-Fort Drum, NY MSA  Wausau, WI HUD Metro FMR Area  Weirton-Steubenville, WV-OH MSA  Wenatchee, WA MSA  West Palm Beach-Boca Raton, FL HUD Metro FMR Area  Westerly-Hopkinton-New Shoreham, RI HUD Metro FMR Area  Western Rockingham County, NH HUD Metro FMR Area  Western Worcester County, MA HUD Metro FMR Area  Wheeling, WV-OH MSA  Wichita Falls, TX MSA  Wichita, KS HUD Metro FMR Area  Williamson County, IL HUD Metro FMR Area  Williamsport, PA MSA  Wilmington, NC HUD Metro FMR Area  Winchester, VA-WV MSA  Windham County, CT HUD Metro FMR Area  Winston-Salem, NC HUD Metro FMR Area  Wise County, TX HUD Metro FMR Area  Worcester County, MD HUD Metro FMR Area  Worcester, MA HUD Metro FMR Area  Yakima, WA MSA  Yates County, NY HUD Metro FMR Area  Yauco, PR MSA  Yazoo County, MS HUD Metro FMR Area  Yolo, CA HUD Metro FMR Area  York County, ME (part) HUD Metro FMR Area  York-Hanover, PA MSA  York-Kittery-South Berwick, ME HUD Metro FMR Area  Youngstown-Warren-Boardman, OH HUD Metro FMR Area  Yuba City, CA MSA  Yuma, AZ MSA",,,,,,,,2025
+HUD Home Page,,,,,,,,2025
+HUD User Home,,,,,,,,2025
+Data Sets,,,,,,,,2025
+Fair Market Rents,,,,,,,,2025
+Section 8 Income Limits,,,,,,,,2025
+FMR/IL Summary System,,,,,,,,2025
+Multifamily Tax Subsidy Project (MTSP) Income Limits,,,,,,,,2025
+HUD LIHTC Database,,,,,,,,2025
+Technical Problems or questions? Contact Us.,,,,,,,,2025
+"Abilene, TX MSA","$1,010","$1,020","$1,276","$1,653","$1,987",40,,2025
+"Amarillo, TX HUD Metro FMR Area",$778,$903,"$1,106","$1,503","$1,742",40,,2025
+"Aransas County, TX HUD Metro FMR Area","$1,059","$1,072","$1,407","$1,910","$2,116",40,,2025
+"Atascosa County, TX HUD Metro FMR Area",$831,"$1,002","$1,098","$1,435","$1,454",40,,2025
+"Austin County, TX HUD Metro FMR Area",$885,$891,"$1,095","$1,523","$1,837",40,,2025
+"Austin-Round Rock-San Marcos, TX MSA","$1,474","$1,562","$1,852","$2,347","$2,760",40,,2025
+"Beaumont-Port Arthur, TX MSA",$892,$898,"$1,103","$1,446","$1,732",40,,2025
+"Bosque County, TX HUD Metro FMR Area",$671,$742,$973,"$1,283","$1,288",40,,2025
+"Brazoria County, TX HUD Metro FMR Area","$1,080","$1,240","$1,359","$1,839","$2,280",40,,2025
+"Brownsville-Harlingen, TX MSA",$773,$866,"$1,047","$1,414","$1,479",40,,2025
+"Cochran County, TX HUD Metro FMR Area",$681,$820,$973,"$1,170","$1,606",40,,2025
+"College Station-Bryan, TX MSA","$1,025","$1,082","$1,186","$1,649","$1,928",40,,2025
+"Corpus Christi, TX HUD Metro FMR Area","$1,031","$1,117","$1,366","$1,796","$2,054",40,,2025
+"Dallas, TX HUD Metro FMR Area","$1,582","$1,648","$1,931","$2,431","$3,091",40,,2025
+"Eagle Pass, TX MSA",$814,$888,$973,"$1,337","$1,499",40,,2025
+"El Paso, TX HUD Metro FMR Area",$821,"$1,013","$1,191","$1,633","$1,998",40,,2025
+"Falls County, TX HUD Metro FMR Area",$671,$742,$973,"$1,353","$1,632",40,,2025
+"Fort Worth-Arlington, TX HUD Metro FMR Area","$1,427","$1,473","$1,723","$2,273","$2,815",40,,2025
+"Garza County, TX HUD Metro FMR Area",$681,$820,$973,"$1,353","$1,569",40,,2025
+"Harrison County, TX HUD Metro FMR Area",$869,$960,"$1,260","$1,511","$1,668",40,,2025
+"Hockley County, TX HUD Metro FMR Area",$848,$854,$973,"$1,353","$1,632",40,,2025
+"Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area","$1,280","$1,323","$1,573","$2,116","$2,639",40,,2025
+"Hudspeth County, TX HUD Metro FMR Area",$671,$828,$973,"$1,167","$1,632",40,,2025
+"Kendall County, TX HUD Metro FMR Area","$1,301","$1,311","$1,650","$2,176","$2,185",40,,2025
+"Killeen-Temple, TX HUD Metro FMR Area",$983,$990,"$1,233","$1,711","$2,068",40,,2025
+"Lampasas County, TX HUD Metro FMR Area",$808,$813,"$1,067","$1,475","$1,790",40,,2025
+"Laredo, TX MSA",$956,$962,"$1,161","$1,499","$1,551",40,,2025
+"Longview, TX HUD Metro FMR Area","$1,007","$1,013","$1,199","$1,606","$1,694",40,,2025
+"Lubbock, TX HUD Metro FMR Area",$818,$990,"$1,175","$1,634","$1,940",40,,2025
+"Lynn County, TX HUD Metro FMR Area",$705,$767,"$1,007","$1,207","$1,465",40,,2025
+"Martin County, TX HUD Metro FMR Area","$1,422","$1,441","$1,772","$2,215","$2,722",40,,2025
+"McAllen-Edinburg-Mission, TX MSA",$842,$847,"$1,060","$1,376","$1,522",40,,2025
+"Medina County, TX HUD Metro FMR Area",$905,$912,"$1,196","$1,578","$1,584",40,,2025
+"Midland, TX HUD Metro FMR Area","$1,424","$1,449","$1,780","$2,286","$2,667",40,,2025
+"Odessa, TX MSA","$1,245","$1,269","$1,595","$1,912","$2,213",40,,2025
+"Oldham County, TX HUD Metro FMR Area",$774,$899,"$1,101","$1,499","$1,734",40,,2025
+"Rusk County, TX HUD Metro FMR Area",$890,$895,"$1,175","$1,451","$1,606",40,,2025
+"San Angelo, TX MSA",$923,"$1,049","$1,339","$1,821","$2,043",40,,2025
+"San Antonio-New Braunfels, TX HUD Metro FMR Area","$1,077","$1,177","$1,426","$1,830","$2,132",40,,2025
+"San Jacinto County, TX HUD Metro FMR Area",$935,"$1,048","$1,149","$1,536","$1,928",40,,2025
+"Sherman-Denison, TX MSA","$1,088","$1,089","$1,351","$1,879","$2,157",40,,2025
+"Texarkana, TX-Texarkana, AR HUD Metro FMR Area",$859,$868,"$1,101","$1,369","$1,657",40,,2025
+"Tyler, TX MSA",$984,"$1,089","$1,338","$1,793","$1,981",40,,2025
+"Victoria, TX MSA","$1,146","$1,153","$1,442","$1,729","$1,909",40,,2025
+"Waco, TX HUD Metro FMR Area",$850,$996,"$1,240","$1,599","$1,644",40,,2025
+"Wichita Falls, TX MSA",$831,$925,"$1,136","$1,553","$1,759",40,,2025
+"Wise County, TX HUD Metro FMR Area",$912,$918,"$1,205","$1,676","$2,021",40,,2025
+FY2026 Texas FMR Local Area Summary,,,,,,,,2025
+Locality Name,Metropolitan Area Name,Efficiency,One-Bedroom,Two-Bedroom,Three-Bedroom,Four-Bedroom,FMR Percentile,2025
+Anderson County,"Anderson County, TX",$895,$901,"$1,117","$1,339","$1,686",40,2025
+Andrews County,"Andrews County, TX","$1,108","$1,300","$1,425","$1,709","$2,097",40,2025
+Angelina County,"Angelina County, TX",$876,$892,"$1,021","$1,365","$1,414",40,2025
+Aransas County,"Aransas County, TX HUD Metro FMR Area","$1,059","$1,072","$1,407","$1,910","$2,116",40,2025
+Archer County,"Wichita Falls, TX MSA",$831,$925,"$1,136","$1,553","$1,759",40,2025
+Armstrong County,"Amarillo, TX HUD Metro FMR Area",$778,$903,"$1,106","$1,503","$1,742",40,2025
+Atascosa County,"Atascosa County, TX HUD Metro FMR Area",$831,"$1,002","$1,098","$1,435","$1,454",40,2025
+Austin County,"Austin County, TX HUD Metro FMR Area",$885,$891,"$1,095","$1,523","$1,837",40,2025
+Bailey County,"Bailey County, TX",$756,$778,$973,"$1,266","$1,432",40,2025
+Bandera County,"San Antonio-New Braunfels, TX HUD Metro FMR Area","$1,077","$1,177","$1,426","$1,830","$2,132",40,2025
+Bastrop County,"Austin-Round Rock-San Marcos, TX MSA","$1,474","$1,562","$1,852","$2,347","$2,760",40,2025
+Baylor County,"Baylor County, TX",$737,$742,$973,"$1,353","$1,432",40,2025
+Bee County,"Bee County, TX",$897,$903,"$1,185","$1,467","$1,569",40,2025
+Bell County,"Killeen-Temple, TX HUD Metro FMR Area",$983,$990,"$1,233","$1,711","$2,068",40,2025
+Bexar County,"San Antonio-New Braunfels, TX HUD Metro FMR Area","$1,077","$1,177","$1,426","$1,830","$2,132",40,2025
+Blanco County,"Blanco County, TX",$884,$889,"$1,167","$1,623","$1,717",40,2025
+Borden County,"Borden County, TX",$789,$811,"$1,015","$1,321","$1,493",40,2025
+Bosque County,"Bosque County, TX HUD Metro FMR Area",$671,$742,$973,"$1,283","$1,288",40,2025
+Bowie County,"Texarkana, TX-Texarkana, AR HUD Metro FMR Area",$859,$868,"$1,101","$1,369","$1,657",40,2025
+Brazoria County,"Brazoria County, TX HUD Metro FMR Area","$1,080","$1,240","$1,359","$1,839","$2,280",40,2025
+Brazos County,"College Station-Bryan, TX MSA","$1,025","$1,082","$1,186","$1,649","$1,928",40,2025
+Brewster County,"Brewster County, TX",$772,$808,$993,"$1,381","$1,461",40,2025
+Briscoe County,"Briscoe County, TX",$789,$811,"$1,015","$1,321","$1,493",40,2025
+Brooks County,"Brooks County, TX",$756,$778,$973,"$1,353","$1,432",40,2025
+Brown County,"Brown County, TX",$792,$823,"$1,080","$1,362","$1,619",40,2025
+Burleson County,"College Station-Bryan, TX MSA","$1,025","$1,082","$1,186","$1,649","$1,928",40,2025
+Burnet County,"Burnet County, TX",$969,$997,"$1,247","$1,645","$1,651",40,2025
+Caldwell County,"Austin-Round Rock-San Marcos, TX MSA","$1,474","$1,562","$1,852","$2,347","$2,760",40,2025
+Calhoun County,"Calhoun County, TX",$756,$888,$973,"$1,353","$1,432",40,2025
+Callahan County,"Abilene, TX MSA","$1,010","$1,020","$1,276","$1,653","$1,987",40,2025
+Cameron County,"Brownsville-Harlingen, TX MSA",$773,$866,"$1,047","$1,414","$1,479",40,2025
+Camp County,"Camp County, TX",$749,$754,$973,"$1,353","$1,432",40,2025
+Carson County,"Amarillo, TX HUD Metro FMR Area",$778,$903,"$1,106","$1,503","$1,742",40,2025
+Cass County,"Cass County, TX",$737,$742,$973,"$1,328","$1,432",40,2025
+Castro County,"Castro County, TX",$795,$801,"$1,050","$1,259","$1,545",40,2025
+Chambers County,"Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area","$1,280","$1,323","$1,573","$2,116","$2,639",40,2025
+Cherokee County,"Cherokee County, TX",$751,$756,$984,"$1,362","$1,448",40,2025
+Childress County,"Childress County, TX",$816,$853,"$1,049","$1,409","$1,543",40,2025
+Clay County,"Wichita Falls, TX MSA",$831,$925,"$1,136","$1,553","$1,759",40,2025
+Cochran County,"Cochran County, TX HUD Metro FMR Area",$681,$820,$973,"$1,170","$1,606",40,2025
+Coke County,"Coke County, TX",$737,$742,$973,"$1,234","$1,432",40,2025
+Coleman County,"Coleman County, TX",$797,$803,"$1,053","$1,263","$1,549",40,2025
+Collin County,"Dallas, TX HUD Metro FMR Area","$1,582","$1,648","$1,931","$2,431","$3,091",40,2025
+Collingsworth County,"Collingsworth County, TX",$756,$778,$973,"$1,266","$1,432",40,2025
+Colorado County,"Colorado County, TX",$892,$917,"$1,147","$1,375","$1,688",40,2025
+Comal County,"San Antonio-New Braunfels, TX HUD Metro FMR Area","$1,077","$1,177","$1,426","$1,830","$2,132",40,2025
+Comanche County,"Comanche County, TX",$737,$742,$973,"$1,353","$1,432",40,2025
+Concho County,"Concho County, TX",$896,$922,"$1,153","$1,500","$1,696",40,2025
+Cooke County,"Cooke County, TX",$955,$961,"$1,261","$1,552","$1,719",40,2025
+Coryell County,"Killeen-Temple, TX HUD Metro FMR Area",$983,$990,"$1,233","$1,711","$2,068",40,2025
+Cottle County,"Cottle County, TX",$789,$811,"$1,015","$1,321","$1,493",40,2025
+Crane County,"Crane County, TX",$762,$783,$980,"$1,275","$1,442",40,2025
+Crockett County,"Crockett County, TX",$789,$811,"$1,015","$1,321","$1,493",40,2025
+Crosby County,"Lubbock, TX HUD Metro FMR Area",$818,$990,"$1,175","$1,634","$1,940",40,2025
+Culberson County,"Culberson County, TX",$789,$811,"$1,015","$1,321","$1,493",40,2025
+Dallam County,"Dallam County, TX",$910,"$1,067","$1,170","$1,558","$1,721",40,2025
+Dallas County,"Dallas, TX HUD Metro FMR Area","$1,582","$1,648","$1,931","$2,431","$3,091",40,2025
+Dawson County,"Dawson County, TX",$818,$823,"$1,080","$1,295","$1,589",40,2025
+Deaf Smith County,"Deaf Smith County, TX",$738,$855,"$1,070","$1,283","$1,604",40,2025
+Delta County,"Delta County, TX",$756,$808,$973,"$1,345","$1,359",40,2025
+Denton County,"Dallas, TX HUD Metro FMR Area","$1,582","$1,648","$1,931","$2,431","$3,091",40,2025
+DeWitt County,"DeWitt County, TX",$887,$912,"$1,141","$1,368","$1,679",40,2025
+Dickens County,"Dickens County, TX",$756,$778,$973,"$1,167","$1,432",40,2025
+Dimmit County,"Dimmit County, TX",$756,$888,$973,"$1,353","$1,432",40,2025
+Donley County,"Donley County, TX",$756,$778,$973,"$1,178","$1,376",40,2025
+Duval County,"Duval County, TX",$789,$811,"$1,015","$1,321","$1,493",40,2025
+Eastland County,"Eastland County, TX",$756,$862,$973,"$1,353","$1,632",40,2025
+Ector County,"Odessa, TX MSA","$1,245","$1,269","$1,595","$1,912","$2,213",40,2025
+Edwards County,"Edwards County, TX",$789,$811,"$1,015","$1,321","$1,493",40,2025
+El Paso County,"El Paso, TX HUD Metro FMR Area",$821,"$1,013","$1,191","$1,633","$1,998",40,2025
+Ellis County,"Dallas, TX HUD Metro FMR Area","$1,582","$1,648","$1,931","$2,431","$3,091",40,2025
+Erath County,"Erath County, TX",$893,$899,"$1,179","$1,640","$1,913",40,2025
+Falls County,"Falls County, TX HUD Metro FMR Area",$671,$742,$973,"$1,353","$1,632",40,2025
+Fannin County,"Fannin County, TX",$679,$751,$985,"$1,370","$1,652",40,2025
+Fayette County,"Fayette County, TX",$771,$882,"$1,019","$1,388","$1,597",40,2025
+Fisher County,"Fisher County, TX",$751,$755,$973,"$1,167","$1,432",40,2025
+Floyd County,"Floyd County, TX",$737,$742,$973,"$1,167","$1,432",40,2025
+Foard County,"Foard County, TX",$745,$750,$973,"$1,266","$1,432",40,2025
+Fort Bend County,"Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area","$1,280","$1,323","$1,573","$2,116","$2,639",40,2025
+Franklin County,"Franklin County, TX",$861,$885,"$1,107","$1,327","$1,629",40,2025
+Freestone County,"Freestone County, TX",$737,$742,$973,"$1,298","$1,432",40,2025
+Frio County,"Frio County, TX",$846,$870,"$1,088","$1,416","$1,601",40,2025
+Gaines County,"Gaines County, TX",$756,$832,$973,"$1,167","$1,432",40,2025
+Galveston County,"Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area","$1,280","$1,323","$1,573","$2,116","$2,639",40,2025
+Garza County,"Garza County, TX HUD Metro FMR Area",$681,$820,$973,"$1,353","$1,569",40,2025
+Gillespie County,"Gillespie County, TX","$1,089","$1,096","$1,438","$1,806","$2,116",40,2025
+Glasscock County,"Glasscock County, TX",$789,$811,"$1,015","$1,321","$1,493",40,2025
+Goliad County,"Victoria, TX MSA","$1,146","$1,153","$1,442","$1,729","$1,909",40,2025
+Gonzales County,"Gonzales County, TX",$671,$742,$973,"$1,353","$1,396",40,2025
+Gray County,"Gray County, TX",$785,$790,"$1,037","$1,243","$1,373",40,2025
+Grayson County,"Sherman-Denison, TX MSA","$1,088","$1,089","$1,351","$1,879","$2,157",40,2025
+Gregg County,"Longview, TX HUD Metro FMR Area","$1,007","$1,013","$1,199","$1,606","$1,694",40,2025
+Grimes County,"Grimes County, TX",$830,$853,"$1,067","$1,287","$1,570",40,2025
+Guadalupe County,"San Antonio-New Braunfels, TX HUD Metro FMR Area","$1,077","$1,177","$1,426","$1,830","$2,132",40,2025
+Hale County,"Hale County, TX",$671,$888,$973,"$1,304","$1,477",40,2025
+Hall County,"Hall County, TX",$746,$751,$973,"$1,353","$1,432",40,2025
+Hamilton County,"Hamilton County, TX",$737,$742,$973,"$1,309","$1,432",40,2025
+Hansford County,"Hansford County, TX",$843,$848,"$1,113","$1,379","$1,474",40,2025
+Hardeman County,"Hardeman County, TX",$737,$742,$973,"$1,220","$1,432",40,2025
+Hardin County,"Beaumont-Port Arthur, TX MSA",$892,$898,"$1,103","$1,446","$1,732",40,2025
+Harris County,"Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area","$1,280","$1,323","$1,573","$2,116","$2,639",40,2025
+Harrison County,"Harrison County, TX HUD Metro FMR Area",$869,$960,"$1,260","$1,511","$1,668",40,2025
+Hartley County,"Hartley County, TX",$878,$902,"$1,129","$1,489","$1,495",40,2025
+Haskell County,"Haskell County, TX",$756,$778,$973,"$1,353","$1,550",40,2025
+Hays County,"Austin-Round Rock-San Marcos, TX MSA","$1,474","$1,562","$1,852","$2,347","$2,760",40,2025
+Hemphill County,"Hemphill County, TX",$756,$778,$973,"$1,353","$1,432",40,2025
+Henderson County,"Henderson County, TX",$754,$830,"$1,009","$1,328","$1,494",40,2025
+Hidalgo County,"McAllen-Edinburg-Mission, TX MSA",$842,$847,"$1,060","$1,376","$1,522",40,2025
+Hill County,"Hill County, TX",$705,$802,"$1,023","$1,397","$1,716",40,2025
+Hockley County,"Hockley County, TX HUD Metro FMR Area",$848,$854,$973,"$1,353","$1,632",40,2025
+Hood County,"Hood County, TX","$1,098","$1,237","$1,412","$1,693","$2,196",40,2025
+Hopkins County,"Hopkins County, TX",$910,$952,"$1,115","$1,471","$1,476",40,2025
+Houston County,"Houston County, TX",$740,$745,$978,"$1,204","$1,295",40,2025
+Howard County,"Howard County, TX",$918,$924,"$1,173","$1,406","$1,726",40,2025
+Hudspeth County,"Hudspeth County, TX HUD Metro FMR Area",$671,$828,$973,"$1,167","$1,632",40,2025
+Hunt County,"Dallas, TX HUD Metro FMR Area","$1,582","$1,648","$1,931","$2,431","$3,091",40,2025
+Hutchinson County,"Hutchinson County, TX",$737,$742,$973,"$1,353","$1,632",40,2025
+Irion County,"San Angelo, TX MSA",$923,"$1,049","$1,339","$1,821","$2,043",40,2025
+Jack County,"Jack County, TX",$756,$888,$973,"$1,353","$1,432",40,2025
+Jackson County,"Jackson County, TX",$822,$940,"$1,057","$1,267","$1,555",40,2025
+Jasper County,"Jasper County, TX",$756,$838,$973,"$1,221","$1,432",40,2025
+Jeff Davis County,"Jeff Davis County, TX",$789,$811,"$1,015","$1,321","$1,493",40,2025
+Jefferson County,"Beaumont-Port Arthur, TX MSA",$892,$898,"$1,103","$1,446","$1,732",40,2025
+Jim Hogg County,"Jim Hogg County, TX",$756,$778,$973,"$1,167","$1,432",40,2025
+Jim Wells County,"Jim Wells County, TX",$737,$742,$973,"$1,289","$1,432",40,2025
+Johnson County,"Fort Worth-Arlington, TX HUD Metro FMR Area","$1,427","$1,473","$1,723","$2,273","$2,815",40,2025
+Jones County,"Abilene, TX MSA","$1,010","$1,020","$1,276","$1,653","$1,987",40,2025
+Karnes County,"Karnes County, TX",$876,$968,"$1,270","$1,523","$1,869",40,2025
+Kaufman County,"Dallas, TX HUD Metro FMR Area","$1,582","$1,648","$1,931","$2,431","$3,091",40,2025
+Kendall County,"Kendall County, TX HUD Metro FMR Area","$1,301","$1,311","$1,650","$2,176","$2,185",40,2025
+Kenedy County,"Kenedy County, TX",$789,$811,"$1,015","$1,321","$1,493",40,2025
+Kent County,"Kent County, TX",$789,$811,"$1,015","$1,321","$1,493",40,2025
+Kerr County,"Kerr County, TX",$869,$965,"$1,118","$1,475","$1,523",40,2025
+Kimble County,"Kimble County, TX",$737,$742,$973,"$1,340","$1,432",40,2025
+King County,"King County, TX",$789,$811,"$1,015","$1,321","$1,493",40,2025
+Kinney County,"Kinney County, TX",$789,$811,"$1,015","$1,321","$1,493",40,2025
+Kleberg County,"Kleberg County, TX",$914,$953,"$1,238","$1,484","$1,822",40,2025
+Knox County,"Knox County, TX",$756,$778,$973,"$1,266","$1,432",40,2025
+La Salle County,"La Salle County, TX",$789,$811,"$1,015","$1,321","$1,493",40,2025
+Lamar County,"Lamar County, TX",$756,$785,$973,"$1,294","$1,329",40,2025
+Lamb County,"Lamb County, TX",$737,$742,$973,"$1,313","$1,632",40,2025
+Lampasas County,"Lampasas County, TX HUD Metro FMR Area",$808,$813,"$1,067","$1,475","$1,790",40,2025
+Lavaca County,"Lavaca County, TX",$820,$886,"$1,055","$1,265","$1,770",40,2025
+Lee County,"Lee County, TX",$887,$912,"$1,141","$1,430","$1,540",40,2025
+Leon County,"Leon County, TX",$773,$778,$973,"$1,283","$1,288",40,2025
+Liberty County,"Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area","$1,280","$1,323","$1,573","$2,116","$2,639",40,2025
+Limestone County,"Limestone County, TX",$737,$742,$973,"$1,231","$1,432",40,2025
+Lipscomb County,"Lipscomb County, TX",$756,$778,$973,"$1,270","$1,432",40,2025
+Live Oak County,"Live Oak County, TX",$782,$787,"$1,033","$1,314","$1,547",40,2025
+Llano County,"Llano County, TX",$839,$845,"$1,097","$1,526","$1,665",40,2025
+Loving County,"Loving County, TX",$789,$811,"$1,015","$1,321","$1,493",40,2025
+Lubbock County,"Lubbock, TX HUD Metro FMR Area",$818,$990,"$1,175","$1,634","$1,940",40,2025
+Lynn County,"Lynn County, TX HUD Metro FMR Area",$705,$767,"$1,007","$1,207","$1,465",40,2025
+Madison County,"Madison County, TX",$737,$742,$973,"$1,353","$1,432",40,2025
+Marion County,"Marion County, TX",$756,$778,$973,"$1,238","$1,432",40,2025
+Martin County,"Martin County, TX HUD Metro FMR Area","$1,422","$1,441","$1,772","$2,215","$2,722",40,2025
+Mason County,"Mason County, TX",$796,$819,"$1,024","$1,333","$1,507",40,2025
+Matagorda County,"Matagorda County, TX",$912,$960,"$1,173","$1,498","$1,911",40,2025
+Maverick County,"Eagle Pass, TX MSA",$814,$888,$973,"$1,337","$1,499",40,2025
+McCulloch County,"McCulloch County, TX",$812,$863,"$1,045","$1,360","$1,538",40,2025
+McLennan County,"Waco, TX HUD Metro FMR Area",$850,$996,"$1,240","$1,599","$1,644",40,2025
+McMullen County,"McMullen County, TX",$789,$811,"$1,015","$1,321","$1,493",40,2025
+Medina County,"Medina County, TX HUD Metro FMR Area",$905,$912,"$1,196","$1,578","$1,584",40,2025
+Menard County,"Menard County, TX",$756,$778,$973,"$1,353","$1,432",40,2025
+Midland County,"Midland, TX HUD Metro FMR Area","$1,424","$1,449","$1,780","$2,286","$2,667",40,2025
+Milam County,"Milam County, TX",$785,$790,"$1,037","$1,302","$1,626",40,2025
+Mills County,"Mills County, TX",$756,$888,$973,"$1,353","$1,432",40,2025
+Mitchell County,"Mitchell County, TX",$826,$831,"$1,091","$1,420","$1,605",40,2025
+Montague County,"Montague County, TX",$820,$856,"$1,055","$1,467","$1,552",40,2025
+Montgomery County,"Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area","$1,280","$1,323","$1,573","$2,116","$2,639",40,2025
+Moore County,"Moore County, TX",$786,$791,"$1,038","$1,305","$1,527",40,2025
+Morris County,"Morris County, TX",$756,$778,$973,"$1,254","$1,632",40,2025
+Motley County,"Motley County, TX",$756,$778,$973,"$1,167","$1,432",40,2025
+Nacogdoches County,"Nacogdoches County, TX",$850,$893,"$1,067","$1,279","$1,696",40,2025
+Navarro County,"Navarro County, TX",$775,$863,"$1,055","$1,467","$1,552",40,2025
+Newton County,"Newton County, TX",$756,$778,$973,"$1,353","$1,594",40,2025
+Nolan County,"Nolan County, TX",$774,$810,$995,"$1,384","$1,669",40,2025
+Nueces County,"Corpus Christi, TX HUD Metro FMR Area","$1,031","$1,117","$1,366","$1,796","$2,054",40,2025
+Ochiltree County,"Ochiltree County, TX",$776,$798,$998,"$1,280","$1,468",40,2025
+Oldham County,"Oldham County, TX HUD Metro FMR Area",$774,$899,"$1,101","$1,499","$1,734",40,2025
+Orange County,"Beaumont-Port Arthur, TX MSA",$892,$898,"$1,103","$1,446","$1,732",40,2025
+Palo Pinto County,"Palo Pinto County, TX",$820,$825,"$1,068","$1,397","$1,792",40,2025
+Panola County,"Panola County, TX",$753,$758,$995,"$1,235","$1,434",40,2025
+Parker County,"Fort Worth-Arlington, TX HUD Metro FMR Area","$1,427","$1,473","$1,723","$2,273","$2,815",40,2025
+Parmer County,"Parmer County, TX",$823,$828,"$1,087","$1,303","$1,698",40,2025
+Pecos County,"Pecos County, TX",$756,$888,$973,"$1,353","$1,432",40,2025
+Polk County,"Polk County, TX",$849,$855,"$1,122","$1,345","$1,651",40,2025
+Potter County,"Amarillo, TX HUD Metro FMR Area",$778,$903,"$1,106","$1,503","$1,742",40,2025
+Presidio County,"Presidio County, TX",$789,$811,"$1,015","$1,321","$1,493",40,2025
+Rains County,"Rains County, TX",$756,$888,$973,"$1,353","$1,632",40,2025
+Randall County,"Amarillo, TX HUD Metro FMR Area",$778,$903,"$1,106","$1,503","$1,742",40,2025
+Reagan County,"Reagan County, TX",$789,$811,"$1,015","$1,321","$1,493",40,2025
+Real County,"Real County, TX",$812,$953,"$1,045","$1,360","$1,538",40,2025
+Red River County,"Red River County, TX",$671,$778,$973,"$1,353","$1,632",40,2025
+Reeves County,"Reeves County, TX",$842,$988,"$1,083","$1,299","$1,593",40,2025
+Refugio County,"Refugio County, TX",$756,$778,$973,"$1,353","$1,432",40,2025
+Roberts County,"Roberts County, TX",$789,$811,"$1,015","$1,321","$1,493",40,2025
+Robertson County,"College Station-Bryan, TX MSA","$1,025","$1,082","$1,186","$1,649","$1,928",40,2025
+Rockwall County,"Dallas, TX HUD Metro FMR Area","$1,582","$1,648","$1,931","$2,431","$3,091",40,2025
+Runnels County,"Runnels County, TX",$809,$815,"$1,069","$1,282","$1,573",40,2025
+Rusk County,"Rusk County, TX HUD Metro FMR Area",$890,$895,"$1,175","$1,451","$1,606",40,2025
+Sabine County,"Sabine County, TX",$737,$742,$973,"$1,167","$1,432",40,2025
+San Augustine County,"San Augustine County, TX",$789,$811,"$1,015","$1,321","$1,493",40,2025
+San Jacinto County,"San Jacinto County, TX HUD Metro FMR Area",$935,"$1,048","$1,149","$1,536","$1,928",40,2025
+San Patricio County,"Corpus Christi, TX HUD Metro FMR Area","$1,031","$1,117","$1,366","$1,796","$2,054",40,2025
+San Saba County,"San Saba County, TX",$781,$786,"$1,031","$1,288","$1,517",40,2025
+Schleicher County,"Schleicher County, TX",$756,$778,$973,"$1,266","$1,432",40,2025
+Scurry County,"Scurry County, TX",$862,"$1,012","$1,109","$1,528","$1,588",40,2025
+Shackelford County,"Shackelford County, TX",$756,$778,$973,"$1,266","$1,432",40,2025
+Shelby County,"Shelby County, TX",$756,$888,$973,"$1,353","$1,439",40,2025
+Sherman County,"Sherman County, TX",$756,$778,$973,"$1,266","$1,432",40,2025
+Smith County,"Tyler, TX MSA",$984,"$1,089","$1,338","$1,793","$1,981",40,2025
+Somervell County,"Somervell County, TX",$789,$811,"$1,015","$1,321","$1,493",40,2025
+Starr County,"Starr County, TX",$737,$742,$973,"$1,353","$1,490",40,2025
+Stephens County,"Stephens County, TX",$789,$811,"$1,015","$1,321","$1,493",40,2025
+Sterling County,"Sterling County, TX",$789,$899,"$1,133","$1,519","$1,871",40,2025
+Stonewall County,"Stonewall County, TX",$789,$811,"$1,015","$1,321","$1,493",40,2025
+Sutton County,"Sutton County, TX",$737,$742,$973,"$1,214","$1,432",40,2025
+Swisher County,"Swisher County, TX",$756,$783,$973,"$1,353","$1,432",40,2025
+Tarrant County,"Fort Worth-Arlington, TX HUD Metro FMR Area","$1,427","$1,473","$1,723","$2,273","$2,815",40,2025
+Taylor County,"Abilene, TX MSA","$1,010","$1,020","$1,276","$1,653","$1,987",40,2025
+Terrell County,"Terrell County, TX",$789,$811,"$1,015","$1,321","$1,493",40,2025
+Terry County,"Terry County, TX",$756,$778,$973,"$1,266","$1,432",40,2025
+Throckmorton County,"Throckmorton County, TX",$767,$788,$986,"$1,182","$1,451",40,2025
+Titus County,"Titus County, TX",$774,$779,$973,"$1,263","$1,288",40,2025
+Tom Green County,"San Angelo, TX MSA",$923,"$1,049","$1,339","$1,821","$2,043",40,2025
+Travis County,"Austin-Round Rock-San Marcos, TX MSA","$1,474","$1,562","$1,852","$2,347","$2,760",40,2025
+Trinity County,"Trinity County, TX",$785,$818,"$1,010","$1,211","$1,486",40,2025
+Tyler County,"Tyler County, TX",$787,$793,"$1,040","$1,247","$1,604",40,2025
+Upshur County,"Longview, TX HUD Metro FMR Area","$1,007","$1,013","$1,199","$1,606","$1,694",40,2025
+Upton County,"Upton County, TX",$789,$811,"$1,015","$1,321","$1,493",40,2025
+Uvalde County,"Uvalde County, TX",$850,$856,"$1,123","$1,488","$1,751",40,2025
+Val Verde County,"Val Verde County, TX",$857,$863,"$1,064","$1,450","$1,455",40,2025
+Van Zandt County,"Van Zandt County, TX",$839,$844,"$1,108","$1,458","$1,467",40,2025
+Victoria County,"Victoria, TX MSA","$1,146","$1,153","$1,442","$1,729","$1,909",40,2025
+Walker County,"Walker County, TX",$857,"$1,097","$1,210","$1,602","$1,780",40,2025
+Waller County,"Houston-The Woodlands-Sugar Land, TX HUD Metro FMR Area","$1,280","$1,323","$1,573","$2,116","$2,639",40,2025
+Ward County,"Ward County, TX",$945,$963,"$1,215","$1,576","$1,788",40,2025
+Washington County,"Washington County, TX",$991,$998,"$1,309","$1,692","$1,733",40,2025
+Webb County,"Laredo, TX MSA",$956,$962,"$1,161","$1,499","$1,551",40,2025
+Wharton County,"Wharton County, TX",$758,$838,"$1,100","$1,500","$1,718",40,2025
+Wheeler County,"Wheeler County, TX",$784,$806,"$1,008","$1,209","$1,483",40,2025
+Wichita County,"Wichita Falls, TX MSA",$831,$925,"$1,136","$1,553","$1,759",40,2025
+Wilbarger County,"Wilbarger County, TX",$752,$757,$993,"$1,191","$1,512",40,2025
+Willacy County,"Willacy County, TX",$737,$742,$973,"$1,353","$1,432",40,2025
+Williamson County,"Austin-Round Rock-San Marcos, TX MSA","$1,474","$1,562","$1,852","$2,347","$2,760",40,2025
+Wilson County,"San Antonio-New Braunfels, TX HUD Metro FMR Area","$1,077","$1,177","$1,426","$1,830","$2,132",40,2025
+Winkler County,"Winkler County, TX",$760,$782,$978,"$1,173","$1,439",40,2025
+Wise County,"Wise County, TX HUD Metro FMR Area",$912,$918,"$1,205","$1,676","$2,021",40,2025
+Wood County,"Wood County, TX",$705,$814,"$1,022","$1,260","$1,398",40,2025
+Yoakum County,"Yoakum County, TX",$922,"$1,082","$1,186","$1,422","$1,745",40,2025
+Young County,"Young County, TX",$756,$761,$998,"$1,388","$1,468",40,2025
+Zapata County,"Zapata County, TX",$747,$751,$973,"$1,167","$1,432",40,2025
+Zavala County,"Zavala County, TX",$756,$778,$973,"$1,353","$1,432",40,2025

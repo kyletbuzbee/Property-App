@@ -1,0 +1,1370 @@
+{
+  "context": {
+    "project_name": "Project",
+    "description": "Code review analysis",
+    "tech_stack": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Supabase"
+    ],
+    "architecture_layers": {},
+    "dependency_map": {
+      "next-env.d.ts": [],
+      "next.config.js": [],
+      "playwright.config.ts": [],
+      "postcss.config.js": [],
+      "prisma.config.ts": [],
+      "tailwind.config.js": [],
+      "take-screenshots.js": [],
+      "prisma\\seed-fixed.ts": [],
+      "prisma\\seed-service.ts": [],
+      "prisma\\seed-simple.ts": [],
+      "prisma\\seed.ts": [],
+      "prisma\\simple-seed.js": [],
+      "scripts\\convert-properties.ts": [],
+      "src\\app\\layout.tsx": [],
+      "src\\app\\not-found.tsx": [],
+      "src\\app\\page.tsx": [],
+      "src\\app\\api\\bank-accounts\\route.ts": [],
+      "src\\app\\api\\enrich\\property\\route.ts": [],
+      "src\\app\\api\\leases\\route.ts": [],
+      "src\\app\\api\\leases\\[id]\\route.ts": [],
+      "src\\app\\api\\maintenance\\route.ts": [],
+      "src\\app\\api\\maintenance\\[id]\\route.ts": [],
+      "src\\app\\api\\organizations\\route.ts": [],
+      "src\\app\\api\\payments\\route.ts": [],
+      "src\\app\\api\\payments\\[id]\\route.ts": [],
+      "src\\app\\api\\predictions\\route.ts": [],
+      "src\\app\\api\\properties\\route.ts": [],
+      "src\\app\\api\\tenants\\route.ts": [],
+      "src\\app\\api\\tenants\\[id]\\route.ts": [],
+      "src\\app\\api\\transactions\\route.ts": [],
+      "src\\app\\api\\vendors\\route.ts": [],
+      "src\\app\\api\\vendors\\[id]\\route.ts": [],
+      "src\\app\\lib\\db.ts": [],
+      "src\\app\\properties\\[id]\\page.tsx": [],
+      "src\\components\\AIDealScoring.tsx": [],
+      "src\\components\\CollaborationHub.tsx": [],
+      "src\\components\\DashboardClient.tsx": [],
+      "src\\components\\ExpenseTracker.tsx": [],
+      "src\\components\\ExportReports.tsx": [],
+      "src\\components\\FinancialProjections.tsx": [],
+      "src\\components\\MarketAnalysis.tsx": [],
+      "src\\components\\MobilePWA.tsx": [],
+      "src\\components\\OpportunityMap.tsx": [],
+      "src\\components\\PortfolioTracker.tsx": [],
+      "src\\components\\ProjectTimeline.tsx": [],
+      "src\\components\\PropertyComparator.tsx": [],
+      "src\\components\\PropertyDataTable.tsx": [],
+      "src\\components\\Providers.tsx": [],
+      "src\\components\\RehabEstimator.tsx": [],
+      "src\\components\\RentComps.tsx": [],
+      "src\\components\\Sidebar.tsx": [],
+      "src\\components\\StrategyKanban.tsx": [],
+      "src\\components\\TaskManager.tsx": [],
+      "src\\components\\ValueScatterPlot.tsx": [],
+      "src\\context\\PropertyContext.tsx": [],
+      "src\\data\\properties.ts": [],
+      "src\\generated\\browser.ts": [],
+      "src\\generated\\client.ts": [],
+      "src\\generated\\commonInputTypes.ts": [],
+      "src\\generated\\enums.ts": [],
+      "src\\generated\\models.ts": [],
+      "src\\generated\\internal\\class.ts": [],
+      "src\\generated\\internal\\prismaNamespace.ts": [],
+      "src\\generated\\internal\\prismaNamespaceBrowser.ts": [],
+      "src\\generated\\models\\Activity.ts": [],
+      "src\\generated\\models\\BankAccount.ts": [],
+      "src\\generated\\models\\Comment.ts": [],
+      "src\\generated\\models\\Document.ts": [],
+      "src\\generated\\models\\Expense.ts": [],
+      "src\\generated\\models\\Lease.ts": [],
+      "src\\generated\\models\\MaintenanceAttachment.ts": [],
+      "src\\generated\\models\\MaintenanceComment.ts": [],
+      "src\\generated\\models\\MaintenanceRequest.ts": [],
+      "src\\generated\\models\\MarketData.ts": [],
+      "src\\generated\\models\\Organization.ts": [],
+      "src\\generated\\models\\OrganizationUser.ts": [],
+      "src\\generated\\models\\Payment.ts": [],
+      "src\\generated\\models\\Projection.ts": [],
+      "src\\generated\\models\\Property.ts": [],
+      "src\\generated\\models\\RehabItem.ts": [],
+      "src\\generated\\models\\RentComp.ts": [],
+      "src\\generated\\models\\Task.ts": [],
+      "src\\generated\\models\\Tenant.ts": [],
+      "src\\generated\\models\\TimelineEvent.ts": [],
+      "src\\generated\\models\\Transaction.ts": [],
+      "src\\generated\\models\\User.ts": [],
+      "src\\generated\\models\\Vendor.ts": [],
+      "src\\lib\\calculations.ts": [],
+      "src\\lib\\marketData.ts": [],
+      "src\\lib\\ai\\enhancedScoring.ts": [],
+      "src\\lib\\ai\\externalAPIs.ts": [],
+      "src\\lib\\ai\\index.ts": [],
+      "src\\lib\\ai\\predictionService.ts": [],
+      "src\\lib\\ai\\useEnhancedScoring.ts": [],
+      "src\\types\\marketIntelligence.ts": [],
+      "tests\\basic.spec.ts": []
+    }
+  },
+  "analysis": {
+    "timestamp": "2026-02-28T11:15:34.308346",
+    "project_root": "D:\\Properties4Creation\\Property App",
+    "files": [
+      {
+        "path": "next-env.d.ts",
+        "violations": [],
+        "summary": "/// <reference types=\"next\" />\n/// <reference types=\"next/image-types/global\" />\n\n// NOTE: This file should not be edited\n// see https://nextjs.org/docs/app/api-reference/config/typescript for more information.\n"
+      },
+      {
+        "path": "next.config.js",
+        "violations": [],
+        "summary": "/** @type {import('next').NextConfig} */\nconst nextConfig = {\n  reactStrictMode: true,\n};\n\nexport default nextConfig;\n"
+      },
+      {
+        "path": "playwright.config.ts",
+        "violations": [],
+        "summary": "import { defineConfig, devices } from \"@playwright/test\";\n\nexport default defineConfig({\n  testDir: \"./tests\",\n  fullyParallel: true,\n  forbidOnly: !!process.env.CI,\n  retries: process.env.CI ? 2 : 0,\n  workers: process.env.CI ? 1 : undefined,\n  reporter: \"html\",\n  use: {\n    baseURL: \"http://localhost:3001\",\n    trace: \"on-first-retry\",\n    screenshot: \"only-on-failure\",\n  },\n  projects: [\n    {\n      name: \"chromium\",\n      use: { ...devices[\"Desktop Chrome\"] },\n    },\n    {\n      name: \"firefox\",\n      use: { ...devices[\"Desktop Firefox\"] },\n    },\n    {\n      name: \"webkit\",\n      use: { ...devices[\"Desktop Safari\"] },\n    },\n    {\n      name: \"chrome-mobile\",\n      use: { ...devices[\"Pixel 5\"] },\n    },\n    {\n      name: \"chrome-tablet\",\n      use: { ...devices[\"iPad Pro\"] },\n    },\n  ],\n  webServer: {\n    command: \"npm run dev\",\n    url: \"http://localhost:3001\",\n    reuseExistingServer: !process.env.CI,\n  },\n});\n"
+      },
+      {
+        "path": "postcss.config.js",
+        "violations": [],
+        "summary": "export default {\n  plugins: {\n    tailwindcss: {},\n    autoprefixer: {},\n  },\n};\n"
+      },
+      {
+        "path": "prisma.config.ts",
+        "violations": [],
+        "summary": "// This file was generated by Prisma, and assumes you have installed the following:\n// npm install --save-dev prisma dotenv\nimport \"dotenv/config\";\nimport { defineConfig } from \"prisma/config\";\n\nexport default defineConfig({\n  schema: \"prisma/schema.prisma\",\n  migrations: {\n    path: \"prisma/migrations\",\n  },\n  datasource: {\n    url: process.env[\"DIRECT_URL\"] || process.env[\"DATABASE_URL\"],\n  },\n});\n"
+      },
+      {
+        "path": "tailwind.config.js",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Hardcoded hex color detected. Consider using theme constants or CSS variables."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "/** @type {import('tailwindcss').Config} */\nexport default {\n  content: [\n    \"./src/pages/**/*.{js,ts,jsx,tsx,mdx}\",\n    \"./src/components/**/*.{js,ts,jsx,tsx,mdx}\",\n    \"./src/app/**/*.{js,ts,jsx,tsx,mdx}\",\n  ],\n  darkMode: \"class\",\n  theme: {\n    extend: {\n      colors: {\n        primary: {\n          50: \"#f0f9ff\",\n          100: \"#e0f2fe\",\n          200: \"#bae6fd\",\n          300: \"#7dd3fc\",\n          400: \"#38bdf8\",\n          500: \"#0ea5e9\",\n          600: \"#0284c7\",\n          700: \"#0369a1\",\n          800: \"#075985\",\n          900: \"#0c4a6e\",\n        },\n        dark: {\n          50: \"#f8fafc\",\n          100: \"#f1f5f9\",\n          200: \"#e2e8f0\",\n          300: \"#cbd5e1\",\n          400: \"#94a3b8\",\n          500: \"#64748b\",\n          600: \"#475569\",\n          700: \"#334155\",\n          800: \"#1e293b\",\n          900: \"#0f172a\",\n          950: \"#020617\",\n        },\n        platinum: \"#10b981\",\n        gold: \"#f59e0b\",\n        silver: \"#f97316\",\n        hardfail: \"#ef4444\",\n        cauti"
+      },
+      {
+        "path": "take-screenshots.js",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "CLEAN_CODE",
+            "message": "Console statement detected. Remove debug logs before production or use proper logging service."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import { chromium } from \"playwright\";\n\n(async () => {\n  const browser = await chromium.launch();\n  const context = await browser.newContext();\n  const page = await context.newPage();\n\n  const viewports = [\n    { width: 375, height: 667, name: \"mobile\" },\n    { width: 768, height: 1024, name: \"tablet\" },\n    { width: 1024, height: 768, name: \"tablet-landscape\" },\n    { width: 1920, height: 1080, name: \"desktop\" },\n  ];\n\n  for (const viewport of viewports) {\n    await page.setViewportSize({\n      width: viewport.width,\n      height: viewport.height,\n    });\n    await page.goto(\"http://localhost:3001\");\n    await page.screenshot({\n      path: `reports/screenshot-${viewport.name}-${viewport.width}x${viewport.height}.png`,\n      fullPage: true,\n    });\n    console.log(\n      `Screenshot taken: ${viewport.name} (${viewport.width}x${viewport.height})`,\n    );\n  }\n\n  await browser.close();\n  console.log(\"All screenshots completed!\");\n})();\n"
+      },
+      {
+        "path": "prisma\\seed-fixed.ts",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "CLEAN_CODE",
+            "message": "Console statement detected. Remove debug logs before production or use proper logging service."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import { createClient } from \"@supabase/supabase-js\";\n\n// Use the same credentials from .env\nconst supabaseUrl = \"https://uoulozqwxsfmsbesjmke.supabase.co\";\nconst supabaseKey =\n  \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVvdWxvenF3eHNmbXNiZXNqbWtlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEzODU1MjEsImV4cCI6MjA4Njk2MTUyMX0.-KbxE3x0PsDI22q1CDXDRsagwW22m-p16mhS2PUQHQg\";\n\nconst supabase = createClient(supabaseUrl, supabaseKey);\n\nconst seedProperties = [\n  {\n    address: \"309 E Brandon St\",\n    city: \"Overton\",\n    state: \"TX\",\n    zip: \"75684\",\n    lat: 32.2757,\n    lng: -94.9427,\n    list_price: 149900,\n    equity_gap: 25000,\n    sqft: 1700,\n    bedrooms: 3,\n    bathrooms: 3,\n    decision: \"Pass Platinum\",\n    strategy: \"Section 8\",\n    rationale: \"Multi-family potential in rental desert; high yield\",\n    type: \"Multi-family home for sale\",\n    estimated_rent: 1400,\n    annual_taxes: 3500,\n    annual_insurance: 1200,\n    renovation_budget: 15000,\n    after_repair_valu"
+      },
+      {
+        "path": "prisma\\seed-service.ts",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "CLEAN_CODE",
+            "message": "Console statement detected. Remove debug logs before production or use proper logging service."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import { createClient } from \"@supabase/supabase-js\";\n\n// Use SERVICE ROLE key for full database access\nconst supabaseUrl = \"https://uoulozqwxsfmsbesjmke.supabase.co\";\nconst serviceKey =\n  \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVvdWxvenF3eHNmbXNiZXNqbWtlIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MTM4NTUyMSwiZXhwIjoyMDg2OTYxNTIxfQ.ZhI_rayqPeVv2B_qqj0hAi5C28eVRmeMFt1ZtMghXeQ\";\n\nconst supabase = createClient(supabaseUrl, serviceKey);\n\nconst seedProperties = [\n  {\n    address: \"309 E Brandon St\",\n    city: \"Overton\",\n    state: \"TX\",\n    zip: \"75684\",\n    lat: 32.2757,\n    lng: -94.9427,\n    list_price: 149900,\n    equity_gap: 25000,\n    sqft: 1700,\n    bedrooms: 3,\n    bathrooms: 3,\n    decision: \"Pass Platinum\",\n    strategy: \"Section 8\",\n    rationale: \"Multi-family potential in rental desert; high yield\",\n    type: \"Multi-family home for sale\",\n  },\n  {\n    address: \"2319 Luther St\",\n    city: \"Tyler\",\n    state: \"TX\",\n    zip: \"75701\",\n    lat: 32.351"
+      },
+      {
+        "path": "prisma\\seed-simple.ts",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          },
+          {
+            "severity": "LOW",
+            "type": "CLEAN_CODE",
+            "message": "Console statement detected. Remove debug logs before production or use proper logging service."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import { createClient } from \"@supabase/supabase-js\";\n\n// Use the same credentials from .env\nconst supabaseUrl = \"https://uoulozqwxsfmsbesjmke.supabase.co\";\nconst supabaseKey =\n  \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVvdWxvenF3eHNmbXNiZXNqbWtlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEzODU1MjEsImV4cCI6MjA4Njk2MTUyMX0.-KbxE3x0PsDI22q1CDXDRsagwW22m-p16mhS2PUQHQg\";\n\nconst supabase = createClient(supabaseUrl, supabaseKey);\n\n// Minimal properties with only guaranteed columns\nconst seedProperties = [\n  {\n    address: \"309 E Brandon St\",\n    city: \"Overton\",\n    state: \"TX\",\n    zip: \"75684\",\n    lat: 32.2757,\n    lng: -94.9427,\n    list_price: 149900,\n    equity_gap: 25000,\n    sqft: 1700,\n    bedrooms: 3,\n    bathrooms: 3,\n    decision: \"Pass Platinum\",\n    strategy: \"Section 8\",\n    rationale: \"Multi-family potential in rental desert; high yield\",\n    type: \"Multi-family home for sale\",\n  },\n  {\n    address: \"2319 Luther St\",\n    city: \"Tyler\",\n    state: \"TX\",\n  "
+      },
+      {
+        "path": "prisma\\seed.ts",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "CLEAN_CODE",
+            "message": "Console statement detected. Remove debug logs before production or use proper logging service."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "const seedProperties = [\n  {\n    address: \"309 E Brandon St\",\n    city: \"Overton\",\n    state: \"TX\",\n    zip: \"75684\",\n    lat: 32.2757,\n    lng: -94.9427,\n    listPrice: 149900,\n    equityGap: 25000,\n    sqft: 1700,\n    bedrooms: 3,\n    bathrooms: 3,\n    decision: \"Pass Platinum\",\n    strategy: \"Section 8\",\n    rationale: \"Multi-family potential in rental desert; high yield\",\n    type: \"Multi-family home for sale\",\n    realtor: null,\n    url: null,\n    details: null,\n    images: [],\n    estimatedRent: 0,\n    annualTaxes: 0,\n    annualInsurance: 0,\n    renovationBudget: 0,\n    afterRepairValue: 0,\n    notes: \"\",\n  },\n  {\n    address: \"2319 Luther St\",\n    city: \"Tyler\",\n    state: \"TX\",\n    zip: \"75701\",\n    lat: 32.3513,\n    lng: -95.3011,\n    listPrice: 99999,\n    equityGap: 125001,\n    sqft: 1909,\n    bedrooms: 4,\n    bathrooms: 2,\n    decision: \"Pass Platinum\",\n    strategy: \"Retail Flip\",\n    rationale: \"Massive equity gap; tax value $225k vs $100k list\",\n    type: \"House for sale\""
+      },
+      {
+        "path": "prisma\\simple-seed.js",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "CLEAN_CODE",
+            "message": "Console statement detected. Remove debug logs before production or use proper logging service."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import pkg from \"@prisma/client\";\nconst { PrismaClient } = pkg;\n\nconst prisma = new PrismaClient();\n\nasync function main() {\n  console.log(\"Starting seed...\");\n\n  // Clear existing properties\n  await prisma.property.deleteMany({});\n  console.log(\"Cleared existing properties\");\n\n  // Insert properties from the data file\n  const properties = [\n    {\n      id: \"brrr-1\",\n      address: \"309 E Brandon St\",\n      city: \"Overton\",\n      state: \"TX\",\n      zip: \"75684\",\n      lat: 32.2757,\n      lng: -94.9427,\n      listPrice: 149900,\n      equityGap: 25000,\n      sqft: 1700,\n      bedrooms: 3,\n      bathrooms: 3,\n      decision: \"Pass Platinum\",\n      strategy: \"Section 8\",\n      rationale: \"Multi-family potential in rental desert; high yield\",\n      type: \"Multi-family home for sale\",\n      realtor: null,\n      url: null,\n      details: null,\n      images: [],\n      estimatedRent: 0,\n      annualTaxes: 0,\n      annualInsurance: 0,\n      renovationBudget: 0,\n      afterRepairValue: 0,\n      n"
+      },
+      {
+        "path": "scripts\\convert-properties.ts",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "CLEAN_CODE",
+            "message": "Console statement detected. Remove debug logs before production or use proper logging service."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Hardcoded hex color detected. Consider using theme constants or CSS variables."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import fs from \"fs\";\nimport path from \"path\";\n\ninterface RawProperty {\n  address: string;\n  link: string;\n  brokerage: string | null;\n  price: string;\n  beds: string;\n  baths: string;\n  sqft: string;\n  type: string;\n  note: string;\n}\n\ninterface Property {\n  id: string;\n  address: string;\n  city: string;\n  state: string;\n  zip: string;\n  lat: number;\n  lng: number;\n  listPrice: number;\n  equityGap: number;\n  sqft: number;\n  bedrooms: number;\n  bathrooms: number;\n  decision: string;\n  strategy: string;\n  rationale: string;\n  type: string;\n  realtor: string;\n  url: string;\n  details: string;\n  images: string[];\n  estimatedRent: number;\n  annualTaxes: number;\n  annualInsurance: number;\n  renovationBudget: number;\n  afterRepairValue: number;\n  notes: string;\n  createdAt: string;\n  updatedAt: string;\n}\n\nconst cityCoordinates: Record<string, { lat: number; lng: number }> = {\n  Marshall: { lat: 32.5449, lng: -94.3674 },\n  Yantis: { lat: 32.9418, lng: -95.1693 },\n  Troup: { lat: 32.1507, lng: -"
+      },
+      {
+        "path": "src\\app\\layout.tsx",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Hardcoded hex color detected. Consider using theme constants or CSS variables."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import type { Metadata, Viewport } from \"next\";\nimport \"./globals.css\";\nimport { Providers } from \"@/components/Providers\";\n\nexport const metadata: Metadata = {\n  title: \"Property Investment Tracker\",\n  description:\n    \"Real estate investment analysis and portfolio management platform\",\n  manifest: \"/manifest.json\",\n  icons: {\n    icon: [{ url: \"/favicon.svg\", type: \"image/svg+xml\" }],\n    apple: [{ url: \"/icon-192.svg\", sizes: \"192x192\", type: \"image/svg+xml\" }],\n  },\n  appleWebApp: {\n    capable: true,\n    statusBarStyle: \"default\",\n    title: \"PropTracker\",\n  },\n};\n\nexport const viewport: Viewport = {\n  width: \"device-width\",\n  initialScale: 1,\n  maximumScale: 1,\n  userScalable: false,\n  themeColor: \"#3b82f6\",\n};\n\nexport default function RootLayout({\n  children,\n}: {\n  children: React.ReactNode;\n}) {\n  return (\n    <html lang=\"en\" className=\"dark\">\n      <head>\n        <link rel=\"icon\" type=\"image/svg+xml\" href=\"/favicon.svg\" />\n        <link rel=\"manifest\" href=\"/manifest.json\" />"
+      },
+      {
+        "path": "src\\app\\not-found.tsx",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import Link from \"next/link\";\n\nexport default function NotFound() {\n  return (\n    <div className=\"min-h-screen bg-dark-950 flex flex-col items-center justify-center p-4\">\n      <h1 className=\"text-6xl font-bold text-white mb-4\">404</h1>\n      <h2 className=\"text-2xl text-dark-300 mb-8\">Page Not Found</h2>\n      <p className=\"text-dark-400 mb-8 text-center max-w-md\">\n        The page you are looking for does not exist or has been moved.\n      </p>\n      <Link\n        href=\"/\"\n        className=\"px-6 py-3 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors\"\n      >\n        Return to Dashboard\n      </Link>\n    </div>\n  );\n}\n"
+      },
+      {
+        "path": "src\\app\\page.tsx",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          },
+          {
+            "severity": "LOW",
+            "type": "CLEAN_CODE",
+            "message": "Console statement detected. Remove debug logs before production or use proper logging service."
+          }
+        ],
+        "summary": "import { supabase } from \"@/app/lib/db\";\nimport DashboardClient from \"@/components/DashboardClient\";\nimport { PropertyProvider } from \"@/context/PropertyContext\";\nimport {\n  PropertyWithCalculations,\n  addCalculations,\n  serializeProperties,\n} from \"@/lib/calculations\";\nimport { properties as localProperties } from \"@/data/properties\";\n\nexport const dynamic = \"force-dynamic\";\n\n/**\n * Fetch properties from the database and add calculations.\n * Falls back to local data if Supabase is unavailable.\n */\nasync function getProperties(): Promise<PropertyWithCalculations[]> {\n  try {\n    // Try Supabase first\n    const { data, error } = await supabase\n      .from(\"properties\")\n      .select(\"*\")\n      .order(\"created_at\", { ascending: false });\n\n    if (error) {\n      console.warn(\"Supabase error, using local data:\", error.message);\n      return getLocalPropertiesWithCalculations();\n    }\n\n    if (!data || data.length === 0) {\n      console.warn(\"No data from Supabase, using local data\");\n     "
+      },
+      {
+        "path": "src\\app\\api\\bank-accounts\\route.ts",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "CLEAN_CODE",
+            "message": "Console statement detected. Remove debug logs before production or use proper logging service."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import { NextRequest, NextResponse } from \"next/server\";\nimport {\n  prisma,\n  authenticateRequest,\n  canManageAccounting,\n  AuthContext,\n} from \"../../lib/db\";\n\n// Helper to get user's organization and role\nasync function getUserOrgContext(context: AuthContext) {\n  if (!context.user) return null;\n\n  const orgUser = await prisma.organizationUser.findFirst({\n    where: { userId: context.user.id },\n    include: { organization: true },\n    orderBy: { createdAt: \"desc\" },\n  });\n\n  return orgUser;\n}\n\n// GET /api/bank-accounts - List all bank accounts\nexport async function GET(request: NextRequest) {\n  try {\n    const { context, error } = await authenticateRequest(request);\n    if (error) return error;\n\n    if (!canManageAccounting(context.role)) {\n      return NextResponse.json(\n        { error: \"Insufficient permissions to view bank accounts\" },\n        { status: 403 },\n      );\n    }\n\n    const orgUser = await getUserOrgContext(context);\n    if (!orgUser) {\n      return NextResponse.json(\n"
+      },
+      {
+        "path": "src\\app\\api\\enrich\\property\\route.ts",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "CLEAN_CODE",
+            "message": "Console statement detected. Remove debug logs before production or use proper logging service."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "/**\n * Property Enrichment API Endpoint\n *\n * POST /api/enrich/property\n * Body: { property: Property }\n *\n * Returns enriched property data with:\n * - School ratings (GreatSchools)\n * - Walk Score data\n * - Crime statistics\n * - Overall neighborhood score\n */\n\nimport { NextRequest, NextResponse } from \"next/server\";\nimport { Property } from \"@/data/properties\";\nimport {\n  fetchPropertyEnrichment,\n  fetchBatchEnrichment,\n  getAPIHealthStatus,\n} from \"@/lib/ai/externalAPIs\";\n\nexport const dynamic = \"force-dynamic\";\n\n// POST /api/enrich/property - Enrich a single property\nexport async function POST(request: NextRequest) {\n  try {\n    const body = await request.json();\n    const { property } = body;\n\n    if (!property) {\n      return NextResponse.json(\n        { error: \"Property is required\" },\n        { status: 400 },\n      );\n    }\n\n    // Validate property has required fields\n    const requiredFields = [\"id\", \"address\", \"city\", \"state\", \"lat\", \"lng\"];\n    const missingFields = required"
+      },
+      {
+        "path": "src\\app\\api\\leases\\route.ts",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          },
+          {
+            "severity": "LOW",
+            "type": "CLEAN_CODE",
+            "message": "Console statement detected. Remove debug logs before production or use proper logging service."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import { NextRequest, NextResponse } from \"next/server\";\nimport {\n  prisma,\n  authenticateRequest,\n  canManageTenants,\n  AuthContext,\n} from \"../../lib/db\";\n\n// Helper to get user's organization and role\nasync function getUserOrgContext(context: AuthContext) {\n  if (!context.user) return null;\n\n  const orgUser = await prisma.organizationUser.findFirst({\n    where: { userId: context.user.id },\n    include: { organization: true },\n    orderBy: { createdAt: \"desc\" },\n  });\n\n  return orgUser;\n}\n\n// GET /api/leases - List all leases for organization\nexport async function GET(request: NextRequest) {\n  try {\n    const { context, error } = await authenticateRequest(request);\n    if (error) return error;\n\n    if (!canManageTenants(context.role)) {\n      return NextResponse.json(\n        { error: \"Insufficient permissions to view leases\" },\n        { status: 403 },\n      );\n    }\n\n    const orgUser = await getUserOrgContext(context);\n    if (!orgUser) {\n      return NextResponse.json(\n        { "
+      },
+      {
+        "path": "src\\app\\api\\leases\\[id]\\route.ts",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "CLEAN_CODE",
+            "message": "Console statement detected. Remove debug logs before production or use proper logging service."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import { NextRequest, NextResponse } from \"next/server\";\nimport {\n  prisma,\n  authenticateRequest,\n  canManageTenants,\n  AuthContext,\n} from \"../../../lib/db\";\n\n// Helper to get user's organization and role\nasync function getUserOrgContext(context: AuthContext) {\n  if (!context.user) return null;\n\n  const orgUser = await prisma.organizationUser.findFirst({\n    where: { userId: context.user.id },\n    include: { organization: true },\n    orderBy: { createdAt: \"desc\" },\n  });\n\n  return orgUser;\n}\n\n// GET /api/leases/[id] - Get single lease by ID\nexport async function GET(\n  request: NextRequest,\n  { params }: { params: Promise<{ id: string }> },\n) {\n  try {\n    const { id } = await params;\n    const { context, error } = await authenticateRequest(request);\n    if (error) return error;\n\n    if (!canManageTenants(context.role)) {\n      return NextResponse.json(\n        { error: \"Insufficient permissions to view lease\" },\n        { status: 403 },\n      );\n    }\n\n    const orgUser = await getU"
+      },
+      {
+        "path": "src\\app\\api\\maintenance\\route.ts",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          },
+          {
+            "severity": "LOW",
+            "type": "CLEAN_CODE",
+            "message": "Console statement detected. Remove debug logs before production or use proper logging service."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import { NextRequest, NextResponse } from \"next/server\";\nimport {\n  prisma,\n  authenticateRequest,\n  canManageMaintenance,\n  AuthContext,\n} from \"../../lib/db\";\n\n// Helper to get user's organization and role\nasync function getUserOrgContext(context: AuthContext) {\n  if (!context.user) return null;\n\n  const orgUser = await prisma.organizationUser.findFirst({\n    where: { userId: context.user.id },\n    include: { organization: true },\n    orderBy: { createdAt: \"desc\" },\n  });\n\n  return orgUser;\n}\n\n// GET /api/maintenance - List all maintenance requests\nexport async function GET(request: NextRequest) {\n  try {\n    const { context, error } = await authenticateRequest(request);\n    if (error) return error;\n\n    if (!canManageMaintenance(context.role)) {\n      return NextResponse.json(\n        { error: \"Insufficient permissions to view maintenance requests\" },\n        { status: 403 },\n      );\n    }\n\n    const orgUser = await getUserOrgContext(context);\n    if (!orgUser) {\n      return NextR"
+      },
+      {
+        "path": "src\\app\\api\\maintenance\\[id]\\route.ts",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "CLEAN_CODE",
+            "message": "Console statement detected. Remove debug logs before production or use proper logging service."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import { NextRequest, NextResponse } from \"next/server\";\nimport {\n  prisma,\n  authenticateRequest,\n  canManageMaintenance,\n  AuthContext,\n} from \"../../../lib/db\";\n\n// Helper to get user's organization and role\nasync function getUserOrgContext(context: AuthContext) {\n  if (!context.user) return null;\n\n  const orgUser = await prisma.organizationUser.findFirst({\n    where: { userId: context.user.id },\n    include: { organization: true },\n    orderBy: { createdAt: \"desc\" },\n  });\n\n  return orgUser;\n}\n\n// GET /api/maintenance/[id] - Get single maintenance request\nexport async function GET(\n  request: NextRequest,\n  { params }: { params: Promise<{ id: string }> },\n) {\n  try {\n    const { id } = await params;\n    const { context, error } = await authenticateRequest(request);\n    if (error) return error;\n\n    if (!canManageMaintenance(context.role)) {\n      return NextResponse.json(\n        { error: \"Insufficient permissions to view maintenance request\" },\n        { status: 403 },\n      );\n  "
+      },
+      {
+        "path": "src\\app\\api\\organizations\\route.ts",
+        "violations": [],
+        "summary": "import { NextRequest, NextResponse } from \"next/server\";\nimport {\n  supabase,\n  prisma,\n  authenticateRequest,\n  requireRole,\n  type UserRole,\n} from \"@/app/lib/db\";\n"
+      },
+      {
+        "path": "src\\app\\api\\payments\\route.ts",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          },
+          {
+            "severity": "LOW",
+            "type": "CLEAN_CODE",
+            "message": "Console statement detected. Remove debug logs before production or use proper logging service."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import { NextRequest, NextResponse } from \"next/server\";\nimport {\n  prisma,\n  authenticateRequest,\n  canManagePayments,\n  AuthContext,\n} from \"../../lib/db\";\n\n// Helper to get user's organization and role\nasync function getUserOrgContext(context: AuthContext) {\n  if (!context.user) return null;\n\n  const orgUser = await prisma.organizationUser.findFirst({\n    where: { userId: context.user.id },\n    include: { organization: true },\n    orderBy: { createdAt: \"desc\" },\n  });\n\n  return orgUser;\n}\n\n// GET /api/payments - List all payments for organization\nexport async function GET(request: NextRequest) {\n  try {\n    const { context, error } = await authenticateRequest(request);\n    if (error) return error;\n\n    if (!canManagePayments(context.role)) {\n      return NextResponse.json(\n        { error: \"Insufficient permissions to view payments\" },\n        { status: 403 },\n      );\n    }\n\n    const orgUser = await getUserOrgContext(context);\n    if (!orgUser) {\n      return NextResponse.json(\n  "
+      },
+      {
+        "path": "src\\app\\api\\payments\\[id]\\route.ts",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "CLEAN_CODE",
+            "message": "Console statement detected. Remove debug logs before production or use proper logging service."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import { NextRequest, NextResponse } from \"next/server\";\nimport {\n  prisma,\n  authenticateRequest,\n  canManagePayments,\n  AuthContext,\n} from \"../../../lib/db\";\n\n// Helper to get user's organization and role\nasync function getUserOrgContext(context: AuthContext) {\n  if (!context.user) return null;\n\n  const orgUser = await prisma.organizationUser.findFirst({\n    where: { userId: context.user.id },\n    include: { organization: true },\n    orderBy: { createdAt: \"desc\" },\n  });\n\n  return orgUser;\n}\n\n// GET /api/payments/[id] - Get single payment by ID\nexport async function GET(\n  request: NextRequest,\n  { params }: { params: Promise<{ id: string }> },\n) {\n  try {\n    const { id } = await params;\n    const { context, error } = await authenticateRequest(request);\n    if (error) return error;\n\n    if (!canManagePayments(context.role)) {\n      return NextResponse.json(\n        { error: \"Insufficient permissions to view payment\" },\n        { status: 403 },\n      );\n    }\n\n    const orgUser = aw"
+      },
+      {
+        "path": "src\\app\\api\\predictions\\route.ts",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          },
+          {
+            "severity": "LOW",
+            "type": "CLEAN_CODE",
+            "message": "Console statement detected. Remove debug logs before production or use proper logging service."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import { NextRequest, NextResponse } from \"next/server\";\nimport fs from \"fs\";\nimport path from \"path\";\n\n/**\n * GET /api/predictions\n * Returns BRRR predictions for properties\n *\n * Query params:\n * - city: Filter by city\n * - minYield: Minimum gross yield threshold\n * - propertyId: Get specific property\n */\nexport async function GET(request: NextRequest) {\n  try {\n    const { searchParams } = new URL(request.url);\n    const city = searchParams.get(\"city\");\n    const minYield = searchParams.get(\"minYield\");\n    const propertyId = searchParams.get(\"propertyId\");\n\n    // Load predictions from JSON file\n    const predictionsPath = path.join(\n      process.cwd(),\n      \"predictions_for_app.json\",\n    );\n\n    if (!fs.existsSync(predictionsPath)) {\n      return NextResponse.json(\n        {\n          success: false,\n          error: \"Predictions not available. Run predict_production.py first.\",\n        },\n        { status: 404 },\n      );\n    }\n\n    const predictionsData = fs.readFileSync(pred"
+      },
+      {
+        "path": "src\\app\\api\\properties\\route.ts",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          },
+          {
+            "severity": "LOW",
+            "type": "CLEAN_CODE",
+            "message": "Console statement detected. Remove debug logs before production or use proper logging service."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import { NextRequest, NextResponse } from \"next/server\";\nimport { supabase } from \"@/app/lib/db\";\nimport { prisma } from \"@/app/lib/db\";\nimport {\n  addCalculations,\n  serializeProperty,\n  PropertyBase,\n  PropertyWithCalculations,\n} from \"@/lib/calculations\";\nimport { getDynamicBenchmarks, loadMarketData } from \"@/lib/marketData\";\nimport { enrichWithPredictions } from \"@/lib/ai/predictionService\";\n\n// Helper to generate slug from name\nconst generateSlug = (name: string): string => {\n  return name\n    .toLowerCase()\n    .replace(/[^a-z0-9]+/g, \"-\")\n    .replace(/(^-|-$)/g, \"\")\n    .slice(0, 50);\n};\n\n/**\n * GET /api/properties\n * Fetch properties with optional filtering.\n * Returns properties with calculated fields.\n */\nexport async function GET(request: NextRequest) {\n  try {\n    const { searchParams } = new URL(request.url);\n    const id = searchParams.get(\"id\");\n    const search = searchParams.get(\"search\");\n    const strategy = searchParams.get(\"strategy\");\n    const decision = search"
+      },
+      {
+        "path": "src\\app\\api\\tenants\\route.ts",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          },
+          {
+            "severity": "LOW",
+            "type": "CLEAN_CODE",
+            "message": "Console statement detected. Remove debug logs before production or use proper logging service."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import { NextRequest, NextResponse } from \"next/server\";\nimport {\n  prisma,\n  authenticateRequest,\n  canManageTenants,\n  AuthContext,\n} from \"../../lib/db\";\n\n// Helper to get user's organization and role\nasync function getUserOrgContext(context: AuthContext) {\n  if (!context.user) return null;\n\n  const orgUser = await prisma.organizationUser.findFirst({\n    where: { userId: context.user.id },\n    include: { organization: true },\n    orderBy: { createdAt: \"desc\" },\n  });\n\n  return orgUser;\n}\n\n// GET /api/tenants - List all tenants for organization\nexport async function GET(request: NextRequest) {\n  try {\n    const { context, error } = await authenticateRequest(request);\n    if (error) return error;\n\n    if (!canManageTenants(context.role)) {\n      return NextResponse.json(\n        { error: \"Insufficient permissions to view tenants\" },\n        { status: 403 },\n      );\n    }\n\n    const orgUser = await getUserOrgContext(context);\n    if (!orgUser) {\n      return NextResponse.json(\n       "
+      },
+      {
+        "path": "src\\app\\api\\tenants\\[id]\\route.ts",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "CLEAN_CODE",
+            "message": "Console statement detected. Remove debug logs before production or use proper logging service."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import { NextRequest, NextResponse } from \"next/server\";\nimport {\n  prisma,\n  authenticateRequest,\n  canManageTenants,\n  AuthContext,\n} from \"../../../lib/db\";\n\n// Helper to get user's organization and role\nasync function getUserOrgContext(context: AuthContext) {\n  if (!context.user) return null;\n\n  const orgUser = await prisma.organizationUser.findFirst({\n    where: { userId: context.user.id },\n    include: { organization: true },\n    orderBy: { createdAt: \"desc\" },\n  });\n\n  return orgUser;\n}\n\n// GET /api/tenants/[id] - Get single tenant by ID\nexport async function GET(\n  request: NextRequest,\n  { params }: { params: Promise<{ id: string }> },\n) {\n  try {\n    const { id } = await params;\n    const { context, error } = await authenticateRequest(request);\n    if (error) return error;\n\n    if (!canManageTenants(context.role)) {\n      return NextResponse.json(\n        { error: \"Insufficient permissions to view tenant\" },\n        { status: 403 },\n      );\n    }\n\n    const orgUser = await g"
+      },
+      {
+        "path": "src\\app\\api\\transactions\\route.ts",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          },
+          {
+            "severity": "LOW",
+            "type": "CLEAN_CODE",
+            "message": "Console statement detected. Remove debug logs before production or use proper logging service."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import { NextRequest, NextResponse } from \"next/server\";\nimport {\n  prisma,\n  authenticateRequest,\n  canManageAccounting,\n  AuthContext,\n} from \"../../lib/db\";\n\n// Helper to get user's organization and role\nasync function getUserOrgContext(context: AuthContext) {\n  if (!context.user) return null;\n\n  const orgUser = await prisma.organizationUser.findFirst({\n    where: { userId: context.user.id },\n    include: { organization: true },\n    orderBy: { createdAt: \"desc\" },\n  });\n\n  return orgUser;\n}\n\n// GET /api/transactions - List all transactions\nexport async function GET(request: NextRequest) {\n  try {\n    const { context, error } = await authenticateRequest(request);\n    if (error) return error;\n\n    if (!canManageAccounting(context.role)) {\n      return NextResponse.json(\n        { error: \"Insufficient permissions to view transactions\" },\n        { status: 403 },\n      );\n    }\n\n    const orgUser = await getUserOrgContext(context);\n    if (!orgUser) {\n      return NextResponse.json(\n   "
+      },
+      {
+        "path": "src\\app\\api\\vendors\\route.ts",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          },
+          {
+            "severity": "LOW",
+            "type": "CLEAN_CODE",
+            "message": "Console statement detected. Remove debug logs before production or use proper logging service."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import { NextRequest, NextResponse } from \"next/server\";\nimport {\n  prisma,\n  authenticateRequest,\n  canManageMaintenance,\n  AuthContext,\n} from \"../../lib/db\";\n\n// Helper to get user's organization and role\nasync function getUserOrgContext(context: AuthContext) {\n  if (!context.user) return null;\n\n  const orgUser = await prisma.organizationUser.findFirst({\n    where: { userId: context.user.id },\n    include: { organization: true },\n    orderBy: { createdAt: \"desc\" },\n  });\n\n  return orgUser;\n}\n\n// GET /api/vendors - List all vendors\nexport async function GET(request: NextRequest) {\n  try {\n    const { context, error } = await authenticateRequest(request);\n    if (error) return error;\n\n    if (!canManageMaintenance(context.role)) {\n      return NextResponse.json(\n        { error: \"Insufficient permissions to view vendors\" },\n        { status: 403 },\n      );\n    }\n\n    const orgUser = await getUserOrgContext(context);\n    if (!orgUser) {\n      return NextResponse.json(\n        { error:"
+      },
+      {
+        "path": "src\\app\\api\\vendors\\[id]\\route.ts",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "CLEAN_CODE",
+            "message": "Console statement detected. Remove debug logs before production or use proper logging service."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import { NextRequest, NextResponse } from \"next/server\";\nimport {\n  prisma,\n  authenticateRequest,\n  canManageMaintenance,\n  AuthContext,\n} from \"../../../lib/db\";\n\n// Helper to get user's organization and role\nasync function getUserOrgContext(context: AuthContext) {\n  if (!context.user) return null;\n\n  const orgUser = await prisma.organizationUser.findFirst({\n    where: { userId: context.user.id },\n    include: { organization: true },\n    orderBy: { createdAt: \"desc\" },\n  });\n\n  return orgUser;\n}\n\n// GET /api/vendors/[id] - Get single vendor\nexport async function GET(\n  request: NextRequest,\n  { params }: { params: Promise<{ id: string }> },\n) {\n  try {\n    const { id } = await params;\n    const { context, error } = await authenticateRequest(request);\n    if (error) return error;\n\n    if (!canManageMaintenance(context.role)) {\n      return NextResponse.json(\n        { error: \"Insufficient permissions to view vendor\" },\n        { status: 403 },\n      );\n    }\n\n    const orgUser = await"
+      },
+      {
+        "path": "src\\app\\lib\\db.ts",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          },
+          {
+            "severity": "LOW",
+            "type": "CLEAN_CODE",
+            "message": "Console statement detected. Remove debug logs before production or use proper logging service."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import { createClient, SupabaseClient, User } from \"@supabase/supabase-js\";\n\nexport type UserRole = \"OWNER\" | \"ADMIN\" | \"MEMBER\" | \"VIEWER\" | \"TENANT\";\n\nexport interface AuthUser {\n  id: string;\n  email: string;\n  supabaseId: string;\n  firstName?: string;\n  lastName?: string;\n  avatarUrl?: string;\n}\n\nexport interface AuthContext {\n  user: AuthUser | null;\n  organizationId: string | null;\n  role: UserRole | null;\n  isAuthenticated: boolean;\n}\n\n// Role hierarchy - higher roles have all permissions of lower roles\nconst roleHierarchy: Record<UserRole, number> = {\n  OWNER: 5,\n  ADMIN: 4,\n  MEMBER: 3,\n  VIEWER: 2,\n  TENANT: 1,\n};\n\nexport const hasRole = (\n  userRole: UserRole | null,\n  requiredRole: UserRole,\n): boolean => {\n  if (!userRole) return false;\n  return roleHierarchy[userRole] >= roleHierarchy[requiredRole];\n};\n\nexport const canManageOrganization = (role: UserRole | null): boolean => {\n  return hasRole(role, \"ADMIN\");\n};\n\nexport const canManageProperties = (role: UserRole | null):"
+      },
+      {
+        "path": "src\\app\\properties\\[id]\\page.tsx",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "CLEAN_CODE",
+            "message": "Console statement detected. Remove debug logs before production or use proper logging service."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "\"use client\";\n\nimport { useState, useEffect } from \"react\";\nimport Link from \"next/link\";\nimport Image from \"next/image\";\nimport {\n  Property,\n  getPricePerSqft,\n  getPricePerDoor,\n  getDecisionColor,\n  calculateCapRate,\n  calculateCashOnCashReturn,\n  calculateMAO,\n  calculateOnePercentRule,\n  calculateGrossYield,\n} from \"@/data/properties\";\n\ninterface PropertyPageProps {\n  params: Promise<{ id: string }>;\n}\n\nexport default function PropertyPage({ params }: PropertyPageProps) {\n  const [propertyId, setPropertyId] = useState<string>(\"\");\n  const [property, setProperty] = useState<Property | null>(null);\n  const [loading, setLoading] = useState(true);\n  const [error, setError] = useState<string | null>(null);\n\n  useEffect(() => {\n    let isMounted = true;\n\n    const fetchProperty = async () => {\n      try {\n        setLoading(true);\n        setError(null);\n\n        // Await the params Promise (required in Next.js 15)\n        const resolvedParams = await params;\n\n        if (!isMounted) r"
+      },
+      {
+        "path": "src\\components\\AIDealScoring.tsx",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "\"use client\";\n\nimport { useState, useMemo } from \"react\";\nimport clsx from \"clsx\";\nimport { PropertyWithCalculations } from \"@/lib/calculations\";\nimport { Strategy } from \"@/data/properties\";\nimport {\n  calculateEnhancedScore,\n  EnhancedScoringResult,\n} from \"@/lib/ai/enhancedScoring\";\n\ninterface AIDealScoringProps {\n  properties: PropertyWithCalculations[];\n  onPropertyClick?: (property: PropertyWithCalculations) => void;\n  onUpdateScore?: (propertyId: string, score: number) => void;\n}\n\n// Get risk level based on score\nconst getRiskLevel = (score: number): { label: string; color: string } => {\n  if (score >= 80) return { label: \"Low Risk\", color: \"text-emerald-400\" };\n  if (score >= 60) return { label: \"Medium Risk\", color: \"text-blue-400\" };\n  if (score >= 40) return { label: \"High Risk\", color: \"text-amber-400\" };\n  return { label: \"Very High Risk\", color: \"text-red-400\" };\n};\n\n// Convert property to metrics for enhanced scoring\nconst propertyToMetrics = (property: PropertyWithCalcu"
+      },
+      {
+        "path": "src\\components\\CollaborationHub.tsx",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "\"use client\";\n\nimport { useState, useMemo } from \"react\";\nimport clsx from \"clsx\";\nimport { PropertyWithCalculations } from \"@/lib/calculations\";\n\ninterface CollaborationHubProps {\n  properties: PropertyWithCalculations[];\n  onPropertyClick?: (property: PropertyWithCalculations) => void;\n}\n\n// Sample team members\ninterface TeamMember {\n  id: string;\n  name: string;\n  email: string;\n  role: string;\n  avatar: string;\n  status: \"online\" | \"offline\" | \"away\";\n}\n\n// Sample comments\ninterface Comment {\n  id: string;\n  propertyId: string;\n  userId: string;\n  userName: string;\n  userAvatar: string;\n  content: string;\n  createdAt: Date;\n}\n\nconst SAMPLE_TEAM: TeamMember[] = [\n  {\n    id: \"1\",\n    name: \"John Smith\",\n    email: \"john@example.com\",\n    role: \"Deal Lead\",\n    avatar: \"JS\",\n    status: \"online\",\n  },\n  {\n    id: \"2\",\n    name: \"Sarah Wilson\",\n    email: \"sarah@example.com\",\n    role: \"Analyst\",\n    avatar: \"SW\",\n    status: \"online\",\n  },\n  {\n    id: \"3\",\n    name: \"Mike Johnson\",\n "
+      },
+      {
+        "path": "src\\components\\DashboardClient.tsx",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "\"use client\";\n\nimport { useState, useMemo, useEffect } from \"react\";\nimport dynamic from \"next/dynamic\";\nimport Sidebar, { ViewType } from \"@/components/Sidebar\";\nimport {\n  useProperties,\n  PropertyWithCalculations,\n} from \"@/context/PropertyContext\";\nimport ValueScatterPlot from \"@/components/ValueScatterPlot\";\nimport StrategyKanban from \"@/components/StrategyKanban\";\nimport PropertyDataTable from \"@/components/PropertyDataTable\";\nimport PortfolioTracker from \"@/components/PortfolioTracker\";\nimport ExpenseTracker from \"@/components/ExpenseTracker\";\nimport TaskManager from \"@/components/TaskManager\";\nimport ProjectTimeline from \"@/components/ProjectTimeline\";\nimport RehabEstimator from \"@/components/RehabEstimator\";\nimport RentComps from \"@/components/RentComps\";\nimport PropertyComparator from \"@/components/PropertyComparator\";\nimport FinancialProjections from \"@/components/FinancialProjections\";\nimport MarketAnalysis from \"@/components/MarketAnalysis\";\nimport AIDealScoring from \"@/co"
+      },
+      {
+        "path": "src\\components\\ExpenseTracker.tsx",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "\"use client\";\nimport { useState } from \"react\";\n\nexport default function ExpenseTracker({ budget }: { budget: number }) {\n  const [expenses, setExpenses] = useState<\n    { id: string; category: string; amount: number }[]\n  >([]);\n  const [amount, setAmount] = useState(\"\");\n  const [category, setCategory] = useState(\"\");\n\n  const addExpense = () => {\n    if (!amount) return;\n    setExpenses([\n      ...expenses,\n      { id: Date.now().toString(), category, amount: Number(amount) },\n    ]);\n    setAmount(\"\");\n  };\n\n  const totalSpent = expenses.reduce((sum, e) => sum + e.amount, 0);\n\n  return (\n    <div className=\"bg-dark-800 p-6 rounded-lg border border-dark-700\">\n      <h3 className=\"text-lg font-semibold text-white mb-4\">Rehab Budget</h3>\n      <div className=\"grid grid-cols-2 gap-4 mb-4\">\n        <div className=\"p-3 bg-dark-700 rounded\">\n          <div className=\"text-xs text-dark-400\">Budget</div>\n          <div className=\"text-lg font-bold text-white\">\n            ${budget.toLocaleS"
+      },
+      {
+        "path": "src\\components\\ExportReports.tsx",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          },
+          {
+            "severity": "MEDIUM",
+            "type": "ERROR_HANDLING",
+            "message": "Try block without catch detected. Ensure proper error handling for robust code."
+          }
+        ],
+        "summary": "\"use client\";\n\nimport { useState, useMemo } from \"react\";\nimport clsx from \"clsx\";\nimport { PropertyWithCalculations } from \"@/lib/calculations\";\n\ninterface ExportReportsProps {\n  properties: PropertyWithCalculations[];\n  onClose?: () => void;\n}\n\ntype ExportFormat = \"csv\" | \"json\" | \"pdf\";\ntype ReportType =\n  | \"deal-analysis\"\n  | \"portfolio-summary\"\n  | \"market-comparison\"\n  | \"equity-report\";\n\nexport default function ExportReports({\n  properties,\n  onClose,\n}: ExportReportsProps) {\n  const [selectedFormat, setSelectedFormat] = useState<ExportFormat>(\"csv\");\n  const [selectedReport, setSelectedReport] =\n    useState<ReportType>(\"deal-analysis\");\n  const [isExporting, setIsExporting] = useState(false);\n\n  // Export to CSV\n  const exportToCSV = () => {\n    const headers = [\n      \"Address\",\n      \"City\",\n      \"State\",\n      \"Zip\",\n      \"List Price\",\n      \"Equity Gap\",\n      \"Sq Ft\",\n      \"Bedrooms\",\n      \"Bathrooms\",\n      \"Cap Rate\",\n      \"Cash-on-Cash\",\n      \"MAO\",\n      \"Gross"
+      },
+      {
+        "path": "src\\components\\FinancialProjections.tsx",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "\"use client\";\n\nimport { useState, useMemo } from \"react\";\nimport clsx from \"clsx\";\nimport { PropertyWithCalculations } from \"@/lib/calculations\";\n\ninterface FinancialProjectionsProps {\n  property: PropertyWithCalculations | null;\n  onClose?: () => void;\n}\n\ninterface ProjectionYear {\n  year: number;\n  grossRent: number;\n  vacancy: number;\n  effectiveGross: number;\n  operatingExpenses: number;\n  noi: number;\n  mortgage: number;\n  cashFlow: number;\n  equityBuild: number;\n  totalReturn: number;\n}\n\ninterface LoanDetails {\n  downPaymentPercent: number;\n  interestRate: number;\n  loanTermYears: number;\n}\n\nconst DEFAULT_LOAN: LoanDetails = {\n  downPaymentPercent: 20,\n  interestRate: 7.0,\n  loanTermYears: 30,\n};\n\n// Calculate monthly mortgage payment\nconst calculateMortgage = (\n  principal: number,\n  annualRate: number,\n  years: number,\n): number => {\n  const monthlyRate = annualRate / 100 / 12;\n  const numPayments = years * 12;\n  if (monthlyRate === 0) return principal / numPayments;\n  return ("
+      },
+      {
+        "path": "src\\components\\MarketAnalysis.tsx",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "\"use client\";\n\nimport { useMemo } from \"react\";\nimport clsx from \"clsx\";\nimport { PropertyWithCalculations } from \"@/lib/calculations\";\n\ninterface MarketAnalysisProps {\n  properties: PropertyWithCalculations[];\n  onPropertyClick?: (property: PropertyWithCalculations) => void;\n}\n\ninterface MarketMetrics {\n  city: string;\n  count: number;\n  avgPrice: number;\n  avgPricePerSqft: number;\n  avgCapRate: number;\n  avgEquityGap: number;\n  avgRent: number;\n}\n\nexport default function MarketAnalysis({\n  properties,\n  onPropertyClick,\n}: MarketAnalysisProps) {\n  // Calculate metrics by city\n  const marketMetrics = useMemo((): MarketMetrics[] => {\n    const byCity: Record<string, PropertyWithCalculations[]> = {};\n\n    properties.forEach((p) => {\n      if (!byCity[p.city]) byCity[p.city] = [];\n      byCity[p.city].push(p);\n    });\n\n    return Object.entries(byCity)\n      .map(([city, props]) => ({\n        city,\n        count: props.length,\n        avgPrice: props.reduce((sum, p) => sum + p.listPrice,"
+      },
+      {
+        "path": "src\\components\\MobilePWA.tsx",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "\"use client\";\n\nimport { useState, useEffect } from \"react\";\nimport clsx from \"clsx\";\n\ninterface MobilePWAProps {\n  // This component shows PWA capabilities and mobile optimizations\n}\n\nexport default function MobilePWA({}: MobilePWAProps) {\n  const [isMobile, setIsMobile] = useState(false);\n  const [isPWA, setIsPWA] = useState(false);\n  const [orientation, setOrientation] = useState<\"portrait\" | \"landscape\">(\n    \"portrait\",\n  );\n\n  useEffect(() => {\n    // Check if mobile\n    const checkMobile = () => {\n      setIsMobile(window.innerWidth < 768 || \"ontouchstart\" in window);\n    };\n\n    // Check if running as PWA\n    const checkPWA = () => {\n      const isStandalone = window.matchMedia(\n        \"(display-mode: standalone)\",\n      ).matches;\n      const isInWebAppiOS = (window.navigator as any).standalone === true;\n      setIsPWA(isStandalone || isInWebAppiOS);\n    };\n\n    // Check orientation\n    const checkOrientation = () => {\n      setOrientation(\n        window.innerWidth > window.i"
+      },
+      {
+        "path": "src\\components\\OpportunityMap.tsx",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Hardcoded hex color detected. Consider using theme constants or CSS variables."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "\"use client\";\n\nimport { useEffect, useState, useRef } from \"react\";\nimport { MapContainer, TileLayer, Marker, Popup, useMap } from \"react-leaflet\";\nimport MarkerClusterGroup from \"react-leaflet-cluster\";\nimport L from \"leaflet\";\nimport { getDecisionColor, Decision } from \"@/data/properties\";\nimport { PropertyWithCalculations } from \"@/lib/calculations\";\n\n// Fix for default marker icons in Next.js\nconst createMarkerIcon = (color: string) => {\n  return L.divIcon({\n    className: \"custom-marker\",\n    html: `\n      <div style=\"\n        width: 24px;\n        height: 24px;\n        background-color: ${color};\n        border: 3px solid white;\n        border-radius: 50%;\n        box-shadow: 0 2px 8px rgba(0,0,0,0.4);\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      \">\n        <div style=\"\n          width: 8px;\n          height: 8px;\n          background-color: white;\n          border-radius: 50%;\n        \"></div>\n      </div>\n    `,\n    iconSize: [24, 24"
+      },
+      {
+        "path": "src\\components\\PortfolioTracker.tsx",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "\"use client\";\n\nimport { useMemo } from \"react\";\nimport clsx from \"clsx\";\nimport { PropertyWithCalculations } from \"@/lib/calculations\";\n\ninterface PortfolioTrackerProps {\n  properties: PropertyWithCalculations[];\n  onPropertyClick?: (property: PropertyWithCalculations) => void;\n}\n\n// Owned properties are marked with isOwned = true\nexport default function PortfolioTracker({\n  properties,\n  onPropertyClick,\n}: PortfolioTrackerProps) {\n  // Filter to show only owned properties (or all for potential portfolio)\n  const ownedProperties = useMemo(() => {\n    return properties.filter((p) => (p as any).isOwned === true);\n  }, [properties]);\n\n  const prospectProperties = useMemo(() => {\n    return properties.filter((p) => (p as any).isOwned !== true);\n  }, [properties]);\n\n  // Calculate portfolio metrics\n  const portfolioMetrics = useMemo(() => {\n    const totalInvested = ownedProperties.reduce(\n      (sum, p) => sum + ((p as any).purchasePrice || p.listPrice),\n      0,\n    );\n    const totalEqu"
+      },
+      {
+        "path": "src\\components\\ProjectTimeline.tsx",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "\"use client\";\n\nimport { useState, useMemo } from \"react\";\nimport clsx from \"clsx\";\nimport { PropertyWithCalculations } from \"@/lib/calculations\";\n\ninterface ProjectTimelineProps {\n  properties: PropertyWithCalculations[];\n  onPropertyClick?: (property: PropertyWithCalculations) => void;\n}\n\n// Event types for timeline\ntype EventType =\n  | \"purchase\"\n  | \"rehab\"\n  | \"listing\"\n  | \"sale\"\n  | \"inspection\"\n  | \"closing\";\n\ninterface TimelineEventData {\n  id: string;\n  propertyId: string;\n  propertyAddress: string;\n  title: string;\n  eventType: EventType;\n  startDate: Date;\n  endDate: Date | null;\n  isCompleted: boolean;\n  assignedTo?: string;\n}\n\n// Sample timeline events (in real app, would come from database)\nconst generateSampleEvents = (\n  properties: PropertyWithCalculations[],\n): TimelineEventData[] => {\n  return properties.slice(0, 5).map((property, index) => {\n    const startDate = new Date();\n    startDate.setDate(startDate.getDate() + index * 7);\n\n    const endDate = new Date(startD"
+      },
+      {
+        "path": "src\\components\\PropertyComparator.tsx",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "\"use client\";\n\nimport { useState, useMemo } from \"react\";\nimport clsx from \"clsx\";\nimport { PropertyWithCalculations } from \"@/lib/calculations\";\nimport { getDecisionColor, Decision } from \"@/data/properties\";\n\ninterface PropertyComparatorProps {\n  properties: PropertyWithCalculations[];\n  onPropertyClick?: (property: PropertyWithCalculations) => void;\n  onClose?: () => void;\n}\n\n// Metrics to compare\ninterface ComparisonMetric {\n  key: keyof PropertyWithCalculations;\n  label: string;\n  format: \"currency\" | \"number\" | \"percent\" | \"boolean\" | \"text\";\n  higherIsBetter?: boolean;\n}\n\nconst COMPARISON_METRICS: ComparisonMetric[] = [\n  {\n    key: \"listPrice\",\n    label: \"List Price\",\n    format: \"currency\",\n    higherIsBetter: false,\n  },\n  { key: \"sqft\", label: \"Square Feet\", format: \"number\", higherIsBetter: true },\n  {\n    key: \"pricePerSqft\",\n    label: \"Price/SqFt\",\n    format: \"currency\",\n    higherIsBetter: false,\n  },\n  {\n    key: \"bedrooms\",\n    label: \"Bedrooms\",\n    format: \"number"
+      },
+      {
+        "path": "src\\components\\PropertyDataTable.tsx",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Hardcoded hex color detected. Consider using theme constants or CSS variables."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "\"use client\";\n\nimport { useMemo, useState } from \"react\";\nimport {\n  useReactTable,\n  getCoreRowModel,\n  getSortedRowModel,\n  getFilteredRowModel,\n  getPaginationRowModel,\n  flexRender,\n  createColumnHelper,\n  SortingState,\n  ColumnFiltersState,\n  ColumnDef,\n  FilterFn,\n  Row,\n} from \"@tanstack/react-table\";\nimport clsx from \"clsx\";\nimport { getDecisionColor, Decision, Strategy } from \"@/data/properties\";\nimport { PropertyWithCalculations } from \"@/lib/calculations\";\n\ninterface PropertyDataTableProps {\n  properties: PropertyWithCalculations[];\n  onPropertyClick?: (property: PropertyWithCalculations) => void;\n  onToggleFavorite?: (id: string) => void;\n  getIsFavorite?: (id: string) => boolean;\n}\n\n// Typed column helper for PropertyWithCalculations type\nconst columnHelper = createColumnHelper<PropertyWithCalculations>();\n\n// Type-safe strategy colors\nconst STRATEGY_COLORS: Record<Strategy, string> = {\n  \"Retail Flip\": \"#3b82f6\",\n  \"Section 8\": \"#22c55e\",\n  BRRR: \"#a855f7\",\n  \"Owner Finan"
+      },
+      {
+        "path": "src\\components\\Providers.tsx",
+        "violations": [],
+        "summary": "\"use client\";\n\nimport { ReactNode } from \"react\";\nimport { PropertyProvider } from \"@/context/PropertyContext\";\n\ninterface ProvidersProps {\n  children: ReactNode;\n}\n\nexport function Providers({ children }: ProvidersProps) {\n  return <PropertyProvider>{children}</PropertyProvider>;\n}\n"
+      },
+      {
+        "path": "src\\components\\RehabEstimator.tsx",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "\"use client\";\n\nimport { useState, useMemo } from \"react\";\nimport clsx from \"clsx\";\nimport { PropertyWithCalculations } from \"@/lib/calculations\";\n\ninterface RehabEstimatorProps {\n  property: PropertyWithCalculations | null;\n  onClose?: () => void;\n}\n\n// Rehab categories with typical cost ranges\ninterface RehabCategory {\n  name: string;\n  icon: string;\n  items: RehabItemTemplate[];\n}\n\ninterface RehabItemTemplate {\n  name: string;\n  unit: string;\n  lowCost: number;\n  highCost: number;\n  avgCost: number;\n}\n\nconst REHAB_CATEGORIES: RehabCategory[] = [\n  {\n    name: \"Kitchen\",\n    icon: \"\ud83c\udf73\",\n    items: [\n      {\n        name: \"Cabinet Refinish\",\n        unit: \"linear ft\",\n        lowCost: 30,\n        highCost: 60,\n        avgCost: 45,\n      },\n      {\n        name: \"New Cabinets\",\n        unit: \"linear ft\",\n        lowCost: 150,\n        highCost: 400,\n        avgCost: 275,\n      },\n      {\n        name: \"Countertop (Laminate)\",\n        unit: \"sq ft\",\n        lowCost: 20,\n        highCost: 4"
+      },
+      {
+        "path": "src\\components\\RentComps.tsx",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "\"use client\";\n\nimport { useState, useMemo } from \"react\";\nimport clsx from \"clsx\";\nimport { PropertyWithCalculations } from \"@/lib/calculations\";\n\ninterface RentCompsProps {\n  property: PropertyWithCalculations | null;\n  onClose?: () => void;\n}\n\n// Sample rent comparable data (in real app, would come from API like RentCast/Zillow)\ninterface RentComp {\n  id: string;\n  address: string;\n  city: string;\n  bedrooms: number;\n  bathrooms: number;\n  sqft: number;\n  rent: number;\n  distance: number;\n  source: string;\n  dateAdded: Date;\n}\n\n// Generate sample rent comps for demo\nconst generateSampleComps = (\n  property: PropertyWithCalculations,\n): RentComp[] => {\n  const baseRent = property.estimatedRent || 1500;\n  return [\n    {\n      id: \"1\",\n      address: `${Math.floor(Math.random() * 9000) + 1000} Oak Street`,\n      city: property.city,\n      bedrooms: property.bedrooms,\n      bathrooms: property.bathrooms,\n      sqft: property.sqft,\n      rent: Math.round(baseRent * (0.9 + Math.random() * "
+      },
+      {
+        "path": "src\\components\\Sidebar.tsx",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "\"use client\";\n\nimport { useState, useEffect } from \"react\";\nimport clsx from \"clsx\";\nimport {\n  MapIcon,\n  ChartBarIcon,\n  Squares2X2Icon,\n  TableCellsIcon,\n  MagnifyingGlassIcon,\n  HomeIcon,\n  Bars3Icon,\n  XMarkIcon,\n  CurrencyDollarIcon,\n  ClipboardDocumentListIcon,\n  ClockIcon,\n  WrenchScrewdriverIcon,\n  HomeModernIcon,\n  ScaleIcon,\n  ChartPieIcon,\n  MagnifyingGlassCircleIcon,\n  SparklesIcon,\n  DocumentArrowDownIcon,\n  UsersIcon,\n  BriefcaseIcon,\n} from \"@heroicons/react/24/outline\";\n\nexport type ViewType =\n  | \"map\"\n  | \"scatter\"\n  | \"kanban\"\n  | \"table\"\n  | \"portfolio\"\n  | \"expenses\"\n  | \"tasks\"\n  | \"timeline\"\n  | \"rehab\"\n  | \"rentComps\"\n  | \"comparator\"\n  | \"projections\"\n  | \"market\"\n  | \"ai\"\n  | \"export\"\n  | \"collaboration\";\n\ninterface SidebarProps {\n  currentView: ViewType;\n  onViewChange: (view: ViewType) => void;\n  searchQuery: string;\n  onSearchChange: (query: string) => void;\n  propertyCount?: number;\n  platinumCount?: number;\n}\n\nconst navigationItems = [\n  { id: \"map\" as V"
+      },
+      {
+        "path": "src\\components\\StrategyKanban.tsx",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Hardcoded hex color detected. Consider using theme constants or CSS variables."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "\"use client\";\n\nimport { useMemo, useState } from \"react\";\nimport clsx from \"clsx\";\nimport {\n  DndContext,\n  closestCenter,\n  KeyboardSensor,\n  PointerSensor,\n  useSensor,\n  useSensors,\n  DragOverlay,\n  DragStartEvent,\n  DragEndEvent,\n} from \"@dnd-kit/core\";\nimport {\n  arrayMove,\n  SortableContext,\n  sortableKeyboardCoordinates,\n  rectSortingStrategy,\n  useSortable,\n} from \"@dnd-kit/sortable\";\nimport { CSS } from \"@dnd-kit/utilities\";\nimport { Strategy, getDecisionColor } from \"@/data/properties\";\nimport { PropertyWithCalculations } from \"@/lib/calculations\";\n\ninterface StrategyKanbanProps {\n  properties: PropertyWithCalculations[];\n  onPropertyClick?: (property: PropertyWithCalculations) => void;\n}\n\nconst strategyConfig: {\n  strategy: Strategy;\n  label: string;\n  color: string;\n  icon: string;\n}[] = [\n  {\n    strategy: \"Retail Flip\",\n    label: \"Retail Flip\",\n    color: \"#3b82f6\",\n    icon: \"\ud83c\udfe0\",\n  },\n  { strategy: \"Section 8\", label: \"Section 8\", color: \"#22c55e\", icon: \"\ud83c\udfd8\ufe0f\" },\n  { str"
+      },
+      {
+        "path": "src\\components\\TaskManager.tsx",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "\"use client\";\nimport { useState } from \"react\";\n\nexport default function TaskManager({ propertyId }: { propertyId: string }) {\n  const [tasks, setTasks] = useState<\n    { id: string; title: string; isCompleted: boolean }[]\n  >([]);\n  const [newTask, setNewTask] = useState(\"\");\n\n  const addTask = () => {\n    if (!newTask) return;\n    setTasks([\n      ...tasks,\n      { id: Date.now().toString(), title: newTask, isCompleted: false },\n    ]);\n    setNewTask(\"\");\n    // TODO: Call API to save to DB\n  };\n\n  return (\n    <div className=\"bg-dark-800 p-6 rounded-lg border border-dark-700\">\n      <h3 className=\"text-lg font-semibold text-white mb-4\">Tasks</h3>\n      <div className=\"flex gap-2 mb-4\">\n        <input\n          className=\"bg-dark-900 border border-dark-600 rounded p-2 text-sm text-white w-full\"\n          placeholder=\"Add a task...\"\n          value={newTask}\n          onChange={(e) => setNewTask(e.target.value)}\n        />\n        <button\n          onClick={addTask}\n          classNa"
+      },
+      {
+        "path": "src\\components\\ValueScatterPlot.tsx",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Hardcoded hex color detected. Consider using theme constants or CSS variables."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "\"use client\";\n\nimport { useMemo, useState } from \"react\";\nimport {\n  ScatterChart,\n  Scatter,\n  XAxis,\n  YAxis,\n  CartesianGrid,\n  Tooltip,\n  ResponsiveContainer,\n  ReferenceLine,\n  Cell,\n} from \"recharts\";\nimport { getDecisionColor, Decision } from \"@/data/properties\";\nimport { PropertyWithCalculations } from \"@/lib/calculations\";\n\ninterface ValueScatterPlotProps {\n  properties: PropertyWithCalculations[];\n  onPropertyClick?: (property: PropertyWithCalculations) => void;\n}\n\ninterface ChartData {\n  x: number;\n  y: number;\n  size: number;\n  property: PropertyWithCalculations;\n  isOutlier: boolean;\n}\n\nexport default function ValueScatterPlot({\n  properties,\n  onPropertyClick,\n}: ValueScatterPlotProps) {\n  const [selectedDecision, setSelectedDecision] = useState<Decision | \"all\">(\n    \"all\",\n  );\n  const [showTrendLine, setShowTrendLine] = useState(true);\n\n  const averagePricePerSqft = useMemo(() => {\n    const validProperties = properties.filter((p) => p.sqft > 0);\n    if (validPropertie"
+      },
+      {
+        "path": "src\\context\\PropertyContext.tsx",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          },
+          {
+            "severity": "LOW",
+            "type": "CLEAN_CODE",
+            "message": "Console statement detected. Remove debug logs before production or use proper logging service."
+          }
+        ],
+        "summary": "\"use client\";\n\nimport {\n  createContext,\n  useContext,\n  useState,\n  useCallback,\n  useEffect,\n  ReactNode,\n  useRef,\n} from \"react\";\nimport { Decision, Strategy } from \"@/data/properties\";\nimport {\n  PropertyWithCalculations,\n  PropertyBase,\n  addCalculations,\n} from \"@/lib/calculations\";\n\n// Re-export for convenience\nexport type { PropertyWithCalculations } from \"@/lib/calculations\";\n\ninterface PropertyContextType {\n  properties: PropertyWithCalculations[];\n  loading: boolean;\n  error: string | null;\n  selectedProperty: PropertyWithCalculations | null;\n  filters: PropertyFilters;\n  setSelectedProperty: (property: PropertyWithCalculations | null) => void;\n  setFilters: (filters: PropertyFilters) => void;\n  refreshProperties: () => Promise<void>;\n  updateProperty: (id: string, data: Partial<PropertyBase>) => Promise<void>;\n  deleteProperty: (id: string) => Promise<void>;\n  addProperty: (\n    property: Omit<PropertyBase, \"id\" | \"createdAt\" | \"updatedAt\">,\n  ) => Promise<void>;\n  getProp"
+      },
+      {
+        "path": "src\\data\\properties.ts",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Hardcoded hex color detected. Consider using theme constants or CSS variables."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "// Auto-generated from processed/properties.json\n// Run: npx tsx scripts/convert-properties.ts to regenerate\n\nexport type Decision =\n  | \"Pass Platinum\"\n  | \"Pass Gold\"\n  | \"Pass Silver\"\n  | \"Hard Fail\"\n  | \"Caution\";\nexport type Strategy =\n  | \"Retail Flip\"\n  | \"Section 8\"\n  | \"BRRR\"\n  | \"Owner Finance\"\n  | \"Wholesaling\";\n\nexport interface Property {\n  id: string;\n  address: string;\n  city: string;\n  state: string;\n  zip: string;\n  lat: number;\n  lng: number;\n  listPrice: number;\n  equityGap: number;\n  sqft: number;\n  bedrooms: number;\n  bathrooms: number;\n  decision: Decision;\n  strategy: Strategy;\n  rationale: string;\n  type: string;\n  realtor: string;\n  url: string;\n  details: string;\n  images: string[];\n  estimatedRent: number;\n  annualTaxes: number;\n  annualInsurance: number;\n  renovationBudget: number;\n  afterRepairValue: number;\n  notes: string;\n  createdAt: string | Date;\n  updatedAt: string | Date;\n}\n\n// Helper functions for data analysis\nexport const getPricePerSqft = (prope"
+      },
+      {
+        "path": "src\\generated\\browser.ts",
+        "violations": [],
+        "summary": "\n/* !!! This is code generated by Prisma. Do not edit directly. !!! */\n/* eslint-disable */\n// biome-ignore-all lint: generated file\n// @ts-nocheck \n/*\n * This file should be your main import to use Prisma-related types and utilities in a browser. \n * Use it to get access to models, enums, and input types.\n * \n * This file does not contain a `PrismaClient` class, nor several other helpers that are intended as server-side only.\n * See `client.ts` for the standard, server-side entry point.\n *\n * \ud83d\udfe2 You can import this file directly.\n */\n\nimport * as Prisma from './internal/prismaNamespaceBrowser'\nexport { Prisma }\nexport * as $Enums from './enums'\nexport * from './enums';\n/**\n * Model Property\n * \n */\nexport type Property = Prisma.PropertyModel\n/**\n * Model Expense\n * \n */\nexport type Expense = Prisma.ExpenseModel\n/**\n * Model Task\n * \n */\nexport type Task = Prisma.TaskModel\n/**\n * Model RehabItem\n * \n */\nexport type RehabItem = Prisma.RehabItemModel\n/**\n * Model MarketData\n * \n */\nexport"
+      },
+      {
+        "path": "src\\generated\\client.ts",
+        "violations": [],
+        "summary": "\n/* !!! This is code generated by Prisma. Do not edit directly. !!! */\n/* eslint-disable */\n// biome-ignore-all lint: generated file\n// @ts-nocheck \n/*\n * This file should be your main import to use Prisma. Through it you get access to all the models, enums, and input types.\n * If you're looking for something you can import in the client-side of your application, please refer to the `browser.ts` file instead.\n *\n * \ud83d\udfe2 You can import this file directly.\n */\n\nimport * as process from 'node:process'\nimport * as path from 'node:path'\nimport { fileURLToPath } from 'node:url'\nglobalThis['__dirname'] = path.dirname(fileURLToPath(import.meta.url))\n\nimport * as runtime from \"@prisma/client/runtime/client\"\nimport * as $Enums from \"./enums\"\nimport * as $Class from \"./internal/class\"\nimport * as Prisma from \"./internal/prismaNamespace\"\n\nexport * as $Enums from './enums'\nexport * from \"./enums\"\n/**\n * ## Prisma Client\n * \n * Type-safe database client for TypeScript\n * @example\n * ```\n * const prisma"
+      },
+      {
+        "path": "src\\generated\\commonInputTypes.ts",
+        "violations": [],
+        "summary": "\n/* !!! This is code generated by Prisma. Do not edit directly. !!! */\n/* eslint-disable */\n// biome-ignore-all lint: generated file\n// @ts-nocheck \n/*\n * This file exports various common sort, input & filter types that are not directly linked to a particular model.\n *\n * \ud83d\udfe2 You can import this file directly.\n */\n\nimport type * as runtime from \"@prisma/client/runtime/client\"\nimport * as $Enums from \"./enums\"\nimport type * as Prisma from \"./internal/prismaNamespace\"\n\n\nexport type StringFilter<$PrismaModel = never> = {\n  equals?: string | Prisma.StringFieldRefInput<$PrismaModel>\n  in?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>\n  notIn?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>\n  lt?: string | Prisma.StringFieldRefInput<$PrismaModel>\n  lte?: string | Prisma.StringFieldRefInput<$PrismaModel>\n  gt?: string | Prisma.StringFieldRefInput<$PrismaModel>\n  gte?: string | Prisma.StringFieldRefInput<$PrismaModel>\n  contains?: string | Prisma.StringFieldRefInput<$PrismaMo"
+      },
+      {
+        "path": "src\\generated\\enums.ts",
+        "violations": [],
+        "summary": "\n/* !!! This is code generated by Prisma. Do not edit directly. !!! */\n/* eslint-disable */\n// biome-ignore-all lint: generated file\n// @ts-nocheck \n/*\n* This file exports all enum related types from the schema.\n*\n* \ud83d\udfe2 You can import this file directly.\n*/\n\nexport const PropertyManagementStatus = {\n  AVAILABLE: 'AVAILABLE',\n  UNDER_RENOVATION: 'UNDER_RENOVATION',\n  RENTED: 'RENTED',\n  OFF_MARKET: 'OFF_MARKET',\n  SOLD: 'SOLD'\n} as const\n\nexport type PropertyManagementStatus = (typeof PropertyManagementStatus)[keyof typeof PropertyManagementStatus]\n\n\nexport const UserRole = {\n  OWNER: 'OWNER',\n  ADMIN: 'ADMIN',\n  MEMBER: 'MEMBER',\n  VIEWER: 'VIEWER',\n  TENANT: 'TENANT'\n} as const\n\nexport type UserRole = (typeof UserRole)[keyof typeof UserRole]\n\n\nexport const LeaseStatus = {\n  DRAFT: 'DRAFT',\n  ACTIVE: 'ACTIVE',\n  EXPIRED: 'EXPIRED',\n  TERMINATED: 'TERMINATED',\n  MONTH_TO_MONTH: 'MONTH_TO_MONTH',\n  PENDING_RENEWAL: 'PENDING_RENEWAL'\n} as const\n\nexport type LeaseStatus = (typeof LeaseStatus"
+      },
+      {
+        "path": "src\\generated\\models.ts",
+        "violations": [],
+        "summary": "\n/* !!! This is code generated by Prisma. Do not edit directly. !!! */\n/* eslint-disable */\n// biome-ignore-all lint: generated file\n// @ts-nocheck \n/*\n * This is a barrel export file for all models and their related types.\n *\n * \ud83d\udfe2 You can import this file directly.\n */\nexport type * from './models/Property'\nexport type * from './models/Expense'\nexport type * from './models/Task'\nexport type * from './models/RehabItem'\nexport type * from './models/MarketData'\nexport type * from './models/RentComp'\nexport type * from './models/Projection'\nexport type * from './models/TimelineEvent'\nexport type * from './models/Comment'\nexport type * from './models/Document'\nexport type * from './models/Organization'\nexport type * from './models/User'\nexport type * from './models/OrganizationUser'\nexport type * from './models/Tenant'\nexport type * from './models/Lease'\nexport type * from './models/Payment'\nexport type * from './models/MaintenanceRequest'\nexport type * from './models/MaintenanceComment'\ne"
+      },
+      {
+        "path": "src\\generated\\internal\\class.ts",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          }
+        ],
+        "summary": "\n/* !!! This is code generated by Prisma. Do not edit directly. !!! */\n/* eslint-disable */\n// biome-ignore-all lint: generated file\n// @ts-nocheck \n/*\n * WARNING: This is an internal file that is subject to change!\n *\n * \ud83d\uded1 Under no circumstances should you import this file directly! \ud83d\uded1\n *\n * Please import the `PrismaClient` class from the `client.ts` file instead.\n */\n\nimport * as runtime from \"@prisma/client/runtime/client\"\nimport type * as Prisma from \"./prismaNamespace\"\n\n\nconst config: runtime.GetPrismaClientConfig = {\n  \"previewFeatures\": [],\n  \"clientVersion\": \"7.4.0\",\n  \"engineVersion\": \"ab56fe763f921d033a6c195e7ddeb3e255bdbb57\",\n  \"activeProvider\": \"postgresql\",\n  \"inlineSchema\": \"generator client {\\n  provider = \\\"prisma-client\\\"\\n  output   = \\\"../src/generated\\\"\\n}\\n\\ndatasource db {\\n  provider = \\\"postgresql\\\"\\n}\\n\\nmodel Property {\\n  id        String  @id @default(uuid())\\n  address   String\\n  city      String\\n  state     String  @default(\\\"TX\\\")\\n  zip       String  @d"
+      },
+      {
+        "path": "src\\generated\\internal\\prismaNamespace.ts",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          }
+        ],
+        "summary": "\n/* !!! This is code generated by Prisma. Do not edit directly. !!! */\n/* eslint-disable */\n// biome-ignore-all lint: generated file\n// @ts-nocheck \n/*\n * WARNING: This is an internal file that is subject to change!\n *\n * \ud83d\uded1 Under no circumstances should you import this file directly! \ud83d\uded1\n *\n * All exports from this file are wrapped under a `Prisma` namespace object in the client.ts file.\n * While this enables partial backward compatibility, it is not part of the stable public API.\n *\n * If you are looking for your Models, Enums, and Input Types, please import them from the respective\n * model files in the `model` directory!\n */\n\nimport * as runtime from \"@prisma/client/runtime/client\"\nimport type * as Prisma from \"../models\"\nimport { type PrismaClient } from \"./class\"\n\nexport type * from '../models'\n\nexport type DMMF = typeof runtime.DMMF\n\nexport type PrismaPromise<T> = runtime.Types.Public.PrismaPromise<T>\n\n/**\n * Prisma Errors\n */\n\nexport const PrismaClientKnownRequestError = runtime.P"
+      },
+      {
+        "path": "src\\generated\\internal\\prismaNamespaceBrowser.ts",
+        "violations": [],
+        "summary": "\n/* !!! This is code generated by Prisma. Do not edit directly. !!! */\n/* eslint-disable */\n// biome-ignore-all lint: generated file\n// @ts-nocheck \n/*\n * WARNING: This is an internal file that is subject to change!\n *\n * \ud83d\uded1 Under no circumstances should you import this file directly! \ud83d\uded1\n *\n * All exports from this file are wrapped under a `Prisma` namespace object in the browser.ts file.\n * While this enables partial backward compatibility, it is not part of the stable public API.\n *\n * If you are looking for your Models, Enums, and Input Types, please import them from the respective\n * model files in the `model` directory!\n */\n\nimport * as runtime from \"@prisma/client/runtime/index-browser\"\n\nexport type * from '../models'\nexport type * from './prismaNamespace'\n\nexport const Decimal = runtime.Decimal\n\n\nexport const NullTypes = {\n  DbNull: runtime.NullTypes.DbNull as (new (secret: never) => typeof runtime.DbNull),\n  JsonNull: runtime.NullTypes.JsonNull as (new (secret: never) => typeof r"
+      },
+      {
+        "path": "src\\generated\\models\\Activity.ts",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          }
+        ],
+        "summary": "\n/* !!! This is code generated by Prisma. Do not edit directly. !!! */\n/* eslint-disable */\n// biome-ignore-all lint: generated file\n// @ts-nocheck \n/*\n * This file exports the `Activity` model and its related types.\n *\n * \ud83d\udfe2 You can import this file directly.\n */\nimport type * as runtime from \"@prisma/client/runtime/client\"\nimport type * as $Enums from \"../enums\"\nimport type * as Prisma from \"../internal/prismaNamespace\"\n\n/**\n * Model Activity\n * \n */\nexport type ActivityModel = runtime.Types.Result.DefaultSelection<Prisma.$ActivityPayload>\n\nexport type AggregateActivity = {\n  _count: ActivityCountAggregateOutputType | null\n  _min: ActivityMinAggregateOutputType | null\n  _max: ActivityMaxAggregateOutputType | null\n}\n\nexport type ActivityMinAggregateOutputType = {\n  id: string | null\n  organizationId: string | null\n  userId: string | null\n  action: string | null\n  targetType: string | null\n  targetId: string | null\n  ipAddress: string | null\n  createdAt: Date | null\n}\n\nexport type Activ"
+      },
+      {
+        "path": "src\\generated\\models\\BankAccount.ts",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          }
+        ],
+        "summary": "\n/* !!! This is code generated by Prisma. Do not edit directly. !!! */\n/* eslint-disable */\n// biome-ignore-all lint: generated file\n// @ts-nocheck \n/*\n * This file exports the `BankAccount` model and its related types.\n *\n * \ud83d\udfe2 You can import this file directly.\n */\nimport type * as runtime from \"@prisma/client/runtime/client\"\nimport type * as $Enums from \"../enums\"\nimport type * as Prisma from \"../internal/prismaNamespace\"\n\n/**\n * Model BankAccount\n * \n */\nexport type BankAccountModel = runtime.Types.Result.DefaultSelection<Prisma.$BankAccountPayload>\n\nexport type AggregateBankAccount = {\n  _count: BankAccountCountAggregateOutputType | null\n  _avg: BankAccountAvgAggregateOutputType | null\n  _sum: BankAccountSumAggregateOutputType | null\n  _min: BankAccountMinAggregateOutputType | null\n  _max: BankAccountMaxAggregateOutputType | null\n}\n\nexport type BankAccountAvgAggregateOutputType = {\n  balance: number | null\n}\n\nexport type BankAccountSumAggregateOutputType = {\n  balance: number | nul"
+      },
+      {
+        "path": "src\\generated\\models\\Comment.ts",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          }
+        ],
+        "summary": "\n/* !!! This is code generated by Prisma. Do not edit directly. !!! */\n/* eslint-disable */\n// biome-ignore-all lint: generated file\n// @ts-nocheck \n/*\n * This file exports the `Comment` model and its related types.\n *\n * \ud83d\udfe2 You can import this file directly.\n */\nimport type * as runtime from \"@prisma/client/runtime/client\"\nimport type * as $Enums from \"../enums\"\nimport type * as Prisma from \"../internal/prismaNamespace\"\n\n/**\n * Model Comment\n * \n */\nexport type CommentModel = runtime.Types.Result.DefaultSelection<Prisma.$CommentPayload>\n\nexport type AggregateComment = {\n  _count: CommentCountAggregateOutputType | null\n  _min: CommentMinAggregateOutputType | null\n  _max: CommentMaxAggregateOutputType | null\n}\n\nexport type CommentMinAggregateOutputType = {\n  id: string | null\n  propertyId: string | null\n  userId: string | null\n  userName: string | null\n  content: string | null\n  createdAt: Date | null\n}\n\nexport type CommentMaxAggregateOutputType = {\n  id: string | null\n  propertyId: stri"
+      },
+      {
+        "path": "src\\generated\\models\\Document.ts",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          }
+        ],
+        "summary": "\n/* !!! This is code generated by Prisma. Do not edit directly. !!! */\n/* eslint-disable */\n// biome-ignore-all lint: generated file\n// @ts-nocheck \n/*\n * This file exports the `Document` model and its related types.\n *\n * \ud83d\udfe2 You can import this file directly.\n */\nimport type * as runtime from \"@prisma/client/runtime/client\"\nimport type * as $Enums from \"../enums\"\nimport type * as Prisma from \"../internal/prismaNamespace\"\n\n/**\n * Model Document\n * \n */\nexport type DocumentModel = runtime.Types.Result.DefaultSelection<Prisma.$DocumentPayload>\n\nexport type AggregateDocument = {\n  _count: DocumentCountAggregateOutputType | null\n  _min: DocumentMinAggregateOutputType | null\n  _max: DocumentMaxAggregateOutputType | null\n}\n\nexport type DocumentMinAggregateOutputType = {\n  id: string | null\n  propertyId: string | null\n  fileName: string | null\n  fileUrl: string | null\n  fileType: string | null\n  category: string | null\n  uploadedBy: string | null\n  createdAt: Date | null\n}\n\nexport type Documen"
+      },
+      {
+        "path": "src\\generated\\models\\Expense.ts",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          }
+        ],
+        "summary": "\n/* !!! This is code generated by Prisma. Do not edit directly. !!! */\n/* eslint-disable */\n// biome-ignore-all lint: generated file\n// @ts-nocheck \n/*\n * This file exports the `Expense` model and its related types.\n *\n * \ud83d\udfe2 You can import this file directly.\n */\nimport type * as runtime from \"@prisma/client/runtime/client\"\nimport type * as $Enums from \"../enums\"\nimport type * as Prisma from \"../internal/prismaNamespace\"\n\n/**\n * Model Expense\n * \n */\nexport type ExpenseModel = runtime.Types.Result.DefaultSelection<Prisma.$ExpensePayload>\n\nexport type AggregateExpense = {\n  _count: ExpenseCountAggregateOutputType | null\n  _avg: ExpenseAvgAggregateOutputType | null\n  _sum: ExpenseSumAggregateOutputType | null\n  _min: ExpenseMinAggregateOutputType | null\n  _max: ExpenseMaxAggregateOutputType | null\n}\n\nexport type ExpenseAvgAggregateOutputType = {\n  amount: number | null\n}\n\nexport type ExpenseSumAggregateOutputType = {\n  amount: number | null\n}\n\nexport type ExpenseMinAggregateOutputType = {"
+      },
+      {
+        "path": "src\\generated\\models\\Lease.ts",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          }
+        ],
+        "summary": "\n/* !!! This is code generated by Prisma. Do not edit directly. !!! */\n/* eslint-disable */\n// biome-ignore-all lint: generated file\n// @ts-nocheck \n/*\n * This file exports the `Lease` model and its related types.\n *\n * \ud83d\udfe2 You can import this file directly.\n */\nimport type * as runtime from \"@prisma/client/runtime/client\"\nimport type * as $Enums from \"../enums\"\nimport type * as Prisma from \"../internal/prismaNamespace\"\n\n/**\n * Model Lease\n * \n */\nexport type LeaseModel = runtime.Types.Result.DefaultSelection<Prisma.$LeasePayload>\n\nexport type AggregateLease = {\n  _count: LeaseCountAggregateOutputType | null\n  _avg: LeaseAvgAggregateOutputType | null\n  _sum: LeaseSumAggregateOutputType | null\n  _min: LeaseMinAggregateOutputType | null\n  _max: LeaseMaxAggregateOutputType | null\n}\n\nexport type LeaseAvgAggregateOutputType = {\n  monthlyRent: number | null\n  securityDeposit: number | null\n  lateFee: number | null\n  gracePeriod: number | null\n  rentDueDay: number | null\n}\n\nexport type LeaseSum"
+      },
+      {
+        "path": "src\\generated\\models\\MaintenanceAttachment.ts",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          }
+        ],
+        "summary": "\n/* !!! This is code generated by Prisma. Do not edit directly. !!! */\n/* eslint-disable */\n// biome-ignore-all lint: generated file\n// @ts-nocheck \n/*\n * This file exports the `MaintenanceAttachment` model and its related types.\n *\n * \ud83d\udfe2 You can import this file directly.\n */\nimport type * as runtime from \"@prisma/client/runtime/client\"\nimport type * as $Enums from \"../enums\"\nimport type * as Prisma from \"../internal/prismaNamespace\"\n\n/**\n * Model MaintenanceAttachment\n * \n */\nexport type MaintenanceAttachmentModel = runtime.Types.Result.DefaultSelection<Prisma.$MaintenanceAttachmentPayload>\n\nexport type AggregateMaintenanceAttachment = {\n  _count: MaintenanceAttachmentCountAggregateOutputType | null\n  _avg: MaintenanceAttachmentAvgAggregateOutputType | null\n  _sum: MaintenanceAttachmentSumAggregateOutputType | null\n  _min: MaintenanceAttachmentMinAggregateOutputType | null\n  _max: MaintenanceAttachmentMaxAggregateOutputType | null\n}\n\nexport type MaintenanceAttachmentAvgAggregateOutput"
+      },
+      {
+        "path": "src\\generated\\models\\MaintenanceComment.ts",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          }
+        ],
+        "summary": "\n/* !!! This is code generated by Prisma. Do not edit directly. !!! */\n/* eslint-disable */\n// biome-ignore-all lint: generated file\n// @ts-nocheck \n/*\n * This file exports the `MaintenanceComment` model and its related types.\n *\n * \ud83d\udfe2 You can import this file directly.\n */\nimport type * as runtime from \"@prisma/client/runtime/client\"\nimport type * as $Enums from \"../enums\"\nimport type * as Prisma from \"../internal/prismaNamespace\"\n\n/**\n * Model MaintenanceComment\n * \n */\nexport type MaintenanceCommentModel = runtime.Types.Result.DefaultSelection<Prisma.$MaintenanceCommentPayload>\n\nexport type AggregateMaintenanceComment = {\n  _count: MaintenanceCommentCountAggregateOutputType | null\n  _min: MaintenanceCommentMinAggregateOutputType | null\n  _max: MaintenanceCommentMaxAggregateOutputType | null\n}\n\nexport type MaintenanceCommentMinAggregateOutputType = {\n  id: string | null\n  requestId: string | null\n  userId: string | null\n  content: string | null\n  isInternal: boolean | null\n  createdAt"
+      },
+      {
+        "path": "src\\generated\\models\\MaintenanceRequest.ts",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          }
+        ],
+        "summary": "\n/* !!! This is code generated by Prisma. Do not edit directly. !!! */\n/* eslint-disable */\n// biome-ignore-all lint: generated file\n// @ts-nocheck \n/*\n * This file exports the `MaintenanceRequest` model and its related types.\n *\n * \ud83d\udfe2 You can import this file directly.\n */\nimport type * as runtime from \"@prisma/client/runtime/client\"\nimport type * as $Enums from \"../enums\"\nimport type * as Prisma from \"../internal/prismaNamespace\"\n\n/**\n * Model MaintenanceRequest\n * \n */\nexport type MaintenanceRequestModel = runtime.Types.Result.DefaultSelection<Prisma.$MaintenanceRequestPayload>\n\nexport type AggregateMaintenanceRequest = {\n  _count: MaintenanceRequestCountAggregateOutputType | null\n  _avg: MaintenanceRequestAvgAggregateOutputType | null\n  _sum: MaintenanceRequestSumAggregateOutputType | null\n  _min: MaintenanceRequestMinAggregateOutputType | null\n  _max: MaintenanceRequestMaxAggregateOutputType | null\n}\n\nexport type MaintenanceRequestAvgAggregateOutputType = {\n  estimatedCost: number "
+      },
+      {
+        "path": "src\\generated\\models\\MarketData.ts",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          }
+        ],
+        "summary": "\n/* !!! This is code generated by Prisma. Do not edit directly. !!! */\n/* eslint-disable */\n// biome-ignore-all lint: generated file\n// @ts-nocheck \n/*\n * This file exports the `MarketData` model and its related types.\n *\n * \ud83d\udfe2 You can import this file directly.\n */\nimport type * as runtime from \"@prisma/client/runtime/client\"\nimport type * as $Enums from \"../enums\"\nimport type * as Prisma from \"../internal/prismaNamespace\"\n\n/**\n * Model MarketData\n * \n */\nexport type MarketDataModel = runtime.Types.Result.DefaultSelection<Prisma.$MarketDataPayload>\n\nexport type AggregateMarketData = {\n  _count: MarketDataCountAggregateOutputType | null\n  _avg: MarketDataAvgAggregateOutputType | null\n  _sum: MarketDataSumAggregateOutputType | null\n  _min: MarketDataMinAggregateOutputType | null\n  _max: MarketDataMaxAggregateOutputType | null\n}\n\nexport type MarketDataAvgAggregateOutputType = {\n  avgDaysOnMarket: number | null\n  avgPricePerSqft: number | null\n  priceTrend: number | null\n  inventory: numbe"
+      },
+      {
+        "path": "src\\generated\\models\\Organization.ts",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          }
+        ],
+        "summary": "\n/* !!! This is code generated by Prisma. Do not edit directly. !!! */\n/* eslint-disable */\n// biome-ignore-all lint: generated file\n// @ts-nocheck \n/*\n * This file exports the `Organization` model and its related types.\n *\n * \ud83d\udfe2 You can import this file directly.\n */\nimport type * as runtime from \"@prisma/client/runtime/client\"\nimport type * as $Enums from \"../enums\"\nimport type * as Prisma from \"../internal/prismaNamespace\"\n\n/**\n * Model Organization\n * \n */\nexport type OrganizationModel = runtime.Types.Result.DefaultSelection<Prisma.$OrganizationPayload>\n\nexport type AggregateOrganization = {\n  _count: OrganizationCountAggregateOutputType | null\n  _min: OrganizationMinAggregateOutputType | null\n  _max: OrganizationMaxAggregateOutputType | null\n}\n\nexport type OrganizationMinAggregateOutputType = {\n  id: string | null\n  name: string | null\n  slug: string | null\n  subscription: string | null\n  createdAt: Date | null\n  updatedAt: Date | null\n}\n\nexport type OrganizationMaxAggregateOutputT"
+      },
+      {
+        "path": "src\\generated\\models\\OrganizationUser.ts",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          }
+        ],
+        "summary": "\n/* !!! This is code generated by Prisma. Do not edit directly. !!! */\n/* eslint-disable */\n// biome-ignore-all lint: generated file\n// @ts-nocheck \n/*\n * This file exports the `OrganizationUser` model and its related types.\n *\n * \ud83d\udfe2 You can import this file directly.\n */\nimport type * as runtime from \"@prisma/client/runtime/client\"\nimport type * as $Enums from \"../enums\"\nimport type * as Prisma from \"../internal/prismaNamespace\"\n\n/**\n * Model OrganizationUser\n * \n */\nexport type OrganizationUserModel = runtime.Types.Result.DefaultSelection<Prisma.$OrganizationUserPayload>\n\nexport type AggregateOrganizationUser = {\n  _count: OrganizationUserCountAggregateOutputType | null\n  _min: OrganizationUserMinAggregateOutputType | null\n  _max: OrganizationUserMaxAggregateOutputType | null\n}\n\nexport type OrganizationUserMinAggregateOutputType = {\n  id: string | null\n  userId: string | null\n  organizationId: string | null\n  role: $Enums.UserRole | null\n  createdAt: Date | null\n}\n\nexport type Organiz"
+      },
+      {
+        "path": "src\\generated\\models\\Payment.ts",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          }
+        ],
+        "summary": "\n/* !!! This is code generated by Prisma. Do not edit directly. !!! */\n/* eslint-disable */\n// biome-ignore-all lint: generated file\n// @ts-nocheck \n/*\n * This file exports the `Payment` model and its related types.\n *\n * \ud83d\udfe2 You can import this file directly.\n */\nimport type * as runtime from \"@prisma/client/runtime/client\"\nimport type * as $Enums from \"../enums\"\nimport type * as Prisma from \"../internal/prismaNamespace\"\n\n/**\n * Model Payment\n * \n */\nexport type PaymentModel = runtime.Types.Result.DefaultSelection<Prisma.$PaymentPayload>\n\nexport type AggregatePayment = {\n  _count: PaymentCountAggregateOutputType | null\n  _avg: PaymentAvgAggregateOutputType | null\n  _sum: PaymentSumAggregateOutputType | null\n  _min: PaymentMinAggregateOutputType | null\n  _max: PaymentMaxAggregateOutputType | null\n}\n\nexport type PaymentAvgAggregateOutputType = {\n  amount: number | null\n  lateFeeApplied: number | null\n}\n\nexport type PaymentSumAggregateOutputType = {\n  amount: number | null\n  lateFeeApplied"
+      },
+      {
+        "path": "src\\generated\\models\\Projection.ts",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          }
+        ],
+        "summary": "\n/* !!! This is code generated by Prisma. Do not edit directly. !!! */\n/* eslint-disable */\n// biome-ignore-all lint: generated file\n// @ts-nocheck \n/*\n * This file exports the `Projection` model and its related types.\n *\n * \ud83d\udfe2 You can import this file directly.\n */\nimport type * as runtime from \"@prisma/client/runtime/client\"\nimport type * as $Enums from \"../enums\"\nimport type * as Prisma from \"../internal/prismaNamespace\"\n\n/**\n * Model Projection\n * \n */\nexport type ProjectionModel = runtime.Types.Result.DefaultSelection<Prisma.$ProjectionPayload>\n\nexport type AggregateProjection = {\n  _count: ProjectionCountAggregateOutputType | null\n  _avg: ProjectionAvgAggregateOutputType | null\n  _sum: ProjectionSumAggregateOutputType | null\n  _min: ProjectionMinAggregateOutputType | null\n  _max: ProjectionMaxAggregateOutputType | null\n}\n\nexport type ProjectionAvgAggregateOutputType = {\n  year: number | null\n  monthlyRent: number | null\n  vacancyRate: number | null\n  operatingExpenses: number | nu"
+      },
+      {
+        "path": "src\\generated\\models\\Property.ts",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          }
+        ],
+        "summary": "\n/* !!! This is code generated by Prisma. Do not edit directly. !!! */\n/* eslint-disable */\n// biome-ignore-all lint: generated file\n// @ts-nocheck \n/*\n * This file exports the `Property` model and its related types.\n *\n * \ud83d\udfe2 You can import this file directly.\n */\nimport type * as runtime from \"@prisma/client/runtime/client\"\nimport type * as $Enums from \"../enums\"\nimport type * as Prisma from \"../internal/prismaNamespace\"\n\n/**\n * Model Property\n * \n */\nexport type PropertyModel = runtime.Types.Result.DefaultSelection<Prisma.$PropertyPayload>\n\nexport type AggregateProperty = {\n  _count: PropertyCountAggregateOutputType | null\n  _avg: PropertyAvgAggregateOutputType | null\n  _sum: PropertySumAggregateOutputType | null\n  _min: PropertyMinAggregateOutputType | null\n  _max: PropertyMaxAggregateOutputType | null\n}\n\nexport type PropertyAvgAggregateOutputType = {\n  lat: number | null\n  lng: number | null\n  listPrice: number | null\n  equityGap: number | null\n  sqft: number | null\n  bedrooms: numb"
+      },
+      {
+        "path": "src\\generated\\models\\RehabItem.ts",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          }
+        ],
+        "summary": "\n/* !!! This is code generated by Prisma. Do not edit directly. !!! */\n/* eslint-disable */\n// biome-ignore-all lint: generated file\n// @ts-nocheck \n/*\n * This file exports the `RehabItem` model and its related types.\n *\n * \ud83d\udfe2 You can import this file directly.\n */\nimport type * as runtime from \"@prisma/client/runtime/client\"\nimport type * as $Enums from \"../enums\"\nimport type * as Prisma from \"../internal/prismaNamespace\"\n\n/**\n * Model RehabItem\n * \n */\nexport type RehabItemModel = runtime.Types.Result.DefaultSelection<Prisma.$RehabItemPayload>\n\nexport type AggregateRehabItem = {\n  _count: RehabItemCountAggregateOutputType | null\n  _avg: RehabItemAvgAggregateOutputType | null\n  _sum: RehabItemSumAggregateOutputType | null\n  _min: RehabItemMinAggregateOutputType | null\n  _max: RehabItemMaxAggregateOutputType | null\n}\n\nexport type RehabItemAvgAggregateOutputType = {\n  quantity: number | null\n  unitCost: number | null\n  totalCost: number | null\n}\n\nexport type RehabItemSumAggregateOutputTy"
+      },
+      {
+        "path": "src\\generated\\models\\RentComp.ts",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          }
+        ],
+        "summary": "\n/* !!! This is code generated by Prisma. Do not edit directly. !!! */\n/* eslint-disable */\n// biome-ignore-all lint: generated file\n// @ts-nocheck \n/*\n * This file exports the `RentComp` model and its related types.\n *\n * \ud83d\udfe2 You can import this file directly.\n */\nimport type * as runtime from \"@prisma/client/runtime/client\"\nimport type * as $Enums from \"../enums\"\nimport type * as Prisma from \"../internal/prismaNamespace\"\n\n/**\n * Model RentComp\n * \n */\nexport type RentCompModel = runtime.Types.Result.DefaultSelection<Prisma.$RentCompPayload>\n\nexport type AggregateRentComp = {\n  _count: RentCompCountAggregateOutputType | null\n  _avg: RentCompAvgAggregateOutputType | null\n  _sum: RentCompSumAggregateOutputType | null\n  _min: RentCompMinAggregateOutputType | null\n  _max: RentCompMaxAggregateOutputType | null\n}\n\nexport type RentCompAvgAggregateOutputType = {\n  rentAmount: number | null\n  sqft: number | null\n  bedrooms: number | null\n  bathrooms: number | null\n  distance: number | null\n}\n\nex"
+      },
+      {
+        "path": "src\\generated\\models\\Task.ts",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          }
+        ],
+        "summary": "\n/* !!! This is code generated by Prisma. Do not edit directly. !!! */\n/* eslint-disable */\n// biome-ignore-all lint: generated file\n// @ts-nocheck \n/*\n * This file exports the `Task` model and its related types.\n *\n * \ud83d\udfe2 You can import this file directly.\n */\nimport type * as runtime from \"@prisma/client/runtime/client\"\nimport type * as $Enums from \"../enums\"\nimport type * as Prisma from \"../internal/prismaNamespace\"\n\n/**\n * Model Task\n * \n */\nexport type TaskModel = runtime.Types.Result.DefaultSelection<Prisma.$TaskPayload>\n\nexport type AggregateTask = {\n  _count: TaskCountAggregateOutputType | null\n  _min: TaskMinAggregateOutputType | null\n  _max: TaskMaxAggregateOutputType | null\n}\n\nexport type TaskMinAggregateOutputType = {\n  id: string | null\n  propertyId: string | null\n  title: string | null\n  isCompleted: boolean | null\n  createdAt: Date | null\n}\n\nexport type TaskMaxAggregateOutputType = {\n  id: string | null\n  propertyId: string | null\n  title: string | null\n  isCompleted: bool"
+      },
+      {
+        "path": "src\\generated\\models\\Tenant.ts",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          }
+        ],
+        "summary": "\n/* !!! This is code generated by Prisma. Do not edit directly. !!! */\n/* eslint-disable */\n// biome-ignore-all lint: generated file\n// @ts-nocheck \n/*\n * This file exports the `Tenant` model and its related types.\n *\n * \ud83d\udfe2 You can import this file directly.\n */\nimport type * as runtime from \"@prisma/client/runtime/client\"\nimport type * as $Enums from \"../enums\"\nimport type * as Prisma from \"../internal/prismaNamespace\"\n\n/**\n * Model Tenant\n * \n */\nexport type TenantModel = runtime.Types.Result.DefaultSelection<Prisma.$TenantPayload>\n\nexport type AggregateTenant = {\n  _count: TenantCountAggregateOutputType | null\n  _min: TenantMinAggregateOutputType | null\n  _max: TenantMaxAggregateOutputType | null\n}\n\nexport type TenantMinAggregateOutputType = {\n  id: string | null\n  organizationId: string | null\n  propertyId: string | null\n  firstName: string | null\n  lastName: string | null\n  email: string | null\n  phone: string | null\n  moveInDate: Date | null\n  moveOutDate: Date | null\n  emergencyC"
+      },
+      {
+        "path": "src\\generated\\models\\TimelineEvent.ts",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          }
+        ],
+        "summary": "\n/* !!! This is code generated by Prisma. Do not edit directly. !!! */\n/* eslint-disable */\n// biome-ignore-all lint: generated file\n// @ts-nocheck \n/*\n * This file exports the `TimelineEvent` model and its related types.\n *\n * \ud83d\udfe2 You can import this file directly.\n */\nimport type * as runtime from \"@prisma/client/runtime/client\"\nimport type * as $Enums from \"../enums\"\nimport type * as Prisma from \"../internal/prismaNamespace\"\n\n/**\n * Model TimelineEvent\n * \n */\nexport type TimelineEventModel = runtime.Types.Result.DefaultSelection<Prisma.$TimelineEventPayload>\n\nexport type AggregateTimelineEvent = {\n  _count: TimelineEventCountAggregateOutputType | null\n  _min: TimelineEventMinAggregateOutputType | null\n  _max: TimelineEventMaxAggregateOutputType | null\n}\n\nexport type TimelineEventMinAggregateOutputType = {\n  id: string | null\n  propertyId: string | null\n  title: string | null\n  description: string | null\n  eventType: string | null\n  startDate: Date | null\n  endDate: Date | null\n  isCo"
+      },
+      {
+        "path": "src\\generated\\models\\Transaction.ts",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          }
+        ],
+        "summary": "\n/* !!! This is code generated by Prisma. Do not edit directly. !!! */\n/* eslint-disable */\n// biome-ignore-all lint: generated file\n// @ts-nocheck \n/*\n * This file exports the `Transaction` model and its related types.\n *\n * \ud83d\udfe2 You can import this file directly.\n */\nimport type * as runtime from \"@prisma/client/runtime/client\"\nimport type * as $Enums from \"../enums\"\nimport type * as Prisma from \"../internal/prismaNamespace\"\n\n/**\n * Model Transaction\n * \n */\nexport type TransactionModel = runtime.Types.Result.DefaultSelection<Prisma.$TransactionPayload>\n\nexport type AggregateTransaction = {\n  _count: TransactionCountAggregateOutputType | null\n  _avg: TransactionAvgAggregateOutputType | null\n  _sum: TransactionSumAggregateOutputType | null\n  _min: TransactionMinAggregateOutputType | null\n  _max: TransactionMaxAggregateOutputType | null\n}\n\nexport type TransactionAvgAggregateOutputType = {\n  amount: number | null\n}\n\nexport type TransactionSumAggregateOutputType = {\n  amount: number | null\n"
+      },
+      {
+        "path": "src\\generated\\models\\User.ts",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          }
+        ],
+        "summary": "\n/* !!! This is code generated by Prisma. Do not edit directly. !!! */\n/* eslint-disable */\n// biome-ignore-all lint: generated file\n// @ts-nocheck \n/*\n * This file exports the `User` model and its related types.\n *\n * \ud83d\udfe2 You can import this file directly.\n */\nimport type * as runtime from \"@prisma/client/runtime/client\"\nimport type * as $Enums from \"../enums\"\nimport type * as Prisma from \"../internal/prismaNamespace\"\n\n/**\n * Model User\n * \n */\nexport type UserModel = runtime.Types.Result.DefaultSelection<Prisma.$UserPayload>\n\nexport type AggregateUser = {\n  _count: UserCountAggregateOutputType | null\n  _min: UserMinAggregateOutputType | null\n  _max: UserMaxAggregateOutputType | null\n}\n\nexport type UserMinAggregateOutputType = {\n  id: string | null\n  email: string | null\n  firstName: string | null\n  lastName: string | null\n  avatarUrl: string | null\n  phone: string | null\n  createdAt: Date | null\n  updatedAt: Date | null\n  supabaseId: string | null\n}\n\nexport type UserMaxAggregateOutputT"
+      },
+      {
+        "path": "src\\generated\\models\\Vendor.ts",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          }
+        ],
+        "summary": "\n/* !!! This is code generated by Prisma. Do not edit directly. !!! */\n/* eslint-disable */\n// biome-ignore-all lint: generated file\n// @ts-nocheck \n/*\n * This file exports the `Vendor` model and its related types.\n *\n * \ud83d\udfe2 You can import this file directly.\n */\nimport type * as runtime from \"@prisma/client/runtime/client\"\nimport type * as $Enums from \"../enums\"\nimport type * as Prisma from \"../internal/prismaNamespace\"\n\n/**\n * Model Vendor\n * \n */\nexport type VendorModel = runtime.Types.Result.DefaultSelection<Prisma.$VendorPayload>\n\nexport type AggregateVendor = {\n  _count: VendorCountAggregateOutputType | null\n  _avg: VendorAvgAggregateOutputType | null\n  _sum: VendorSumAggregateOutputType | null\n  _min: VendorMinAggregateOutputType | null\n  _max: VendorMaxAggregateOutputType | null\n}\n\nexport type VendorAvgAggregateOutputType = {\n  hourlyRate: number | null\n  rating: number | null\n}\n\nexport type VendorSumAggregateOutputType = {\n  hourlyRate: number | null\n  rating: number | null\n}\n\ne"
+      },
+      {
+        "path": "src\\lib\\calculations.ts",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "/**\n * Shared Calculation Utilities\n * Single source of truth for property calculations used by both server and client.\n */\n\nimport {\n  calculateCapRate,\n  calculateCashOnCashReturn,\n  calculateMAO,\n  calculateOnePercentRule,\n  calculateGrossYield,\n  Decision,\n  Strategy,\n} from \"@/data/properties\";\n\n// Re-export Decision and Strategy for convenience\nexport type { Decision, Strategy } from \"@/data/properties\";\n\n/**\n * Calculate monthly cash flow for a property\n * @param property - Property with estimated rent, taxes, insurance\n * @param mortgagePayment - Monthly mortgage payment (optional)\n * @returns Monthly cash flow\n */\nexport function calculateCashFlow(\n  property: {\n    estimatedRent: number;\n    annualTaxes: number;\n    annualInsurance: number;\n    listPrice?: number;\n  },\n  downPaymentPercent: number = 25,\n  interestRate: number = 7.5,\n): number {\n  const monthlyRent = property.estimatedRent ?? 0;\n  const monthlyTaxes = (property.annualTaxes ?? 0) / 12;\n  const monthlyInsurance "
+      },
+      {
+        "path": "src\\lib\\marketData.ts",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          },
+          {
+            "severity": "LOW",
+            "type": "CLEAN_CODE",
+            "message": "Console statement detected. Remove debug logs before production or use proper logging service."
+          }
+        ],
+        "summary": "/**\n * Market Data Loader and Utilities\n * Stub file - actual implementation requires server-side fs module\n */\n\nexport function getCityMarketSummary(city: string): any {\n  console.warn(\"getCityMarketSummary not available on client\");\n  return null;\n}\n\nexport function getMarketData(): any[] {\n  console.warn(\"getMarketData not available on client\");\n  return [];\n}\n\nexport function enrichWithMarketData(property: any): any {\n  console.warn(\"enrichWithMarketData not available on client\");\n  return property;\n}\n\nexport function getMarketTrendsByCity(city: string): any {\n  console.warn(\"getMarketTrendsByCity not available on client\");\n  return null;\n}\n\nexport function calculateMarketScore(city: string): number {\n  console.warn(\"calculateMarketScore not available on client\");\n  return 0;\n}\n"
+      },
+      {
+        "path": "src\\lib\\ai\\enhancedScoring.ts",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Hardcoded hex color detected. Consider using theme constants or CSS variables."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "/**\n * Enhanced AI Scoring Engine with Regional Market Benchmarks\n * Tier 1 Implementation: Market-aware, region-specific scoring\n *\n * Features:\n * - Regional benchmarks for East Texas markets\n * - Property-type specific weighting\n * - Dynamic score calculation based on local market conditions\n */\n\nimport { Property, Strategy } from \"@/data/properties\";\n\n// ============================================================================\n// REGIONAL MARKET BENCHMARKS - East Texas Markets\n// ============================================================================\n\nexport interface RegionalBenchmarks {\n  city: string;\n  state: string;\n  capRate: { min: number; good: number; excellent: number };\n  cashOnCash: { min: number; good: number; excellent: number };\n  grossYield: { min: number; good: number; excellent: number };\n  pricePerSqft: { min: number; good: number; excellent: number };\n  pricePerDoor: { min: number; good: number; excellent: number };\n  onePercentRule: boolean;\n  daysOnMar"
+      },
+      {
+        "path": "src\\lib\\ai\\externalAPIs.ts",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "CLEAN_CODE",
+            "message": "Console statement detected. Remove debug logs before production or use proper logging service."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "/**\n * External API Integrations for Property Enrichment\n * Tier 1 Implementation: GreatSchools, WalkScore, Crime Data\n *\n * Features:\n * - GreatSchools API for school ratings\n * - Walk Score API for walkability\n * - Crime data integration (mock/placeholder)\n * - Rate limiting and error handling\n * - Caching layer for API responses\n */\n\nimport { Property } from \"@/data/properties\";\n\n// ============================================================================\n// TYPES\n// ============================================================================\n\nexport interface SchoolData {\n  name: string;\n  type: \"elementary\" | \"middle\" | \"high\" | \"private\";\n  rating: number; // 1-10\n  distance: number; // miles\n  url?: string;\n}\n\nexport interface GreatSchoolsResponse {\n  schools: SchoolData[];\n  overallRating: number;\n  summary: string;\n}\n\nexport interface WalkScoreResponse {\n  walkScore: number;\n  walkScoreDescription: string;\n  transitScore: number;\n  transitScoreDescription: string;\n  bikeSco"
+      },
+      {
+        "path": "src\\lib\\ai\\index.ts",
+        "violations": [],
+        "summary": "/**\n * AI Module Exports\n * Centralized exports for all AI/ML functionality\n */\n\n// Enhanced Scoring\nexport * from \"./enhancedScoring\";\n\n// External APIs\nexport * from \"./externalAPIs\";\n\n// React Hook\nexport * from \"./useEnhancedScoring\";\n"
+      },
+      {
+        "path": "src\\lib\\ai\\predictionService.ts",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "CLEAN_CODE",
+            "message": "Console statement detected. Remove debug logs before production or use proper logging service."
+          }
+        ],
+        "summary": "import fs from 'fs';\nimport path from 'path';\n\nexport interface MLPrediction {\n  property_id?: string;\n  address?: string;\n  city?: string;\n  price?: number;\n  sqft?: number;\n  beds?: number;\n  baths?: number;\n  county?: string;\n  predicted_arv?: number;\n  predicted_rent?: number;\n  gross_yield?: number;\n  equity_potential?: number;\n  confidence?: number;\n  deal_score?: number;\n  recommendation?: \"PLATINUM\" | \"GOLD\" | \"SILVER\" | \"CAUTION\" | \"HARD_FAIL\";\n}\n\nlet predictionsCache: MLPrediction[] | null = null;\nlet predictionsMapCache: Map<string, MLPrediction> | null = null;\n\n/**\n * Load predictions from JSON file\n */\nexport function loadPredictions(): MLPrediction[] {\n  if (predictionsCache) return predictionsCache;\n\n  const predictionsPath = path.join(process.cwd(), 'predictions_for_app.json');\n  \n  try {\n    if (fs.existsSync(predictionsPath)) {\n      const data = fs.readFileSync(predictionsPath, 'utf-8');\n      predictionsCache = JSON.parse(data);\n      \n      // Build map by address/"
+      },
+      {
+        "path": "src\\lib\\ai\\useEnhancedScoring.ts",
+        "violations": [
+          {
+            "severity": "MEDIUM",
+            "type": "TYPE_SAFETY",
+            "message": "Usage of 'any' type detected. Define explicit interfaces for better type safety."
+          },
+          {
+            "severity": "LOW",
+            "type": "CLEAN_CODE",
+            "message": "Console statement detected. Remove debug logs before production or use proper logging service."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Hardcoded hex color detected. Consider using theme constants or CSS variables."
+          }
+        ],
+        "summary": "/**\n * Enhanced Scoring Hook\n * Provides integration between enhanced scoring engine and external data APIs\n *\n * Features:\n * - Automatic property enrichment\n * - Cached API responses\n * - Progress tracking for batch operations\n * - Fallback to local scoring when APIs unavailable\n */\n\n\"use client\";\n\nimport { useState, useEffect, useCallback } from \"react\";\nimport { PropertyWithCalculations } from \"@/lib/calculations\";\nimport {\n  calculateEnhancedScore,\n  EnhancedScoringResult,\n  PropertyMetrics,\n} from \"./enhancedScoring\";\nimport {\n  fetchPropertyEnrichment,\n  enrichmentToNeighborhoodScore,\n  PropertyEnrichmentData,\n} from \"./externalAPIs\";\n\ninterface UseEnhancedScoringOptions {\n  enableEnrichment?: boolean;\n  onProgress?: (completed: number, total: number) => void;\n}\n\ninterface UseEnhancedScoringReturn {\n  scoredProperties: ScoredProperty[];\n  isLoading: boolean;\n  error: string | null;\n  enrichProperty: (\n    property: PropertyWithCalculations,\n  ) => Promise<EnhancedScoringResult>;"
+      },
+      {
+        "path": "src\\types\\marketIntelligence.ts",
+        "violations": [],
+        "summary": "export interface MarketIntelligence {\n  // Property identification\n  propertyId?: string;\n  address?: string;\n  city: string;\n  county?: string;\n  zip?: string;\n\n  // Property specs\n  price?: number;\n  sqft?: number;\n  beds?: number;\n  baths?: number;\n\n  // Zillow ZHVI (Home Value Index)\n  zhviCurrent: number;\n  zhvi1YrAgo?: number;\n  zhvi2YrAgo?: number;\n  zhvi1YrGrowth: number;\n  zhvi2YrGrowth?: number;\n\n  // Zillow ZORI (Rent Index)\n  zoriCurrent: number;\n  zori1YrAgo?: number;\n  zori1YrGrowth?: number;\n\n  // Census data\n  censusMedianHomeValue?: number;\n  censusMedianGrossRent?: number;\n  censusMedianHouseholdIncome?: number;\n\n  // AI predictions\n  predictedRent?: number;\n  predictedARV?: number;\n  grossYield?: number;\n  equityPotential?: number;\n  confidence?: number;\n  dealScore?: number;\n  recommendation?: \"PLATINUM\" | \"GOLD\" | \"SILVER\" | \"CAUTION\" | \"HARD_FAIL\";\n}\n\n// Regional Benchmark interface matching enhancedScoring.ts\nexport interface RegionalBenchmarks {\n  city: string;\n"
+      },
+      {
+        "path": "tests\\basic.spec.ts",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import { test, expect } from '@playwright/test';\n\ntest.describe('Homepage Tests', () => {\n  test('should load homepage successfully', async ({ page }) => {\n    await page.goto('/');\n    await expect(page).toHaveTitle(/Property Investment Tracker/i);\n  });\n\n  test('should have main navigation', async ({ page }) => {\n    await page.goto('/');\n    const nav = page.locator('nav');\n    await expect(nav).toBeVisible();\n  });\n\n  test('should display property data', async ({ page }) => {\n    await page.goto('/');\n    // Wait for any content to load\n    await page.waitForSelector('body', { state: 'visible' });\n    const body = page.locator('body');\n    await expect(body).toBeVisible();\n  });\n});\n\ntest.describe('Responsive Design Tests', () => {\n  test('should be mobile-friendly', async ({ page }) => {\n    await page.setViewportSize({ width: 375, height: 667 });\n    await page.goto('/');\n    await expect(page).toHaveTitle(/Property Investment Tracker/i);\n  });\n\n  test('should work on tablet', as"
+      }
+    ],
+    "summary": {
+      "total_files_scanned": 96,
+      "total_violations": 135,
+      "severity_breakdown": {
+        "CRITICAL": 0,
+        "HIGH": 0,
+        "MEDIUM": 44,
+        "LOW": 91
+      },
+      "violation_types": {
+        "MAINTAINABILITY": 61,
+        "CLEAN_CODE": 30,
+        "TYPE_SAFETY": 43,
+        "ERROR_HANDLING": 1
+      }
+    }
+  }
+}

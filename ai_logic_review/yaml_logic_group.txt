@@ -2,7 +2,7 @@
 ================================================================================
 FILE_BEGIN: .github\workflow\ci.yaml
 TYPE: YAML
-SIZE: 675 bytes
+SIZE: 649 bytes
 ================================================================================
 name: CI
 
@@ -33,13 +33,14 @@ jobs:
             exit 1
           fi
 
+
 [FILE_END: .github\workflow\ci.yaml]
 ################################################################################
 
 ================================================================================
 FILE_BEGIN: .github\workflow\production.yaml
 TYPE: YAML
-SIZE: 589 bytes
+SIZE: 565 bytes
 ================================================================================
 name: Deploy Migrations to Production
 
@@ -68,13 +69,14 @@ jobs:
       - run: supabase link --project-ref $SUPABASE_PROJECT_ID
       - run: supabase db push
 
+
 [FILE_END: .github\workflow\production.yaml]
 ################################################################################
 
 ================================================================================
 FILE_BEGIN: .github\workflow\staging.yaml
 TYPE: YAML
-SIZE: 583 bytes
+SIZE: 559 bytes
 ================================================================================
 name: Deploy Migrations to Staging
 
@@ -102,6 +104,7 @@ jobs:
 
       - run: supabase link --project-ref $SUPABASE_PROJECT_ID
       - run: supabase db push
+
 
 [FILE_END: .github\workflow\staging.yaml]
 ################################################################################

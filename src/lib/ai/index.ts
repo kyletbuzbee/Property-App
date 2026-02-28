@@ -4,10 +4,10 @@
  */
 
 // Enhanced Scoring
-export * from './enhancedScoring';
+export * from "./enhancedScoring";
 
 // External APIs
-export * from './externalAPIs';
+export * from "./externalAPIs";
 
 // React Hook
-export * from './useEnhancedScoring';
+export * from "./useEnhancedScoring";

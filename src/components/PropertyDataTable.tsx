@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useMemo, useState } from 'react';
+import { useMemo, useState } from "react";
 import {
   useReactTable,
   getCoreRowModel,
@@ -11,17 +11,12 @@ import {
   createColumnHelper,
   SortingState,
   ColumnFiltersState,
-  ColumnDef,
   FilterFn,
   Row,
-} from '@tanstack/react-table';
-import clsx from 'clsx';
-import { 
-  getDecisionColor, 
-  Decision,
-  Strategy,
-} from '@/data/properties';
-import { PropertyWithCalculations } from '@/lib/calculations';
+} from "@tanstack/react-table";
+import clsx from "clsx";
+import { Decision, Strategy } from "@/data/properties";
+import { PropertyWithCalculations } from "@/lib/calculations";
 
 interface PropertyDataTableProps {
   properties: PropertyWithCalculations[];
@@ -30,329 +25,114 @@ interface PropertyDataTableProps {
   getIsFavorite?: (id: string) => boolean;
 }
 
-// Typed column helper for PropertyWithCalculations type
 const columnHelper = createColumnHelper<PropertyWithCalculations>();
 
-// Type-safe strategy colors
-const STRATEGY_COLORS: Record<Strategy, string> = {
-  'Retail Flip': '#3b82f6',
-  'Section 8': '#22c55e',
-  'BRRR': '#a855f7',
-  'Owner Finance': '#06b6d4',
-  'Wholesaling': '#ec4899',
-};
-
-// Type-safe decision filter options
-const DECISION_FILTER_OPTIONS: readonly { value: Decision | 'all'; label: string }[] = [
-  { value: 'all', label: 'All Decisions' },
-  { value: 'Pass Platinum', label: 'Platinum' },
-  { value: 'Pass Gold', label: 'Gold' },
-  { value: 'Pass Silver', label: 'Silver' },
-  { value: 'Hard Fail', label: 'Hard Fail' },
-  { value: 'Caution', label: 'Caution' },
+const DECISION_FILTER_OPTIONS: readonly {
+  value: Decision | "all";
+  label: string;
+}[] = [
+  { value: "all", label: "All Decisions" },
+  { value: "PASS", label: "PASS" },
+  { value: "CAUTION", label: "CAUTION" },
+  { value: "HARD_FAIL", label: "HARD_FAIL" },
 ] as const;
 
-// Type-safe decision filter function
 const decisionFilterFn: FilterFn<PropertyWithCalculations> = (
   row: Row<PropertyWithCalculations>,
   columnId: string,
-  filterValue: string
+  filterValue: string,
 ): boolean => {
-  if (filterValue === 'all') return true;
-  const decision = row.getValue(columnId) as Decision;
+  if (filterValue === "all") return true;
+  const decision = row.getValue(columnId) as string;
   return decision === filterValue;
 };
 
-// Interface for one percent rule calculation result
-interface OnePercentRuleResult {
-  passes: boolean;
-  ratio: number;
-  rent: number;
-}
-
-// Interface for rent state
-type RentState = Record<string, number>;
-
-export default function PropertyDataTable({ 
-  properties, 
+export default function PropertyDataTable({
+  properties,
   onPropertyClick,
   onToggleFavorite,
   getIsFavorite,
 }: PropertyDataTableProps) {
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
-  const [globalFilter, setGlobalFilter] = useState<string>('');
-  const [estimatedRent, setEstimatedRent] = useState<RentState>({});
+  const [globalFilter, setGlobalFilter] = useState<string>("");
 
-  // Typed columns array
   const columns = useMemo(
     () => [
-      // Favorites column
       columnHelper.display({
-        id: 'favorite',
-        header: '★',
+        id: "favorite",
+        header: "★",
         cell: (info) => {
           const property = info.row.original;
           const isFavorite = getIsFavorite?.(property.id) ?? property.isFavorite;
           return (
             <button
-              onClick={(e: React.MouseEvent) => {
-                e.stopPropagation();
-                onToggleFavorite?.(property.id);
-              }}
-              className={clsx(
-                'text-xl transition-colors hover:scale-110',
-                isFavorite ? 'text-amber-400' : 'text-dark-500 hover:text-amber-300'
-              )}
-              title={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
+              onClick={(e) => { e.stopPropagation(); onToggleFavorite?.(property.id); }}
+              className={clsx("text-lg transition-colors", isFavorite ? "text-warning" : "text-slate-300")}
             >
-              {isFavorite ? '★' : '☆'}
+              {isFavorite ? "★" : "☆"}
             </button>
           );
         },
       }),
-      columnHelper.accessor('address', {
-        header: 'Address',
+      columnHelper.accessor("address", {
+        header: "Address",
         cell: (info) => (
-          <div>
-            <div className="font-medium text-white">{info.getValue()}</div>
-            <div className="text-xs text-dark-400">{info.row.original.city}</div>
+          <div className="leading-tight">
+            <div className="font-semibold text-slate-900 text-sm tracking-tight">{info.getValue()}</div>
+            <div className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">{info.row.original.city}</div>
           </div>
         ),
-        footer: (props) => props.column.id,
       }),
-      columnHelper.accessor('listPrice', {
-        header: 'List Price',
-        cell: (info) => {
-          const price = info.getValue();
-          return (
-            <span className="text-emerald-400 font-medium">
-              ${price.toLocaleString()}
-            </span>
-          );
-        },
-        footer: (props) => props.column.id,
+      columnHelper.accessor("listPrice", {
+        header: "List Price",
+        cell: (info) => <span className="text-slate-900 font-mono tabular-nums font-semibold">${info.getValue().toLocaleString()}</span>,
       }),
-      columnHelper.accessor('sqft', {
-        header: 'SqFt',
-        cell: (info) => {
-          const sqft = info.getValue();
-          return sqft > 0 ? sqft.toLocaleString() : 'N/A';
-        },
-        footer: (props) => props.column.id,
+      columnHelper.accessor("mao25k", {
+        header: "MAO 25k",
+        cell: (info) => <span className="text-success font-mono tabular-nums font-bold">${info.getValue().toLocaleString()}</span>,
       }),
-      columnHelper.accessor('pricePerSqft', {
-         id: 'pricePerSqft',
-         header: '$/SqFt',
-         cell: (info) => {
-           const value = info.getValue();
-           const avgPricePerSqft = properties.length > 0
-             ? properties.reduce((sum, p) => sum + p.pricePerSqft, 0) / properties.length
-             : 0;
-           const isBelowAverage = value < avgPricePerSqft;
-           return (
-             <span className={clsx(isBelowAverage && 'text-emerald-400 font-medium')}>
-               ${value.toFixed(2)}
-             </span>
-           );
-         },
-         footer: (props) => props.column.id,
-       }),
-       columnHelper.accessor('bedrooms', {
-         header: 'Beds',
-         cell: (info) => info.getValue(),
-         footer: (props) => props.column.id,
-       }),
-       columnHelper.accessor('pricePerDoor', {
-         id: 'pricePerDoor',
-         header: '$/Door',
-         cell: (info) => (
-           <span className="text-primary-400">
-             ${info.getValue().toLocaleString()}
-           </span>
-         ),
-         footer: (props) => props.column.id,
-       }),
-      columnHelper.accessor('decision', {
-        header: 'Decision',
+      columnHelper.accessor("mao50k", {
+        header: "MAO 50k",
+        cell: (info) => <span className="text-info font-mono tabular-nums font-bold">${info.getValue().toLocaleString()}</span>,
+      }),
+      columnHelper.accessor("afterRepairValue", {
+        header: "ARV",
+        cell: (info) => <span className="text-slate-600 font-mono tabular-nums font-medium">${info.getValue().toLocaleString()}</span>,
+      }),
+      columnHelper.accessor("rehabTier", {
+        header: "Tier",
+        cell: (info) => <span className="text-[9px] font-bold uppercase text-slate-500 bg-slate-100 px-1.5 py-0.5 rounded-sm border border-slate-200">{info.getValue()}</span>,
+      }),
+      columnHelper.accessor("decision", {
+        header: "Decision",
         cell: (info) => {
           const decision = info.getValue() as Decision;
-          const color = getDecisionColor(decision);
+          let badgeClass = "decision-badge ";
+          if (decision === "PASS") badgeClass += "decision-platinum";
+          else if (decision === "CAUTION") badgeClass += "decision-caution";
+          else if (decision === "HARD_FAIL") badgeClass += "decision-hardfail";
+          
           return (
-            <span
-              className="px-2 py-1 rounded-full text-xs font-semibold"
-              style={{
-                backgroundColor: `${color}20`,
-                color: color,
-              }}
-            >
+            <span className={badgeClass}>
               {decision}
             </span>
           );
         },
-        footer: (props) => props.column.id,
         filterFn: decisionFilterFn,
       }),
-      columnHelper.accessor('strategy', {
-        header: 'Strategy',
-        cell: (info) => {
-          const strategy = info.getValue() as Strategy;
-          const color = STRATEGY_COLORS[strategy] || '#6b7280';
-          return (
-            <span
-              className="px-2 py-0.5 rounded text-xs font-medium"
-              style={{
-                backgroundColor: `${color}20`,
-                color: color,
-              }}
-            >
-              {strategy}
-            </span>
-          );
-        },
-        footer: (props) => props.column.id,
-      }),
-      columnHelper.accessor('equityGap', {
-        header: 'Equity Gap',
-        cell: (info) => {
-          const gap = info.getValue();
-          return (
-            <span className="text-amber-400 font-medium">
-              ${gap.toLocaleString()}
-            </span>
-          );
-        },
-        footer: (props) => props.column.id,
-      }),
-      columnHelper.accessor('capRate', {
-         id: 'capRate',
-         header: 'Cap Rate',
-         cell: (info) => {
-           const capRate = info.getValue();
-           return (
-             <span className={clsx(
-               'text-sm font-medium',
-               capRate >= 8 ? 'text-emerald-400' : 
-               capRate >= 6 ? 'text-amber-400' : 'text-red-400'
-             )}>
-               {capRate.toFixed(2)}%
-             </span>
-           );
-         },
-         footer: (props) => props.column.id,
-       }),
-       columnHelper.accessor('cashOnCashReturn', {
-         id: 'cashOnCash',
-         header: 'Cash-on-Cash',
-         cell: (info) => {
-           const coc = info.getValue();
-           return (
-             <span className={clsx(
-               'text-sm font-medium',
-               coc >= 15 ? 'text-emerald-400' : 
-               coc >= 10 ? 'text-amber-400' : 'text-red-400'
-             )}>
-               {coc.toFixed(2)}%
-             </span>
-           );
-         },
-         footer: (props) => props.column.id,
-       }),
-       columnHelper.accessor('mao', {
-         id: 'mao',
-         header: 'MAO',
-         cell: (info) => (
-           <span className="text-emerald-400 font-medium">
-             ${info.getValue().toLocaleString()}
-           </span>
-         ),
-         footer: (props) => props.column.id,
-       }),
-       columnHelper.accessor('grossYield', {
-         id: 'grossYield',
-         header: 'Gross Yield',
-         cell: (info) => {
-           const yield_ = info.getValue();
-           return (
-             <span className={clsx(
-               'text-sm font-medium',
-               yield_ >= 12 ? 'text-emerald-400' : 
-               yield_ >= 8 ? 'text-amber-400' : 'text-red-400'
-             )}>
-               {yield_.toFixed(2)}%
-             </span>
-           );
-         },
-         footer: (props) => props.column.id,
-       }),
-       columnHelper.accessor((row: PropertyWithCalculations): OnePercentRuleResult => {
-         const rent = estimatedRent[row.id] ?? row.estimatedRent ?? 0;
-         const price = row.listPrice;
-         if (rent <= 0 || price <= 0) return { passes: false, ratio: 0, rent };
-         const ratio = (rent / price) * 100;
-         return { passes: ratio >= 1, ratio, rent };
-       }, {
-        id: 'onePercentRule',
-        header: '1% Rule',
-        cell: (info) => {
-          const { passes, ratio, rent } = info.getValue();
-          const propertyId = info.row.original.id;
-          
-          return (
-            <div className="flex flex-col gap-1">
-              <input
-                type="number"
-                placeholder="Est. Rent"
-                value={rent || ''}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                  const value = parseFloat(e.target.value) || 0;
-                  setEstimatedRent((prev: RentState) => ({
-                    ...prev,
-                    [propertyId]: value,
-                  }));
-                }}
-                className="w-20 px-2 py-1 text-xs bg-dark-700 border border-dark-600 rounded focus:outline-none focus:border-primary-500"
-                onClick={(e: React.MouseEvent<HTMLInputElement>) => e.stopPropagation()}
-              />
-              {rent > 0 && (
-                <span
-                  className={clsx(
-                    'text-xs font-medium',
-                    passes ? 'text-emerald-400' : 'text-red-400'
-                  )}
-                >
-                  {ratio.toFixed(2)}% {passes ? '✓' : '✗'}
-                </span>
-              )}
-            </div>
-          );
-        },
-        footer: (props) => props.column.id,
-      }),
-      columnHelper.accessor('rationale', {
-        header: 'Rationale',
-        cell: (info) => {
-          const rationale = info.getValue();
-          return (
-            <div className="max-w-xs truncate text-xs text-dark-300" title={rationale}>
-              {rationale}
-            </div>
-          );
-        },
-        footer: (props) => props.column.id,
+      columnHelper.accessor("equityGap", {
+        header: "Equity Gap",
+        cell: (info) => <span className="text-warning font-mono tabular-nums font-bold">${info.getValue().toLocaleString()}</span>,
       }),
     ],
-    [properties, estimatedRent]
+    [getIsFavorite, onToggleFavorite],
   );
 
   const table = useReactTable({
     data: properties,
     columns,
-    state: {
-      sorting,
-      columnFilters,
-      globalFilter,
-    },
+    state: { sorting, columnFilters, globalFilter },
     onSortingChange: setSorting,
     onColumnFiltersChange: setColumnFilters,
     onGlobalFilterChange: setGlobalFilter,
@@ -362,104 +142,58 @@ export default function PropertyDataTable({
     getPaginationRowModel: getPaginationRowModel(),
   });
 
-  // Get current decision filter value with type safety
-  const currentDecisionFilter = (columnFilters.find((f) => f.id === 'decision')?.value as string) || 'all';
+  const currentDecisionFilter = (columnFilters.find((f) => f.id === "decision")?.value as string) || "all";
 
   return (
-    <div className="w-full h-full flex flex-col">
-      {/* Controls */}
-      <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
-        <div className="flex items-center gap-4">
-          {/* Global Search */}
+    <div className="w-full h-full flex flex-col font-sans">
+      <div className="flex flex-wrap items-center justify-between gap-4 mb-3">
+        <div className="flex items-center gap-3">
           <div className="relative">
+            <MagnifyingGlassIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-400" />
             <input
               type="text"
-              placeholder="Search all columns..."
-              value={globalFilter as string}
+              placeholder="Search by address..."
+              value={globalFilter}
               onChange={(e) => setGlobalFilter(e.target.value)}
-              className="w-64 px-4 py-2 bg-dark-800 border border-dark-600 rounded-lg text-sm focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500"
+              className="w-64 pl-9 pr-3 py-1.5 bg-white border border-slate-300 rounded-sm text-xs focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all shadow-sm"
             />
           </div>
-
-          {/* Decision Filter */}
           <select
             value={currentDecisionFilter}
-            onChange={(e) => {
-              const value = e.target.value;
-              table.getColumn('decision')?.setFilterValue(value);
-            }}
-            className="px-4 py-2 bg-dark-800 border border-dark-600 rounded-lg text-sm focus:outline-none focus:border-primary-500"
+            onChange={(e) => table.getColumn("decision")?.setFilterValue(e.target.value)}
+            className="px-3 py-1.5 bg-white border border-slate-300 rounded-sm text-xs font-semibold text-slate-600 focus:outline-none focus:border-primary-500 shadow-sm"
           >
             {DECISION_FILTER_OPTIONS.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
+              <option key={option.value} value={option.value}>{option.label}</option>
             ))}
           </select>
         </div>
-
-        {/* Pagination Controls */}
-        <div className="flex items-center gap-2">
-          <button
-            onClick={() => table.previousPage()}
-            disabled={!table.getCanPreviousPage()}
-            className="px-3 py-1.5 bg-dark-700 border border-dark-600 rounded-lg text-sm disabled:opacity-50 disabled:cursor-not-allowed hover:bg-dark-600 transition-colors"
-          >
-            Previous
-          </button>
-          <span className="text-sm text-dark-300">
-            Page {table.getState().pagination.pageIndex + 1} of {table.getPageCount()}
-          </span>
-          <button
-            onClick={() => table.nextPage()}
-            disabled={!table.getCanNextPage()}
-            className="px-3 py-1.5 bg-dark-700 border border-dark-600 rounded-lg text-sm disabled:opacity-50 disabled:cursor-not-allowed hover:bg-dark-600 transition-colors"
-          >
-            Next
-          </button>
-        </div>
       </div>
 
-      {/* Table */}
-      <div className="flex-1 overflow-auto bg-dark-800 rounded-lg border border-dark-700">
-        <table className="w-full">
-          <thead className="bg-dark-900 sticky top-0">
+      <div className="flex-1 overflow-auto bg-white border border-slate-200 rounded-sm shadow-sm">
+        <table className="w-full text-left border-collapse">
+          <thead className="bg-slate-50 sticky top-0 border-b border-slate-200 z-10 shadow-sm">
             {table.getHeaderGroups().map((headerGroup) => (
               <tr key={headerGroup.id}>
                 {headerGroup.headers.map((header) => (
-                  <th
-                    key={header.id}
-                    className={clsx(
-                      'px-4 py-3 text-left text-xs font-semibold text-dark-300 uppercase tracking-wider cursor-pointer hover:bg-dark-700 transition-colors',
-                      header.column.getIsSorted() && 'text-primary-400'
-                    )}
-                    onClick={header.column.getToggleSortingHandler()}
-                  >
-                    <div className="flex items-center gap-2">
-                      {flexRender(
-                        header.column.columnDef.header,
-                        header.getContext()
-                      )}
-                      {header.column.getIsSorted() && (
-                        <span>
-                          {header.column.getIsSorted() === 'asc' ? '↑' : '↓'}
-                        </span>
-                      )}
+                  <th key={header.id} className="px-3 py-2 text-[10px] font-bold text-slate-500 uppercase tracking-wider cursor-pointer hover:bg-slate-100 transition-colors" onClick={header.column.getToggleSortingHandler()}>
+                    <div className="flex items-center gap-1">
+                      {flexRender(header.column.columnDef.header, header.getContext())}
+                      {{
+                        asc: ' ▴',
+                        desc: ' ▾',
+                      }[header.column.getIsSorted() as string] ?? null}
                     </div>
                   </th>
                 ))}
               </tr>
             ))}
           </thead>
-          <tbody className="divide-y divide-dark-700">
+          <tbody className="divide-y divide-slate-100">
             {table.getRowModel().rows.map((row) => (
-              <tr
-                key={row.id}
-                onClick={() => onPropertyClick?.(row.original)}
-                className="hover:bg-dark-700/50 cursor-pointer transition-colors"
-              >
+              <tr key={row.id} onClick={() => onPropertyClick?.(row.original)} className="hover:bg-slate-50/80 cursor-pointer transition-colors group">
                 {row.getVisibleCells().map((cell) => (
-                  <td key={cell.id} className="px-4 py-3 text-sm">
+                  <td key={cell.id} className="px-3 py-2 border-b border-slate-50 text-xs text-slate-600">
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </td>
                 ))}
@@ -467,29 +201,31 @@ export default function PropertyDataTable({
             ))}
           </tbody>
         </table>
-
-        {/* Empty State */}
-        {table.getRowModel().rows.length === 0 && (
-          <div className="text-center py-12 text-dark-400">
-            No properties found matching your criteria
-          </div>
-        )}
       </div>
-
-      {/* Footer Stats */}
-      <div className="mt-4 flex items-center justify-between text-sm text-dark-400">
-        <div>
-          Showing {table.getRowModel().rows.length} of {properties.length} properties
+      
+      <div className="flex items-center justify-between py-2 px-1">
+        <div className="text-[11px] text-slate-500 font-medium">
+          Showing {table.getRowModel().rows.length} of {properties.length} deals
         </div>
-        <div className="flex items-center gap-4">
-          <span>
-            Total Equity Gap:{' '}
-            <span className="text-amber-400 font-medium">
-              ${properties.reduce((sum, p) => sum + p.equityGap, 0).toLocaleString()}
-            </span>
-          </span>
+        <div className="flex gap-1">
+          <button 
+            className="p-1 px-2 border border-slate-200 rounded-sm text-[10px] font-bold disabled:opacity-30 hover:bg-white transition-colors"
+            onClick={() => table.previousPage()}
+            disabled={!table.getCanPreviousPage()}
+          >
+            PREV
+          </button>
+          <button 
+            className="p-1 px-2 border border-slate-200 rounded-sm text-[10px] font-bold disabled:opacity-30 hover:bg-white transition-colors"
+            onClick={() => table.nextPage()}
+            disabled={!table.getCanNextPage()}
+          >
+            NEXT
+          </button>
         </div>
       </div>
     </div>
   );
 }
+
+import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";

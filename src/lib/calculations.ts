@@ -1,68 +1,105 @@
 /**
- * Shared Calculation Utilities
- * Single source of truth for property calculations used by both server and client.
+ * Shared Calculation Utilities - Rule 1: Flipping Only
+ * Rule 3: Mandatory Knowledge Base Logic
+ * Rule 5: Missing Data Fallback
  */
 
-import {
-  calculateCapRate,
-  calculateCashOnCashReturn,
-  calculateMAO,
-  calculateOnePercentRule,
-  calculateGrossYield,
-  Decision,
-  Strategy,
-} from '@/data/properties';
+import { Decision, Strategy } from "@/data/properties";
+import { MarketVelocity } from "./knowledgeBundle";
 
 // Re-export Decision and Strategy for convenience
-export type { Decision, Strategy } from '@/data/properties';
+export type { Decision, Strategy } from "@/data/properties";
 
-/**
- * Calculate monthly cash flow for a property
- * @param property - Property with estimated rent, taxes, insurance
- * @param mortgagePayment - Monthly mortgage payment (optional)
- * @returns Monthly cash flow
- */
-export function calculateCashFlow(
-  property: { estimatedRent: number; annualTaxes: number; annualInsurance: number; listPrice?: number },
-  downPaymentPercent: number = 25,
-  interestRate: number = 7.5
-): number {
-  const monthlyRent = property.estimatedRent ?? 0;
-  const monthlyTaxes = (property.annualTaxes ?? 0) / 12;
-  const monthlyInsurance = (property.annualInsurance ?? 0) / 12;
-  
-  // Calculate mortgage if listPrice is provided
-  let monthlyMortgage = 0;
-  if (property.listPrice && property.listPrice > 0) {
-    const downPayment = property.listPrice * (downPaymentPercent / 100);
-    const loanAmount = property.listPrice - downPayment;
-    const monthlyRate = interestRate / 100 / 12;
-    const numPayments = 360; // 30-year loan
-    monthlyMortgage = (loanAmount * monthlyRate * Math.pow(1 + monthlyRate, numPayments)) / 
-                      (Math.pow(1 + monthlyRate, numPayments) - 1);
+export class IncompleteDataError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "IncompleteDataError";
   }
-  
-  const totalExpenses = monthlyTaxes + monthlyInsurance + monthlyMortgage;
-  return monthlyRent - totalExpenses;
 }
 
 /**
- * Calculate NOI (Net Operating Income)
- * @param property - Property with estimated rent, taxes, insurance
- * @returns Annual NOI
+ * Preflight Gates: Returns decision signal based on basic property/market data.
+ * - HARD_FAIL if List Price > 75% ARV
+ * - HARD_FAIL if median_dom > 90
+ * - CAUTION if p75_dom > 90
  */
-export function calculateNOI(
-  property: { estimatedRent: number; annualTaxes: number; annualInsurance: number }
-): number {
-  const annualRent = (property.estimatedRent ?? 0) * 12;
-  const annualExpenses = (property.annualTaxes ?? 0) + (property.annualInsurance ?? 0);
-  return annualRent - annualExpenses;
+export function runPreflightGate(
+  property: { listPrice: number; afterRepairValue: number },
+  velocityData?: MarketVelocity | null,
+): { decision: Decision; rationale: string } | null {
+  // Gate 1: Price vs ARV
+  if (
+    property.afterRepairValue > 0 &&
+    property.listPrice > property.afterRepairValue * 0.75
+  ) {
+    return {
+      decision: "HARD_FAIL",
+      rationale: "List Price exceeds 75% of ARV threshold.",
+    };
+  }
+
+  // Gate 2: Market Velocity
+  if (velocityData) {
+    if (velocityData.median_dom > 90) {
+      return {
+        decision: "HARD_FAIL",
+        rationale: `Market too slow: Median DOM (${velocityData.median_dom}) > 90 days.`,
+      };
+    }
+    if (velocityData.p75_dom > 90) {
+      return {
+        decision: "CAUTION",
+        rationale: `Slow market warning: P75 DOM (${velocityData.p75_dom}) > 90 days.`,
+      };
+    }
+  }
+
+  return null;
 }
 
 /**
- * Base property interface that matches Prisma schema (with Date objects)
- * Uses string types for decision and strategy since Prisma stores them as strings.
- * The frontend should validate/cast these to the proper union types when needed.
+ * Holding Costs: Implement institutional formulas.
+ * Months: Default 4. If median_dom > 60, change to 5.
+ * Formula: ($350 * months) + ((ARV * 0.0235) / 12 * months)
+ */
+export function calculateHoldingCosts(
+  arv: number,
+  medianDom: number = 0,
+): { cost: number; months: number } {
+  const months = medianDom > 60 ? 5 : 4;
+  const fixedMonthly = 350 * months;
+  const capitalMonthly = ((arv * 0.0235) / 12) * months;
+
+  return {
+    cost: Math.round(fixedMonthly + capitalMonthly),
+    months,
+  };
+}
+
+/**
+ * MAO Calculation: Institutional Buy Formula
+ * Accounts for 8% closing cost and 20% rehab contingency.
+ */
+export function calculateMAO(
+  arv: number,
+  rehabBudget: number,
+  holdingCosts: number,
+  profitTarget: number,
+): number {
+  if (arv <= 0) return 0;
+
+  // Closing Costs: Mandatory 8%
+  const closingCosts = arv * 0.08;
+
+  // Rehab Contingency: Mandatory 20%
+  const totalRehab = rehabBudget * 1.2;
+
+  const mao = arv - totalRehab - holdingCosts - closingCosts - profitTarget;
+  return Math.max(0, Math.round(mao));
+}
+
+/**
+ * Base property interface that matches Prisma schema
  */
 export interface PropertyBase {
   id: string;
@@ -77,20 +114,26 @@ export interface PropertyBase {
   sqft: number;
   bedrooms: number;
   bathrooms: number;
-  decision: string;  // Stored as string in DB, cast to Decision type when needed
-  strategy: string;  // Stored as string in DB, cast to Strategy type when needed
+  decision: string;
+  strategy: string;
   rationale: string;
   type: string;
   realtor: string | null;
   url: string | null;
   details: string | null;
   images: string[];
-  estimatedRent: number;
   annualTaxes: number;
   annualInsurance: number;
   renovationBudget: number;
   afterRepairValue: number;
   notes: string;
+  // Flipping specific fields
+  mao25k: number;
+  mao50k: number;
+  holdingCosts: number;
+  closingCosts: number;
+  rehabTier: string;
+  arvSource: string;
   // Extended fields from database schema
   isOwned: boolean;
   purchasePrice: number;
@@ -106,100 +149,96 @@ export interface PropertyBase {
 
 /**
  * Interface for properties with calculated fields
- * Uses string types for decision/strategy to match Prisma storage.
  */
 export interface PropertyWithCalculations extends PropertyBase {
   pricePerSqft: number;
   pricePerDoor: number;
-  capRate: number;
-  cashOnCashReturn: number;
-  mao: number;
-  onePercentRule: boolean;
-  grossYield: number;
-  // Type-safe accessors - cast to proper types when needed
+  // Type-safe accessors
   decision: string;
   strategy: string;
 }
 
 /**
  * Add calculated fields to a property object.
- * This is the SINGLE source of truth for all property calculations.
- * Used by both the API route and the client-side context.
- * 
- * @param property - The base property object (can be from Prisma or client)
- * @returns Property with all calculated fields added
+ * Enforces Rule 5 (Missing Data Fallback).
  */
-export function addCalculations<T extends PropertyBase>(property: T): PropertyWithCalculations {
-  // Ensure numeric values are valid (defensive coding)
-  const listPrice = property.listPrice ?? 0;
-  const sqft = property.sqft ?? 0;
+export function addCalculations<T extends PropertyBase>(
+  property: T,
+): PropertyWithCalculations {
+  // Rule 5: Missing Data Fallback
+  if (!property.listPrice || !property.sqft || !property.zip) {
+    throw new IncompleteDataError(
+      `Missing required data for analysis: ${!property.listPrice ? "listPrice " : ""}${!property.sqft ? "sqft " : ""}${!property.zip ? "zip" : ""}`,
+    );
+  }
+
+  const listPrice = property.listPrice;
+  const sqft = property.sqft;
   const bedrooms = property.bedrooms ?? 0;
 
   return {
     ...property,
-    // Price per square foot (0 if sqft is 0 or negative)
     pricePerSqft: sqft > 0 ? Number((listPrice / sqft).toFixed(2)) : 0,
-    // Price per bedroom/door (0 if bedrooms is 0 or negative)
     pricePerDoor: bedrooms > 0 ? Number((listPrice / bedrooms).toFixed(2)) : 0,
-    // Cap rate calculation
-    capRate: Number(calculateCapRate(property as any).toFixed(2)),
-    // Cash on cash return calculation
-    cashOnCashReturn: Number(calculateCashOnCashReturn(property as any).toFixed(2)),
-    // Maximum Allowable Offer
-    mao: Number(calculateMAO(property as any).toFixed(2)),
-    // 1% rule check (rent >= 1% of purchase price)
-    onePercentRule: calculateOnePercentRule(property as any),
-    // Gross yield calculation
-    grossYield: Number(calculateGrossYield(property as any).toFixed(2)),
   };
 }
 
 /**
- * Add calculations to an array of properties.
- * Convenience function for batch processing.
- * 
- * @param properties - Array of base property objects
- * @returns Array of properties with calculated fields
+ * Batch processing
  */
 export function addCalculationsToAll<T extends PropertyBase>(
-  properties: T[]
+  properties: T[],
 ): PropertyWithCalculations[] {
   if (!properties || !Array.isArray(properties)) {
     return [];
   }
-  return properties.map(addCalculations);
+
+  const results: PropertyWithCalculations[] = [];
+  for (const p of properties) {
+    try {
+      results.push(addCalculations(p));
+    } catch (e) {
+      if (e instanceof IncompleteDataError) {
+        console.warn(`Skipping property ${p.address}: ${e.message}`);
+        continue;
+      }
+      throw e;
+    }
+  }
+  return results;
 }
 
 /**
  * Serialize a property for client-side usage.
- * Converts Date objects to ISO strings for JSON serialization.
- * 
- * @param property - Property from Prisma (with Date objects)
- * @returns Property with dates as ISO strings
  */
-export function serializeProperty<T extends { createdAt: Date; updatedAt: Date }>(
-  property: T
-): Omit<T, 'createdAt' | 'updatedAt'> & { createdAt: string; updatedAt: string } {
+export function serializeProperty<
+  T extends { createdAt: Date | string; updatedAt: Date | string },
+>(
+  property: T,
+): Omit<T, "createdAt" | "updatedAt"> & {
+  createdAt: string;
+  updatedAt: string;
+} {
   return {
     ...property,
-    createdAt: property.createdAt instanceof Date 
-      ? property.createdAt.toISOString() 
-      : String(property.createdAt),
-    updatedAt: property.updatedAt instanceof Date 
-      ? property.updatedAt.toISOString() 
-      : String(property.updatedAt),
+    createdAt:
+      property.createdAt instanceof Date
+        ? property.createdAt.toISOString()
+        : String(property.createdAt),
+    updatedAt:
+      property.updatedAt instanceof Date
+        ? property.updatedAt.toISOString()
+        : String(property.updatedAt),
   };
 }
 
-/**
- * Serialize an array of properties for client-side usage.
- * 
- * @param properties - Array of properties from Prisma
- * @returns Array of properties with dates as ISO strings
- */
-export function serializeProperties<T extends { createdAt: Date; updatedAt: Date }>(
-  properties: T[]
-): Array<Omit<T, 'createdAt' | 'updatedAt'> & { createdAt: string; updatedAt: string }> {
+export function serializeProperties<
+  T extends { createdAt: Date | string; updatedAt: Date | string },
+>(
+  properties: T[],
+): Array<
+  Omit<T, "createdAt" | "updatedAt"> & { createdAt: string; updatedAt: string }
+> {
   if (!properties || !Array.isArray(properties)) {
     return [];
   }

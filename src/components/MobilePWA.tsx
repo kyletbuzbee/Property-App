@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import clsx from 'clsx';
+import { useState, useEffect } from "react";
+import clsx from "clsx";
 
 interface MobilePWAProps {
   // This component shows PWA capabilities and mobile optimizations
@@ -10,84 +10,100 @@ interface MobilePWAProps {
 export default function MobilePWA({}: MobilePWAProps) {
   const [isMobile, setIsMobile] = useState(false);
   const [isPWA, setIsPWA] = useState(false);
-  const [orientation, setOrientation] = useState<'portrait' | 'landscape'>('portrait');
+  const [orientation, setOrientation] = useState<"portrait" | "landscape">(
+    "portrait",
+  );
 
   useEffect(() => {
     // Check if mobile
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768 || 'ontouchstart' in window);
+      setIsMobile(window.innerWidth < 768 || "ontouchstart" in window);
     };
-    
+
     // Check if running as PWA
     const checkPWA = () => {
-      const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
+      const isStandalone = window.matchMedia(
+        "(display-mode: standalone)",
+      ).matches;
       const isInWebAppiOS = (window.navigator as any).standalone === true;
       setIsPWA(isStandalone || isInWebAppiOS);
     };
 
     // Check orientation
     const checkOrientation = () => {
-      setOrientation(window.innerWidth > window.innerHeight ? 'landscape' : 'portrait');
+      setOrientation(
+        window.innerWidth > window.innerHeight ? "landscape" : "portrait",
+      );
     };
 
     checkMobile();
     checkPWA();
     checkOrientation();
 
-    window.addEventListener('resize', checkMobile);
-    window.addEventListener('resize', checkOrientation);
-    window.matchMedia('(display-mode: standalone)').addEventListener('change', checkPWA);
+    window.addEventListener("resize", checkMobile);
+    window.addEventListener("resize", checkOrientation);
+    window
+      .matchMedia("(display-mode: standalone)")
+      .addEventListener("change", checkPWA);
 
     return () => {
-      window.removeEventListener('resize', checkMobile);
-      window.removeEventListener('resize', checkOrientation);
+      window.removeEventListener("resize", checkMobile);
+      window.removeEventListener("resize", checkOrientation);
     };
   }, []);
 
   const pwaFeatures = [
     {
-      icon: '📱',
-      title: 'Installable App',
-      description: 'Add to home screen for quick access',
+      icon: "📱",
+      title: "Installable App",
+      description: "Add to home screen for quick access",
       enabled: true,
     },
     {
-      icon: '🔔',
-      title: 'Push Notifications',
-      description: 'Get alerts for new deals and updates',
+      icon: "🔔",
+      title: "Push Notifications",
+      description: "Get alerts for new deals and updates",
       enabled: true,
     },
     {
-      icon: '📴',
-      title: 'Offline Mode',
-      description: 'Access cached properties without internet',
+      icon: "📴",
+      title: "Offline Mode",
+      description: "Access cached properties without internet",
       enabled: false,
     },
     {
-      icon: '⚡',
-      title: 'Fast Loading',
-      description: 'Optimized for mobile networks',
+      icon: "⚡",
+      title: "Fast Loading",
+      description: "Optimized for mobile networks",
       enabled: true,
     },
     {
-      icon: '🔒',
-      title: 'Secure Access',
-      description: 'Biometric authentication support',
+      icon: "🔒",
+      title: "Secure Access",
+      description: "Biometric authentication support",
       enabled: false,
     },
     {
-      icon: '📊',
-      title: 'Mobile Dashboard',
-      description: 'Touch-optimized property cards',
+      icon: "📊",
+      title: "Mobile Dashboard",
+      description: "Touch-optimized property cards",
       enabled: true,
     },
   ];
 
   const responsiveFeatures = [
-    { name: 'Viewport', value: isMobile ? 'Mobile (<768px)' : 'Desktop (≥768px)', active: true },
-    { name: 'Orientation', value: orientation, active: true },
-    { name: 'Touch Support', value: 'ontouchstart' in window ? 'Yes' : 'No', active: true },
-    { name: 'PWA Mode', value: isPWA ? 'Installed' : 'Browser', active: isPWA },
+    {
+      name: "Viewport",
+      value: isMobile ? "Mobile (<768px)" : "Desktop (≥768px)",
+      active: true,
+    },
+    { name: "Orientation", value: orientation, active: true },
+    {
+      name: "Touch Support",
+      value: "ontouchstart" in window ? "Yes" : "No",
+      active: true,
+    },
+    { name: "PWA Mode", value: isPWA ? "Installed" : "Browser", active: isPWA },
   ];
 
   return (
@@ -95,7 +111,9 @@ export default function MobilePWA({}: MobilePWAProps) {
       {/* Header */}
       <div className="p-4 border-b border-dark-700">
         <h2 className="text-lg font-bold text-white">Mobile & PWA</h2>
-        <p className="text-sm text-dark-400">Mobile optimizations and progressive web app features</p>
+        <p className="text-sm text-dark-400">
+          Mobile optimizations and progressive web app features
+        </p>
       </div>
 
       <div className="flex-1 overflow-auto p-4">
@@ -106,16 +124,17 @@ export default function MobilePWA({}: MobilePWAProps) {
           </h3>
           <div className="grid grid-cols-2 gap-3">
             {responsiveFeatures.map((feature) => (
-              <div 
-                key={feature.name}
-                className="bg-dark-700 rounded-lg p-3"
-              >
+              <div key={feature.name} className="bg-dark-700 rounded-lg p-3">
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-dark-400">{feature.name}</span>
-                  <span className={clsx(
-                    'text-xs px-2 py-0.5 rounded',
-                    feature.active ? 'bg-emerald-900/30 text-emerald-400' : 'bg-dark-600 text-dark-500'
-                  )}>
+                  <span
+                    className={clsx(
+                      "text-xs px-2 py-0.5 rounded",
+                      feature.active
+                        ? "bg-emerald-900/30 text-emerald-400"
+                        : "bg-dark-600 text-dark-500",
+                    )}
+                  >
                     {feature.value}
                   </span>
                 </div>
@@ -131,7 +150,7 @@ export default function MobilePWA({}: MobilePWAProps) {
           </h3>
           <div className="space-y-2">
             {pwaFeatures.map((feature) => (
-              <div 
+              <div
                 key={feature.title}
                 className="bg-dark-800 rounded-lg p-4 flex items-center gap-4"
               >
@@ -139,11 +158,15 @@ export default function MobilePWA({}: MobilePWAProps) {
                 <div className="flex-1">
                   <div className="flex items-center justify-between">
                     <p className="font-medium text-white">{feature.title}</p>
-                    <span className={clsx(
-                      'text-xs px-2 py-0.5 rounded',
-                      feature.enabled ? 'bg-emerald-900/30 text-emerald-400' : 'bg-dark-700 text-dark-500'
-                    )}>
-                      {feature.enabled ? 'Enabled' : 'Coming Soon'}
+                    <span
+                      className={clsx(
+                        "text-xs px-2 py-0.5 rounded",
+                        feature.enabled
+                          ? "bg-emerald-900/30 text-emerald-400"
+                          : "bg-dark-700 text-dark-500",
+                      )}
+                    >
+                      {feature.enabled ? "Enabled" : "Coming Soon"}
                     </span>
                   </div>
                   <p className="text-sm text-dark-400">{feature.description}</p>
@@ -166,7 +189,9 @@ export default function MobilePWA({}: MobilePWAProps) {
                 </div>
                 <div>
                   <p className="text-white text-sm">iOS (Safari)</p>
-                  <p className="text-dark-400 text-xs">Tap the Share button → Add to Home Screen</p>
+                  <p className="text-dark-400 text-xs">
+                    Tap the Share button → Add to Home Screen
+                  </p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -175,7 +200,9 @@ export default function MobilePWA({}: MobilePWAProps) {
                 </div>
                 <div>
                   <p className="text-white text-sm">Android (Chrome)</p>
-                  <p className="text-dark-400 text-xs">Tap the menu (⋮) → Install App</p>
+                  <p className="text-dark-400 text-xs">
+                    Tap the menu (⋮) → Install App
+                  </p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -184,7 +211,9 @@ export default function MobilePWA({}: MobilePWAProps) {
                 </div>
                 <div>
                   <p className="text-white text-sm">Desktop (Chrome)</p>
-                  <p className="text-dark-400 text-xs">Click the install icon in the address bar</p>
+                  <p className="text-dark-400 text-xs">
+                    Click the install icon in the address bar
+                  </p>
                 </div>
               </div>
             </div>
@@ -227,10 +256,10 @@ export default function MobilePWA({}: MobilePWAProps) {
           className="w-full py-3 bg-primary-500 text-white rounded-lg font-medium hover:bg-primary-600 transition-colors"
           onClick={() => {
             // In a real app, this would trigger the PWA install prompt
-            alert('PWA install prompt would appear here');
+            alert("PWA install prompt would appear here");
           }}
         >
-          {isPWA ? 'App Installed ✓' : 'Install App'}
+          {isPWA ? "App Installed ✓" : "Install App"}
         </button>
       </div>
     </div>

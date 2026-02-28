@@ -1,9 +1,9 @@
 /**
  * Property Enrichment API Endpoint
- * 
+ *
  * POST /api/enrich/property
  * Body: { property: Property }
- * 
+ *
  * Returns enriched property data with:
  * - School ratings (GreatSchools)
  * - Walk Score data
@@ -11,11 +11,15 @@
  * - Overall neighborhood score
  */
 
-import { NextRequest, NextResponse } from 'next/server';
-import { Property } from '@/data/properties';
-import { fetchPropertyEnrichment, fetchBatchEnrichment, getAPIHealthStatus } from '@/lib/ai/externalAPIs';
+import { NextRequest, NextResponse } from "next/server";
+import { Property } from "@/data/properties";
+import {
+  fetchPropertyEnrichment,
+  fetchBatchEnrichment,
+  getAPIHealthStatus,
+} from "@/lib/ai/externalAPIs";
 
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic";
 
 // POST /api/enrich/property - Enrich a single property
 export async function POST(request: NextRequest) {
@@ -25,19 +29,19 @@ export async function POST(request: NextRequest) {
 
     if (!property) {
       return NextResponse.json(
-        { error: 'Property is required' },
-        { status: 400 }
+        { error: "Property is required" },
+        { status: 400 },
       );
     }
 
     // Validate property has required fields
-    const requiredFields = ['id', 'address', 'city', 'state', 'lat', 'lng'];
-    const missingFields = requiredFields.filter(field => !property[field]);
-    
+    const requiredFields = ["id", "address", "city", "state", "lat", "lng"];
+    const missingFields = requiredFields.filter((field) => !property[field]);
+
     if (missingFields.length > 0) {
       return NextResponse.json(
-        { error: `Missing required fields: ${missingFields.join(', ')}` },
-        { status: 400 }
+        { error: `Missing required fields: ${missingFields.join(", ")}` },
+        { status: 400 },
       );
     }
 
@@ -50,10 +54,13 @@ export async function POST(request: NextRequest) {
       apiStatus: getAPIHealthStatus(),
     });
   } catch (error) {
-    console.error('[Enrichment API] Error:', error);
+    console.error("[Enrichment API] Error:", error);
     return NextResponse.json(
-      { error: 'Failed to fetch enrichment data', details: error instanceof Error ? error.message : 'Unknown error' },
-      { status: 500 }
+      {
+        error: "Failed to fetch enrichment data",
+        details: error instanceof Error ? error.message : "Unknown error",
+      },
+      { status: 500 },
     );
   }
 }
@@ -61,21 +68,21 @@ export async function POST(request: NextRequest) {
 // GET /api/enrich/property - Health check and status
 export async function GET() {
   return NextResponse.json({
-    status: 'ok',
-    message: 'Property Enrichment API',
-    version: '1.0.0',
+    status: "ok",
+    message: "Property Enrichment API",
+    version: "1.0.0",
     apiStatus: getAPIHealthStatus(),
     features: [
-      'GreatSchools school ratings',
-      'Walk Score walkability data',
-      'Crime statistics (mock)',
-      'Neighborhood scoring',
+      "GreatSchools school ratings",
+      "Walk Score walkability data",
+      "Crime statistics (mock)",
+      "Neighborhood scoring",
     ],
     documentation: {
-      endpoint: '/api/enrich/property',
-      method: 'POST',
+      endpoint: "/api/enrich/property",
+      method: "POST",
       body: {
-        property: 'Property object with id, address, city, state, lat, lng',
+        property: "Property object with id, address, city, state, lat, lng",
       },
     },
   });

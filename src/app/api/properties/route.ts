@@ -1,304 +1,276 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { supabase } from '@/app/lib/db';
-import { prisma } from '@/app/lib/db';
-import { 
-  addCalculations, 
+import { NextRequest, NextResponse } from "next/server";
+import { prisma } from "@/app/lib/db";
+import {
+  addCalculations,
   serializeProperty,
   PropertyBase,
-  PropertyWithCalculations 
-} from '@/lib/calculations';
-
-// Helper to generate slug from name
-const generateSlug = (name: string): string => {
-  return name
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/(^-|-$)/g, '')
-    .slice(0, 50)
-}
+  PropertyWithCalculations,
+} from "@/lib/calculations";
+import { getDynamicBenchmarks, loadMarketData } from "@/lib/marketData";
+import { enrichWithPredictions } from "@/lib/ai/predictionService";
+import { analyzePropertyFlip } from "@/lib/ai/enhancedScoring";
 
 /**
  * GET /api/properties
- * Fetch properties with optional filtering.
- * Returns properties with calculated fields.
  */
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
-    const id = searchParams.get('id');
-    const search = searchParams.get('search');
-    const strategy = searchParams.get('strategy');
-    const decision = searchParams.get('decision');
-    const city = searchParams.get('city');
+    const id = searchParams.get("id");
+    const search = searchParams.get("search");
+    const strategy = searchParams.get("strategy");
+    const decision = searchParams.get("decision");
+    const city = searchParams.get("city");
+    const enrich = searchParams.get("enrich") === "true";
 
-    // 1. Handle Single Property Fetch
     if (id) {
-      const { data, error } = await supabase
-        .from('properties')
-        .select('*')
-        .eq('id', id)
-        .single()
-      
-      if (error || !data) {
+      const property = await prisma.property.findUnique({
+        where: { id },
+      });
+
+      if (!property) {
         return NextResponse.json(
-          { success: false, error: 'Property not found' }, 
-          { status: 404 }
+          { success: false, error: "Property not found" },
+          { status: 404 },
         );
       }
-      
-      // Convert, serialize and add calculations
-      const converted = convertSupabaseProperty(data)
-      const serialized = serializeProperty(converted);
-      // @ts-ignore - serializeProperty intentionally converts Date to string
-      const calculated = addCalculations(serialized);
+
+      const serialized = serializeProperty(property as any);
+      // @ts-ignore
+      let calculated = addCalculations(serialized);
+
+      if (enrich) {
+        loadMarketData();
+        const benchmarks = getDynamicBenchmarks(
+          calculated.city,
+          calculated.state,
+        );
+        calculated = {
+          ...calculated,
+          marketIntelligence: { benchmarks },
+        } as any;
+        const enrichedList = enrichWithPredictions([calculated as any]);
+        calculated = enrichedList[0] as any;
+      }
+
       return NextResponse.json({ success: true, data: calculated });
     }
 
-    // 2. Build query with filters
-    let query = supabase.from('properties').select('*')
-    
-    if (strategy) query = query.eq('strategy', strategy)
-    if (decision) query = query.eq('decision', decision)
-    if (city) query = query.ilike('city', city)
-    
+    const where: any = {};
+    if (strategy) where.strategy = strategy;
+    if (decision) where.decision = decision;
+    if (city) where.city = { contains: city, mode: "insensitive" };
+
     if (search) {
-      query = query.or(`address.ilike.%${search}%,city.ilike.%${search}%,rationale.ilike.%${search}%,details.ilike.%${search}%`)
-    }
-    
-    query = query.order('created_at', { ascending: false })
-
-    // 3. Execute query
-    const { data, error } = await query
-    
-    if (error) {
-      console.error('Supabase error:', error)
-      return NextResponse.json(
-        { success: false, error: 'Failed to fetch properties' }, 
-        { status: 500 }
-      );
+      where.OR = [
+        { address: { contains: search, mode: "insensitive" } },
+        { city: { contains: search, mode: "insensitive" } },
+        { rationale: { contains: search, mode: "insensitive" } },
+        { details: { contains: search, mode: "insensitive" } },
+      ];
     }
 
-    // 4. Convert, serialize and add calculations
-    const converted = (data || []).map(convertSupabaseProperty)
-    const serialized = converted.map(serializeProperty) as PropertyBase[];
-    const calculated = serialized.map(addCalculations);
-
-    return NextResponse.json({ 
-      success: true, 
-      data: calculated, 
-      count: calculated.length 
+    const properties = await prisma.property.findMany({
+      where,
+      orderBy: { createdAt: "desc" },
     });
 
-  } catch (error) {
-    console.error('API Error:', error);
-    return NextResponse.json(
-      { success: false, error: 'Failed to fetch properties' }, 
-      { status: 500 }
-    );
-  }
-}
+    const serialized = properties.map((p) =>
+      serializeProperty(p as any),
+    ) as PropertyBase[];
+    let calculated = serialized.map(addCalculations);
 
-// Helper to convert Supabase snake_case to camelCase
-function convertSupabaseProperty(prop: any): any {
-  return {
-    ...prop,
-    listPrice: prop.list_price,
-    equityGap: prop.equity_gap,
-    isOwned: prop.is_owned,
-    purchasePrice: prop.purchase_price,
-    purchaseDate: prop.purchase_date ? new Date(prop.purchase_date) : null,
-    rehabCompleted: prop.rehab_completed ? new Date(prop.rehab_completed) : null,
-    isFavorite: prop.is_favorite,
-    favoriteNotes: prop.favorite_notes,
-    dealScore: prop.deal_score,
-    riskLevel: prop.risk_level,
-    createdAt: new Date(prop.created_at),
-    updatedAt: new Date(prop.updated_at),
+    if (enrich) {
+      loadMarketData();
+      calculated = calculated.map((prop) => {
+        const benchmarks = getDynamicBenchmarks(prop.city, prop.state);
+        return { ...prop, marketIntelligence: { benchmarks } } as any;
+      });
+      calculated = enrichWithPredictions(calculated as any) as any;
+    }
+
+    return NextResponse.json({
+      success: true,
+      data: calculated,
+      count: calculated.length,
+    });
+  } catch (error) {
+    console.error("API Error:", error);
+    return NextResponse.json(
+      { success: false, error: "Failed to fetch properties" },
+      { status: 500 },
+    );
   }
 }
 
 /**
  * POST /api/properties
- * Create a new property.
+ * Triggers AI Analysis automatically.
  */
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
     const { id, createdAt, updatedAt, ...data } = body;
 
-    // Convert camelCase to snake_case for Supabase
-    const insertData = {
+    // Trigger AI Analysis before saving
+    const analysis = await analyzePropertyFlip({
       address: data.address,
-      city: data.city,
-      state: data.state || 'TX',
-      zip: data.zip || '',
-      lat: data.lat || 0,
-      lng: data.lng || 0,
-      list_price: Number(data.listPrice) || 0,
-      equity_gap: data.equityGap || 0,
-      sqft: Number(data.sqft) || 0,
-      bedrooms: data.bedrooms || 0,
-      bathrooms: data.bathrooms || 0,
-      decision: data.decision || 'Review',
-      strategy: data.strategy || 'None',
-      rationale: data.rationale || '',
-      type: data.type || 'House for sale',
-      realtor: data.realtor || null,
-      url: data.url || null,
-      details: data.details || null,
+      zip: data.zip,
+      sqft: Number(data.sqft),
+      listPrice: Number(data.listPrice),
       images: data.images || [],
-      estimatedRent: Number(data.estimatedRent) || 0,
-      annualTaxes: data.annualTaxes || 0,
-      annualInsurance: data.annualInsurance || 0,
-      renovationBudget: data.renovationBudget || 0,
-      afterRepairValue: data.afterRepairValue || 0,
-      notes: data.notes || '',
-      is_owned: data.isOwned || false,
-      purchase_price: data.purchasePrice || 0,
-      purchase_date: data.purchaseDate || null,
-      rehab_completed: data.rehabCompleted || null,
-      is_favorite: data.isFavorite || false,
-      favorite_notes: data.favoriteNotes || '',
-      deal_score: data.dealScore || 0,
-      risk_level: data.riskLevel || 'Medium',
-    }
+    });
 
-    const { data: newProperty, error } = await supabase
-      .from('properties')
-      .insert(insertData)
-      .select()
-      .single()
+    const newProperty = await prisma.property.create({
+      data: {
+        address: data.address,
+        city: data.city,
+        state: data.state || "TX",
+        zip: data.zip || "",
+        lat: data.lat || 0,
+        lng: data.lng || 0,
+        listPrice: Number(data.listPrice) || 0,
+        sqft: Number(data.sqft) || 0,
+        bedrooms: data.bedrooms || 0,
+        bathrooms: data.bathrooms || 0,
+        // AI Results
+        decision: analysis.data.decision,
+        rationale: analysis.narrative,
+        afterRepairValue: analysis.data.arv,
+        mao25k: analysis.data.mao25k,
+        mao50k: analysis.data.mao50k,
+        renovationBudget: analysis.data.rehabEstimate,
+        rehabTier: analysis.data.rehabTier,
+        arvSource: "AI_KNOWLEDGE_BUNDLE",
+        // Other fields
+        strategy: data.strategy || "Retail Flip",
+        type: data.type || "House for sale",
+        realtor: data.realtor || null,
+        url: data.url || null,
+        details: data.details || null,
+        images: data.images || [],
+        annualTaxes: data.annualTaxes || 0,
+        annualInsurance: data.annualInsurance || 0,
+        notes: data.notes || "",
+        isOwned: data.isOwned || false,
+        purchasePrice: data.purchasePrice || 0,
+        isFavorite: data.isFavorite || false,
+        favoriteNotes: data.favoriteNotes || "",
+        dealScore: analysis.data.confidence * 100,
+        riskLevel: analysis.data.decision === "HARD_FAIL" ? "High" : "Medium",
+      },
+    });
 
-    if (error) {
-      console.error('Supabase insert error:', error)
-      return NextResponse.json(
-        { success: false, error: 'Failed to create property' }, 
-        { status: 500 }
-      );
-    }
-
-    // Convert, serialize and add calculations
-    const converted = convertSupabaseProperty(newProperty)
-    const serialized = serializeProperty(converted);
-    // @ts-ignore - serializeProperty intentionally converts Date to string
+    const serialized = serializeProperty(newProperty as any);
+    // @ts-ignore
     const calculated = addCalculations(serialized);
 
-    return NextResponse.json({ success: true, data: calculated }, { status: 201 });
-  } catch (error) {
-    console.error('API Error:', error);
     return NextResponse.json(
-      { success: false, error: 'Failed to create property' }, 
-      { status: 500 }
+      { success: true, data: calculated },
+      { status: 201 },
+    );
+  } catch (error) {
+    console.error("API Error:", error);
+    return NextResponse.json(
+      { success: false, error: "Failed to create property" },
+      { status: 500 },
     );
   }
 }
 
 /**
  * PUT /api/properties
- * Update an existing property.
  */
 export async function PUT(request: NextRequest) {
   try {
     const body = await request.json();
-    const { id, createdAt, updatedAt, ...data } = body;
+    const { id, createdAt, updatedAt, triggerAnalysis, ...data } = body;
 
     if (!id) {
       return NextResponse.json(
-        { success: false, error: 'Property ID is required' }, 
-        { status: 400 }
+        { success: false, error: "Property ID is required" },
+        { status: 400 },
       );
     }
 
-    // Convert camelCase to snake_case for fields that need it
-    const updateData: any = {}
-    
-    if (data.listPrice !== undefined) updateData.list_price = Number(data.listPrice)
-    if (data.equityGap !== undefined) updateData.equity_gap = data.equityGap
-    if (data.isOwned !== undefined) updateData.is_owned = data.isOwned
-    if (data.purchasePrice !== undefined) updateData.purchase_price = data.purchasePrice
-    if (data.purchaseDate !== undefined) updateData.purchase_date = data.purchaseDate
-    if (data.rehabCompleted !== undefined) updateData.rehab_completed = data.rehabCompleted
-    if (data.isFavorite !== undefined) updateData.is_favorite = data.isFavorite
-    if (data.favoriteNotes !== undefined) updateData.favorite_notes = data.favoriteNotes
-    if (data.dealScore !== undefined) updateData.deal_score = data.dealScore
-    if (data.riskLevel !== undefined) updateData.risk_level = data.riskLevel
-    
-    // Copy over fields that don't need conversion
-    const directFields = ['address', 'city', 'state', 'zip', 'lat', 'lng', 'sqft', 
-      'bedrooms', 'bathrooms', 'decision', 'strategy', 'rationale', 'type', 
-      'realtor', 'url', 'details', 'images', 'estimatedRent', 'annualTaxes', 
-      'annualInsurance', 'renovationBudget', 'afterRepairValue', 'notes']
-    
-    directFields.forEach(field => {
-      if (data[field] !== undefined) updateData[field] = data[field]
-    })
-
-    const { data: updatedProperty, error } = await supabase
-      .from('properties')
-      .update(updateData)
-      .eq('id', id)
-      .select()
-      .single()
-
-    if (error) {
-      console.error('Supabase update error:', error)
-      return NextResponse.json(
-        { success: false, error: 'Failed to update property' }, 
-        { status: 500 }
-      );
+    let analysisUpdate = {};
+    if (triggerAnalysis) {
+      const analysis = await analyzePropertyFlip({
+        address: data.address || "",
+        zip: data.zip || "",
+        sqft: Number(data.sqft) || 0,
+        listPrice: Number(data.listPrice) || 0,
+        images: data.images || [],
+      });
+      analysisUpdate = {
+        decision: analysis.data.decision,
+        rationale: analysis.narrative,
+        afterRepairValue: analysis.data.arv,
+        mao25k: analysis.data.mao25k,
+        mao50k: analysis.data.mao50k,
+        renovationBudget: analysis.data.rehabEstimate,
+        rehabTier: analysis.data.rehabTier,
+        dealScore: analysis.data.confidence * 100,
+      };
     }
 
-    // Convert, serialize and add calculations
-    const converted = convertSupabaseProperty(updatedProperty)
-    const serialized = serializeProperty(converted);
-    // @ts-ignore - serializeProperty intentionally converts Date to string
+    const updateData: any = {
+      ...data,
+      ...analysisUpdate,
+      listPrice:
+        data.listPrice !== undefined ? Number(data.listPrice) : undefined,
+      sqft: data.sqft !== undefined ? Number(data.sqft) : undefined,
+      purchaseDate: data.purchaseDate ? new Date(data.purchaseDate) : undefined,
+      rehabCompleted: data.rehabCompleted
+        ? new Date(data.rehabCompleted)
+        : undefined,
+    };
+
+    Object.keys(updateData).forEach(
+      (key) => updateData[key] === undefined && delete updateData[key],
+    );
+
+    const updatedProperty = await prisma.property.update({
+      where: { id },
+      data: updateData,
+    });
+
+    const serialized = serializeProperty(updatedProperty as any);
+    // @ts-ignore
     const calculated = addCalculations(serialized);
 
     return NextResponse.json({ success: true, data: calculated });
   } catch (error) {
-    console.error('API Error:', error);
+    console.error("API Error:", error);
     return NextResponse.json(
-      { success: false, error: 'Failed to update property' }, 
-      { status: 500 }
+      { success: false, error: "Failed to update property" },
+      { status: 500 },
     );
   }
 }
 
 /**
  * DELETE /api/properties
- * Delete a property by ID.
  */
 export async function DELETE(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
-    const id = searchParams.get('id');
-
-    if (!id) {
+    const id = searchParams.get("id");
+    if (!id)
       return NextResponse.json(
-        { success: false, error: 'Property ID is required' }, 
-        { status: 400 }
+        { success: false, error: "Property ID is required" },
+        { status: 400 },
       );
-    }
-
-    const { error } = await supabase
-      .from('properties')
-      .delete()
-      .eq('id', id)
-
-    if (error) {
-      console.error('Supabase delete error:', error)
-      return NextResponse.json(
-        { success: false, error: 'Failed to delete property' }, 
-        { status: 500 }
-      );
-    }
-
-    return NextResponse.json({ success: true, message: 'Property deleted successfully' });
+    await prisma.property.delete({ where: { id } });
+    return NextResponse.json({
+      success: true,
+      message: "Property deleted successfully",
+    });
   } catch (error) {
-    console.error('API Error:', error);
+    console.error("API Error:", error);
     return NextResponse.json(
-      { success: false, error: 'Failed to delete property' }, 
-      { status: 500 }
+      { success: false, error: "Failed to delete property" },
+      { status: 500 },
     );
   }
 }

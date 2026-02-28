@@ -1,59 +1,64 @@
-import { NextRequest, NextResponse } from 'next/server'
-import { prisma, authenticateRequest, canManageTenants, AuthContext } from '../../lib/db'
+import { NextRequest, NextResponse } from "next/server";
+import {
+  prisma,
+  authenticateRequest,
+  canManageTenants,
+  AuthContext,
+} from "../../lib/db";
 
 // Helper to get user's organization and role
 async function getUserOrgContext(context: AuthContext) {
-  if (!context.user) return null
+  if (!context.user) return null;
 
   const orgUser = await prisma.organizationUser.findFirst({
     where: { userId: context.user.id },
     include: { organization: true },
-    orderBy: { createdAt: 'desc' },
-  })
+    orderBy: { createdAt: "desc" },
+  });
 
-  return orgUser
+  return orgUser;
 }
 
 // GET /api/leases - List all leases for organization
 export async function GET(request: NextRequest) {
   try {
-    const { context, error } = await authenticateRequest(request)
-    if (error) return error
+    const { context, error } = await authenticateRequest(request);
+    if (error) return error;
 
     if (!canManageTenants(context.role)) {
       return NextResponse.json(
-        { error: 'Insufficient permissions to view leases' },
-        { status: 403 }
-      )
+        { error: "Insufficient permissions to view leases" },
+        { status: 403 },
+      );
     }
 
-    const orgUser = await getUserOrgContext(context)
+    const orgUser = await getUserOrgContext(context);
     if (!orgUser) {
       return NextResponse.json(
-        { error: 'No organization found' },
-        { status: 404 }
-      )
+        { error: "No organization found" },
+        { status: 404 },
+      );
     }
 
-    const { searchParams } = new URL(request.url)
-    const propertyId = searchParams.get('propertyId')
-    const tenantId = searchParams.get('tenantId')
-    const status = searchParams.get('status') // 'active', 'expired', 'all'
+    const { searchParams } = new URL(request.url);
+    const propertyId = searchParams.get("propertyId");
+    const tenantId = searchParams.get("tenantId");
+    const status = searchParams.get("status"); // 'active', 'expired', 'all'
 
-    const where: any = { organizationId: orgUser.organizationId }
+    const where: any = { organizationId: orgUser.organizationId };
 
     if (propertyId) {
-      where.propertyId = propertyId
+      where.propertyId = propertyId;
     }
 
     if (tenantId) {
-      where.tenantId = tenantId
+      where.tenantId = tenantId;
     }
 
-    if (status === 'active') {
-      where.status = 'ACTIVE'
-    } else if (status === 'expired') {
-      where.status = { in: ['EXPIRED', 'TERMINATED'] }
+    if (status === "active") {
+      where.status = "ACTIVE";
+    } else if (status === "expired") {
+      where.status = { in: ["EXPIRED", "TERMINATED"] };
     }
 
     const leases = await prisma.lease.findMany({
@@ -79,7 +84,7 @@ export async function GET(request: NextRequest) {
           },
         },
         payments: {
-          orderBy: { dueDate: 'desc' },
+          orderBy: { dueDate: "desc" },
           take: 12,
           select: {
             id: true,
@@ -94,19 +99,21 @@ export async function GET(request: NextRequest) {
           select: { payments: true },
         },
       },
-      orderBy: { createdAt: 'desc' },
-    })
+      orderBy: { createdAt: "desc" },
+    });
 
     // Transform leases with computed fields
-    const today = new Date()
+    const today = new Date();
     const transformedLeases = leases.map((lease) => {
-      const isExpiringSoon = lease.status === 'ACTIVE' && 
-        lease.endDate && 
-        new Date(lease.endDate) <= new Date(today.getTime() + 30 * 24 * 60 * 60 * 1000)
-      
+      const isExpiringSoon =
+        lease.status === "ACTIVE" &&
+        lease.endDate &&
+        new Date(lease.endDate) <=
+          new Date(today.getTime() + 30 * 24 * 60 * 60 * 1000);
+
       const totalPaid = lease.payments
-        .filter(p => p.status === 'COMPLETED')
-        .reduce((sum, p) => sum + p.amount, 0)
+        .filter((p) => p.status === "COMPLETED")
+        .reduce((sum, p) => sum + p.amount, 0);
 
       return {
         id: lease.id,
@@ -130,41 +137,41 @@ export async function GET(request: NextRequest) {
         paymentCount: lease._count.payments,
         recentPayments: lease.payments,
         createdAt: lease.createdAt,
-      }
-    })
+      };
+    });
 
-    return NextResponse.json({ leases: transformedLeases })
+    return NextResponse.json({ leases: transformedLeases });
   } catch (error) {
-    console.error('Error fetching leases:', error)
+    console.error("Error fetching leases:", error);
     return NextResponse.json(
-      { error: 'Failed to fetch leases' },
-      { status: 500 }
-    )
+      { error: "Failed to fetch leases" },
+      { status: 500 },
+    );
   }
 }
 
 // POST /api/leases - Create a new lease
 export async function POST(request: NextRequest) {
   try {
-    const { context, error } = await authenticateRequest(request)
-    if (error) return error
+    const { context, error } = await authenticateRequest(request);
+    if (error) return error;
 
     if (!canManageTenants(context.role)) {
       return NextResponse.json(
-        { error: 'Insufficient permissions to create leases' },
-        { status: 403 }
-      )
+        { error: "Insufficient permissions to create leases" },
+        { status: 403 },
+      );
     }
 
-    const orgUser = await getUserOrgContext(context)
+    const orgUser = await getUserOrgContext(context);
     if (!orgUser) {
       return NextResponse.json(
-        { error: 'No organization found' },
-        { status: 404 }
-      )
+        { error: "No organization found" },
+        { status: 404 },
+      );
     }
 
-    const body = await request.json()
+    const body = await request.json();
     const {
       tenantId,
       propertyId,
@@ -177,43 +184,46 @@ export async function POST(request: NextRequest) {
       gracePeriod,
       rentDueDay,
       terms,
-    } = body
+    } = body;
 
     // Validate required fields
     if (!tenantId || !propertyId || !startDate || !endDate || !monthlyRent) {
       return NextResponse.json(
-        { error: 'Tenant, property, start date, end date, and monthly rent are required' },
-        { status: 400 }
-      )
+        {
+          error:
+            "Tenant, property, start date, end date, and monthly rent are required",
+        },
+        { status: 400 },
+      );
     }
 
     // Verify tenant belongs to organization
     const tenant = await prisma.tenant.findFirst({
       where: { id: tenantId, organizationId: orgUser.organizationId },
-    })
+    });
     if (!tenant) {
       return NextResponse.json(
-        { error: 'Tenant not found in your organization' },
-        { status: 404 }
-      )
+        { error: "Tenant not found in your organization" },
+        { status: 404 },
+      );
     }
 
     // Verify property belongs to organization
     const property = await prisma.property.findFirst({
       where: { id: propertyId, organizationId: orgUser.organizationId },
-    })
+    });
     if (!property) {
       return NextResponse.json(
-        { error: 'Property not found in your organization' },
-        { status: 404 }
-      )
+        { error: "Property not found in your organization" },
+        { status: 404 },
+      );
     }
 
     // Check for overlapping active leases on the property
     const overlappingLease = await prisma.lease.findFirst({
       where: {
         propertyId,
-        status: 'ACTIVE',
+        status: "ACTIVE",
         OR: [
           {
             // New lease starts before existing ends
@@ -222,12 +232,15 @@ export async function POST(request: NextRequest) {
           },
         ],
       },
-    })
+    });
     if (overlappingLease) {
       return NextResponse.json(
-        { error: 'There is already an active lease for this property during this period' },
-        { status: 409 }
-      )
+        {
+          error:
+            "There is already an active lease for this property during this period",
+        },
+        { status: 409 },
+      );
     }
 
     // Create the lease
@@ -240,7 +253,7 @@ export async function POST(request: NextRequest) {
         endDate: new Date(endDate),
         monthlyRent,
         securityDeposit,
-        status: status || 'DRAFT',
+        status: status || "DRAFT",
         lateFee,
         gracePeriod,
         rentDueDay: rentDueDay || 1,
@@ -265,26 +278,26 @@ export async function POST(request: NextRequest) {
           },
         },
       },
-    })
+    });
 
     // If lease is active, update property status
-    if (status === 'ACTIVE') {
+    if (status === "ACTIVE") {
       await prisma.property.update({
         where: { id: propertyId },
-        data: { 
-          propertyStatus: 'RENTED',
+        data: {
+          propertyStatus: "RENTED",
           isRental: true,
         },
-      })
+      });
 
       // Update tenant's property assignment
       await prisma.tenant.update({
         where: { id: tenantId },
-        data: { 
+        data: {
           propertyId,
           moveInDate: new Date(startDate),
         },
-      })
+      });
     }
 
     // Log activity
@@ -292,16 +305,16 @@ export async function POST(request: NextRequest) {
       data: {
         organizationId: orgUser.organizationId,
         userId: context.user?.id,
-        action: 'LEASE_CREATED',
-        targetType: 'lease',
+        action: "LEASE_CREATED",
+        targetType: "lease",
         targetId: lease.id,
-        details: { 
+        details: {
           tenantName: `${lease.tenant.firstName} ${lease.tenant.lastName}`,
           propertyAddress: lease.property.address,
           monthlyRent,
         },
       },
-    })
+    });
 
     return NextResponse.json({
       lease: {
@@ -311,13 +324,13 @@ export async function POST(request: NextRequest) {
           fullName: `${lease.tenant.firstName} ${lease.tenant.lastName}`,
         },
       },
-      message: 'Lease created successfully',
-    })
+      message: "Lease created successfully",
+    });
   } catch (error) {
-    console.error('Error creating lease:', error)
+    console.error("Error creating lease:", error);
     return NextResponse.json(
-      { error: 'Failed to create lease' },
-      { status: 500 }
-    )
+      { error: "Failed to create lease" },
+      { status: 500 },
+    );
   }
 }

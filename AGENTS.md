@@ -69,18 +69,19 @@ Test files are located in `tests/` directory.
 
 ### Naming Conventions
 
-| Type | Convention | Example |
-|------|------------|---------|
-| Components | PascalCase | `PropertyDataTable.tsx` |
-| Interfaces/Types | PascalCase | `PropertyWithCalculations` |
-| Functions | camelCase | `calculateCashFlow()` |
-| Variables | camelCase | `const propertyList = []` |
-| Database columns | snake_case | `list_price`, `is_favorite` |
-| React hooks | camelCase with `use` prefix | `usePropertyData()` |
+| Type             | Convention                  | Example                     |
+| ---------------- | --------------------------- | --------------------------- |
+| Components       | PascalCase                  | `PropertyDataTable.tsx`     |
+| Interfaces/Types | PascalCase                  | `PropertyWithCalculations`  |
+| Functions        | camelCase                   | `calculateCashFlow()`       |
+| Variables        | camelCase                   | `const propertyList = []`   |
+| Database columns | snake_case                  | `list_price`, `is_favorite` |
+| React hooks      | camelCase with `use` prefix | `usePropertyData()`         |
 
 ### Import Organization
 
 Order imports as follows:
+
 1. Next.js/React imports
 2. Third-party library imports
 3. Internal imports (`@/components`, `@/lib`)
@@ -88,19 +89,19 @@ Order imports as follows:
 
 ```typescript
 // 1. React/Next
-import { useState, useMemo } from 'react';
-import { NextRequest, NextResponse } from 'next/server';
+import { useState, useMemo } from "react";
+import { NextRequest, NextResponse } from "next/server";
 
 // 2. Third-party
-import { useReactTable, getCoreRowModel } from '@tanstack/react-table';
-import clsx from 'clsx';
+import { useReactTable, getCoreRowModel } from "@tanstack/react-table";
+import clsx from "clsx";
 
 // 3. Internal
-import { PropertyWithCalculations } from '@/lib/calculations';
-import { getDecisionColor } from '@/data/properties';
+import { PropertyWithCalculations } from "@/lib/calculations";
+import { getDecisionColor } from "@/data/properties";
 
 // 4. Types
-import type { Decision, Strategy } from '@/data/properties';
+import type { Decision, Strategy } from "@/data/properties";
 ```
 
 Use the `@/` alias for imports from `src/` directory.
@@ -145,7 +146,7 @@ export default function PropertyTable({
   const [sorting, setSorting] = useState<SortingState>([]);
 
   const columns = useMemo(() => [...], [dependencies]);
-  
+
   return <table>...</table>;
 }
 ```
@@ -166,20 +167,20 @@ export default function PropertyTable({
 ```typescript
 // API route error handling
 try {
-  const { data, error } = await supabase.from('properties').select('*');
+  const { data, error } = await supabase.from("properties").select("*");
   if (error) {
-    console.error('Supabase error:', error);
+    console.error("Supabase error:", error);
     return NextResponse.json(
-      { success: false, error: 'Failed to fetch properties' },
-      { status: 500 }
+      { success: false, error: "Failed to fetch properties" },
+      { status: 500 },
     );
   }
   return NextResponse.json({ success: true, data });
 } catch (error) {
-  console.error('API Error:', error);
+  console.error("API Error:", error);
   return NextResponse.json(
-    { success: false, error: 'Internal server error' },
-    { status: 500 }
+    { success: false, error: "Internal server error" },
+    { status: 500 },
   );
 }
 ```
@@ -200,14 +201,14 @@ try {
 
 ## Key Libraries
 
-| Library | Purpose |
-|---------|---------|
+| Library                 | Purpose                                         |
+| ----------------------- | ----------------------------------------------- |
 | `@tanstack/react-table` | Data tables with sorting, filtering, pagination |
-| `@dnd-kit` | Drag and drop functionality |
-| `recharts` | Data visualization |
-| `react-leaflet` | Map components |
-| `supabase` | Database and auth |
-| `prisma` | ORM for database |
+| `@dnd-kit`              | Drag and drop functionality                     |
+| `recharts`              | Data visualization                              |
+| `react-leaflet`         | Map components                                  |
+| `supabase`              | Database and auth                               |
+| `prisma`                | ORM for database                                |
 
 ---
 

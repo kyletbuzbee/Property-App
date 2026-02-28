@@ -1,0 +1,4 @@
+RegionID,SizeRank,RegionName,RegionType,BaseDate,date,value,source_file,zorf
+102001,0,United States,country,2026-01-31,2026-02-28,0.3,National_zorf_growth_uc_sfr_sm_month.csv,growth
+102001,0,United States,country,2026-01-31,2026-04-30,1.1,National_zorf_growth_uc_sfr_sm_month.csv,growth
+102001,0,United States,country,2026-01-31,2027-01-31,1.0,National_zorf_growth_uc_sfr_sm_month.csv,growth

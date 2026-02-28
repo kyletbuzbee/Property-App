@@ -1,0 +1,20 @@
+property_id,address,zip,city,county,metro,neighborhood,event_date,notes,price,beds_baths_sqft,status,strategy,comment,source_file
+p001,309 E Brandon St,75760,Overton,Smith,Tyler,Central,2026-02-01,,149900,3bd/3ba/1700sqft,PASS (PLATINUM),Workforce Housing / MF,Multi-family potential in rental desert; high yield,properties.csv
+p002,210 N Stephens St,75438,Quitman,Wood,Longview,Central,2026-02-01,,69000,3bd/2ba/1681sqft,PASS (PLATINUM),Wholetail,Deep value at $41/sqft; near construction cost,properties.csv
+p003,2901 Sunset Ln,75662,Kilgore,Gregg,Longview,Northside,2026-02-01,,140000,3bd/3ba/2510sqft,PASS (PLATINUM),Section 8 / Sober Living,High equity play ($55/sqft); 3 baths enable premium exits,properties.csv
+p004,407 Baker St,75771,Lindale,Smith,Tyler,North,2026-02-01,,Auction,3bd/2ba/2003sqft,PASS (GOLD),Equity Play,Lindale ISD premium; buy for equity spread at auction,properties.csv
+p005,10748 W Hwy 84,75785,Rusk,Rusk,Tyler,West,2026-02-01,,112990,4bd/2ba/2144sqft,PASS (GOLD),Section 8,Volume rental; 4 bedrooms scarce in Rusk market,properties.csv
+p006,307 N Longview St,75662,Kilgore,Gregg,Longview,Northside,2026-02-01,,110000,3bd/2ba/1947sqft,PASS (SILVER),Section 8 BRRR,Volume play at $56/sqft; requires galvanized plumbing repipe,properties.csv
+p007,430 Seminole,75438,Quitman,Wood,Longview,Central,2026-02-01,,46610,3bd/2ba,PASS,Distressed / Foreclosure,Deep discount potential; inspect for major defects,properties.csv
+p008,908 Burns St,75662,Kilgore,Gregg,Longview,Northside,2026-02-01,,64999,3bd/2ba/1336sqft,PASS,Rental,Standard Kilgore rental inventory; fair price,properties.csv
+p009,5961 Club Dr,75644,Gilmer,Gilmer,Longview,Rural,2026-02-01,,77040,2bd/2ba/1188sqft,PASS,Distressed / Flip,Foreclosure discount; potential cosmetic flip,properties.csv
+p010,18958 County Road 356,75693,Winona,Smith,Tyler,Rural,2026-02-01,,85500,3bd/2ba/1440sqft,PASS,Foreclosure Rehab,Winona is growing; foreclosure offers spread,properties.csv
+p011,309 McDaniel St,75771,Mineola,Wood,Longview,Central,2026-02-01,,115000,4bd/2ba/1200sqft,PASS,Rental,4-bedroom in Mineola; high utility,properties.csv
+p012,220 S Chandler St,75785,Rusk,Rusk,Tyler,West,2026-02-01,,115000,2bd/2ba/1232sqft,PASS,Rental,Standard Rusk rental inventory,properties.csv
+p013,444 Geronimo,75438,Quitman,Wood,Longview,Central,2026-02-01,,140000,2bd/2ba/1016sqft,CAUTION,Verify Value,Pricey per sqft for Quitman 2/2; check comps,properties.csv
+p014,211 Blue Bird Ln,75771,Mineola,Wood,Longview,Central,2026-02-01,,148990,3bd/2ba/1202sqft,PASS,Turnkey Rental,New construction; low CapEx but lower yield,properties.csv
+p015,613 N Newsom St,75771,Mineola,Wood,Longview,Central,2026-02-01,,149000,3bd/2ba/1407sqft,PASS,Rental,Fresh on market; standard rental,properties.csv
+p016,327 Fairview St,75785,Rusk,Rusk,Tyler,West,2026-02-01,,149000,3bd/2ba/1784sqft,PASS,Rental,Good size; hot tub is a liability/maintenance risk,properties.csv
+p017,8439 Hyena Rd,75644,Gilmer,Gilmer,Longview,Rural,2026-02-01,,149900,3bd/2ba/1664sqft,PASS,Rural Rental,Water well/spring assets; rural appeal,properties.csv
+p018,233 Blue Bird Ln,75771,Mineola,Wood,Longview,Central,2026-02-01,,149990,3bd/2ba/1202sqft,PASS,Turnkey Rental,New construction; price cut; low CapEx,properties.csv
+p019,616 W Scott St,75644,Gilmer,Gilmer,Longview,Rural,2026-02-01,,Auction,3bd/2ba/2652sqft,PASS,Equity Play,Auction status; massive square footage,properties.csv

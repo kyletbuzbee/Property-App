@@ -1,11 +1,11 @@
-import { NextRequest, NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
+import { NextRequest, NextResponse } from "next/server";
+import fs from "fs";
+import path from "path";
 
 /**
  * GET /api/predictions
  * Returns BRRR predictions for properties
- * 
+ *
  * Query params:
  * - city: Filter by city
  * - minYield: Minimum gross yield threshold
@@ -14,71 +14,86 @@ import path from 'path';
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
-    const city = searchParams.get('city');
-    const minYield = searchParams.get('minYield');
-    const propertyId = searchParams.get('propertyId');
+    const city = searchParams.get("city");
+    const minYield = searchParams.get("minYield");
+    const propertyId = searchParams.get("propertyId");
 
     // Load predictions from JSON file
-    const predictionsPath = path.join(process.cwd(), '..', 'predictions_for_app.json');
-    
+    const predictionsPath = path.join(
+      process.cwd(),
+      "predictions_for_app.json",
+    );
+
     if (!fs.existsSync(predictionsPath)) {
-      return NextResponse.json({
-        success: false,
-        error: 'Predictions not available. Run predict_production.py first.'
-      }, { status: 404 });
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Predictions not available. Run predict_production.py first.",
+        },
+        { status: 404 },
+      );
     }
 
-    const predictionsData = fs.readFileSync(predictionsPath, 'utf-8');
+    const predictionsData = fs.readFileSync(predictionsPath, "utf-8");
     let predictions = JSON.parse(predictionsData);
 
     // Filter by property ID
     if (propertyId) {
-      predictions = predictions.filter((p: any) => p.property_id === propertyId);
+      predictions = predictions.filter(
+        (p: any) => p.property_id === propertyId,
+      );
       if (predictions.length === 0) {
-        return NextResponse.json({
-          success: false,
-          error: 'Property not found'
-        }, { status: 404 });
+        return NextResponse.json(
+          {
+            success: false,
+            error: "Property not found",
+          },
+          { status: 404 },
+        );
       }
       return NextResponse.json({ success: true, data: predictions[0] });
     }
 
     // Filter by city
     if (city) {
-      predictions = predictions.filter((p: any) => 
-        p.city?.toLowerCase() === city.toLowerCase()
+      predictions = predictions.filter(
+        (p: any) => p.city?.toLowerCase() === city.toLowerCase(),
       );
     }
 
     // Filter by minimum yield
     if (minYield) {
       const minYieldNum = parseFloat(minYield);
-      predictions = predictions.filter((p: any) => 
-        p.gross_yield && p.gross_yield >= minYieldNum
+      predictions = predictions.filter(
+        (p: any) => p.gross_yield && p.gross_yield >= minYieldNum,
       );
     }
 
     // Sort by yield (highest first)
-    predictions.sort((a: any, b: any) => (b.gross_yield || 0) - (a.gross_yield || 0));
+    predictions.sort(
+      (a: any, b: any) => (b.gross_yield || 0) - (a.gross_yield || 0),
+    );
 
     // Add ranking
     predictions = predictions.map((p: any, idx: number) => ({
       ...p,
-      yield_rank: idx + 1
+      yield_rank: idx + 1,
     }));
 
     return NextResponse.json({
       success: true,
       data: predictions,
-      count: predictions.length
+      count: predictions.length,
     });
-
   } catch (error) {
-    console.error('Predictions API error:', error);
-    return NextResponse.json({
-      success: false,
-      error: 'Failed to fetch predictions'
-    }, { status: 500 });
+    console.error("Predictions API error:", error);
+    return NextResponse.json(
+      {
+        success: false,
+        error: "Failed to fetch predictions",
+      },
+      { status: 500 },
+    );
   }
 }
 
@@ -93,7 +108,7 @@ export async function POST(request: NextRequest) {
 
     // Simple heuristic-based prediction for new properties
     // In production, this would call a Python model or ML service
-    
+
     let predictedRent = null;
     let predictedARV = null;
     let grossYield = null;
@@ -101,18 +116,18 @@ export async function POST(request: NextRequest) {
 
     // Rent estimation: $/sqft by city (from training data)
     const rentPerSqft: Record<string, number> = {
-      'Kilgore': 0.71,
-      'Gilmer': 0.85,
-      'Quitman': 0.55,
-      'Overton': 0.60,
-      'Mineola': 0.60,
-      'Rusk': 0.60,
-      'Winona': 0.60,
-      'Lindale': 0.60
+      Kilgore: 0.71,
+      Gilmer: 0.85,
+      Quitman: 0.55,
+      Overton: 0.6,
+      Mineola: 0.6,
+      Rusk: 0.6,
+      Winona: 0.6,
+      Lindale: 0.6,
     };
 
-    const cityKey = city || 'Unknown';
-    const rate = rentPerSqft[cityKey] || 0.60;
+    const cityKey = city || "Unknown";
+    const rate = rentPerSqft[cityKey] || 0.6;
 
     if (sqft && sqft > 0) {
       predictedRent = Math.round(sqft * rate);
@@ -139,16 +154,18 @@ export async function POST(request: NextRequest) {
       predicted_arv: predictedARV,
       gross_yield: grossYield ? Math.round(grossYield * 100) / 100 : null,
       confidence: Math.min(confidence, 1.0),
-      source: 'api_heuristic'
+      source: "api_heuristic",
     };
 
     return NextResponse.json({ success: true, data: result });
-
   } catch (error) {
-    console.error('Prediction calculation error:', error);
-    return NextResponse.json({
-      success: false,
-      error: 'Failed to calculate prediction'
-    }, { status: 500 });
+    console.error("Prediction calculation error:", error);
+    return NextResponse.json(
+      {
+        success: false,
+        error: "Failed to calculate prediction",
+      },
+      { status: 500 },
+    );
   }
 }
