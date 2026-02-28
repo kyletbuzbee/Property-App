@@ -83,6 +83,7 @@ export default function DashboardClient() {
 
   const handlePropertyClick = (property: PropertyWithCalculations) => {
     setSelectedProperty(property);
+    setCurrentView("ai");
   };
 
   const renderView = () => {
@@ -90,6 +91,8 @@ export default function DashboardClient() {
     if (loading && currentView === "table") {
       return <PropertyTableSkeleton />;
     }
+
+    const activeProperty = selectedProperty || filteredProperties[0] || null;
 
     switch (currentView) {
       case "map":
@@ -127,23 +130,23 @@ export default function DashboardClient() {
       case "expenses":
         return <ExpenseTracker budget={0} />;
       case "tasks":
-        return <TaskManager propertyId={filteredProperties[0]?.id || ""} />;
+        return <TaskManager propertyId={activeProperty?.id || ""} />;
       case "timeline":
         return <ProjectTimeline properties={filteredProperties} />;
       case "rehab":
-        return <RehabEstimator property={filteredProperties[0] || null} />;
+        return <RehabEstimator property={activeProperty} />;
       case "rentComps":
-        return <RentComps property={filteredProperties[0] || null} />;
+        return <RentComps property={activeProperty} />;
       case "comparator":
         return <PropertyComparator properties={filteredProperties} />;
       case "projections":
         return (
-          <FinancialProjections property={filteredProperties[0] || null} />
+          <FinancialProjections property={activeProperty} />
         );
       case "market":
         return <MarketAnalysis properties={filteredProperties} />;
       case "ai":
-        return <AIDealScoring properties={filteredProperties} />;
+        return <AIDealScoring properties={filteredProperties} selectedPropertyId={selectedProperty?.id} onSelectProperty={(p) => setSelectedProperty(p)} />;
       case "export":
         return <ExportReports properties={filteredProperties} />;
       case "collaboration":

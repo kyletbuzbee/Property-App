@@ -85,8 +85,8 @@ const SortableCard = ({
       style={style}
       onClick={onSelect}
       className={clsx(
-        "kanban-card bg-dark-800 border border-dark-600 rounded-lg p-3 cursor-grab active:cursor-grabbing transition-all",
-        selected && "ring-2 ring-primary-500",
+        "bg-white border border-slate-200 rounded-sm p-3 cursor-grab active:cursor-grabbing transition-all shadow-sm",
+        selected && "ring-1 ring-primary-500 border-primary-500",
       )}
       {...attributes}
       {...listeners}
@@ -94,53 +94,42 @@ const SortableCard = ({
       {/* Card Header */}
       <div className="flex items-start justify-between mb-2">
         <div className="flex-1 min-w-0">
-          <div className="text-sm font-medium text-white truncate">
+          <div className="text-[13px] font-bold text-slate-900 truncate tracking-tight">
             {property.address}
           </div>
-          <div className="text-xs text-dark-400">
-            {property.city}, {property.state}
+          <div className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">
+            {property.city}
           </div>
         </div>
-        <span
-          className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider"
-          style={{
-            backgroundColor: `${getDecisionColor(property.decision as any)}20`,
-            color: getDecisionColor(property.decision as any),
-          }}
-        >
+        <span className={clsx("decision-badge", 
+          property.decision === "PASS" ? "decision-platinum" : 
+          property.decision === "CAUTION" ? "decision-caution" : "decision-hardfail"
+        )}>
           {property.decision}
         </span>
       </div>
 
       {/* Key Metrics */}
-      <div className="grid grid-cols-2 gap-2 text-xs mb-2">
-        <div>
-          <span className="text-dark-400 font-bold uppercase text-[9px]">
-            Price:{" "}
-          </span>
-          <span className="text-emerald-400 font-medium">
+      <div className="grid grid-cols-2 gap-x-2 gap-y-1 text-[11px] mb-2 border-t border-slate-50 pt-2">
+        <div className="flex justify-between">
+          <span className="text-slate-400 font-medium uppercase text-[9px]">Price:</span>
+          <span className="text-slate-900 font-mono font-bold tabular-nums">
             ${property.listPrice.toLocaleString()}
           </span>
         </div>
-        <div>
-          <span className="text-dark-400 font-bold uppercase text-[9px]">
-            MAO 50k:{" "}
-          </span>
-          <span className="text-blue-400 font-medium">
+        <div className="flex justify-between">
+          <span className="text-slate-400 font-medium uppercase text-[9px]">MAO:</span>
+          <span className="text-info font-mono font-bold tabular-nums">
             ${property.mao50k.toLocaleString()}
           </span>
         </div>
-        <div>
-          <span className="text-dark-400 font-bold uppercase text-[9px]">
-            SqFt:{" "}
-          </span>
-          <span>{property.sqft.toLocaleString()}</span>
+        <div className="flex justify-between">
+          <span className="text-slate-400 font-medium uppercase text-[9px]">SqFt:</span>
+          <span className="font-mono tabular-nums">{property.sqft.toLocaleString()}</span>
         </div>
-        <div>
-          <span className="text-dark-400 font-bold uppercase text-[9px]">
-            ARV:{" "}
-          </span>
-          <span className="text-primary-400">
+        <div className="flex justify-between">
+          <span className="text-slate-400 font-medium uppercase text-[9px]">ARV:</span>
+          <span className="text-primary-600 font-mono font-bold tabular-nums">
             ${property.afterRepairValue.toLocaleString()}
           </span>
         </div>
@@ -148,19 +137,22 @@ const SortableCard = ({
 
       {/* Expanded Details */}
       {selected && (
-        <div className="mt-3 pt-3 border-t border-dark-600 animate-fade-in">
-          <div className="text-[10px] text-dark-300 mb-2 line-clamp-3 italic">
-            "{property.rationale.split("\n")[0]}"
+        <div className="mt-2 pt-2 border-t border-slate-100 animate-fade-in">
+          <div className="text-[10px] text-slate-500 mb-2 line-clamp-2 italic leading-relaxed">
+            &ldquo;{property.rationale.split("\n")[0]}&rdquo;
           </div>
-          <a
-            href={property.url ?? "#"}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[10px] font-bold uppercase tracking-widest text-primary-400 hover:text-primary-300"
-            onClick={(e) => e.stopPropagation()}
-          >
-            Open on Zillow →
-          </a>
+          <div className="flex justify-between items-center">
+            <span className="text-[10px] font-bold text-success tabular-nums">+${property.equityGap.toLocaleString()} Equity</span>
+            <a
+              href={property.url ?? "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[9px] font-bold uppercase tracking-widest text-primary-600 hover:text-primary-700 underline"
+              onClick={(e) => e.stopPropagation()}
+            >
+              Listing Details
+            </a>
+          </div>
         </div>
       )}
     </div>
@@ -226,19 +218,19 @@ export default function StrategyKanban({
     }
 
     if (sourceColumn === destColumn) {
-      const sourceItems = [...(groupedProperties[sourceColumn!] ?? [])];
+      const sourceItems: PropertyWithCalculations[] = [...(groupedProperties[sourceColumn] ?? [])];
       const activeIndex = sourceItems.findIndex((p) => p.id === active.id);
       const overIndex = sourceItems.findIndex((p) => p.id === over.id);
       if (activeIndex !== overIndex) {
         const reordered = arrayMove(sourceItems, activeIndex, overIndex);
         setGroupedProperties((prev) => ({
           ...prev,
-          [sourceColumn!]: reordered,
+          [sourceColumn as string]: reordered,
         }));
       }
     } else if (destColumn) {
-      const sourceItems = [...(groupedProperties[sourceColumn!] ?? [])];
-      const destItems = [...(groupedProperties[destColumn] ?? [])];
+      const sourceItems: PropertyWithCalculations[] = [...(groupedProperties[sourceColumn] ?? [])];
+      const destItems: PropertyWithCalculations[] = [...(groupedProperties[destColumn] ?? [])];
       const activeIndex = sourceItems.findIndex((p) => p.id === active.id);
       if (activeIndex !== -1) {
         const [movedProperty] = sourceItems.splice(activeIndex, 1);
@@ -255,8 +247,8 @@ export default function StrategyKanban({
         }
         setGroupedProperties((prev) => ({
           ...prev,
-          [sourceColumn!]: sourceItems,
-          [destColumn]: destItems,
+          [sourceColumn as string]: sourceItems,
+          [destColumn as string]: destItems,
         }));
       }
     }
@@ -292,40 +284,42 @@ export default function StrategyKanban({
             return (
               <div
                 key={strategy}
-                className="bg-dark-800 rounded-lg p-3 border border-dark-700"
+                className="bento-card"
                 style={{ borderLeftColor: color, borderLeftWidth: 3 }}
               >
                 <div className="flex items-center gap-2 mb-1">
-                  <span>{icon}</span>
-                  <span className="text-xs font-bold uppercase tracking-wider text-dark-300">
+                  <span className="text-sm">{icon}</span>
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500">
                     {label}
                   </span>
                 </div>
-                <div className="text-lg font-black text-white">
-                  {props.length}
-                </div>
-                <div className="text-xs text-emerald-400">
-                  ${totalEquity.toLocaleString()} equity
+                <div className="flex items-baseline gap-2">
+                  <div className="text-2xl font-black text-slate-900 tabular-nums">
+                    {props.length}
+                  </div>
+                  <div className="text-[11px] font-bold text-success tabular-nums">
+                    +${totalEquity.toLocaleString()} Equity
+                  </div>
                 </div>
               </div>
             );
           })}
         </div>
 
-        <div className="bg-dark-900 border border-dark-800 p-4 mb-4 rounded-lg flex items-center justify-between">
+        <div className="bento-card py-4 mb-4 flex items-center justify-between border-t-4 border-t-primary-600">
           <div>
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-dark-500 mb-1">
-              Total Pipeline Equity
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 mb-1">
+              Total Pipeline Potential
             </p>
-            <p className="text-2xl font-black text-white">
+            <p className="text-3xl font-black text-slate-900 tabular-nums">
               ${totalEquityGap.toLocaleString()}
             </p>
           </div>
           <div className="text-right">
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-dark-500 mb-1">
-              Properties
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 mb-1">
+              Active Deal Flow
             </p>
-            <p className="text-2xl font-black text-primary-500">
+            <p className="text-3xl font-black text-primary-600 tabular-nums">
               {Object.values(groupedProperties).flat().length}
             </p>
           </div>
@@ -338,33 +332,31 @@ export default function StrategyKanban({
               return (
                 <div
                   key={strategy}
-                  className="kanban-column flex-shrink-0 w-80"
-                  style={{ borderTopColor: color, borderTopWidth: 3 }}
+                  className="flex flex-col flex-shrink-0 w-80 bg-slate-50/50 rounded-sm border border-slate-200 shadow-inner p-2"
                 >
-                  <div className="flex items-center justify-between mb-3 pb-2 border-b border-dark-700 p-2">
+                  <div className="flex items-center justify-between mb-3 pb-2 border-b border-slate-200 p-2">
                     <div className="flex items-center gap-2">
-                      <span className="text-lg">{icon}</span>
-                      <span className="font-black text-white uppercase tracking-widest text-xs">
+                      <span className="text-base">{icon}</span>
+                      <span className="font-bold text-slate-900 uppercase tracking-widest text-[11px]">
                         {label}
                       </span>
                     </div>
                     <span
-                      className="px-2 py-0.5 rounded-full text-xs font-black"
-                      style={{ backgroundColor: `${color}30`, color }}
+                      className="px-2 py-0.5 rounded-full text-[10px] font-black bg-white border border-slate-200 text-slate-600"
                     >
                       {columnProperties.length}
                     </span>
                   </div>
                   <div
                     id={`column-${strategy}`}
-                    className="space-y-3 max-h-[calc(100vh-400px)] overflow-y-auto p-2"
+                    className="space-y-3 max-h-[calc(100vh-450px)] overflow-y-auto p-1"
                   >
                     <SortableContext
                       items={columnProperties.map((p) => p.id)}
                       strategy={rectSortingStrategy}
                     >
                       {columnProperties.length === 0 ? (
-                        <div className="text-center py-12 text-dark-600 uppercase text-[10px] font-black tracking-widest">
+                        <div className="text-center py-12 text-slate-400 uppercase text-[9px] font-bold tracking-widest border-2 border-dashed border-slate-200 rounded-sm">
                           No Active Deals
                         </div>
                       ) : (

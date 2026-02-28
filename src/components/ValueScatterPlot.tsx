@@ -56,29 +56,23 @@ export default function ValueScatterPlot({
     if (active && payload && payload.length) {
       const data = payload[0].payload.original;
       return (
-        <div className="bg-dark-900 border border-dark-700 p-4 rounded-sm shadow-2xl font-sans">
-          <p className="text-[10px] font-black text-white uppercase mb-2 tracking-widest">
+        <div className="bg-white border border-slate-200 p-3 rounded-sm shadow-xl font-sans">
+          <p className="text-[11px] font-bold text-slate-900 uppercase mb-2 tracking-tight">
             {data.address}
           </p>
-          <div className="space-y-1">
-            <p className="text-[10px] text-dark-400 uppercase font-bold">
-              List:{" "}
-              <span className="text-white">
-                ${data.listPrice.toLocaleString()}
-              </span>
-            </p>
-            <p className="text-[10px] text-dark-400 uppercase font-bold">
-              ARV:{" "}
-              <span className="text-white">
-                ${data.afterRepairValue.toLocaleString()}
-              </span>
-            </p>
-            <p className="text-[10px] text-dark-400 uppercase font-bold">
-              MAO 50k:{" "}
-              <span className="text-emerald-400">
-                ${data.mao50k.toLocaleString()}
-              </span>
-            </p>
+          <div className="space-y-1.5 border-t border-slate-50 pt-2">
+            <div className="flex justify-between gap-4">
+              <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider">List Price</span>
+              <span className="text-[10px] text-slate-900 font-mono font-bold">${data.listPrice.toLocaleString()}</span>
+            </div>
+            <div className="flex justify-between gap-4">
+              <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Target ARV</span>
+              <span className="text-[10px] text-slate-900 font-mono font-bold">${data.afterRepairValue.toLocaleString()}</span>
+            </div>
+            <div className="flex justify-between gap-4">
+              <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider">MAO 50k</span>
+              <span className="text-[10px] text-info font-mono font-bold">${data.mao50k.toLocaleString()}</span>
+            </div>
           </div>
         </div>
       );
@@ -87,26 +81,27 @@ export default function ValueScatterPlot({
   };
 
   return (
-    <div className="w-full h-full flex flex-col bg-dark-950 p-6 rounded-sm border border-dark-800">
+    <div className="w-full h-full flex flex-col bg-white p-6 rounded-sm border border-slate-200 shadow-sm">
       <div className="flex justify-between items-center mb-8">
         <div>
-          <h2 className="text-xs font-black text-white uppercase tracking-[0.3em] mb-1">
-            Market Position Analysis
+          <h2 className="text-[11px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-1">
+            Institutional Market Positioning
           </h2>
-          <p className="text-[10px] text-dark-500 font-bold uppercase tracking-widest">
-            List Price vs Target ARV
+          <p className="text-xl font-black text-slate-900 tracking-tight">
+            List Price vs Target ARV Correlation
           </p>
         </div>
-        <div className="flex gap-2">
+        <div className="flex gap-1.5">
           {filterOptions.map((opt) => (
             <button
               key={opt.value}
               onClick={() => setFilter(opt.value)}
-              className={`px-3 py-1 rounded-sm text-[9px] font-black uppercase tracking-tighter transition-all ${
+              className={clsx(
+                "px-3 py-1 rounded-sm text-[9px] font-bold uppercase tracking-wider transition-all border",
                 filter === opt.value
-                  ? "bg-white text-dark-950"
-                  : "bg-dark-800 text-dark-400 hover:text-white"
-              }`}
+                  ? "bg-slate-900 text-white border-slate-900 shadow-sm"
+                  : "bg-white text-slate-500 border-slate-200 hover:border-slate-300"
+              )}
             >
               {opt.label}
             </button>
@@ -122,16 +117,17 @@ export default function ValueScatterPlot({
               dataKey="x"
               name="List Price"
               unit="$"
-              stroke="#475569"
+              stroke="#94a3b8"
               fontSize={10}
               tickFormatter={(v) => `$${v / 1000}k`}
               label={{
                 value: "LIST PRICE",
                 position: "bottom",
                 offset: 0,
-                fill: "#475569",
+                fill: "#94a3b8",
                 fontSize: 9,
-                fontWeight: 900,
+                fontWeight: 700,
+                letterSpacing: "0.1em"
               }}
             />
             <YAxis
@@ -139,16 +135,17 @@ export default function ValueScatterPlot({
               dataKey="y"
               name="ARV"
               unit="$"
-              stroke="#475569"
+              stroke="#94a3b8"
               fontSize={10}
               tickFormatter={(v) => `$${v / 1000}k`}
               label={{
                 value: "TARGET ARV",
                 angle: -90,
                 position: "left",
-                fill: "#475569",
+                fill: "#94a3b8",
                 fontSize: 9,
-                fontWeight: 900,
+                fontWeight: 700,
+                letterSpacing: "0.1em"
               }}
             />
             <ZAxis type="number" dataKey="z" range={[50, 400]} name="MAO" />
@@ -158,20 +155,22 @@ export default function ValueScatterPlot({
                 { x: 0, y: 0 },
                 { x: 500000, y: 500000 },
               ]}
-              stroke="#1e293b"
+              stroke="#e2e8f0"
               strokeDasharray="3 3"
             />
             <Scatter
               name="Properties"
               data={chartData}
               onClick={(data) => onPropertyClick?.(data.original)}
+              cursor="pointer"
             >
               {chartData.map((entry, index) => (
                 <Cell
                   key={`cell-${index}`}
                   fill={entry.color}
-                  strokeWidth={2}
-                  stroke={`${entry.color}40`}
+                  strokeWidth={1}
+                  stroke="rgba(255,255,255,0.8)"
+                  fillOpacity={0.7}
                 />
               ))}
             </Scatter>

@@ -14,12 +14,24 @@ import {
 
 interface AIDealScoringProps {
   properties: PropertyWithCalculations[];
+  selectedPropertyId?: string | null;
+  onSelectProperty?: (property: PropertyWithCalculations) => void;
 }
 
-export default function AIDealScoring({ properties }: AIDealScoringProps) {
-  const [selectedId, setSelectedId] = useState<string | null>(
+export default function AIDealScoring({ properties, selectedPropertyId, onSelectProperty }: AIDealScoringProps) {
+  const [internalSelectedId, setInternalSelectedId] = useState<string | null>(
     properties.length > 0 ? properties[0].id : null
   );
+
+  const selectedId = selectedPropertyId !== undefined ? selectedPropertyId : internalSelectedId;
+
+  const handleSelect = (property: PropertyWithCalculations) => {
+    if (onSelectProperty) {
+      onSelectProperty(property);
+    } else {
+      setInternalSelectedId(property.id);
+    }
+  };
 
   const selectedProperty = useMemo(() => 
     properties.find(p => p.id === selectedId) || properties[0],
@@ -58,7 +70,7 @@ export default function AIDealScoring({ properties }: AIDealScoringProps) {
         {properties.map((p) => (
           <button
             key={p.id}
-            onClick={() => setSelectedId(p.id)}
+            onClick={() => handleSelect(p)}
             className={clsx(
               "flex flex-col p-3 rounded-sm border transition-all text-left",
               selectedId === p.id

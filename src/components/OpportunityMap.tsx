@@ -77,21 +77,22 @@ export default function OpportunityMap({
   };
 
   return (
-    <div className="w-full h-full flex flex-col bg-dark-950 rounded-sm border border-dark-800 overflow-hidden">
-      <div className="p-4 bg-dark-900 border-b border-dark-800 flex justify-between items-center">
-        <h2 className="text-[10px] font-black text-white uppercase tracking-[0.2em]">
-          Regional Opportunity Map
+    <div className="w-full h-full flex flex-col bg-white rounded-sm border border-slate-200 overflow-hidden shadow-sm">
+      <div className="p-4 bg-slate-50 border-b border-slate-200 flex justify-between items-center">
+        <h2 className="text-[11px] font-bold text-slate-400 uppercase tracking-[0.2em]">
+          Institutional Geographic Deal Distribution
         </h2>
-        <div className="flex gap-2">
+        <div className="flex gap-1.5">
           {filterOptions.map((opt) => (
             <button
               key={opt.value}
               onClick={() => setFilter(opt.value)}
-              className={`px-2 py-1 rounded-sm text-[8px] font-black uppercase tracking-tighter transition-all ${
+              className={clsx(
+                "px-3 py-1 rounded-sm text-[9px] font-bold uppercase tracking-wider transition-all border",
                 filter === opt.value
-                  ? "bg-white text-dark-950"
-                  : "bg-dark-800 text-dark-400"
-              }`}
+                  ? "bg-slate-900 text-white border-slate-900 shadow-sm"
+                  : "bg-white text-slate-500 border-slate-200 hover:border-slate-300"
+              )}
             >
               {opt.label}
             </button>
@@ -108,7 +109,7 @@ export default function OpportunityMap({
         >
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-            url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+            url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
           />
           <ChangeView center={center} zoom={zoom} />
           {filteredProperties.map((property) => (
@@ -116,22 +117,27 @@ export default function OpportunityMap({
               key={property.id}
               position={[property.lat, property.lng]}
               icon={getMarkerIcon(property.decision)}
-              eventHandlers={{ click: () => onPropertyClick?.(property) }}
             >
-              <Popup className="custom-popup">
-                <div className="p-2 font-sans">
-                  <p className="font-black text-dark-950 uppercase text-[10px] mb-1">
+              <Popup className="institutional-popup">
+                <div className="p-1 font-sans min-w-[180px]">
+                  <p className="font-bold text-slate-900 uppercase text-[11px] mb-1 tracking-tight">
                     {property.address}
                   </p>
-                  <p className="text-[10px] font-bold text-dark-600 mb-2">
-                    ${property.listPrice.toLocaleString()} • $
-                    {property.mao50k.toLocaleString()} MAO
-                  </p>
+                  <div className="flex flex-col gap-1 mb-3">
+                    <div className="flex justify-between text-[10px] text-slate-500 font-medium">
+                      <span>List Price</span>
+                      <span className="font-mono font-bold text-slate-900">${property.listPrice.toLocaleString()}</span>
+                    </div>
+                    <div className="flex justify-between text-[10px] text-slate-500 font-medium">
+                      <span>Target MAO</span>
+                      <span className="font-mono font-bold text-info">${property.mao50k.toLocaleString()}</span>
+                    </div>
+                  </div>
                   <button
                     onClick={() => onPropertyClick?.(property)}
-                    className="w-full py-1 bg-dark-950 text-white text-[8px] font-black uppercase tracking-widest rounded-sm"
+                    className="w-full py-1.5 bg-primary-600 text-white text-[9px] font-bold uppercase tracking-widest rounded-sm shadow-sm hover:bg-primary-700 transition-colors"
                   >
-                    View Analysis
+                    View Audit Report
                   </button>
                 </div>
               </Popup>
