@@ -111,6 +111,7 @@ export type PropertyMinAggregateOutputType = {
   updatedAt: Date | null
   organizationId: string | null
   ownerId: string | null
+  status: $Enums.PropertyStatus | null
   propertyStatus: $Enums.PropertyStatus | null
   yearBuilt: number | null
   buildiumId: string | null
@@ -159,6 +160,7 @@ export type PropertyMaxAggregateOutputType = {
   updatedAt: Date | null
   organizationId: string | null
   ownerId: string | null
+  status: $Enums.PropertyStatus | null
   propertyStatus: $Enums.PropertyStatus | null
   yearBuilt: number | null
   buildiumId: string | null
@@ -208,6 +210,7 @@ export type PropertyCountAggregateOutputType = {
   updatedAt: number
   organizationId: number
   ownerId: number
+  status: number
   propertyStatus: number
   yearBuilt: number
   buildiumId: number
@@ -300,6 +303,7 @@ export type PropertyMinAggregateInputType = {
   updatedAt?: true
   organizationId?: true
   ownerId?: true
+  status?: true
   propertyStatus?: true
   yearBuilt?: true
   buildiumId?: true
@@ -348,6 +352,7 @@ export type PropertyMaxAggregateInputType = {
   updatedAt?: true
   organizationId?: true
   ownerId?: true
+  status?: true
   propertyStatus?: true
   yearBuilt?: true
   buildiumId?: true
@@ -397,6 +402,7 @@ export type PropertyCountAggregateInputType = {
   updatedAt?: true
   organizationId?: true
   ownerId?: true
+  status?: true
   propertyStatus?: true
   yearBuilt?: true
   buildiumId?: true
@@ -533,6 +539,7 @@ export type PropertyGroupByOutputType = {
   updatedAt: Date
   organizationId: string | null
   ownerId: string | null
+  status: $Enums.PropertyStatus
   propertyStatus: $Enums.PropertyStatus
   yearBuilt: number | null
   buildiumId: string | null
@@ -605,6 +612,7 @@ export type PropertyWhereInput = {
   updatedAt?: Prisma.DateTimeFilter<"Property"> | Date | string
   organizationId?: Prisma.StringNullableFilter<"Property"> | string | null
   ownerId?: Prisma.StringNullableFilter<"Property"> | string | null
+  status?: Prisma.EnumPropertyStatusFilter<"Property"> | $Enums.PropertyStatus
   propertyStatus?: Prisma.EnumPropertyStatusFilter<"Property"> | $Enums.PropertyStatus
   yearBuilt?: Prisma.IntNullableFilter<"Property"> | number | null
   buildiumId?: Prisma.StringNullableFilter<"Property"> | string | null
@@ -663,6 +671,7 @@ export type PropertyOrderByWithRelationInput = {
   updatedAt?: Prisma.SortOrder
   organizationId?: Prisma.SortOrderInput | Prisma.SortOrder
   ownerId?: Prisma.SortOrderInput | Prisma.SortOrder
+  status?: Prisma.SortOrder
   propertyStatus?: Prisma.SortOrder
   yearBuilt?: Prisma.SortOrderInput | Prisma.SortOrder
   buildiumId?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -725,6 +734,7 @@ export type PropertyWhereUniqueInput = Prisma.AtLeast<{
   updatedAt?: Prisma.DateTimeFilter<"Property"> | Date | string
   organizationId?: Prisma.StringNullableFilter<"Property"> | string | null
   ownerId?: Prisma.StringNullableFilter<"Property"> | string | null
+  status?: Prisma.EnumPropertyStatusFilter<"Property"> | $Enums.PropertyStatus
   propertyStatus?: Prisma.EnumPropertyStatusFilter<"Property"> | $Enums.PropertyStatus
   yearBuilt?: Prisma.IntNullableFilter<"Property"> | number | null
   organization?: Prisma.XOR<Prisma.OrganizationNullableScalarRelationFilter, Prisma.OrganizationWhereInput> | null
@@ -782,6 +792,7 @@ export type PropertyOrderByWithAggregationInput = {
   updatedAt?: Prisma.SortOrder
   organizationId?: Prisma.SortOrderInput | Prisma.SortOrder
   ownerId?: Prisma.SortOrderInput | Prisma.SortOrder
+  status?: Prisma.SortOrder
   propertyStatus?: Prisma.SortOrder
   yearBuilt?: Prisma.SortOrderInput | Prisma.SortOrder
   buildiumId?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -839,6 +850,7 @@ export type PropertyScalarWhereWithAggregatesInput = {
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Property"> | Date | string
   organizationId?: Prisma.StringNullableWithAggregatesFilter<"Property"> | string | null
   ownerId?: Prisma.StringNullableWithAggregatesFilter<"Property"> | string | null
+  status?: Prisma.EnumPropertyStatusWithAggregatesFilter<"Property"> | $Enums.PropertyStatus
   propertyStatus?: Prisma.EnumPropertyStatusWithAggregatesFilter<"Property"> | $Enums.PropertyStatus
   yearBuilt?: Prisma.IntNullableWithAggregatesFilter<"Property"> | number | null
   buildiumId?: Prisma.StringNullableWithAggregatesFilter<"Property"> | string | null
@@ -886,6 +898,7 @@ export type PropertyCreateInput = {
   arvSource?: string
   createdAt?: Date | string
   updatedAt?: Date | string
+  status?: $Enums.PropertyStatus
   propertyStatus?: $Enums.PropertyStatus
   yearBuilt?: number | null
   buildiumId?: string | null
@@ -944,6 +957,7 @@ export type PropertyUncheckedCreateInput = {
   updatedAt?: Date | string
   organizationId?: string | null
   ownerId?: string | null
+  status?: $Enums.PropertyStatus
   propertyStatus?: $Enums.PropertyStatus
   yearBuilt?: number | null
   buildiumId?: string | null
@@ -998,6 +1012,7 @@ export type PropertyUpdateInput = {
   arvSource?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   propertyStatus?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   yearBuilt?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   buildiumId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1056,6 +1071,7 @@ export type PropertyUncheckedUpdateInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   organizationId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   ownerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   propertyStatus?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   yearBuilt?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   buildiumId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1112,6 +1128,7 @@ export type PropertyCreateManyInput = {
   updatedAt?: Date | string
   organizationId?: string | null
   ownerId?: string | null
+  status?: $Enums.PropertyStatus
   propertyStatus?: $Enums.PropertyStatus
   yearBuilt?: number | null
   buildiumId?: string | null
@@ -1159,6 +1176,7 @@ export type PropertyUpdateManyMutationInput = {
   arvSource?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   propertyStatus?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   yearBuilt?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   buildiumId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1208,6 +1226,7 @@ export type PropertyUncheckedUpdateManyInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   organizationId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   ownerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   propertyStatus?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   yearBuilt?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   buildiumId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1265,6 +1284,7 @@ export type PropertyCountOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
   organizationId?: Prisma.SortOrder
   ownerId?: Prisma.SortOrder
+  status?: Prisma.SortOrder
   propertyStatus?: Prisma.SortOrder
   yearBuilt?: Prisma.SortOrder
   buildiumId?: Prisma.SortOrder
@@ -1334,6 +1354,7 @@ export type PropertyMaxOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
   organizationId?: Prisma.SortOrder
   ownerId?: Prisma.SortOrder
+  status?: Prisma.SortOrder
   propertyStatus?: Prisma.SortOrder
   yearBuilt?: Prisma.SortOrder
   buildiumId?: Prisma.SortOrder
@@ -1382,6 +1403,7 @@ export type PropertyMinOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
   organizationId?: Prisma.SortOrder
   ownerId?: Prisma.SortOrder
+  status?: Prisma.SortOrder
   propertyStatus?: Prisma.SortOrder
   yearBuilt?: Prisma.SortOrder
   buildiumId?: Prisma.SortOrder
@@ -1711,6 +1733,7 @@ export type PropertyCreateWithoutTasksInput = {
   arvSource?: string
   createdAt?: Date | string
   updatedAt?: Date | string
+  status?: $Enums.PropertyStatus
   propertyStatus?: $Enums.PropertyStatus
   yearBuilt?: number | null
   buildiumId?: string | null
@@ -1768,6 +1791,7 @@ export type PropertyUncheckedCreateWithoutTasksInput = {
   updatedAt?: Date | string
   organizationId?: string | null
   ownerId?: string | null
+  status?: $Enums.PropertyStatus
   propertyStatus?: $Enums.PropertyStatus
   yearBuilt?: number | null
   buildiumId?: string | null
@@ -1837,6 +1861,7 @@ export type PropertyUpdateWithoutTasksInput = {
   arvSource?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   propertyStatus?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   yearBuilt?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   buildiumId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1894,6 +1919,7 @@ export type PropertyUncheckedUpdateWithoutTasksInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   organizationId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   ownerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   propertyStatus?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   yearBuilt?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   buildiumId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1947,6 +1973,7 @@ export type PropertyCreateWithoutRehabItemsInput = {
   arvSource?: string
   createdAt?: Date | string
   updatedAt?: Date | string
+  status?: $Enums.PropertyStatus
   propertyStatus?: $Enums.PropertyStatus
   yearBuilt?: number | null
   buildiumId?: string | null
@@ -2004,6 +2031,7 @@ export type PropertyUncheckedCreateWithoutRehabItemsInput = {
   updatedAt?: Date | string
   organizationId?: string | null
   ownerId?: string | null
+  status?: $Enums.PropertyStatus
   propertyStatus?: $Enums.PropertyStatus
   yearBuilt?: number | null
   buildiumId?: string | null
@@ -2073,6 +2101,7 @@ export type PropertyUpdateWithoutRehabItemsInput = {
   arvSource?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   propertyStatus?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   yearBuilt?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   buildiumId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -2130,6 +2159,7 @@ export type PropertyUncheckedUpdateWithoutRehabItemsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   organizationId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   ownerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   propertyStatus?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   yearBuilt?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   buildiumId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -2183,6 +2213,7 @@ export type PropertyCreateWithoutMarketDataInput = {
   arvSource?: string
   createdAt?: Date | string
   updatedAt?: Date | string
+  status?: $Enums.PropertyStatus
   propertyStatus?: $Enums.PropertyStatus
   yearBuilt?: number | null
   buildiumId?: string | null
@@ -2240,6 +2271,7 @@ export type PropertyUncheckedCreateWithoutMarketDataInput = {
   updatedAt?: Date | string
   organizationId?: string | null
   ownerId?: string | null
+  status?: $Enums.PropertyStatus
   propertyStatus?: $Enums.PropertyStatus
   yearBuilt?: number | null
   buildiumId?: string | null
@@ -2309,6 +2341,7 @@ export type PropertyUpdateWithoutMarketDataInput = {
   arvSource?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   propertyStatus?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   yearBuilt?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   buildiumId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -2366,6 +2399,7 @@ export type PropertyUncheckedUpdateWithoutMarketDataInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   organizationId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   ownerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   propertyStatus?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   yearBuilt?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   buildiumId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -2419,6 +2453,7 @@ export type PropertyCreateWithoutTimelineEventsInput = {
   arvSource?: string
   createdAt?: Date | string
   updatedAt?: Date | string
+  status?: $Enums.PropertyStatus
   propertyStatus?: $Enums.PropertyStatus
   yearBuilt?: number | null
   buildiumId?: string | null
@@ -2476,6 +2511,7 @@ export type PropertyUncheckedCreateWithoutTimelineEventsInput = {
   updatedAt?: Date | string
   organizationId?: string | null
   ownerId?: string | null
+  status?: $Enums.PropertyStatus
   propertyStatus?: $Enums.PropertyStatus
   yearBuilt?: number | null
   buildiumId?: string | null
@@ -2545,6 +2581,7 @@ export type PropertyUpdateWithoutTimelineEventsInput = {
   arvSource?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   propertyStatus?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   yearBuilt?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   buildiumId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -2602,6 +2639,7 @@ export type PropertyUncheckedUpdateWithoutTimelineEventsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   organizationId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   ownerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   propertyStatus?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   yearBuilt?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   buildiumId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -2655,6 +2693,7 @@ export type PropertyCreateWithoutCommentsInput = {
   arvSource?: string
   createdAt?: Date | string
   updatedAt?: Date | string
+  status?: $Enums.PropertyStatus
   propertyStatus?: $Enums.PropertyStatus
   yearBuilt?: number | null
   buildiumId?: string | null
@@ -2712,6 +2751,7 @@ export type PropertyUncheckedCreateWithoutCommentsInput = {
   updatedAt?: Date | string
   organizationId?: string | null
   ownerId?: string | null
+  status?: $Enums.PropertyStatus
   propertyStatus?: $Enums.PropertyStatus
   yearBuilt?: number | null
   buildiumId?: string | null
@@ -2781,6 +2821,7 @@ export type PropertyUpdateWithoutCommentsInput = {
   arvSource?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   propertyStatus?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   yearBuilt?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   buildiumId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -2838,6 +2879,7 @@ export type PropertyUncheckedUpdateWithoutCommentsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   organizationId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   ownerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   propertyStatus?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   yearBuilt?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   buildiumId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -2891,6 +2933,7 @@ export type PropertyCreateWithoutDocumentsInput = {
   arvSource?: string
   createdAt?: Date | string
   updatedAt?: Date | string
+  status?: $Enums.PropertyStatus
   propertyStatus?: $Enums.PropertyStatus
   yearBuilt?: number | null
   buildiumId?: string | null
@@ -2948,6 +2991,7 @@ export type PropertyUncheckedCreateWithoutDocumentsInput = {
   updatedAt?: Date | string
   organizationId?: string | null
   ownerId?: string | null
+  status?: $Enums.PropertyStatus
   propertyStatus?: $Enums.PropertyStatus
   yearBuilt?: number | null
   buildiumId?: string | null
@@ -3017,6 +3061,7 @@ export type PropertyUpdateWithoutDocumentsInput = {
   arvSource?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   propertyStatus?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   yearBuilt?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   buildiumId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -3074,6 +3119,7 @@ export type PropertyUncheckedUpdateWithoutDocumentsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   organizationId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   ownerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   propertyStatus?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   yearBuilt?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   buildiumId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -3127,6 +3173,7 @@ export type PropertyCreateWithoutOrganizationInput = {
   arvSource?: string
   createdAt?: Date | string
   updatedAt?: Date | string
+  status?: $Enums.PropertyStatus
   propertyStatus?: $Enums.PropertyStatus
   yearBuilt?: number | null
   buildiumId?: string | null
@@ -3183,6 +3230,7 @@ export type PropertyUncheckedCreateWithoutOrganizationInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   ownerId?: string | null
+  status?: $Enums.PropertyStatus
   propertyStatus?: $Enums.PropertyStatus
   yearBuilt?: number | null
   buildiumId?: string | null
@@ -3268,6 +3316,7 @@ export type PropertyScalarWhereInput = {
   updatedAt?: Prisma.DateTimeFilter<"Property"> | Date | string
   organizationId?: Prisma.StringNullableFilter<"Property"> | string | null
   ownerId?: Prisma.StringNullableFilter<"Property"> | string | null
+  status?: Prisma.EnumPropertyStatusFilter<"Property"> | $Enums.PropertyStatus
   propertyStatus?: Prisma.EnumPropertyStatusFilter<"Property"> | $Enums.PropertyStatus
   yearBuilt?: Prisma.IntNullableFilter<"Property"> | number | null
   buildiumId?: Prisma.StringNullableFilter<"Property"> | string | null
@@ -3315,6 +3364,7 @@ export type PropertyCreateWithoutOwnerInput = {
   arvSource?: string
   createdAt?: Date | string
   updatedAt?: Date | string
+  status?: $Enums.PropertyStatus
   propertyStatus?: $Enums.PropertyStatus
   yearBuilt?: number | null
   buildiumId?: string | null
@@ -3371,6 +3421,7 @@ export type PropertyUncheckedCreateWithoutOwnerInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   organizationId?: string | null
+  status?: $Enums.PropertyStatus
   propertyStatus?: $Enums.PropertyStatus
   yearBuilt?: number | null
   buildiumId?: string | null
@@ -3451,6 +3502,7 @@ export type PropertyCreateWithoutTransactionsInput = {
   arvSource?: string
   createdAt?: Date | string
   updatedAt?: Date | string
+  status?: $Enums.PropertyStatus
   propertyStatus?: $Enums.PropertyStatus
   yearBuilt?: number | null
   buildiumId?: string | null
@@ -3508,6 +3560,7 @@ export type PropertyUncheckedCreateWithoutTransactionsInput = {
   updatedAt?: Date | string
   organizationId?: string | null
   ownerId?: string | null
+  status?: $Enums.PropertyStatus
   propertyStatus?: $Enums.PropertyStatus
   yearBuilt?: number | null
   buildiumId?: string | null
@@ -3577,6 +3630,7 @@ export type PropertyUpdateWithoutTransactionsInput = {
   arvSource?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   propertyStatus?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   yearBuilt?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   buildiumId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -3634,6 +3688,7 @@ export type PropertyUncheckedUpdateWithoutTransactionsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   organizationId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   ownerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   propertyStatus?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   yearBuilt?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   buildiumId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -3688,6 +3743,7 @@ export type PropertyCreateManyOrganizationInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   ownerId?: string | null
+  status?: $Enums.PropertyStatus
   propertyStatus?: $Enums.PropertyStatus
   yearBuilt?: number | null
   buildiumId?: string | null
@@ -3735,6 +3791,7 @@ export type PropertyUpdateWithoutOrganizationInput = {
   arvSource?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   propertyStatus?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   yearBuilt?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   buildiumId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -3791,6 +3848,7 @@ export type PropertyUncheckedUpdateWithoutOrganizationInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   ownerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   propertyStatus?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   yearBuilt?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   buildiumId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -3846,6 +3904,7 @@ export type PropertyUncheckedUpdateManyWithoutOrganizationInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   ownerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   propertyStatus?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   yearBuilt?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   buildiumId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -3894,6 +3953,7 @@ export type PropertyCreateManyOwnerInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   organizationId?: string | null
+  status?: $Enums.PropertyStatus
   propertyStatus?: $Enums.PropertyStatus
   yearBuilt?: number | null
   buildiumId?: string | null
@@ -3941,6 +4001,7 @@ export type PropertyUpdateWithoutOwnerInput = {
   arvSource?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   propertyStatus?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   yearBuilt?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   buildiumId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -3997,6 +4058,7 @@ export type PropertyUncheckedUpdateWithoutOwnerInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   organizationId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   propertyStatus?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   yearBuilt?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   buildiumId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -4052,6 +4114,7 @@ export type PropertyUncheckedUpdateManyWithoutOwnerInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   organizationId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   propertyStatus?: Prisma.EnumPropertyStatusFieldUpdateOperationsInput | $Enums.PropertyStatus
   yearBuilt?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   buildiumId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -4186,6 +4249,7 @@ export type PropertySelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
   updatedAt?: boolean
   organizationId?: boolean
   ownerId?: boolean
+  status?: boolean
   propertyStatus?: boolean
   yearBuilt?: boolean
   buildiumId?: boolean
@@ -4245,6 +4309,7 @@ export type PropertySelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exte
   updatedAt?: boolean
   organizationId?: boolean
   ownerId?: boolean
+  status?: boolean
   propertyStatus?: boolean
   yearBuilt?: boolean
   buildiumId?: boolean
@@ -4296,6 +4361,7 @@ export type PropertySelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exte
   updatedAt?: boolean
   organizationId?: boolean
   ownerId?: boolean
+  status?: boolean
   propertyStatus?: boolean
   yearBuilt?: boolean
   buildiumId?: boolean
@@ -4347,12 +4413,13 @@ export type PropertySelectScalar = {
   updatedAt?: boolean
   organizationId?: boolean
   ownerId?: boolean
+  status?: boolean
   propertyStatus?: boolean
   yearBuilt?: boolean
   buildiumId?: boolean
 }
 
-export type PropertyOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "address" | "city" | "state" | "zip" | "lat" | "lng" | "listPrice" | "equityGap" | "sqft" | "bedrooms" | "bathrooms" | "decision" | "strategy" | "rationale" | "type" | "realtor" | "url" | "details" | "images" | "annualTaxes" | "annualInsurance" | "renovationBudget" | "afterRepairValue" | "notes" | "isOwned" | "purchasePrice" | "purchaseDate" | "rehabCompleted" | "isFavorite" | "favoriteNotes" | "dealScore" | "riskLevel" | "mao25k" | "mao50k" | "holdingCosts" | "closingCosts" | "rehabTier" | "arvSource" | "createdAt" | "updatedAt" | "organizationId" | "ownerId" | "propertyStatus" | "yearBuilt" | "buildiumId", ExtArgs["result"]["property"]>
+export type PropertyOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "address" | "city" | "state" | "zip" | "lat" | "lng" | "listPrice" | "equityGap" | "sqft" | "bedrooms" | "bathrooms" | "decision" | "strategy" | "rationale" | "type" | "realtor" | "url" | "details" | "images" | "annualTaxes" | "annualInsurance" | "renovationBudget" | "afterRepairValue" | "notes" | "isOwned" | "purchasePrice" | "purchaseDate" | "rehabCompleted" | "isFavorite" | "favoriteNotes" | "dealScore" | "riskLevel" | "mao25k" | "mao50k" | "holdingCosts" | "closingCosts" | "rehabTier" | "arvSource" | "createdAt" | "updatedAt" | "organizationId" | "ownerId" | "status" | "propertyStatus" | "yearBuilt" | "buildiumId", ExtArgs["result"]["property"]>
 export type PropertyInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   organization?: boolean | Prisma.Property$organizationArgs<ExtArgs>
   owner?: boolean | Prisma.Property$ownerArgs<ExtArgs>
@@ -4431,6 +4498,7 @@ export type $PropertyPayload<ExtArgs extends runtime.Types.Extensions.InternalAr
     updatedAt: Date
     organizationId: string | null
     ownerId: string | null
+    status: $Enums.PropertyStatus
     propertyStatus: $Enums.PropertyStatus
     yearBuilt: number | null
     buildiumId: string | null
@@ -4909,6 +4977,7 @@ export interface PropertyFieldRefs {
   readonly updatedAt: Prisma.FieldRef<"Property", 'DateTime'>
   readonly organizationId: Prisma.FieldRef<"Property", 'String'>
   readonly ownerId: Prisma.FieldRef<"Property", 'String'>
+  readonly status: Prisma.FieldRef<"Property", 'PropertyStatus'>
   readonly propertyStatus: Prisma.FieldRef<"Property", 'PropertyStatus'>
   readonly yearBuilt: Prisma.FieldRef<"Property", 'Int'>
   readonly buildiumId: Prisma.FieldRef<"Property", 'String'>

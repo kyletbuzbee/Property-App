@@ -1,5 +1,5 @@
 generator client {
-  provider = "prisma-client"
+  provider = "prisma-client-js"
   output   = "../src/generated"
 }
 
@@ -64,7 +64,7 @@ model Property {
   owner          User?         @relation("PropertyOwner", fields: [ownerId], references: [id], onDelete: SetNull)
 
   // Property status
-  propertyStatus PropertyStatus @default(AVAILABLE) @map("property_status")
+  status         PropertyStatus @default(NEW_LEAD) @map("property_status")
   yearBuilt      Int?                     @map("year_built")
 
   // Buildium sync (kept if needed for data sync, but rental logic is removed)
@@ -126,10 +126,14 @@ model MarketData {
 
 // Property Status enum
 enum PropertyStatus {
-  AVAILABLE
-  UNDER_RENOVATION
-  OFF_MARKET
-  SOLD
+  NEW_LEAD
+  UNDERWRITING
+  OFFER_PENDING
+  UNDER_CONTRACT
+  ACTIVE_REHAB
+  LISTED
+  CLOSED
+  ARCHIVED
 }
 
 model TimelineEvent {

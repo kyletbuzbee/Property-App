@@ -24,6 +24,72 @@ export interface AIAnalysisResult {
   };
 }
 
+// Simple in-memory cache for AI analysis results
+interface CacheEntry {
+  result: AIAnalysisResult;
+  timestamp: number;
+}
+
+const aiAnalysisCache = new Map<string, CacheEntry>();
+const CACHE_TTL_MS = 1000 * 60 * 60; // 1 hour cache TTL
+
+/**
+ * Generate a cache key for a property based on its identifying characteristics
+ */
+function generateCacheKey(property: {
+  address: string;
+  zip: string;
+  sqft: number;
+  listPrice: number;
+}): string {
+  return `${property.address}|${property.zip}|${property.sqft}|${property.listPrice}`;
+}
+
+/**
+ * Get cached AI analysis result if available and not expired
+ */
+export function getCachedAIAnalysis(property: {
+  address: string;
+  zip: string;
+  sqft: number;
+  listPrice: number;
+}): AIAnalysisResult | null {
+  const cacheKey = generateCacheKey(property);
+  const cached = aiAnalysisCache.get(cacheKey);
+  
+  if (cached && Date.now() - cached.timestamp < CACHE_TTL_MS) {
+    return cached.result;
+  }
+  
+  return null;
+}
+
+/**
+ * Store AI analysis result in cache
+ */
+export function setCachedAIAnalysis(
+  property: {
+    address: string;
+    zip: string;
+    sqft: number;
+    listPrice: number;
+  },
+  result: AIAnalysisResult
+): void {
+  const cacheKey = generateCacheKey(property);
+  aiAnalysisCache.set(cacheKey, {
+    result,
+    timestamp: Date.now(),
+  });
+}
+
+/**
+ * Clear the AI analysis cache (useful for testing or memory management)
+ */
+export function clearAIAnalysisCache(): void {
+  aiAnalysisCache.clear();
+}
+
 /**
  * East Texas Deal Inspector Persona & Hard Rules
  */
@@ -80,6 +146,7 @@ export function parseAIResponse(response: string): AIAnalysisResult {
 
 /**
  * Main Analysis Entry Point (Simulated for Phase 4)
+ * Now with caching support for improved performance
  */
 export async function analyzePropertyFlip(property: {
   address: string;
@@ -88,6 +155,12 @@ export async function analyzePropertyFlip(property: {
   listPrice: number;
   images: string[];
 }): Promise<AIAnalysisResult> {
+  // Check cache first
+  const cached = getCachedAIAnalysis(property);
+  if (cached) {
+    return cached;
+  }
+
   // 1. Fetch Knowledge Base Context
   const context = getRAGContext(property.zip, property.sqft, "Standard");
   const velocity = KnowledgeBundle.getMarketVelocity(property.zip, "Standard");
@@ -99,8 +172,10 @@ export async function analyzePropertyFlip(property: {
     velocity,
   );
 
+  let result: AIAnalysisResult;
+
   if (gateResult?.decision === "HARD_FAIL") {
-    return {
+    result = {
       narrative: `HARD_FAIL: ${gateResult.rationale}`,
       data: {
         mao25k: 0,
@@ -112,32 +187,37 @@ export async function analyzePropertyFlip(property: {
         confidence: 1.0,
       },
     };
-  }
+  } else {
+    // 3. (In real implementation, call LLM with SYSTEM_PROMPT + context + property images)
+    // For now, we simulate the calculation logic based on Rules 3 & 4
+    const arv = arvData?.arv_p50 || 0;
+    const rehabBudget = property.sqft * 35; // Standard tier fallback
+    const holding = calculateHoldingCosts(arv, velocity?.median_dom || 0);
 
-  // 3. (In real implementation, call LLM with SYSTEM_PROMPT + context + property images)
-  // For now, we simulate the calculation logic based on Rules 3 & 4
-  const arv = arvData?.arv_p50 || 0;
-  const rehabBudget = property.sqft * 35; // Standard tier fallback
-  const holding = calculateHoldingCosts(arv, velocity?.median_dom || 0);
+    const mao25k = calculateMAO(arv, rehabBudget, holding.cost, 25000);
+    const mao50k = calculateMAO(arv, rehabBudget, holding.cost, 50000);
 
-  const mao25k = calculateMAO(arv, rehabBudget, holding.cost, 25000);
-  const mao50k = calculateMAO(arv, rehabBudget, holding.cost, 50000);
-
-  return {
-    narrative: `DECISION LINE: ${gateResult?.decision || "PASS"}
+    result = {
+      narrative: `DECISION LINE: ${gateResult?.decision || "PASS"}
 EXECUTIVE SUMMARY: Property matches institutional buy parameters for East Texas.
 OBSERVED: List price $${property.listPrice}, Sqft ${property.sqft}.
 DERIVED: ARV $${arv} based on local zip code P50.
 POLICY: Institutional 8% closing and 20% rehab contingency applied.
 OPINION: Strong potential if purchased near MAO.`,
-    data: {
-      mao25k,
-      mao50k,
-      rehabEstimate: rehabBudget,
-      rehabTier: "Standard",
-      arv,
-      decision: (gateResult?.decision as Decision) || "PASS",
-      confidence: 0.85,
-    },
-  };
+      data: {
+        mao25k,
+        mao50k,
+        rehabEstimate: rehabBudget,
+        rehabTier: "Standard",
+        arv,
+        decision: (gateResult?.decision as Decision) || "PASS",
+        confidence: 0.85,
+      },
+    };
+  }
+
+  // Cache the result
+  setCachedAIAnalysis(property, result);
+  
+  return result;
 }

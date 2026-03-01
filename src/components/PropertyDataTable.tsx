@@ -17,6 +17,7 @@ import {
 import clsx from "clsx";
 import { Decision, Strategy } from "@/data/properties";
 import { PropertyWithCalculations } from "@/lib/calculations";
+import { DecisionBadge } from "@/components/ui/Badge";
 
 interface PropertyDataTableProps {
   properties: PropertyWithCalculations[];
@@ -108,16 +109,7 @@ export default function PropertyDataTable({
         header: "Decision",
         cell: (info) => {
           const decision = info.getValue() as Decision;
-          let badgeClass = "decision-badge ";
-          if (decision === "PASS") badgeClass += "decision-platinum";
-          else if (decision === "CAUTION") badgeClass += "decision-caution";
-          else if (decision === "HARD_FAIL") badgeClass += "decision-hardfail";
-          
-          return (
-            <span className={badgeClass}>
-              {decision}
-            </span>
-          );
+          return <DecisionBadge decision={decision} size="sm" />;
         },
         filterFn: decisionFilterFn,
       }),

@@ -3,6 +3,9 @@
 import { useState, useMemo } from "react";
 import { PropertyWithCalculations } from "@/lib/calculations";
 import clsx from "clsx";
+import { Card, CardContent } from "@/components/ui/Card";
+import { DecisionBadge } from "@/components/ui/Badge";
+import { SkeletonCard } from "@/components/ui/Skeleton";
 import { 
   SparklesIcon, 
   ShieldCheckIcon, 
@@ -103,9 +106,10 @@ export default function AIDealScoring({ properties, selectedPropertyId, onSelect
             <div>
               <h2 className="text-xl font-bold text-slate-900 tracking-tight">{selectedProperty.address}</h2>
               <div className="flex items-center gap-3 mt-1">
-                <span className={clsx("px-2 py-0.5 rounded-sm text-[10px] font-black tracking-tight", risk.bg, risk.color, risk.border, "border")}>
-                  {risk.label}
-                </span>
+                <DecisionBadge 
+                  decision={selectedProperty.decision} 
+                  size="sm"
+                />
                 <span className="text-[11px] text-slate-500 font-bold uppercase tracking-wider">
                   Audit Confidence: {Math.round(score)}%
                 </span>

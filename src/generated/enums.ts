@@ -10,10 +10,14 @@
 */
 
 export const PropertyStatus = {
-  AVAILABLE: 'AVAILABLE',
-  UNDER_RENOVATION: 'UNDER_RENOVATION',
-  OFF_MARKET: 'OFF_MARKET',
-  SOLD: 'SOLD'
+  NEW_LEAD: 'NEW_LEAD',
+  UNDERWRITING: 'UNDERWRITING',
+  OFFER_PENDING: 'OFFER_PENDING',
+  UNDER_CONTRACT: 'UNDER_CONTRACT',
+  ACTIVE_REHAB: 'ACTIVE_REHAB',
+  LISTED: 'LISTED',
+  CLOSED: 'CLOSED',
+  ARCHIVED: 'ARCHIVED'
 } as const
 
 export type PropertyStatus = (typeof PropertyStatus)[keyof typeof PropertyStatus]

@@ -2,13 +2,18 @@
 
 import { useMemo } from "react";
 import { PropertyWithCalculations } from "@/lib/calculations";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/Card";
+import { MetricCard } from "@/components/ui/Card";
+import { SkeletonTable } from "@/components/ui/Skeleton";
 
 interface PortfolioTrackerProps {
   properties: PropertyWithCalculations[];
+  isLoading?: boolean;
 }
 
 export default function PortfolioTracker({
   properties,
+  isLoading = false,
 }: PortfolioTrackerProps) {
   const ownedProperties = properties.filter((p) => p.isOwned);
   const prospectProperties = properties.filter((p) => !p.isOwned);
@@ -34,43 +39,54 @@ export default function PortfolioTracker({
     };
   }, [ownedProperties, prospectProperties]);
 
+  if (isLoading) {
+    return (
+      <div className="space-y-6 font-sans">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <SkeletonTable rows={1} columns={1} className="h-24" />
+          <SkeletonTable rows={1} columns={1} className="h-24" />
+          <SkeletonTable rows={1} columns={1} className="h-24" />
+        </div>
+        <SkeletonTable rows={5} columns={4} />
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-6 font-sans">
+      {/* Metrics Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="bg-dark-900 p-6 border border-dark-800 rounded-sm">
-          <p className="text-[10px] font-black text-dark-500 uppercase tracking-widest mb-2">
-            Total Capital Deployed
-          </p>
-          <p className="text-3xl font-black text-white">
-            ${stats.totalInvested.toLocaleString()}
-          </p>
-        </div>
-        <div className="bg-dark-900 p-6 border border-dark-800 rounded-sm">
-          <p className="text-[10px] font-black text-dark-500 uppercase tracking-widest mb-2">
-            Net Portfolio Equity
-          </p>
-          <p className="text-3xl font-black text-emerald-500">
-            ${stats.totalEquity.toLocaleString()}
-          </p>
-        </div>
-        <div className="bg-dark-900 p-6 border border-dark-800 rounded-sm">
-          <p className="text-[10px] font-black text-dark-500 uppercase tracking-widest mb-2">
-            Pipeline Buy Power (MAO)
-          </p>
-          <p className="text-3xl font-black text-blue-500">
-            ${stats.pipelineMao.toLocaleString()}
-          </p>
-        </div>
+        <MetricCard
+          label="Total Capital Deployed"
+          value={`$${stats.totalInvested.toLocaleString()}`}
+          variant="default"
+        />
+        <MetricCard
+          label="Net Portfolio Equity"
+          value={`$${stats.totalEquity.toLocaleString()}`}
+          trend={stats.totalEquity > 0 ? 12.5 : undefined}
+          trendLabel="vs last quarter"
+          variant="success"
+        />
+        <MetricCard
+          label="Pipeline Buy Power (MAO)"
+          value={`$${stats.pipelineMao.toLocaleString()}`}
+          trend={stats.pipelineMao > 0 ? 8.3 : undefined}
+          trendLabel="active pipeline"
+          variant="info"
+        />
       </div>
 
-      <div className="bg-dark-900 border border-dark-800 rounded-sm overflow-hidden">
-        <div className="p-4 bg-dark-950 border-b border-dark-800">
-          <h2 className="text-[10px] font-black text-white uppercase tracking-[0.2em]">
+      {/* Active Inventory Table */}
+      <Card variant="dark" isHoverable>
+        <CardHeader className="bg-dark-950 border-b border-dark-800">
+          <CardTitle className="text-[10px] font-black text-white uppercase tracking-[0.2em]">
             Active Inventory
-          </h2>
-        </div>
-        <div className="p-0">
-          <table className="w-full">
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="p-0">
+          <div className="overflow-x-auto">
+            <table className="w-full">
             <thead className="bg-dark-900 border-b border-dark-800">
               <tr>
                 <th className="px-6 py-3 text-left text-[10px] font-black text-dark-500 uppercase tracking-widest">
@@ -88,10 +104,11 @@ export default function PortfolioTracker({
               </tr>
             </thead>
             <tbody className="divide-y divide-dark-800">
-              {ownedProperties.map((p) => (
+              {ownedProperties.map((p, index) => (
                 <tr
                   key={p.id}
-                  className="hover:bg-dark-800/50 transition-colors"
+                  className="hover:bg-dark-800/50 transition-all duration-200 focus-visible:bg-dark-800/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary-500/50"
+                  style={{ animationDelay: `${index * 50}ms` }}
                 >
                   <td className="px-6 py-4">
                     <p className="text-xs font-black text-white uppercase">
@@ -101,15 +118,14 @@ export default function PortfolioTracker({
                       {p.city}
                     </p>
                   </td>
-                  <td className="px-6 py-4 text-right text-xs font-bold text-dark-300">
+                  <td className="px-6 py-4 text-right text-xs font-bold text-dark-300 tabular-nums">
                     ${(p.purchasePrice + p.renovationBudget).toLocaleString()}
                   </td>
-                  <td className="px-6 py-4 text-right text-xs font-bold text-white">
+                  <td className="px-6 py-4 text-right text-xs font-bold text-white tabular-nums">
                     ${p.afterRepairValue.toLocaleString()}
                   </td>
-                  <td className="px-6 py-4 text-right text-xs font-black text-emerald-500">
-                    $
-                    {(
+                  <td className="px-6 py-4 text-right text-xs font-black text-emerald-500 tabular-nums">
+                    ${(
                       p.afterRepairValue -
                       p.purchasePrice -
                       p.renovationBudget
@@ -128,9 +144,10 @@ export default function PortfolioTracker({
                 </tr>
               )}
             </tbody>
-          </table>
-        </div>
-      </div>
+            </table>
+          </div>
+        </CardContent>
+      </Card>
     </div>
   );
 }

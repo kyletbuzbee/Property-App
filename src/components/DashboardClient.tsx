@@ -76,8 +76,7 @@ export default function DashboardClient() {
   const stats = useMemo(() => {
     return {
       total: filteredProperties.length,
-      platinum: filteredProperties.filter((p) => p.decision === "Pass Platinum")
-        .length,
+      platinum: filteredProperties.filter((p) => p.decision === "PASS").length,
     };
   }, [filteredProperties]);
 

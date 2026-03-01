@@ -3,16 +3,95 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import clsx from "clsx";
 import {
   Property,
   getPricePerSqft,
   getPricePerDoor,
   getDecisionColor,
 } from "@/data/properties";
+import { PropertyWithCalculations } from "@/lib/calculations";
 
 interface PropertyPageProps {
   params: Promise<{ id: string }>;
 }
+
+const PreflightGate = ({ property }: { property: PropertyWithCalculations }) => {
+  const listToArv = property.afterRepairValue > 0 
+    ? (property.listPrice / property.afterRepairValue) * 100 
+    : 0;
+  
+  const avmVariance = property.avm && property.afterRepairValue > 0
+    ? Math.abs((property.afterRepairValue - property.avm.avm_value) / property.avm.avm_value) * 100
+    : 0;
+
+  const isHardFail = property.decision === "HARD_FAIL";
+  const isCaution = property.decision === "CAUTION";
+
+  const metrics = [
+    {
+      label: "List/ARV Ratio",
+      value: `${listToArv.toFixed(0)}%`,
+      status: listToArv <= 75 ? "PASS" : "HARD_FAIL",
+      sub: "Limit: 75%"
+    },
+    {
+      label: "Market Velocity",
+      value: property.velocity ? `${property.velocity.median_dom} Days` : "N/A",
+      status: !property.velocity || property.velocity.median_dom <= 90 ? (property.velocity && property.velocity.p75_dom > 90 ? "CAUTION" : "PASS") : "HARD_FAIL",
+      sub: "Limit: 90 Days"
+    },
+    {
+      label: "AVM Variance",
+      value: avmVariance > 0 ? `${avmVariance.toFixed(1)}%` : "N/A",
+      status: avmVariance <= 10 ? "PASS" : "CAUTION",
+      sub: "Limit: 10%"
+    }
+  ];
+
+  return (
+    <div className={clsx(
+      "w-full p-4 mb-8 flex flex-col md:flex-row justify-between items-center gap-6 border-b-4",
+      isHardFail ? "bg-red-950/20 border-red-600" : 
+      isCaution ? "bg-amber-950/20 border-amber-600" : "bg-emerald-950/20 border-emerald-600"
+    )}>
+      <div className="flex items-center gap-4">
+        <div className={clsx(
+          "w-12 h-12 rounded-full flex items-center justify-center text-xl font-black",
+          isHardFail ? "bg-red-600 text-white" : 
+          isCaution ? "bg-amber-600 text-white" : "bg-emerald-600 text-white"
+        )}>
+          {isHardFail ? "!" : isCaution ? "?" : "✓"}
+        </div>
+        <div>
+          <h2 className="text-xs font-black text-white uppercase tracking-[0.3em] mb-1">
+            Preflight Gate Analysis
+          </h2>
+          <p className={clsx(
+            "text-[10px] font-black uppercase tracking-widest",
+            isHardFail ? "text-red-400" : isCaution ? "text-amber-400" : "text-emerald-400"
+          )}>
+            Institutional Rule Compliance: {property.decision}
+          </p>
+        </div>
+      </div>
+
+      <div className="flex flex-1 justify-end gap-12">
+        {metrics.map((m, i) => (
+          <div key={i} className="text-right">
+            <p className="text-[9px] font-bold text-dark-500 uppercase tracking-widest mb-1">{m.label}</p>
+            <p className={clsx(
+              "text-lg font-black tabular-nums leading-none mb-1",
+              m.status === "PASS" ? "text-emerald-400" : 
+              m.status === "CAUTION" ? "text-amber-400" : "text-red-400"
+            )}>{m.value}</p>
+            <p className="text-[8px] font-bold text-dark-600 uppercase tracking-tighter">{m.sub}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const NarrativeOutput = ({ text }: { text: string }) => {
   if (!text) return null;
@@ -65,7 +144,7 @@ const NarrativeOutput = ({ text }: { text: string }) => {
 };
 
 export default function PropertyPage({ params }: PropertyPageProps) {
-  const [property, setProperty] = useState<Property | null>(null);
+  const [property, setProperty] = useState<PropertyWithCalculations | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -75,7 +154,7 @@ export default function PropertyPage({ params }: PropertyPageProps) {
       try {
         setLoading(true);
         const resolvedParams = await params;
-        const response = await fetch(`/api/properties?id=${resolvedParams.id}`);
+        const response = await fetch(`/api/properties?id=${resolvedParams.id}&enrich=true`);
         if (!response.ok)
           throw new Error(`Failed to fetch property: ${response.status}`);
         const data = await response.json();
@@ -97,24 +176,24 @@ export default function PropertyPage({ params }: PropertyPageProps) {
 
   if (loading)
     return (
-      <div className="min-h-screen bg-dark-950 flex items-center justify-center text-white">
-        <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin mr-3" />
-        Loading...
+      <div className="min-h-screen bg-dark-950 flex items-center justify-center text-white font-mono">
+        <div className="w-4 h-4 border border-white/20 border-t-white animate-spin mr-3" />
+        ESTABLISHING SECURE CONNECTION...
       </div>
     );
 
   if (error || !property)
     return (
       <div className="min-h-screen bg-dark-950 flex flex-col items-center justify-center text-white p-6 text-center">
-        <h1 className="text-2xl font-bold mb-4">Analysis Failed</h1>
-        <p className="text-dark-400 mb-8">
+        <h1 className="text-2xl font-black mb-4 tracking-tighter italic">ANALYSIS_CRITICAL_FAILURE</h1>
+        <p className="text-dark-400 mb-8 font-bold uppercase tracking-widest text-[10px]">
           {error || "Property data unavailable."}
         </p>
         <Link
           href="/"
-          className="px-6 py-2 bg-primary-500 rounded hover:bg-primary-600 transition-colors"
+          className="px-8 py-4 bg-white text-dark-950 text-[10px] font-black uppercase tracking-widest hover:bg-primary-500 hover:text-white transition-all"
         >
-          Back to Dashboard
+          Return to Dashboard
         </Link>
       </div>
     );
@@ -122,11 +201,13 @@ export default function PropertyPage({ params }: PropertyPageProps) {
   return (
     <div className="min-h-screen bg-dark-950 p-6 md:p-12 font-sans selection:bg-primary-500/30">
       <div className="max-w-7xl mx-auto">
+        <PreflightGate property={property} />
+
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-dark-400 hover:text-white transition-colors mb-10 text-sm uppercase tracking-widest font-bold"
+          className="inline-flex items-center gap-2 text-dark-400 hover:text-white transition-colors mb-10 text-[10px] uppercase tracking-[0.3em] font-black"
         >
-          ← Return to Dashboard
+          ← Exit to Pipeline
         </Link>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
@@ -137,7 +218,7 @@ export default function PropertyPage({ params }: PropertyPageProps) {
                 <span
                   className="px-3 py-1 rounded-sm text-[10px] font-black tracking-tighter"
                   style={{
-                    backgroundColor: getDecisionColor(property.decision),
+                    backgroundColor: getDecisionColor(property.decision as any),
                     color: "#000",
                   }}
                 >

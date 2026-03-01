@@ -7,78 +7,123 @@ import {
   serializeProperties,
 } from "@/lib/calculations";
 import { properties as localProperties } from "@/data/properties";
+import { KnowledgeBundle } from "@/lib/knowledgeBundle";
+import { analyzePropertyFlip } from "@/lib/ai/enhancedScoring";
 
 export const dynamic = "force-dynamic";
 
 /**
- * Fetch properties from the database and add calculations.
- * Falls back to local data if Supabase is unavailable.
+ * Fetch properties from the database and apply AI analysis.
  */
 async function getProperties(): Promise<PropertyWithCalculations[]> {
   try {
-    // Try Supabase first
     const { data, error } = await supabase
       .from("properties")
       .select("*")
       .order("created_at", { ascending: false });
 
-    if (error) {
-      console.warn("Supabase error, using local data:", error.message);
+    if (error || !data || data.length === 0) {
       return getLocalPropertiesWithCalculations();
     }
 
-    if (!data || data.length === 0) {
-      console.warn("No data from Supabase, using local data");
-      return getLocalPropertiesWithCalculations();
-    }
-
-    // Convert snake_case to camelCase and handle dates
-    const converted = (data || []).map((prop: any) => ({
+    const converted = data.map((prop: any) => ({
       ...prop,
       listPrice: prop.list_price,
       equityGap: prop.equity_gap,
       isOwned: prop.is_owned,
       purchasePrice: prop.purchase_price,
       purchaseDate: prop.purchase_date ? new Date(prop.purchase_date) : null,
-      rehabCompleted: prop.rehab_completed
-        ? new Date(prop.rehab_completed)
-        : null,
+      rehabCompleted: prop.rehab_completed ? new Date(prop.rehab_completed) : null,
       isFavorite: prop.is_favorite,
       favoriteNotes: prop.favorite_notes,
       dealScore: prop.deal_score,
       riskLevel: prop.risk_level,
+      status: prop.status || prop.property_status || "NEW_LEAD",
       createdAt: new Date(prop.created_at),
       updatedAt: new Date(prop.updated_at),
     }));
 
-    // Serialize Date objects to strings for client-side usage
     const serialized = serializeProperties(converted);
 
-    // Add calculated fields using the shared utility
-    // @ts-ignore - serializeProperties intentionally converts Date to string
-    return serialized.map(addCalculations);
+    // Apply AI Analysis to every property
+    const enriched = await Promise.all(serialized.map(async (p) => {
+      // @ts-ignore
+      const calculated = addCalculations(p);
+      const aiResult = await analyzePropertyFlip({
+        address: p.address,
+        zip: p.zip,
+        sqft: p.sqft,
+        listPrice: p.listPrice,
+        images: p.images || [],
+      });
+
+      const comps = KnowledgeBundle.getSoldComps(p.zip, p.sqft);
+      const velocity = KnowledgeBundle.getMarketVelocity(p.zip, "Standard");
+      const avmList = KnowledgeBundle.getAttomAvm(p.zip, p.sqft);
+
+      return {
+        ...calculated,
+        decision: aiResult.data.decision,
+        afterRepairValue: aiResult.data.arv,
+        mao25k: aiResult.data.mao25k,
+        mao50k: aiResult.data.mao50k,
+        renovationBudget: aiResult.data.rehabEstimate,
+        rehabTier: aiResult.data.rehabTier,
+        rationale: aiResult.narrative,
+        comps,
+        velocity,
+        avm: avmList[0] || null,
+      };
+    }));
+
+    return enriched;
   } catch (error) {
-    console.error("Database connection error, using local data:", error);
+    console.error("Fetch error:", error);
     return getLocalPropertiesWithCalculations();
   }
 }
 
 /**
- * Get local sample properties with calculations applied.
+ * Get local properties processed by the AI engine.
  */
-function getLocalPropertiesWithCalculations(): PropertyWithCalculations[] {
-  // @ts-ignore - localProperties has string dates, serializeProperties handles conversion
+async function getLocalPropertiesWithCalculations(): Promise<PropertyWithCalculations[]> {
   const serialized = serializeProperties(localProperties);
-  // @ts-ignore - serializeProperties intentionally converts Date to string
-  return serialized.map(addCalculations);
+  
+  return await Promise.all(serialized.map(async (p) => {
+    // @ts-ignore
+    const calculated = addCalculations(p);
+    const aiResult = await analyzePropertyFlip({
+      address: p.address,
+      zip: p.zip,
+      sqft: p.sqft,
+      listPrice: p.listPrice,
+      images: p.images || [],
+    });
+
+    const comps = KnowledgeBundle.getSoldComps(p.zip, p.sqft);
+    const velocity = KnowledgeBundle.getMarketVelocity(p.zip, "Standard");
+    const avmList = KnowledgeBundle.getAttomAvm(p.zip, p.sqft);
+
+    return {
+      ...calculated,
+      status: p.status || "NEW_LEAD",
+      decision: aiResult.data.decision,
+      afterRepairValue: aiResult.data.arv,
+      mao25k: aiResult.data.mao25k,
+      mao50k: aiResult.data.mao50k,
+      renovationBudget: aiResult.data.rehabEstimate,
+      rehabTier: aiResult.data.rehabTier,
+      rationale: aiResult.narrative,
+      comps,
+      velocity,
+      avm: avmList[0] || null,
+    };
+  }));
 }
 
 export default async function Page() {
-  // Fetch data on the server
   const properties = await getProperties();
 
-  // Pass to the client component via context provider
-  // This eliminates the "double fetch" pattern
   return (
     <PropertyProvider initialData={properties}>
       <DashboardClient />

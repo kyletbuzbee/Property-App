@@ -1,7 +1,8 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import clsx from "clsx";
+import Image from "next/image";
 import {
   DndContext,
   closestCenter,
@@ -21,46 +22,36 @@ import {
   useSortable,
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import { Strategy, getDecisionColor } from "@/data/properties";
+import { DecisionBadge } from "@/components/ui/Badge";
+import { PropertyStatus, getStatusColor, getStatusLabel } from "@/data/properties";
 import { PropertyWithCalculations } from "@/lib/calculations";
 
 interface StrategyKanbanProps {
   properties: PropertyWithCalculations[];
   onPropertyClick?: (property: PropertyWithCalculations) => void;
+  onStatusChange?: (propertyId: string, newStatus: PropertyStatus) => void;
 }
 
-const strategyConfig: {
-  strategy: Strategy;
-  label: string;
-  color: string;
-  icon: string;
-}[] = [
-  {
-    strategy: "Retail Flip",
-    label: "Retail Flip",
-    color: "#3b82f6",
-    icon: "🏠",
-  },
-  {
-    strategy: "Wholesaling",
-    label: "Wholesaling",
-    color: "#ec4899",
-    icon: "🤝",
-  },
+const statusColumns: PropertyStatus[] = [
+  "NEW_LEAD",
+  "UNDERWRITING",
+  "OFFER_PENDING",
+  "UNDER_CONTRACT",
+  "ACTIVE_REHAB",
+  "LISTED",
+  "CLOSED",
 ];
 
 // Sortable Card Component
 interface SortableCardProps {
   property: PropertyWithCalculations;
   isDragging?: boolean;
-  selected?: boolean;
   onSelect?: () => void;
 }
 
 const SortableCard = ({
   property,
   isDragging,
-  selected,
   onSelect,
 }: SortableCardProps) => {
   const {
@@ -79,82 +70,70 @@ const SortableCard = ({
     zIndex: isDragging || dndDragging ? 999 : "auto",
   };
 
+  // Calculate target profit
+  const targetProfit = property.afterRepairValue - property.listPrice - property.renovationBudget - property.holdingCosts - property.closingCosts;
+
   return (
     <div
       ref={setNodeRef}
       style={style}
       onClick={onSelect}
       className={clsx(
-        "bg-white border border-slate-200 rounded-sm p-3 cursor-grab active:cursor-grabbing transition-all shadow-sm",
-        selected && "ring-1 ring-primary-500 border-primary-500",
+        "bg-white border border-slate-200 rounded-sm p-2 cursor-grab active:cursor-grabbing transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-lg hover:border-primary-300 group",
       )}
       {...attributes}
       {...listeners}
     >
-      {/* Card Header */}
-      <div className="flex items-start justify-between mb-2">
+      <div className="flex gap-2">
+        {/* Thumbnail Placeholder/Image */}
+        <div className="w-12 h-12 bg-slate-100 rounded-sm flex-shrink-0 overflow-hidden relative border border-slate-200">
+           {property.images && property.images[0] ? (
+
+             <Image 
+
+               src={property.images[0]} 
+
+               alt="" 
+
+               fill 
+
+               className="object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
+
+             />
+
+           ) : (
+
+             <div className="w-full h-full flex items-center justify-center text-[10px] text-slate-400 font-black">
+
+               P4C
+
+             </div>
+
+           )}
+        </div>
+
         <div className="flex-1 min-w-0">
-          <div className="text-[13px] font-bold text-slate-900 truncate tracking-tight">
-            {property.address}
+          <div className="flex justify-between items-start mb-0.5">
+            <h4 className="text-[11px] font-black text-slate-900 truncate tracking-tight uppercase">
+              {property.address}
+            </h4>
+            <span className={clsx("decision-badge scale-[0.7] origin-right -mt-1", 
+              property.decision === "PASS" ? "decision-platinum" : 
+              property.decision === "CAUTION" ? "decision-caution" : "decision-hardfail"
+            )}>
+              {property.decision}
+            </span>
           </div>
-          <div className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">
-            {property.city}
+          
+          <div className="flex items-center gap-2 text-[9px] font-bold text-slate-500 uppercase tracking-wider mb-1">
+            <span>ARV: <span className="text-slate-900 font-black">${(property.afterRepairValue / 1000).toFixed(0)}k</span></span>
+            <span className="text-slate-300">|</span>
+            <span>Profit: <span className={clsx("font-black", targetProfit > 25000 ? "text-success" : "text-slate-900")}>
+              ${(targetProfit / 1000).toFixed(1)}k
+            </span></span>
           </div>
-        </div>
-        <span className={clsx("decision-badge", 
-          property.decision === "PASS" ? "decision-platinum" : 
-          property.decision === "CAUTION" ? "decision-caution" : "decision-hardfail"
-        )}>
-          {property.decision}
-        </span>
-      </div>
-
-      {/* Key Metrics */}
-      <div className="grid grid-cols-2 gap-x-2 gap-y-1 text-[11px] mb-2 border-t border-slate-50 pt-2">
-        <div className="flex justify-between">
-          <span className="text-slate-400 font-medium uppercase text-[9px]">Price:</span>
-          <span className="text-slate-900 font-mono font-bold tabular-nums">
-            ${property.listPrice.toLocaleString()}
-          </span>
-        </div>
-        <div className="flex justify-between">
-          <span className="text-slate-400 font-medium uppercase text-[9px]">MAO:</span>
-          <span className="text-info font-mono font-bold tabular-nums">
-            ${property.mao50k.toLocaleString()}
-          </span>
-        </div>
-        <div className="flex justify-between">
-          <span className="text-slate-400 font-medium uppercase text-[9px]">SqFt:</span>
-          <span className="font-mono tabular-nums">{property.sqft.toLocaleString()}</span>
-        </div>
-        <div className="flex justify-between">
-          <span className="text-slate-400 font-medium uppercase text-[9px]">ARV:</span>
-          <span className="text-primary-600 font-mono font-bold tabular-nums">
-            ${property.afterRepairValue.toLocaleString()}
-          </span>
         </div>
       </div>
-
-      {/* Expanded Details */}
-      {selected && (
-        <div className="mt-2 pt-2 border-t border-slate-100 animate-fade-in">
-          <div className="text-[10px] text-slate-500 mb-2 line-clamp-2 italic leading-relaxed">
-            &ldquo;{property.rationale.split("\n")[0]}&rdquo;
-          </div>
-          <div className="flex justify-between items-center">
-            <span className="text-[10px] font-bold text-success tabular-nums">+${property.equityGap.toLocaleString()} Equity</span>
-            <a
-              href={property.url ?? "#"}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[9px] font-bold uppercase tracking-widest text-primary-600 hover:text-primary-700 underline"
-              onClick={(e) => e.stopPropagation()}
-            >
-              Listing Details
-            </a>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
@@ -162,25 +141,24 @@ const SortableCard = ({
 export default function StrategyKanban({
   properties,
   onPropertyClick,
+  onStatusChange,
 }: StrategyKanbanProps) {
-  const [selectedProperty, setSelectedProperty] = useState<string | null>(null);
   const [activeId, setActiveId] = useState<string | null>(null);
-  const [groupedProperties, setGroupedProperties] = useState<
-    Record<Strategy, PropertyWithCalculations[]>
-  >(() => {
-    const groups: Record<Strategy, PropertyWithCalculations[]> = {
-      "Retail Flip": [],
-      Wholesaling: [],
-    };
+  
+  // Local state for the kanban to allow immediate UI updates
+  const [localProperties, setLocalProperties] = useState<PropertyWithCalculations[]>(properties);
 
-    properties.forEach((property) => {
-      if (groups[property.strategy as Strategy]) {
-        groups[property.strategy as Strategy].push(property);
-      }
+  useEffect(() => {
+    setLocalProperties(properties);
+  }, [properties]);
+
+  const groupedProperties = useMemo(() => {
+    const groups: Record<string, PropertyWithCalculations[]> = {};
+    statusColumns.forEach(status => {
+      groups[status] = localProperties.filter(p => (p.status || "NEW_LEAD") === status);
     });
-
     return groups;
-  });
+  }, [localProperties]);
 
   const sensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 8 } }),
@@ -200,74 +178,45 @@ export default function StrategyKanban({
       return;
     }
 
-    let sourceColumn: Strategy | null = null;
-    let destColumn: Strategy | null = null;
+    const activeId = active.id as string;
+    const overId = over.id as string;
 
-    Object.entries(groupedProperties).forEach(([strategy, props]) => {
-      if (props.some((p) => p.id === active.id))
-        sourceColumn = strategy as Strategy;
-      if (over.id.toString().startsWith("column-"))
-        destColumn = over.id.toString().replace("column-", "") as Strategy;
-      else if (props.some((p) => p.id === over.id))
-        destColumn = strategy as Strategy;
-    });
-
-    if (!sourceColumn) {
-      setActiveId(null);
-      return;
-    }
-
-    if (sourceColumn === destColumn) {
-      const sourceItems: PropertyWithCalculations[] = [...(groupedProperties[sourceColumn] ?? [])];
-      const activeIndex = sourceItems.findIndex((p) => p.id === active.id);
-      const overIndex = sourceItems.findIndex((p) => p.id === over.id);
-      if (activeIndex !== overIndex) {
-        const reordered = arrayMove(sourceItems, activeIndex, overIndex);
-        setGroupedProperties((prev) => ({
-          ...prev,
-          [sourceColumn as string]: reordered,
-        }));
-      }
-    } else if (destColumn) {
-      const sourceItems: PropertyWithCalculations[] = [...(groupedProperties[sourceColumn] ?? [])];
-      const destItems: PropertyWithCalculations[] = [...(groupedProperties[destColumn] ?? [])];
-      const activeIndex = sourceItems.findIndex((p) => p.id === active.id);
-      if (activeIndex !== -1) {
-        const [movedProperty] = sourceItems.splice(activeIndex, 1);
-        if (!movedProperty) {
-          setActiveId(null);
-          return;
-        }
-        const updatedProperty: PropertyWithCalculations = { ...movedProperty, strategy: destColumn };
-        if (over.id.toString().startsWith("column-"))
-          destItems.push(updatedProperty);
-        else {
-          const overIndex = destItems.findIndex((p) => p.id === over.id);
-          destItems.splice(overIndex + 1, 0, updatedProperty);
-        }
-        setGroupedProperties((prev) => ({
-          ...prev,
-          [sourceColumn as string]: sourceItems,
-          [destColumn as string]: destItems,
-        }));
+    // Determine the destination status
+    let newStatus: PropertyStatus | null = null;
+    
+    if (statusColumns.includes(overId as PropertyStatus)) {
+      newStatus = overId as PropertyStatus;
+    } else {
+      const overProperty = localProperties.find(p => p.id === overId);
+      if (overProperty) {
+        newStatus = (overProperty.status as PropertyStatus) || "NEW_LEAD";
       }
     }
+
+    if (newStatus) {
+      const property = localProperties.find(p => p.id === activeId);
+      if (property && property.status !== newStatus) {
+        // Update local state for immediate feedback
+        setLocalProperties(prev => prev.map(p => 
+          p.id === activeId ? { ...p, status: newStatus as PropertyStatus } : p
+        ));
+        
+        // Notify parent of the change
+        onStatusChange?.(activeId, newStatus);
+        
+        // If moving to Underwriting, we could trigger AI scoring here
+        if (newStatus === "UNDERWRITING") {
+          console.log(`Triggering AI Deal Scoring for ${property.address}...`);
+        }
+      }
+    }
+
     setActiveId(null);
   };
 
-  const totalEquityGap = useMemo(() => {
-    return Object.values(groupedProperties)
-      .flat()
-      .reduce((sum, p) => sum + p.equityGap, 0);
-  }, [groupedProperties]);
-
   const activeProperty = useMemo(() => {
-    return activeId
-      ? Object.values(groupedProperties)
-          .flat()
-          .find((p) => p.id === activeId)
-      : null;
-  }, [activeId, groupedProperties]);
+    return activeId ? localProperties.find((p) => p.id === activeId) : null;
+  }, [activeId, localProperties]);
 
   return (
     <DndContext
@@ -276,106 +225,71 @@ export default function StrategyKanban({
       onDragStart={handleDragStart}
       onDragEnd={handleDragEnd}
     >
-      <div className="w-full h-full flex flex-col">
-        <div className="grid grid-cols-2 gap-4 mb-4">
-          {strategyConfig.map(({ strategy, label, color, icon }) => {
-            const props = groupedProperties[strategy] || [];
-            const totalEquity = props.reduce((sum, p) => sum + p.equityGap, 0);
-            return (
-              <div
-                key={strategy}
-                className="bento-card"
-                style={{ borderLeftColor: color, borderLeftWidth: 3 }}
-              >
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="text-sm">{icon}</span>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500">
-                    {label}
-                  </span>
-                </div>
-                <div className="flex items-baseline gap-2">
-                  <div className="text-2xl font-black text-slate-900 tabular-nums">
-                    {props.length}
-                  </div>
-                  <div className="text-[11px] font-bold text-success tabular-nums">
-                    +${totalEquity.toLocaleString()} Equity
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        <div className="bento-card py-4 mb-4 flex items-center justify-between border-t-4 border-t-primary-600">
+      <div className="w-full h-full flex flex-col bg-slate-100/50 p-4 overflow-hidden">
+        <div className="flex justify-between items-center mb-6">
           <div>
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 mb-1">
-              Total Pipeline Potential
-            </p>
-            <p className="text-3xl font-black text-slate-900 tabular-nums">
-              ${totalEquityGap.toLocaleString()}
+            <h2 className="text-[11px] font-black text-slate-400 uppercase tracking-[0.3em] mb-1">
+              Deal Flow Pipeline
+            </h2>
+            <p className="text-2xl font-black text-slate-900 tracking-tight italic">
+              Institutional Flip Lifecycle
             </p>
           </div>
-          <div className="text-right">
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 mb-1">
-              Active Deal Flow
-            </p>
-            <p className="text-3xl font-black text-primary-600 tabular-nums">
-              {Object.values(groupedProperties).flat().length}
-            </p>
+          <div className="flex gap-4">
+            <div className="text-right">
+              <p className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Active Velocity</p>
+              <p className="text-lg font-black text-slate-900">{localProperties.length} Units</p>
+            </div>
           </div>
         </div>
 
-        <div className="flex-1 overflow-x-auto">
-          <div className="flex gap-4 min-w-max h-full">
-            {strategyConfig.map(({ strategy, label, color, icon }) => {
-              const columnProperties = groupedProperties[strategy] || [];
+        <div className="flex-1 overflow-x-auto pb-4">
+          <div className="flex gap-4 h-full min-w-max">
+            {statusColumns.map((status) => {
+              const columnProperties = groupedProperties[status] || [];
+              const color = getStatusColor(status);
+              
               return (
                 <div
-                  key={strategy}
-                  className="flex flex-col flex-shrink-0 w-80 bg-slate-50/50 rounded-sm border border-slate-200 shadow-inner p-2"
+                  key={status}
+                  className="flex flex-col flex-shrink-0 w-64 bg-slate-200/40 rounded-sm border border-slate-200/60"
                 >
-                  <div className="flex items-center justify-between mb-3 pb-2 border-b border-slate-200 p-2">
-                    <div className="flex items-center gap-2">
-                      <span className="text-base">{icon}</span>
-                      <span className="font-bold text-slate-900 uppercase tracking-widest text-[11px]">
-                        {label}
-                      </span>
-                    </div>
-                    <span
-                      className="px-2 py-0.5 rounded-full text-[10px] font-black bg-white border border-slate-200 text-slate-600"
-                    >
+                  {/* Column Header */}
+                  <div 
+                    className="p-3 border-b-2 flex items-center justify-between bg-white/50"
+                    style={{ borderBottomColor: color }}
+                  >
+                    <h3 className="text-[10px] font-black text-slate-900 uppercase tracking-[0.15em]">
+                      {getStatusLabel(status)}
+                    </h3>
+                    <span className="text-[10px] font-black tabular-nums bg-slate-900 text-white px-1.5 py-0.5 rounded-sm">
                       {columnProperties.length}
                     </span>
                   </div>
+
+                  {/* Drop Zone / Sortable Context */}
                   <div
-                    id={`column-${strategy}`}
-                    className="space-y-3 max-h-[calc(100vh-450px)] overflow-y-auto p-1"
+                    id={status}
+                    className="flex-1 p-2 space-y-2 overflow-y-auto"
                   >
                     <SortableContext
+                      id={status}
                       items={columnProperties.map((p) => p.id)}
                       strategy={rectSortingStrategy}
                     >
-                      {columnProperties.length === 0 ? (
-                        <div className="text-center py-12 text-slate-400 uppercase text-[9px] font-bold tracking-widest border-2 border-dashed border-slate-200 rounded-sm">
-                          No Active Deals
+                      {columnProperties.map((property) => (
+                        <SortableCard
+                          key={property.id}
+                          property={property}
+                          isDragging={activeId === property.id}
+                          onSelect={() => onPropertyClick?.(property)}
+                        />
+                      ))}
+                      
+                      {columnProperties.length === 0 && (
+                        <div className="h-24 border-2 border-dashed border-slate-300 rounded-sm flex items-center justify-center">
+                          <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Empty</span>
                         </div>
-                      ) : (
-                        columnProperties.map((property) => (
-                          <SortableCard
-                            key={property.id}
-                            property={property}
-                            isDragging={activeId === property.id}
-                            selected={selectedProperty === property.id}
-                            onSelect={() => {
-                              setSelectedProperty(
-                                selectedProperty === property.id
-                                  ? null
-                                  : property.id,
-                              );
-                              onPropertyClick?.(property);
-                            }}
-                          />
-                        ))
                       )}
                     </SortableContext>
                   </div>
@@ -385,12 +299,12 @@ export default function StrategyKanban({
           </div>
         </div>
       </div>
+
       <DragOverlay>
         {activeProperty ? (
           <SortableCard
             property={activeProperty}
             isDragging={true}
-            selected={selectedProperty === activeProperty.id}
           />
         ) : null}
       </DragOverlay>

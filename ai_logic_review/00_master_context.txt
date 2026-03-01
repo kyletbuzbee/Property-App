@@ -1,4 +1,4 @@
-PROJECT_ANALYSIS_DATE: 2026-02-28 11:20:36.753576
+PROJECT_ANALYSIS_DATE: 2026-02-28 13:24:37.498085
 PROJECT_STRUCTURE:
   📄 .eslintrc.json
   📄 .stylelintrc.json
@@ -23,6 +23,9 @@ PROJECT_STRUCTURE:
       📄 staging.yaml
   📁 .kilocode/
     📄 mcp.json
+  📁 playwright-report/
+    📄 index.html
+    📁 data/
   📁 prisma/
     📄 schema.prisma
     📄 seed-fixed.ts
@@ -47,6 +50,7 @@ PROJECT_STRUCTURE:
     📄 enriched_east_tx_cleaned.csv
     📄 features_east_tx_final_cleaned.csv
     📄 features_east_tx_v2_cleaned.csv
+    📄 gem_knowledge_bundle.csv
     📄 hpi_master_cleaned.csv
     📄 properties.json
     📄 properties_cleaned.csv
@@ -144,27 +148,19 @@ PROJECT_STRUCTURE:
         📄 BankAccount.ts
         📄 Comment.ts
         📄 Document.ts
-        📄 Expense.ts
-        📄 Lease.ts
-        📄 MaintenanceAttachment.ts
-        📄 MaintenanceComment.ts
-        📄 MaintenanceRequest.ts
         📄 MarketData.ts
         📄 Organization.ts
         📄 OrganizationUser.ts
-        📄 Payment.ts
-        📄 Projection.ts
         📄 Property.ts
         📄 RehabItem.ts
-        📄 RentComp.ts
         📄 Task.ts
-        📄 Tenant.ts
         📄 TimelineEvent.ts
         📄 Transaction.ts
         📄 User.ts
         📄 Vendor.ts
     📁 lib/
       📄 calculations.ts
+      📄 knowledgeBundle.ts
       📄 marketData.ts
       📁 ai/
         📄 enhancedScoring.ts
@@ -182,7 +178,27 @@ PROJECT_STRUCTURE:
     📁 sql/
   📁 test-results/
     📄 .last-run.json
+    📁 sidebar-Sidebar-Navigation-1464d-navigate-to-Market-Analysis-chromium/
+    📁 sidebar-Sidebar-Navigation-2af38-navigate-to-AI-Deal-Scoring-chromium/
+    📁 sidebar-Sidebar-Navigation-58aa2-te-to-Financial-Projections-chromium/
+    📁 sidebar-Sidebar-Navigation-6cd17-navigate-to-Rehab-Estimator-chromium/
+    📁 sidebar-Sidebar-Navigation-6ec3b-avigate-to-Project-Timeline-chromium/
+    📁 sidebar-Sidebar-Navigation-88466-gate-to-Property-Comparator-chromium/
+    📁 sidebar-Sidebar-Navigation-aa278-vigate-to-Collaboration-Hub-chromium/
+    📁 sidebar-Sidebar-Navigation-bf098-navigate-to-Expense-Tracker-chromium/
+    📁 sidebar-Sidebar-Navigation-dbb97-navigate-to-Opportunity-Map-chromium/
+    📁 sidebar-Sidebar-Navigation-e73fb-vigate-to-Portfolio-Tracker-chromium/
+    📁 sidebar-Sidebar-Navigation-should-display-search-input-chromium/
+    📁 sidebar-Sidebar-Navigation-should-display-stats-section-chromium/
+    📁 sidebar-Sidebar-Navigation-should-navigate-to-Data-Grid-chromium/
+    📁 sidebar-Sidebar-Navigation-should-navigate-to-Export-Reports-chromium/
+    📁 sidebar-Sidebar-Navigation-should-navigate-to-Rent-Comps-chromium/
+    📁 sidebar-Sidebar-Navigation-should-navigate-to-Strategy-Board-chromium/
+    📁 sidebar-Sidebar-Navigation-should-navigate-to-Task-Manager-chromium/
+    📁 sidebar-Sidebar-Navigation-should-navigate-to-Value-Analysis-chromium/
+    📁 sidebar-Sidebar-Navigation-should-toggle-sidebar-collapse-chromium/
   📁 tests/
     📄 basic.spec.ts
+    📄 sidebar.spec.ts
 
 ================================================================================

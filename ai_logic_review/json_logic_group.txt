@@ -164,7 +164,7 @@ SIZE: 135 bytes
 ================================================================================
 FILE_BEGIN: package-lock.json
 TYPE: JSON
-SIZE: 337783 bytes
+SIZE: 338498 bytes
 ================================================================================
 {
   "name": "real-estate-triage-dashboard",
@@ -180,7 +180,7 @@ SIZE: 337783 bytes
         "@dnd-kit/sortable": "^10.0.0",
         "@dnd-kit/utilities": "^3.2.2",
         "@heroicons/react": "^2.2.0",
-        "@prisma/adapter-pg": "^7.4.0",
+        "@prisma/adapter-pg": "^7.4.2",
         "@prisma/client": "^7.4.0",
         "@react-leaflet/core": "^3.0.0",
         "@supabase/auth-helpers-nextjs": "^0.15.0",
@@ -190,11 +190,13 @@ SIZE: 337783 bytes
         "@supabase/storage-js": "^2.97.0",
         "@supabase/supabase-js": "^2.95.3",
         "@tanstack/react-table": "^8.21.0",
+        "@types/papaparse": "^5.5.2",
         "clsx": "^2.1.1",
         "leaflet": "^1.9.4",
         "leaflet.markercluster": "^1.5.3",
         "next": "^15.1.12",
-        "pg": "^8.18.0",
+        "papaparse": "^5.5.3",
+        "pg": "^8.19.0",
         "react": "^19.2.4",
         "react-dom": "^19.2.4",
         "react-leaflet": "^5.0.0",
@@ -207,7 +209,7 @@ SIZE: 337783 bytes
         "@testing-library/react": "^16.3.2",
         "@types/leaflet": "^1.9.8",
         "@types/node": "^22.13.0",
-        "@types/pg": "^8.16.0",
+        "@types/pg": "^8.18.0",
         "@types/react": "^19.0.0",
         "@types/react-dom": "^19.0.0",
         "autoprefixer": "^10.4.18",
@@ -2216,6 +2218,15 @@ SIZE: 337783 bytes
       "license": "MIT",
       "dependencies": {
         "undici-types": "~6.21.0"
+      }
+    },
+    "node_modules/@types/papaparse": {
+      "version": "5.5.2",
+      "resolved": "https://registry.npmjs.org/@types/papaparse/-/papaparse-5.5.2.tgz",
+      "integrity": "sha512-gFnFp/JMzLHCwRf7tQHrNnfhN4eYBVYYI897CGX4MY1tzY9l2aLkVyx2IlKZ/SAqDbB3I1AOZW5gTMGGsqWliA==",
+      "license": "MIT",
+      "dependencies": {
+        "@types/node": "*"
       }
     },
     "node_modules/@types/pg": {
@@ -6941,6 +6952,12 @@ SIZE: 337783 bytes
         "url": "https://github.com/sponsors/sindresorhus"
       }
     },
+    "node_modules/papaparse": {
+      "version": "5.5.3",
+      "resolved": "https://registry.npmjs.org/papaparse/-/papaparse-5.5.3.tgz",
+      "integrity": "sha512-5QvjGxYVjxO59MGU2lHVYpRWBBtKHnlIAcSe1uNFCkkptUh63NFRj0FJQm7nR67puEruUci/ZkjmEFrjCAyP4A==",
+      "license": "MIT"
+    },
     "node_modules/parent-module": {
       "version": "1.0.1",
       "resolved": "https://registry.npmjs.org/parent-module/-/parent-module-1.0.1.tgz",
@@ -9697,7 +9714,7 @@ SIZE: 337783 bytes
 ================================================================================
 FILE_BEGIN: package.json
 TYPE: JSON
-SIZE: 1935 bytes
+SIZE: 1996 bytes
 ================================================================================
 {
   "name": "real-estate-triage-dashboard",
@@ -9718,7 +9735,7 @@ SIZE: 1935 bytes
     "@dnd-kit/sortable": "^10.0.0",
     "@dnd-kit/utilities": "^3.2.2",
     "@heroicons/react": "^2.2.0",
-    "@prisma/adapter-pg": "^7.4.0",
+    "@prisma/adapter-pg": "^7.4.2",
     "@prisma/client": "^7.4.0",
     "@react-leaflet/core": "^3.0.0",
     "@supabase/auth-helpers-nextjs": "^0.15.0",
@@ -9728,11 +9745,13 @@ SIZE: 1935 bytes
     "@supabase/storage-js": "^2.97.0",
     "@supabase/supabase-js": "^2.95.3",
     "@tanstack/react-table": "^8.21.0",
+    "@types/papaparse": "^5.5.2",
     "clsx": "^2.1.1",
     "leaflet": "^1.9.4",
     "leaflet.markercluster": "^1.5.3",
     "next": "^15.1.12",
-    "pg": "^8.18.0",
+    "papaparse": "^5.5.3",
+    "pg": "^8.19.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "react-leaflet": "^5.0.0",
@@ -9749,7 +9768,7 @@ SIZE: 1935 bytes
     "@testing-library/react": "^16.3.2",
     "@types/leaflet": "^1.9.8",
     "@types/node": "^22.13.0",
-    "@types/pg": "^8.16.0",
+    "@types/pg": "^8.18.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "autoprefixer": "^10.4.18",
@@ -19345,7 +19364,7 @@ SIZE: 19507 bytes
 ================================================================================
 FILE_BEGIN: reports\context_review_2026-02-28_11-15-34.json
 TYPE: JSON
-SIZE: 140012 bytes
+SIZE: 138644 bytes
 ================================================================================
 {
   "context": {
@@ -20718,17 +20737,38 @@ SIZE: 140012 bytes
   }
 }
 
+
 [FILE_END: reports\context_review_2026-02-28_11-15-34.json]
 ################################################################################
 
 ================================================================================
 FILE_BEGIN: test-results\.last-run.json
 TYPE: JSON
-SIZE: 45 bytes
+SIZE: 978 bytes
 ================================================================================
 {
-  "status": "passed",
-  "failedTests": []
+  "status": "failed",
+  "failedTests": [
+    "19544871d9648c30f4b7-48436e6d1d5f16abb5db",
+    "19544871d9648c30f4b7-ca9b54f77a263b37e82e",
+    "19544871d9648c30f4b7-3d31d9dd9839578b5081",
+    "19544871d9648c30f4b7-ee1fd7cd224bdbef8500",
+    "19544871d9648c30f4b7-9c6049f68385ee967579",
+    "19544871d9648c30f4b7-6e4b63b261f03285eb13",
+    "19544871d9648c30f4b7-a55674dc5c960ce15c24",
+    "19544871d9648c30f4b7-266dfcd94f34f061827a",
+    "19544871d9648c30f4b7-4f586ba812ff0ed05fb9",
+    "19544871d9648c30f4b7-0076b21aed24ab3db649",
+    "19544871d9648c30f4b7-b5325fbcc528d3c760e4",
+    "19544871d9648c30f4b7-6411e0f9698da86d34fd",
+    "19544871d9648c30f4b7-351d36beddd1aa482143",
+    "19544871d9648c30f4b7-540143dd21b08eeba6bd",
+    "19544871d9648c30f4b7-c21504745abbc1fb6dda",
+    "19544871d9648c30f4b7-0668b3662a7d3ade410a",
+    "19544871d9648c30f4b7-060d43ac92eaeb05f7e1",
+    "19544871d9648c30f4b7-c81c1287ff995c2a083b",
+    "19544871d9648c30f4b7-92430495dcfab3d09c4f"
+  ]
 }
 
 [FILE_END: test-results\.last-run.json]

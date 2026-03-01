@@ -127,6 +127,7 @@ export const PropertyScalarFieldEnum = {
   updatedAt: 'updatedAt',
   organizationId: 'organizationId',
   ownerId: 'ownerId',
+  status: 'status',
   propertyStatus: 'propertyStatus',
   yearBuilt: 'yearBuilt',
   buildiumId: 'buildiumId'

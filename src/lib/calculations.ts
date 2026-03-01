@@ -4,11 +4,11 @@
  * Rule 5: Missing Data Fallback
  */
 
-import { Decision, Strategy } from "@/data/properties";
-import { MarketVelocity } from "./knowledgeBundle";
+import { Decision, Strategy, PropertyStatus } from "@/data/properties";
+import { MarketVelocity, SoldComp, AttomAvm } from "./knowledgeBundle";
 
-// Re-export Decision and Strategy for convenience
-export type { Decision, Strategy } from "@/data/properties";
+// Re-export Decision, Strategy and PropertyStatus for convenience
+export type { Decision, Strategy, PropertyStatus } from "@/data/properties";
 
 export class IncompleteDataError extends Error {
   constructor(message: string) {
@@ -114,8 +114,10 @@ export interface PropertyBase {
   sqft: number;
   bedrooms: number;
   bathrooms: number;
-  decision: string;
-  strategy: string;
+  decision: Decision;
+  strategy: Strategy;
+  status: PropertyStatus;
+  yearBuilt?: number | null;
   rationale: string;
   type: string;
   realtor: string | null;
@@ -153,9 +155,11 @@ export interface PropertyBase {
 export interface PropertyWithCalculations extends PropertyBase {
   pricePerSqft: number;
   pricePerDoor: number;
-  // Type-safe accessors
-  decision: string;
-  strategy: string;
+  // Comps for visualization
+  comps?: SoldComp[];
+  // Market & AVM details for Preflight Gate
+  velocity?: MarketVelocity | null;
+  avm?: AttomAvm | null;
 }
 
 /**

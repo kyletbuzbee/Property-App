@@ -2,13 +2,16 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/app/lib/db";
 import {
   addCalculations,
+  addCalculationsToAll,
   serializeProperty,
   PropertyBase,
   PropertyWithCalculations,
 } from "@/lib/calculations";
 import { getDynamicBenchmarks, loadMarketData } from "@/lib/marketData";
+import { KnowledgeBundle } from "@/lib/knowledgeBundle";
 import { enrichWithPredictions } from "@/lib/ai/predictionService";
 import { analyzePropertyFlip } from "@/lib/ai/enhancedScoring";
+import { properties as localProperties } from "@/data/properties";
 
 /**
  * GET /api/properties
@@ -24,9 +27,15 @@ export async function GET(request: NextRequest) {
     const enrich = searchParams.get("enrich") === "true";
 
     if (id) {
-      const property = await prisma.property.findUnique({
-        where: { id },
-      });
+      let property;
+      try {
+        property = await prisma.property.findUnique({
+          where: { id },
+        });
+      } catch (dbError) {
+        console.warn("Prisma error, falling back to local data:", dbError);
+        property = localProperties.find((p) => p.id === id);
+      }
 
       if (!property) {
         return NextResponse.json(
@@ -36,8 +45,18 @@ export async function GET(request: NextRequest) {
       }
 
       const serialized = serializeProperty(property as any);
-      // @ts-ignore
-      let calculated = addCalculations(serialized);
+      let calculated: PropertyWithCalculations;
+      try {
+        // @ts-ignore
+        calculated = addCalculations(serialized as any);
+      } catch (e) {
+        // Fallback: at least return the serialized data if calculations fail
+        calculated = {
+          ...serialized,
+          pricePerSqft: 0,
+          pricePerDoor: 0,
+        } as any;
+      }
 
       if (enrich) {
         loadMarketData();
@@ -45,10 +64,35 @@ export async function GET(request: NextRequest) {
           calculated.city,
           calculated.state,
         );
+        const comps = KnowledgeBundle.getSoldComps(calculated.zip, calculated.sqft);
+        const velocity = KnowledgeBundle.getMarketVelocity(calculated.zip, "Standard");
+        const avmList = KnowledgeBundle.getAttomAvm(calculated.zip, calculated.sqft);
+        const avm = avmList.length > 0 ? avmList[0] : null;
+
+        // Apply AI Analysis
+        const aiResult = await analyzePropertyFlip({
+          address: calculated.address,
+          zip: calculated.zip,
+          sqft: calculated.sqft,
+          listPrice: calculated.listPrice,
+          images: calculated.images || [],
+        });
+
         calculated = {
           ...calculated,
           marketIntelligence: { benchmarks },
+          comps,
+          velocity,
+          avm,
+          decision: aiResult.data.decision,
+          afterRepairValue: aiResult.data.arv,
+          mao25k: aiResult.data.mao25k,
+          mao50k: aiResult.data.mao50k,
+          renovationBudget: aiResult.data.rehabEstimate,
+          rehabTier: aiResult.data.rehabTier,
+          rationale: aiResult.narrative,
         } as any;
+        
         const enrichedList = enrichWithPredictions([calculated as any]);
         calculated = enrichedList[0] as any;
       }
@@ -70,22 +114,82 @@ export async function GET(request: NextRequest) {
       ];
     }
 
-    const properties = await prisma.property.findMany({
-      where,
-      orderBy: { createdAt: "desc" },
-    });
+    let properties = [];
+    try {
+      properties = await prisma.property.findMany({
+        where,
+        orderBy: { createdAt: "desc" },
+      });
+    } catch (dbError) {
+      console.warn("Prisma error, falling back to local data:", dbError);
+      // Basic local filtering
+      properties = localProperties.filter((p) => {
+        if (strategy && p.strategy !== strategy) return false;
+        if (decision && p.decision !== decision) return false;
+        if (city && !p.city.toLowerCase().includes(city.toLowerCase()))
+          return false;
+        if (search) {
+          const s = search.toLowerCase();
+          return (
+            p.address.toLowerCase().includes(s) ||
+            p.city.toLowerCase().includes(s) ||
+            p.rationale.toLowerCase().includes(s)
+          );
+        }
+        return true;
+      });
+    }
 
     const serialized = properties.map((p) =>
       serializeProperty(p as any),
     ) as PropertyBase[];
-    let calculated = serialized.map(addCalculations);
+    let calculated = addCalculationsToAll(serialized);
 
     if (enrich) {
       loadMarketData();
-      calculated = calculated.map((prop) => {
+      calculated = await Promise.all(calculated.map(async (prop) => {
         const benchmarks = getDynamicBenchmarks(prop.city, prop.state);
-        return { ...prop, marketIntelligence: { benchmarks } } as any;
-      });
+        const comps = KnowledgeBundle.getSoldComps(prop.zip, prop.sqft);
+        const velocity = KnowledgeBundle.getMarketVelocity(prop.zip, "Standard");
+        const avmList = KnowledgeBundle.getAttomAvm(prop.zip, prop.sqft);
+        const avm = avmList.length > 0 ? avmList[0] : null;
+
+        try {
+          // Apply AI Analysis with error handling
+          const aiResult = await analyzePropertyFlip({
+            address: prop.address,
+            zip: prop.zip,
+            sqft: prop.sqft,
+            listPrice: prop.listPrice,
+            images: prop.images || [],
+          });
+
+          return { 
+            ...prop, 
+            marketIntelligence: { benchmarks }, 
+            comps, 
+            velocity, 
+            avm,
+            decision: aiResult.data.decision,
+            afterRepairValue: aiResult.data.arv,
+            mao25k: aiResult.data.mao25k,
+            mao50k: aiResult.data.mao50k,
+            renovationBudget: aiResult.data.rehabEstimate,
+            rehabTier: aiResult.data.rehabTier,
+            rationale: aiResult.narrative,
+          };
+        } catch (aiError) {
+          console.error(`AI analysis failed for property ${prop.id}:`, aiError);
+          // Return property without AI enrichment
+          return {
+            ...prop,
+            marketIntelligence: { benchmarks },
+            comps,
+            velocity,
+            avm,
+          };
+        }
+      }));
       calculated = enrichWithPredictions(calculated as any) as any;
     }
 
