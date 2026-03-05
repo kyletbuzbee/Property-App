@@ -20,7 +20,6 @@ export class IncompleteDataError extends Error {
 /**
  * Preflight Gates: Returns decision signal based on basic property/market data.
  * - HARD_FAIL if List Price > 75% ARV
- * - HARD_FAIL if median_dom > 90
  * - CAUTION if p75_dom > 90
  */
 export function runPreflightGate(
@@ -38,14 +37,8 @@ export function runPreflightGate(
     };
   }
 
-  // Gate 2: Market Velocity
+  // Gate 2: Market Velocity (P75 DOM warning only)
   if (velocityData) {
-    if (velocityData.median_dom > 90) {
-      return {
-        decision: "HARD_FAIL",
-        rationale: `Market too slow: Median DOM (${velocityData.median_dom}) > 90 days.`,
-      };
-    }
     if (velocityData.p75_dom > 90) {
       return {
         decision: "CAUTION",
@@ -57,16 +50,77 @@ export function runPreflightGate(
   return null;
 }
 
+export interface DOMOpportunity {
+  scoreAdjustment: number; // -5 to +15 points
+  badge: string; // "Fresh Listing" | "Normal Listing" | "Stale Listing" | "Motivated Seller"
+  opportunityDiscount: number; // 0 to 0.15 (percentage below list)
+  recommendation: string;
+  daysOnMarket: number;
+}
+
+export function analyzeDOMOpportunity(
+  daysOnMarket: number,
+  medianDomMarket?: number,
+): DOMOpportunity {
+  // Use median market DOM if available, otherwise use property DOM
+  const dom = medianDomMarket ?? daysOnMarket;
+
+  if (dom < 30) {
+    return {
+      scoreAdjustment: -5,
+      badge: "Fresh Listing",
+      opportunityDiscount: 0,
+      recommendation: "Sellers have high expectations, difficult to negotiate",
+      daysOnMarket: dom,
+    };
+  } else if (dom >= 30 && dom <= 90) {
+    return {
+      scoreAdjustment: 0,
+      badge: "Normal Listing",
+      opportunityDiscount: 0,
+      recommendation: "Standard market conditions",
+      daysOnMarket: dom,
+    };
+  } else if (dom > 90 && dom <= 180) {
+    return {
+      scoreAdjustment: 10,
+      badge: "Stale Listing",
+      opportunityDiscount: 0.1,
+      recommendation:
+        "Motivated seller - carrying costs stinging, target 10% below list",
+      daysOnMarket: dom,
+    };
+  } else {
+    return {
+      scoreAdjustment: 15,
+      badge: "Motivated Seller",
+      opportunityDiscount: 0.15,
+      recommendation:
+        "Prime target - overpriced or needs rehab, target 15% below list",
+      daysOnMarket: dom,
+    };
+  }
+}
+
 /**
  * Holding Costs: Implement institutional formulas.
- * Months: Default 4. If median_dom > 60, change to 5.
+ * Months: Market-aware calculation based on median DOM
  * Formula: ($350 * months) + ((ARV * 0.0235) / 12 * months)
  */
 export function calculateHoldingCosts(
   arv: number,
   medianDom: number = 0,
 ): { cost: number; months: number } {
-  const months = medianDom > 60 ? 5 : 4;
+  // Market-aware months calculation
+  let months: number;
+  if (medianDom < 30) {
+    months = 3; // Hot market - fast sales
+  } else if (medianDom >= 30 && medianDom <= 90) {
+    months = 4; // Normal market
+  } else {
+    months = 5; // Slower market
+  }
+
   const fixedMonthly = 350 * months;
   const capitalMonthly = ((arv * 0.0235) / 12) * months;
 
@@ -147,6 +201,8 @@ export interface PropertyBase {
   riskLevel: string;
   createdAt: Date | string;
   updatedAt: Date | string;
+  // TODO: Add to database schema - needs listDate or daysOnMarket field in Prisma
+  daysOnMarket?: number;
 }
 
 /**

@@ -13,6 +13,7 @@ interface RawProperty {
   note: string;
 }
 
+// Updated Property interface matching current schema
 interface Property {
   id: string;
   address: string;
@@ -28,18 +29,33 @@ interface Property {
   bathrooms: number;
   decision: string;
   strategy: string;
+  status: string;
+  yearBuilt: number | null;
   rationale: string;
   type: string;
-  realtor: string;
-  url: string;
-  details: string;
+  realtor: string | null;
+  url: string | null;
+  details: string | null;
   images: string[];
-  estimatedRent: number;
   annualTaxes: number;
   annualInsurance: number;
   renovationBudget: number;
   afterRepairValue: number;
   notes: string;
+  // Flipping specific fields
+  mao25k: number;
+  mao50k: number;
+  holdingCosts: number;
+  closingCosts: number;
+  rehabTier: string;
+  arvSource: string;
+  // Additional fields
+  isOwned: boolean;
+  purchasePrice: number;
+  isFavorite: boolean;
+  favoriteNotes: string;
+  dealScore: number;
+  riskLevel: string;
   createdAt: string;
   updatedAt: string;
 }
@@ -94,12 +110,24 @@ const cityCoordinates: Record<string, { lat: number; lng: number }> = {
   "Wills Point": { lat: 32.7087, lng: -96.0086 },
   "Mount Enterprise": { lat: 31.931, lng: -94.6841 },
   Lindale: { lat: 32.5157, lng: -95.4094 },
+  Frankston: { lat: 31.8779, lng: -95.1654 },
+  "Van Zandt": { lat: 32.6216, lng: -95.8675 },
+  Eustace: { lat: 32.3065, lng: -96.0145 },
+  Malakoff: { lat: 32.1696, lng: -96.0124 },
+  "Ben Wheeler": { lat: 32.4416, lng: -95.7022 },
+  "Cedar Creek": { lat: 32.3326, lng: -96.4508 },
+  Murchison: { lat: 32.2788, lng: -95.7508 },
+  "Prairie View": { lat: 30.0933, lng: -95.9919 },
+  Reklaw: { lat: 31.8628, lng: -94.9858 },
+  "New London": { lat: 32.2387, lng: -94.9372 },
+  "Lake Cherokee": { lat: 32.2085, lng: -94.6545 },
 };
 
 function parsePrice(priceStr: string): number {
   if (
     priceStr.toLowerCase().includes("auction") ||
-    priceStr.toLowerCase().includes("undisclosed")
+    priceStr.toLowerCase().includes("undisclosed") ||
+    priceStr.toLowerCase().includes("est.")
   ) {
     return 0;
   }
@@ -115,7 +143,9 @@ function parseAddress(address: string): {
   const parts = address.split(",").map((p) => p.trim());
   const cityPart = parts[1]?.replace(/ TX$/, "").trim() || "";
   const state = "TX";
-  const zipMatch = address.match(/\d{5}/);
+  // Only look for zip in the last part (state/zip portion) to avoid matching street numbers
+  const lastPart = parts[parts.length - 1] || "";
+  const zipMatch = lastPart.match(/\d{5}/);
   const zip = zipMatch ? zipMatch[0] : "";
   return { city: cityPart, state, zip };
 }
@@ -134,10 +164,6 @@ function generateId(address: string): string {
     .slice(0, 50);
 }
 
-function estimateRent(listPrice: number): number {
-  return Math.round(listPrice * 0.008);
-}
-
 function estimateTaxes(listPrice: number): number {
   return Math.round(listPrice * 0.02);
 }
@@ -146,35 +172,110 @@ function estimateInsurance(): number {
   return 1200;
 }
 
-function determineDecision(price: number, sqft: number): string {
+function calculateMAO(arv: number, renovationBudget: number, profitTarget: number): number {
+  // Maximum Allowable Offer = ARV - Renovation - Desired Profit
+  return Math.round(arv - renovationBudget - profitTarget);
+}
+
+function determineRehabTier(price: number, sqft: number): string {
   const pricePerSqft = sqft > 0 ? price / sqft : 0;
-  if (pricePerSqft < 80 && price < 150000) return "Pass Platinum";
-  if (pricePerSqft < 100 && price < 200000) return "Pass Gold";
-  if (pricePerSqft < 120) return "Pass Silver";
-  return "Caution";
+  if (pricePerSqft < 60) return "Heavy";
+  if (pricePerSqft < 85) return "Standard";
+  if (pricePerSqft < 110) return "Light";
+  return "Cosmetic";
+}
+
+function calculateRenovationBudget(listPrice: number, sqft: number, tier: string): number {
+  // Per sqft renovation costs
+  const costPerSqft: Record<string, number> = {
+    "Cosmetic": 15,
+    "Light": 25,
+    "Standard": 40,
+    "Heavy": 65,
+  };
+  const baseCost = Math.round(sqft * (costPerSqft[tier] || 35));
+  // Minimum renovation budget
+  return Math.max(baseCost, 15000);
+}
+
+function determineDecision(price: number, sqft: number, arv: number, mao25k: number): string {
+  const pricePerSqft = sqft > 0 ? price / sqft : 0;
+  const margin = arv - price;
+  
+  // Must have at least $25k potential profit
+  if (price <= mao25k && margin > 40000) return "PASS";
+  if (price <= mao25k + 10000 && margin > 30000) return "CAUTION";
+  return "HARD_FAIL";
 }
 
 function determineStrategy(type: string): string {
   const lower = type.toLowerCase();
-  if (lower.includes("multi")) return "Section 8";
-  if (lower.includes("auction") || lower.includes("foreclosure"))
-    return "Wholesaling";
+  if (lower.includes("auction")) return "Wholesaling";
   return "Retail Flip";
 }
 
-function convertProperty(raw: RawProperty): Property {
-  const { city, state, zip } = parseAddress(raw.address);
-  const coords = getCoordinates(city);
+function calculateHoldingCosts(listPrice: number): number {
+  // 6 months holding: taxes, insurance, utilities, financing
+  const monthly = (listPrice * 0.07 / 12) + 150 + 200; // Financing + insurance + utilities
+  return Math.round(monthly * 6);
+}
+
+function calculateClosingCosts(listPrice: number): number {
+  // Buy and sell closing costs (~5% each side)
+  return Math.round(listPrice * 0.1);
+}
+
+function generateRationale(property: Property): string {
+  const ppsf = property.sqft > 0 ? (property.listPrice / property.sqft).toFixed(0) : "N/A";
+  const margin = property.afterRepairValue - property.listPrice - property.renovationBudget;
+  
+  return `Retail Flip Analysis: ${property.bedrooms}bd/${property.bathrooms}ba, ${property.sqft.toLocaleString()} sqft at $${ppsf}/sqft. ` +
+    `Estimated ARV: $${property.afterRepairValue.toLocaleString()}. ` +
+    `Renovation Budget (${property.rehabTier}): $${property.renovationBudget.toLocaleString()}. ` +
+    `Projected Gross Margin: $${margin.toLocaleString()}. ` +
+    `MAO (25k profit): $${property.mao25k.toLocaleString()}. ` +
+    `${property.details ? property.details + ". " : ""}` +
+    `Listed by ${property.realtor || "Unknown Brokerage"}.`;
+}
+
+function convertProperty(raw: RawProperty): Property | null {
   const listPrice = parsePrice(raw.price);
   const sqft = parseInt(raw.sqft.replace(/,/g, "")) || 0;
+  
+  // FILTER: Only properties under $150,000 with valid sqft
+  if (listPrice >= 150000 || listPrice === 0 || sqft === 0) {
+    return null;
+  }
+  
+  const { city, state, zip } = parseAddress(raw.address);
+  const coords = getCoordinates(city);
   const bedrooms = parseInt(raw.beds) || 0;
   const bathrooms = parseFloat(raw.baths) || 0;
-  const estimatedRent = estimateRent(listPrice);
   const annualTaxes = estimateTaxes(listPrice);
   const annualInsurance = estimateInsurance();
-  const arv = listPrice > 0 ? Math.round(listPrice * 1.15) : 0;
-
-  return {
+  
+  // Flipping calculations
+  const rehabTier = determineRehabTier(listPrice, sqft);
+  const renovationBudget = calculateRenovationBudget(listPrice, sqft, rehabTier);
+  const afterRepairValue = listPrice > 0 ? Math.round(listPrice * 1.25) : 0; // 25% ARV markup
+  const holdingCosts = calculateHoldingCosts(listPrice);
+  const closingCosts = calculateClosingCosts(listPrice);
+  
+  // MAO calculations
+  const mao25k = calculateMAO(afterRepairValue, renovationBudget, 25000);
+  const mao50k = calculateMAO(afterRepairValue, renovationBudget, 50000);
+  
+  // Decision based on flip viability
+  const decision = determineDecision(listPrice, sqft, afterRepairValue, mao25k);
+  const strategy = determineStrategy(raw.type);
+  
+  // Calculate deal score (0-100) based on margin percentage
+  const totalInvestment = listPrice + renovationBudget + holdingCosts + closingCosts;
+  const potentialProfit = afterRepairValue - totalInvestment;
+  const marginPercent = totalInvestment > 0 ? (potentialProfit / totalInvestment) * 100 : 0;
+  const dealScore = Math.min(Math.max(Math.round(marginPercent * 2), 0), 100);
+  
+  const property: Property = {
     id: generateId(raw.address),
     address: raw.address.split(",")[0].trim(),
     city,
@@ -183,27 +284,45 @@ function convertProperty(raw: RawProperty): Property {
     lat: coords.lat + (Math.random() - 0.5) * 0.02,
     lng: coords.lng + (Math.random() - 0.5) * 0.02,
     listPrice,
-    equityGap: Math.round(arv * 0.2),
+    equityGap: Math.round(afterRepairValue * 0.15),
     sqft,
     bedrooms,
     bathrooms,
-    decision: determineDecision(listPrice, sqft),
-    strategy: determineStrategy(raw.type),
-    rationale: `${raw.type}${raw.note ? `. ${raw.note}` : ""}`,
+    decision,
+    strategy,
+    status: "NEW_LEAD",
+    yearBuilt: null,
+    rationale: "", // Will be set after property object created
     type: raw.type,
-    realtor: raw.brokerage || "",
+    realtor: raw.brokerage,
     url: raw.link,
     details: raw.note,
     images: [],
-    estimatedRent,
     annualTaxes,
     annualInsurance,
-    renovationBudget: Math.round(listPrice * 0.1),
-    afterRepairValue: arv,
+    renovationBudget,
+    afterRepairValue,
     notes: raw.brokerage ? `Listed by ${raw.brokerage}` : "",
+    mao25k,
+    mao50k,
+    holdingCosts,
+    closingCosts,
+    rehabTier,
+    arvSource: "AI_ANALYSIS",
+    isOwned: false,
+    purchasePrice: 0,
+    isFavorite: false,
+    favoriteNotes: "",
+    dealScore,
+    riskLevel: decision === "HARD_FAIL" ? "High" : decision === "CAUTION" ? "Medium" : "Low",
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
   };
+  
+  // Generate rationale now that we have all fields
+  property.rationale = generateRationale(property);
+  
+  return property;
 }
 
 const rawData = JSON.parse(
@@ -213,24 +332,28 @@ const rawData = JSON.parse(
   ),
 ) as RawProperty[];
 
-const properties = rawData.map(convertProperty);
+const properties = rawData
+  .map(convertProperty)
+  .filter((p): p is Property => p !== null)
+  // Sort by deal score (best deals first)
+  .sort((a, b) => b.dealScore - a.dealScore);
 
 // Generate TypeScript file
 const header = `// Auto-generated from processed/properties.json
+// Filter: Properties under $150,000
 // Run: npx tsx scripts/convert-properties.ts to regenerate
 
-export type Decision =
-  | "Pass Platinum"
-  | "Pass Gold"
-  | "Pass Silver"
-  | "Hard Fail"
-  | "Caution";
-export type Strategy =
-  | "Retail Flip"
-  | "Section 8"
-  | "BRRR"
-  | "Owner Finance"
-  | "Wholesaling";
+export type Decision = "PASS" | "CAUTION" | "HARD_FAIL";
+export type Strategy = "Retail Flip" | "Wholesaling";
+export type PropertyStatus =
+  | "NEW_LEAD"
+  | "UNDERWRITING"
+  | "OFFER_PENDING"
+  | "UNDER_CONTRACT"
+  | "ACTIVE_REHAB"
+  | "LISTED"
+  | "CLOSED"
+  | "ARCHIVED";
 
 export interface Property {
   id: string;
@@ -247,18 +370,32 @@ export interface Property {
   bathrooms: number;
   decision: Decision;
   strategy: Strategy;
+  status: PropertyStatus;
+  yearBuilt: number | null;
   rationale: string;
   type: string;
-  realtor: string;
-  url: string;
-  details: string;
+  realtor: string | null;
+  url: string | null;
+  details: string | null;
   images: string[];
-  estimatedRent: number;
   annualTaxes: number;
   annualInsurance: number;
   renovationBudget: number;
   afterRepairValue: number;
   notes: string;
+  // Flipping specific fields
+  mao25k: number;
+  mao50k: number;
+  holdingCosts: number;
+  closingCosts: number;
+  rehabTier: string;
+  arvSource: string;
+  isOwned: boolean;
+  purchasePrice: number;
+  isFavorite: boolean;
+  favoriteNotes: string;
+  dealScore: number;
+  riskLevel: string;
   createdAt: string | Date;
   updatedAt: string | Date;
 }
@@ -274,71 +411,43 @@ export const getPricePerDoor = (property: Property): number => {
   return property.listPrice / property.bedrooms;
 };
 
-export const calculateCapRate = (property: Property): number => {
-  if (property.listPrice <= 0) return 0;
-  const annualRent = property.estimatedRent * 12;
-  const noi = annualRent - property.annualTaxes - property.annualInsurance;
-  return (noi / property.listPrice) * 100;
-};
-
-export const calculateCashOnCashReturn = (
-  property: Property,
-  downPaymentPercent: number = 25,
-  interestRate: number = 7.5,
-): number => {
-  const downPayment = property.listPrice * (downPaymentPercent / 100);
-  const loanAmount = property.listPrice - downPayment;
-  const monthlyPayment =
-    (loanAmount * (interestRate / 100 / 12)) /
-    (1 - Math.pow(1 + interestRate / 100 / 12, -360));
-  const annualMortgage = monthlyPayment * 12;
-  const annualRent = property.estimatedRent * 12;
-  const noi = annualRent - property.annualTaxes - property.annualInsurance;
-  const annualCashFlow = noi - annualMortgage;
-  const totalCashInvested =
-    downPayment +
-    property.renovationBudget +
-    property.annualTaxes +
-    property.annualInsurance;
-  if (totalCashInvested <= 0) return 0;
-  return (annualCashFlow / totalCashInvested) * 100;
-};
-
-export const calculateMAO = (
-  property: Property,
-  targetProfitPercent: number = 20,
-): number => {
-  if (property.afterRepairValue <= 0) return 0;
-  const mao =
-    property.afterRepairValue * (1 - targetProfitPercent / 100) -
-    property.renovationBudget;
-  return Math.max(0, mao);
-};
-
-export const calculateOnePercentRule = (property: Property): boolean => {
-  if (property.listPrice <= 0) return false;
-  const monthlyRent = property.estimatedRent;
-  return monthlyRent >= property.listPrice * 0.01;
-};
-
-export const calculateGrossYield = (property: Property): number => {
-  if (property.listPrice <= 0) return 0;
-  const annualRent = property.estimatedRent * 12;
-  return (annualRent / property.listPrice) * 100;
-};
-
 export const getDecisionColor = (decision: Decision): string => {
   switch (decision) {
-    case "Pass Platinum":
+    case "PASS":
       return "#10b981";
-    case "Pass Gold":
+    case "CAUTION":
       return "#f59e0b";
-    case "Pass Silver":
-      return "#f97316";
-    case "Hard Fail":
+    case "HARD_FAIL":
       return "#ef4444";
-    case "Caution":
+    default:
+      return "#64748b";
+  }
+};
+
+export const getStatusLabel = (status: PropertyStatus): string => {
+  return status.replace(/_/g, " ").replace(/\\w\\S*/g, (txt) => {
+    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+  });
+};
+
+export const getStatusColor = (status: PropertyStatus): string => {
+  switch (status) {
+    case "NEW_LEAD":
+      return "#64748b";
+    case "UNDERWRITING":
+      return "#3b82f6";
+    case "OFFER_PENDING":
+      return "#f59e0b";
+    case "UNDER_CONTRACT":
       return "#8b5cf6";
+    case "ACTIVE_REHAB":
+      return "#10b981";
+    case "LISTED":
+      return "#ec4899";
+    case "CLOSED":
+      return "#0f172a";
+    case "ARCHIVED":
+      return "#94a3b8";
     default:
       return "#64748b";
   }
@@ -356,5 +465,14 @@ fs.writeFileSync(
 console.log(
   "Generated src/data/properties.ts with",
   properties.length,
-  "properties",
+  "properties (filtered under $150k)",
+);
+console.log(
+  "Breakdown:",
+  properties.filter((p) => p.decision === "PASS").length,
+  "PASS,",
+  properties.filter((p) => p.decision === "CAUTION").length,
+  "CAUTION,",
+  properties.filter((p) => p.decision === "HARD_FAIL").length,
+  "HARD_FAIL",
 );

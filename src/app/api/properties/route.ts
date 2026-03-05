@@ -11,10 +11,40 @@ import { getDynamicBenchmarks, loadMarketData } from "@/lib/marketData";
 import { KnowledgeBundle } from "@/lib/knowledgeBundle";
 import { enrichWithPredictions } from "@/lib/ai/predictionService";
 import { analyzePropertyFlip } from "@/lib/ai/enhancedScoring";
-import { properties as localProperties } from "@/data/properties";
+import { properties as localProperties, Property } from "@/data/properties";
+
+// Helper to filter local properties
+function filterLocalProperties(
+  properties: Property[],
+  filters: {
+    search?: string | null;
+    strategy?: string | null;
+    decision?: string | null;
+    city?: string | null;
+  }
+): Property[] {
+  return properties.filter((p) => {
+    if (filters.strategy && p.strategy !== filters.strategy) return false;
+    if (filters.decision && p.decision !== filters.decision) return false;
+    if (filters.city && !p.city.toLowerCase().includes(filters.city.toLowerCase()))
+      return false;
+    if (filters.search) {
+      const s = filters.search.toLowerCase();
+      return (
+        p.address.toLowerCase().includes(s) ||
+        p.city.toLowerCase().includes(s) ||
+        p.rationale.toLowerCase().includes(s) ||
+        p.zip.includes(s)
+      );
+    }
+    return true;
+  });
+}
 
 /**
  * GET /api/properties
+ * PRIMARY: Uses local processed/properties.json data
+ * FALLBACK: Supabase/Prisma (when local data unavailable)
  */
 export async function GET(request: NextRequest) {
   try {
@@ -25,16 +55,24 @@ export async function GET(request: NextRequest) {
     const decision = searchParams.get("decision");
     const city = searchParams.get("city");
     const enrich = searchParams.get("enrich") === "true";
+    const source = searchParams.get("source") || "local"; // 'local' | 'database'
 
+    // SINGLE PROPERTY FETCH
     if (id) {
-      let property;
-      try {
-        property = await prisma.property.findUnique({
-          where: { id },
-        });
-      } catch (dbError) {
-        console.warn("Prisma error, falling back to local data:", dbError);
-        property = localProperties.find((p) => p.id === id);
+      // Try local first (primary source)
+      let property = localProperties.find((p) => p.id === id);
+      let fromLocal = true;
+
+      // Fallback to database if not found locally
+      if (!property && source !== "local") {
+        try {
+          property = await prisma.property.findUnique({
+            where: { id },
+          }) as unknown as Property;
+          fromLocal = false;
+        } catch (dbError) {
+          console.warn("Database fetch failed:", dbError);
+        }
       }
 
       if (!property) {
@@ -46,98 +84,101 @@ export async function GET(request: NextRequest) {
 
       const serialized = serializeProperty(property as any);
       let calculated: PropertyWithCalculations;
+      
       try {
-        // @ts-ignore
-        calculated = addCalculations(serialized as any);
+        calculated = addCalculations(serialized as any) as PropertyWithCalculations;
       } catch (e) {
-        // Fallback: at least return the serialized data if calculations fail
         calculated = {
           ...serialized,
           pricePerSqft: 0,
           pricePerDoor: 0,
-        } as any;
+        } as PropertyWithCalculations;
       }
 
-      if (enrich) {
+      // Apply AI enrichment if requested
+      if (enrich && fromLocal) {
         loadMarketData();
-        const benchmarks = getDynamicBenchmarks(
-          calculated.city,
-          calculated.state,
-        );
+        const benchmarks = getDynamicBenchmarks(calculated.city, calculated.state);
         const comps = KnowledgeBundle.getSoldComps(calculated.zip, calculated.sqft);
         const velocity = KnowledgeBundle.getMarketVelocity(calculated.zip, "Standard");
         const avmList = KnowledgeBundle.getAttomAvm(calculated.zip, calculated.sqft);
         const avm = avmList.length > 0 ? avmList[0] : null;
 
-        // Apply AI Analysis
-        const aiResult = await analyzePropertyFlip({
-          address: calculated.address,
-          zip: calculated.zip,
-          sqft: calculated.sqft,
-          listPrice: calculated.listPrice,
-          images: calculated.images || [],
-        });
+        try {
+          const aiResult = await analyzePropertyFlip({
+            address: calculated.address,
+            zip: calculated.zip,
+            sqft: calculated.sqft,
+            listPrice: calculated.listPrice,
+            images: calculated.images || [],
+          });
 
-        calculated = {
-          ...calculated,
-          marketIntelligence: { benchmarks },
-          comps,
-          velocity,
-          avm,
-          decision: aiResult.data.decision,
-          afterRepairValue: aiResult.data.arv,
-          mao25k: aiResult.data.mao25k,
-          mao50k: aiResult.data.mao50k,
-          renovationBudget: aiResult.data.rehabEstimate,
-          rehabTier: aiResult.data.rehabTier,
-          rationale: aiResult.narrative,
-        } as any;
-        
-        const enrichedList = enrichWithPredictions([calculated as any]);
-        calculated = enrichedList[0] as any;
+          calculated = {
+            ...calculated,
+            marketIntelligence: { benchmarks },
+            comps,
+            velocity,
+            avm,
+            decision: aiResult.data.decision,
+            afterRepairValue: aiResult.data.arv,
+            mao25k: aiResult.data.mao25k,
+            mao50k: aiResult.data.mao50k,
+            renovationBudget: aiResult.data.rehabEstimate,
+            rehabTier: aiResult.data.rehabTier,
+            rationale: aiResult.narrative,
+          } as PropertyWithCalculations;
+          
+          const enrichedList = enrichWithPredictions([calculated as any]);
+          calculated = enrichedList[0] as PropertyWithCalculations;
+        } catch (aiError) {
+          console.warn("AI enrichment failed:", aiError);
+          calculated = {
+            ...calculated,
+            marketIntelligence: { benchmarks },
+            comps,
+            velocity,
+            avm,
+          } as PropertyWithCalculations;
+        }
       }
 
       return NextResponse.json({ success: true, data: calculated });
     }
 
-    const where: any = {};
-    if (strategy) where.strategy = strategy;
-    if (decision) where.decision = decision;
-    if (city) where.city = { contains: city, mode: "insensitive" };
+    // LIST PROPERTIES - PRIMARY: Local data
+    let properties: Property[] = [];
+    let fromLocal = true;
 
-    if (search) {
-      where.OR = [
-        { address: { contains: search, mode: "insensitive" } },
-        { city: { contains: search, mode: "insensitive" } },
-        { rationale: { contains: search, mode: "insensitive" } },
-        { details: { contains: search, mode: "insensitive" } },
-      ];
-    }
-
-    let properties = [];
-    try {
-      properties = await prisma.property.findMany({
-        where,
-        orderBy: { createdAt: "desc" },
-      });
-    } catch (dbError) {
-      console.warn("Prisma error, falling back to local data:", dbError);
-      // Basic local filtering
-      properties = localProperties.filter((p) => {
-        if (strategy && p.strategy !== strategy) return false;
-        if (decision && p.decision !== decision) return false;
-        if (city && !p.city.toLowerCase().includes(city.toLowerCase()))
-          return false;
+    if (source === "database") {
+      // Explicit request for database data
+      try {
+        const where: any = {};
+        if (strategy) where.strategy = strategy;
+        if (decision) where.decision = decision;
+        if (city) where.city = { contains: city, mode: "insensitive" };
         if (search) {
-          const s = search.toLowerCase();
-          return (
-            p.address.toLowerCase().includes(s) ||
-            p.city.toLowerCase().includes(s) ||
-            p.rationale.toLowerCase().includes(s)
-          );
+          where.OR = [
+            { address: { contains: search, mode: "insensitive" } },
+            { city: { contains: search, mode: "insensitive" } },
+            { rationale: { contains: search, mode: "insensitive" } },
+          ];
         }
-        return true;
-      });
+
+        properties = await prisma.property.findMany({
+          where,
+          orderBy: { createdAt: "desc" },
+        }) as unknown as Property[];
+        fromLocal = false;
+      } catch (dbError) {
+        console.warn("Database query failed, falling back to local:", dbError);
+        properties = filterLocalProperties(localProperties, { search, strategy, decision, city });
+      }
+    } else {
+      // Default: Use local data (primary source)
+      properties = filterLocalProperties(localProperties, { search, strategy, decision, city });
+      
+      // Sort by deal score (best deals first)
+      properties.sort((a, b) => (b.dealScore || 0) - (a.dealScore || 0));
     }
 
     const serialized = properties.map((p) =>
@@ -145,7 +186,8 @@ export async function GET(request: NextRequest) {
     ) as PropertyBase[];
     let calculated = addCalculationsToAll(serialized);
 
-    if (enrich) {
+    // Apply AI enrichment if requested (for local data)
+    if (enrich && fromLocal) {
       loadMarketData();
       calculated = await Promise.all(calculated.map(async (prop) => {
         const benchmarks = getDynamicBenchmarks(prop.city, prop.state);
@@ -155,7 +197,6 @@ export async function GET(request: NextRequest) {
         const avm = avmList.length > 0 ? avmList[0] : null;
 
         try {
-          // Apply AI Analysis with error handling
           const aiResult = await analyzePropertyFlip({
             address: prop.address,
             zip: prop.zip,
@@ -180,7 +221,6 @@ export async function GET(request: NextRequest) {
           };
         } catch (aiError) {
           console.error(`AI analysis failed for property ${prop.id}:`, aiError);
-          // Return property without AI enrichment
           return {
             ...prop,
             marketIntelligence: { benchmarks },
@@ -197,6 +237,7 @@ export async function GET(request: NextRequest) {
       success: true,
       data: calculated,
       count: calculated.length,
+      source: fromLocal ? "local" : "database",
     });
   } catch (error) {
     console.error("API Error:", error);
@@ -209,7 +250,7 @@ export async function GET(request: NextRequest) {
 
 /**
  * POST /api/properties
- * Triggers AI Analysis automatically.
+ * Creates property in database (for tracking owned/in-progress deals)
  */
 export async function POST(request: NextRequest) {
   try {
@@ -265,8 +306,7 @@ export async function POST(request: NextRequest) {
       },
     });
 
-    const serialized = serializeProperty(newProperty as any);
-    // @ts-ignore
+    const serialized = serializeProperty(newProperty as any) as PropertyBase;
     const calculated = addCalculations(serialized);
 
     return NextResponse.json(
@@ -339,8 +379,7 @@ export async function PUT(request: NextRequest) {
       data: updateData,
     });
 
-    const serialized = serializeProperty(updatedProperty as any);
-    // @ts-ignore
+    const serialized = serializeProperty(updatedProperty as any) as PropertyBase;
     const calculated = addCalculations(serialized);
 
     return NextResponse.json({ success: true, data: calculated });

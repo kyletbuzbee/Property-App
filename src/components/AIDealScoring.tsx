@@ -1,18 +1,23 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { PropertyWithCalculations } from "@/lib/calculations";
+import { ExitValuePrediction, MarketHealth } from "@/lib/ai/marketForecast";
 import clsx from "clsx";
 import { Card, CardContent } from "@/components/ui/Card";
 import { DecisionBadge } from "@/components/ui/Badge";
+import DOMBadge from "@/components/DOMBadge";
+import MarketPhaseIndicator from "@/components/MarketPhaseIndicator";
+import ExitForecastCard from "@/components/ExitForecastCard";
 import { SkeletonCard } from "@/components/ui/Skeleton";
-import { 
-  SparklesIcon, 
-  ShieldCheckIcon, 
+import {
+  SparklesIcon,
+  ShieldCheckIcon,
   ExclamationTriangleIcon,
   ScaleIcon,
   CurrencyDollarIcon,
-  ChartBarIcon
+  ChartBarIcon,
+  BuildingStorefrontIcon,
 } from "@heroicons/react/24/outline";
 
 interface AIDealScoringProps {
@@ -21,12 +26,27 @@ interface AIDealScoringProps {
   onSelectProperty?: (property: PropertyWithCalculations) => void;
 }
 
-export default function AIDealScoring({ properties, selectedPropertyId, onSelectProperty }: AIDealScoringProps) {
-  const [internalSelectedId, setInternalSelectedId] = useState<string | null>(
-    properties.length > 0 ? properties[0].id : null
-  );
+interface MarketDataCache {
+  [zip: string]: {
+    forecast: ExitValuePrediction;
+    health: MarketHealth;
+    timestamp: number;
+  };
+}
 
-  const selectedId = selectedPropertyId !== undefined ? selectedPropertyId : internalSelectedId;
+export default function AIDealScoring({
+  properties,
+  selectedPropertyId,
+  onSelectProperty,
+}: AIDealScoringProps) {
+  const [internalSelectedId, setInternalSelectedId] = useState<string | null>(
+    properties.length > 0 ? properties[0].id : null,
+  );
+  const [marketData, setMarketData] = useState<MarketDataCache>({});
+  const [loading, setLoading] = useState(false);
+
+  const selectedId =
+    selectedPropertyId !== undefined ? selectedPropertyId : internalSelectedId;
 
   const handleSelect = (property: PropertyWithCalculations) => {
     if (onSelectProperty) {
@@ -36,40 +56,135 @@ export default function AIDealScoring({ properties, selectedPropertyId, onSelect
     }
   };
 
-  const selectedProperty = useMemo(() => 
-    properties.find(p => p.id === selectedId) || properties[0],
-  [properties, selectedId]);
+  const selectedProperty = useMemo(
+    () => properties.find((p) => p.id === selectedId) || properties[0],
+    [properties, selectedId],
+  );
+
+  // Fetch market data for selected property
+  useEffect(() => {
+    if (!selectedProperty?.zip) return;
+
+    const zip = selectedProperty.zip;
+    const cached = marketData[zip];
+    const now = Date.now();
+
+    // Use cached data if less than 5 minutes old
+    if (cached && now - cached.timestamp < 5 * 60 * 1000) {
+      return;
+    }
+
+    const fetchMarketData = async () => {
+      setLoading(true);
+      try {
+        const response = await fetch(
+          `/api/market?zip=${zip}&arv=${selectedProperty.afterRepairValue}&holdMonths=4`,
+        );
+        if (!response.ok) throw new Error("Failed to fetch market data");
+
+        const result = await response.json();
+        if (result.success) {
+          setMarketData((prev) => ({
+            ...prev,
+            [zip]: {
+              forecast: result.data.forecast,
+              health: result.data.health,
+              timestamp: now,
+            },
+          }));
+        }
+      } catch (error) {
+        console.error("Error fetching market data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchMarketData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedProperty?.zip, selectedProperty?.afterRepairValue]);
 
   if (!selectedProperty) {
     return (
       <div className="h-full flex items-center justify-center bg-white border border-slate-200 rounded-sm">
         <div className="text-center">
           <SparklesIcon className="w-12 h-12 text-slate-300 mx-auto mb-4" />
-          <h3 className="text-lg font-semibold text-slate-900">No properties analyzed</h3>
-          <p className="text-slate-500">Add properties to trigger institutional AI audits.</p>
+          <h3 className="text-lg font-semibold text-slate-900">
+            No properties analyzed
+          </h3>
+          <p className="text-slate-500">
+            Add properties to trigger institutional AI audits.
+          </p>
         </div>
       </div>
     );
   }
 
   const score = selectedProperty.dealScore || 0;
-  
+
   const riskLevel = () => {
     if (selectedProperty.decision === "HARD_FAIL")
-      return { label: "CRITICAL RISK", color: "text-danger", bg: "bg-danger/10", border: "border-danger/20", icon: ExclamationTriangleIcon };
+      return {
+        label: "CRITICAL RISK",
+        color: "text-danger",
+        bg: "bg-danger/10",
+        border: "border-danger/20",
+        icon: ExclamationTriangleIcon,
+      };
     if (selectedProperty.decision === "CAUTION")
-      return { label: "ELEVATED RISK", color: "text-warning", bg: "bg-warning/10", border: "border-warning/20", icon: ExclamationTriangleIcon };
-    return { label: "LOW RISK", color: "text-success", bg: "bg-success/10", border: "border-success/20", icon: ShieldCheckIcon };
+      return {
+        label: "ELEVATED RISK",
+        color: "text-warning",
+        bg: "bg-warning/10",
+        border: "border-warning/20",
+        icon: ExclamationTriangleIcon,
+      };
+    return {
+      label: "LOW RISK",
+      color: "text-success",
+      bg: "bg-success/10",
+      border: "border-success/20",
+      icon: ShieldCheckIcon,
+    };
   };
 
   const risk = riskLevel();
   const RiskIcon = risk.icon;
 
+  // Get market data for selected property
+  const propertyMarketData = marketData[selectedProperty.zip ?? ""];
+
+  const defaultForecast: ExitValuePrediction = {
+    current_arv: selectedProperty.afterRepairValue,
+    predicted_exit_arv: selectedProperty.afterRepairValue,
+    confidence_low: selectedProperty.afterRepairValue * 0.95,
+    confidence_high: selectedProperty.afterRepairValue * 1.05,
+    market_phase: "stable",
+    optimal_exit_month: 4,
+    days_on_market_estimate: 60,
+    months_ahead: 4,
+  };
+
+  const defaultHealth: MarketHealth = {
+    zip_code: selectedProperty.zip ?? "",
+    phase: "stable",
+    zhvi_growth_12mo: 0,
+    forecast_6mo: 0,
+    inventory_trend: "stable",
+    confidence: 0.6,
+    last_updated: new Date().toISOString(),
+  };
+
+  const forecast = propertyMarketData?.forecast ?? defaultForecast;
+  const health = propertyMarketData?.health ?? defaultHealth;
+
   return (
     <div className="h-full grid grid-cols-12 gap-4">
       {/* Sidebar - Property List */}
       <div className="col-span-3 flex flex-col gap-2 overflow-y-auto pr-2">
-        <h3 className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2 px-1">Analyzed Deals</h3>
+        <h3 className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2 px-1">
+          Analyzed Deals
+        </h3>
         {properties.map((p) => (
           <button
             key={p.id}
@@ -78,19 +193,34 @@ export default function AIDealScoring({ properties, selectedPropertyId, onSelect
               "flex flex-col p-3 rounded-sm border transition-all text-left",
               selectedId === p.id
                 ? "bg-white border-primary-500 shadow-sm ring-1 ring-primary-500/10"
-                : "bg-slate-50 border-slate-200 hover:border-slate-300"
+                : "bg-slate-50 border-slate-200 hover:border-slate-300",
             )}
           >
-            <span className="text-[13px] font-bold text-slate-900 truncate">{p.address}</span>
+            <span className="text-[13px] font-bold text-slate-900 truncate">
+              {p.address}
+            </span>
             <div className="flex justify-between items-center mt-1">
-              <span className="text-[10px] font-mono font-bold text-slate-500 uppercase">{p.city}</span>
-              <span className={clsx(
-                "text-[10px] font-bold tabular-nums",
-                p.dealScore >= 80 ? "text-success" : p.dealScore >= 60 ? "text-warning" : "text-danger"
-              )}>
+              <span className="text-[10px] font-mono font-bold text-slate-500 uppercase">
+                {p.city}
+              </span>
+              <span
+                className={clsx(
+                  "text-[10px] font-bold tabular-nums",
+                  p.dealScore >= 80
+                    ? "text-success"
+                    : p.dealScore >= 60
+                      ? "text-warning"
+                      : "text-danger",
+                )}
+              >
                 Score: {Math.round(p.dealScore)}
               </span>
             </div>
+            {(p.daysOnMarket ?? 0) > 0 && (
+              <div className="mt-1">
+                <DOMBadge daysOnMarket={p.daysOnMarket ?? 0} size="sm" />
+              </div>
+            )}
           </button>
         ))}
       </div>
@@ -100,15 +230,26 @@ export default function AIDealScoring({ properties, selectedPropertyId, onSelect
         {/* Header Section */}
         <div className="bento-card flex justify-between items-center py-6">
           <div className="flex items-center gap-4">
-            <div className={clsx("p-3 rounded-sm", risk.bg, risk.border, "border shadow-sm")}>
+            <div
+              className={clsx(
+                "p-3 rounded-sm",
+                risk.bg,
+                risk.border,
+                "border shadow-sm",
+              )}
+            >
               <RiskIcon className={clsx("w-8 h-8", risk.color)} />
             </div>
             <div>
-              <h2 className="text-xl font-bold text-slate-900 tracking-tight">{selectedProperty.address}</h2>
+              <h2 className="text-xl font-bold text-slate-900 tracking-tight">
+                {selectedProperty.address}
+              </h2>
               <div className="flex items-center gap-3 mt-1">
-                <DecisionBadge 
-                  decision={selectedProperty.decision} 
+                <DecisionBadge decision={selectedProperty.decision} size="sm" />
+                <MarketPhaseIndicator
+                  health={health}
                   size="sm"
+                  showForecast={false}
                 />
                 <span className="text-[11px] text-slate-500 font-bold uppercase tracking-wider">
                   Audit Confidence: {Math.round(score)}%
@@ -117,29 +258,49 @@ export default function AIDealScoring({ properties, selectedPropertyId, onSelect
             </div>
           </div>
           <div className="text-right">
-            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Audit Score</p>
-            <p className={clsx("text-5xl font-black italic tracking-tighter tabular-nums", 
-              score >= 80 ? "text-success" : score >= 60 ? "text-warning" : "text-danger")}>
+            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">
+              Audit Score
+            </p>
+            <p
+              className={clsx(
+                "text-5xl font-black italic tracking-tighter tabular-nums",
+                score >= 80
+                  ? "text-success"
+                  : score >= 60
+                    ? "text-warning"
+                    : "text-danger",
+              )}
+            >
               {Math.round(score)}
             </p>
           </div>
         </div>
 
         {/* Bento Grid Metrics */}
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-4 gap-4">
           <div className="bento-card flex flex-col justify-between">
             <div className="flex items-center gap-2 mb-4">
               <ScaleIcon className="w-4 h-4 text-primary-500" />
-              <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Acquisition Targets</span>
+              <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">
+                Acquisition Targets
+              </span>
             </div>
             <div className="space-y-3">
               <div className="flex justify-between items-baseline border-b border-slate-50 pb-2">
-                <span className="text-[11px] font-medium text-slate-500">Target MAO (25k)</span>
-                <span className="text-sm font-mono font-bold text-slate-900 tabular-nums">${selectedProperty.mao25k.toLocaleString()}</span>
+                <span className="text-[11px] font-medium text-slate-500">
+                  Target MAO (25k)
+                </span>
+                <span className="text-sm font-mono font-bold text-slate-900 tabular-nums">
+                  ${selectedProperty.mao25k.toLocaleString()}
+                </span>
               </div>
               <div className="flex justify-between items-baseline border-b border-slate-50 pb-2">
-                <span className="text-[11px] font-medium text-slate-500">Target MAO (50k)</span>
-                <span className="text-sm font-mono font-bold text-slate-900 tabular-nums">${selectedProperty.mao50k.toLocaleString()}</span>
+                <span className="text-[11px] font-medium text-slate-500">
+                  Target MAO (50k)
+                </span>
+                <span className="text-sm font-mono font-bold text-slate-900 tabular-nums">
+                  ${selectedProperty.mao50k.toLocaleString()}
+                </span>
               </div>
             </div>
           </div>
@@ -147,16 +308,26 @@ export default function AIDealScoring({ properties, selectedPropertyId, onSelect
           <div className="bento-card flex flex-col justify-between">
             <div className="flex items-center gap-2 mb-4">
               <CurrencyDollarIcon className="w-4 h-4 text-success" />
-              <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Valuation Model</span>
+              <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">
+                Valuation Model
+              </span>
             </div>
             <div className="space-y-3">
               <div className="flex justify-between items-baseline border-b border-slate-50 pb-2">
-                <span className="text-[11px] font-medium text-slate-500">After Repair Value</span>
-                <span className="text-sm font-mono font-bold text-slate-900 tabular-nums">${selectedProperty.afterRepairValue.toLocaleString()}</span>
+                <span className="text-[11px] font-medium text-slate-500">
+                  After Repair Value
+                </span>
+                <span className="text-sm font-mono font-bold text-slate-900 tabular-nums">
+                  ${selectedProperty.afterRepairValue.toLocaleString()}
+                </span>
               </div>
               <div className="flex justify-between items-baseline border-b border-slate-50 pb-2">
-                <span className="text-[11px] font-medium text-slate-500">Rehab Budget</span>
-                <span className="text-sm font-mono font-bold text-slate-900 tabular-nums">${selectedProperty.renovationBudget.toLocaleString()}</span>
+                <span className="text-[11px] font-medium text-slate-500">
+                  Rehab Budget
+                </span>
+                <span className="text-sm font-mono font-bold text-slate-900 tabular-nums">
+                  ${selectedProperty.renovationBudget.toLocaleString()}
+                </span>
               </div>
             </div>
           </div>
@@ -164,20 +335,61 @@ export default function AIDealScoring({ properties, selectedPropertyId, onSelect
           <div className="bento-card flex flex-col justify-between">
             <div className="flex items-center gap-2 mb-4">
               <ChartBarIcon className="w-4 h-4 text-warning" />
-              <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Risk Analysis</span>
+              <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">
+                Risk Analysis
+              </span>
             </div>
             <div className="space-y-3">
               <div className="flex justify-between items-baseline border-b border-slate-50 pb-2">
-                <span className="text-[11px] font-medium text-slate-500">Rehab Tier</span>
-                <span className="text-sm font-bold text-warning uppercase tracking-tight">{selectedProperty.rehabTier}</span>
+                <span className="text-[11px] font-medium text-slate-500">
+                  Rehab Tier
+                </span>
+                <span className="text-sm font-bold text-warning uppercase tracking-tight">
+                  {selectedProperty.rehabTier}
+                </span>
               </div>
               <div className="flex justify-between items-baseline border-b border-slate-50 pb-2">
-                <span className="text-[11px] font-medium text-slate-500">Decision Signal</span>
-                <span className={clsx("text-sm font-bold uppercase tracking-tight", risk.color)}>{selectedProperty.decision}</span>
+                <span className="text-[11px] font-medium text-slate-500">
+                  Decision Signal
+                </span>
+                <span
+                  className={clsx(
+                    "text-sm font-bold uppercase tracking-tight",
+                    risk.color,
+                  )}
+                >
+                  {selectedProperty.decision}
+                </span>
               </div>
             </div>
           </div>
+
+          <div className="bento-card flex flex-col justify-between">
+            <div className="flex items-center gap-2 mb-4">
+              <BuildingStorefrontIcon className="w-4 h-4 text-primary-500" />
+              <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">
+                Market Conditions
+              </span>
+            </div>
+            <div className="space-y-3">
+              <MarketPhaseIndicator health={health} size="sm" />
+              {(selectedProperty.daysOnMarket ?? 0) > 0 && (
+                <div className="flex justify-between items-baseline border-b border-slate-50 pb-2">
+                  <span className="text-[11px] font-medium text-slate-500">
+                    Days on Market
+                  </span>
+                  <DOMBadge
+                    daysOnMarket={selectedProperty.daysOnMarket ?? 0}
+                    size="sm"
+                  />
+                </div>
+              )}
+            </div>
+          </div>
         </div>
+
+        {/* Exit Forecast */}
+        {loading ? <SkeletonCard /> : <ExitForecastCard forecast={forecast} />}
 
         {/* Narrative Block (Terminal Card) */}
         <div className="narrative-block shadow-lg">
@@ -187,27 +399,37 @@ export default function AIDealScoring({ properties, selectedPropertyId, onSelect
               <div className="w-2.5 h-2.5 rounded-full bg-slate-700" />
               <div className="w-2.5 h-2.5 rounded-full bg-slate-700" />
             </div>
-            <span className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] ml-2">Audit Narrative Output v4.2</span>
+            <span className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] ml-2">
+              Audit Narrative Output v4.2
+            </span>
           </div>
-          
+
           <div className="space-y-4 font-mono">
-            {selectedProperty.rationale.split('\n').map((line, i) => {
-              if (line.includes(':')) {
-                const [header, content] = line.split(':');
+            {selectedProperty.rationale?.split("\n").map((line, i) => {
+              if (line.includes(":")) {
+                const [header, content] = line.split(":");
                 return (
                   <div key={i}>
-                    <span className="text-slate-500 font-bold uppercase mr-2">{header}:</span>
+                    <span className="text-slate-500 font-bold uppercase mr-2">
+                      {header}:
+                    </span>
                     <span className="text-slate-300">{content}</span>
                   </div>
                 );
               }
-              return <p key={i} className="text-slate-300">{line}</p>;
+              return (
+                <p key={i} className="text-slate-300">
+                  {line}
+                </p>
+              );
             })}
           </div>
-          
+
           <div className="mt-6 flex items-center gap-2 text-primary-500 animate-pulse">
             <span className="text-xs font-black">_</span>
-            <span className="text-[10px] font-bold uppercase tracking-widest">End of Audit Report</span>
+            <span className="text-[10px] font-bold uppercase tracking-widest">
+              End of Audit Report
+            </span>
           </div>
         </div>
       </div>

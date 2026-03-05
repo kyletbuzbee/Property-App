@@ -356,7 +356,7 @@ export default function PropertyPage({ params }: PropertyPageProps) {
                   $/sqft
                 </p>
                 <p className="text-xl font-black text-white">
-                  ${getPricePerSqft(property).toFixed(2)}
+                  ${getPricePerSqft(property as Property).toFixed(2)}
                 </p>
               </div>
               <div className="bg-dark-900 p-6 border border-dark-800 rounded-sm">
@@ -364,7 +364,7 @@ export default function PropertyPage({ params }: PropertyPageProps) {
                   $/door
                 </p>
                 <p className="text-xl font-black text-white">
-                  ${getPricePerDoor(property).toFixed(2)}
+                  ${getPricePerDoor(property as Property).toFixed(2)}
                 </p>
               </div>
             </div>

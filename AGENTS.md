@@ -1,255 +1,199 @@
 # Agent Guidelines for Property App
 
-This document provides guidelines for AI agents working on this codebase.
-
 ## Project Overview
 
-- **Type**: Next.js 16+ Real Estate Triage Dashboard
+- **Type**: Next.js 15+ Real Estate Triage Dashboard for "Properties 4 Creation" platform
+- **Focus**: BRRRR strategy and distressed property flips in East Texas (Tyler, Kilgore, Tatum)
 - **Database**: Supabase (PostgreSQL) with Prisma ORM
-- **Styling**: Tailwind CSS with custom design system
+- **Styling**: Tailwind CSS with institutional design system
 - **State Management**: React Context + TanStack Table
-- **Authentication**: Supabase Auth
 
 ---
 
 ## Build Commands
 
 ```bash
-# Development
-npm run dev           # Start Next.js dev server at localhost:3000
-
-# Build
-npm run build         # Production build
-npm run start         # Start production server
-
-# Linting
-npm run lint          # Run ESLint (Next.js core-web-vitals config)
-
-# Database
-npx prisma generate   # Generate Prisma client
-npx prisma db push   # Push schema to database
-npx prisma studio    # Open Prisma database GUI
+npm run dev              # Start dev server at localhost:3000
+npm run build            # Production build
+npm run lint             # Run ESLint (next/core-web-vitals)
+npm run lint:fix         # Fix ESLint issues
+npm run format           # Format with Prettier
+npm run format:check     # Check formatting
+npx prisma generate      # Generate Prisma client
+npx prisma db push       # Push schema to database
+npx prisma studio        # Open Prisma GUI
 ```
 
 ---
 
-## Running Tests
+## Testing
 
-This project uses Playwright for end-to-end testing.
+Uses Playwright for e2e testing:
 
 ```bash
-# Run all tests
-npx playwright test
-
-# Run a single test file
-npx playwright test tests/filename.spec.ts
-
-# Run tests matching a pattern
-npx playwright test --grep "test name"
-
-# Run tests in headed mode (see browser)
-npx playwright test --headed
-
-# Open Playwright UI for test development
-npx playwright open
+npx playwright test                        # Run all tests
+npx playwright test tests/filename.spec.ts # Run single test file
+npx playwright test --grep "test name"     # Run specific test
+npx playwright test --headed               # Run in headed mode
+npx playwright test --project=chromium     # Run in specific browser
+npx playwright test --ui                   # Open Playwright UI
 ```
-
-Test files are located in `tests/` directory.
 
 ---
 
-## Code Style Guidelines
+## Code Style
 
 ### TypeScript
-
-- **Strict mode enabled** in `tsconfig.json` - do not disable strict checks
-- Always define proper types; avoid `any` except for external API responses
-- Use interfaces for object shapes, types for unions/aliases
-- Use `type` for union types (e.g., `type Decision = 'Pass Platinum' | 'Pass Gold'`)
+- **Strict mode enabled** - never disable strict checks
+- Never use `any` - always use precise interfaces
+- Use `interface` for object shapes, `type` for unions/aliases
+- Define return types for exported functions
 
 ### Naming Conventions
+| Type | Convention | Example |
+|------|------------|---------|
+| Components | PascalCase | `PropertyDataTable.tsx` |
+| Interfaces | PascalCase | `PropertyWithCalculations` |
+| Functions | camelCase | `calculateCashFlow()` |
+| Variables | camelCase | `propertyList` |
+| DB columns | snake_case | `list_price` |
+| Hooks | usePrefix | `usePropertyData()` |
+| Constants | UPPER_SNAKE | `MAX_PROPERTIES` |
 
-| Type             | Convention                  | Example                     |
-| ---------------- | --------------------------- | --------------------------- |
-| Components       | PascalCase                  | `PropertyDataTable.tsx`     |
-| Interfaces/Types | PascalCase                  | `PropertyWithCalculations`  |
-| Functions        | camelCase                   | `calculateCashFlow()`       |
-| Variables        | camelCase                   | `const propertyList = []`   |
-| Database columns | snake_case                  | `list_price`, `is_favorite` |
-| React hooks      | camelCase with `use` prefix | `usePropertyData()`         |
-
-### Import Organization
-
-Order imports as follows:
-
-1. Next.js/React imports
-2. Third-party library imports
-3. Internal imports (`@/components`, `@/lib`)
+### Import Order
+1. React/Next imports
+2. Third-party libraries
+3. Internal (`@/components`, `@/lib`)
 4. Type imports
 
 ```typescript
-// 1. React/Next
-import { useState, useMemo } from "react";
-import { NextRequest, NextResponse } from "next/server";
-
-// 2. Third-party
-import { useReactTable, getCoreRowModel } from "@tanstack/react-table";
-import clsx from "clsx";
-
-// 3. Internal
-import { PropertyWithCalculations } from "@/lib/calculations";
-import { getDecisionColor } from "@/data/properties";
-
-// 4. Types
-import type { Decision, Strategy } from "@/data/properties";
+import { useState } from "react";
+import { useReactTable } from "@tanstack/react-table";
+import { PropertyCard } from "@/components/PropertyCard";
+import type { Property } from "@/data/properties";
 ```
-
-Use the `@/` alias for imports from `src/` directory.
 
 ### File Organization
-
 ```
 src/
-├── app/                    # Next.js App Router pages/api
-│   ├── api/              # API routes
-│   ├── layout.tsx        # Root layout
-│   └── page.tsx          # Home page
-├── components/           # React components
-├── context/              # React Context providers
-├── data/                # Static data, types, constants
-└── lib/                 # Utility functions, helpers
+├── app/          # Next.js App Router
+├── components/   # React components
+├── context/      # Context providers
+├── data/         # Static data, types
+└── lib/          # Utilities, calculations
 ```
 
-### Component Patterns
+---
 
-- Use `'use client'` directive for client-side components
+## Component Patterns
+
+- Use `'use client'` for client components
 - Use TypeScript interfaces for props
 - Destructure props in function signature
 - Use `useMemo` for expensive calculations
-- Use `useCallback` for callback props passed to children
+- Handle null/undefined states defensively
 
 ```typescript
 'use client';
 
-import { useMemo, useState } from 'react';
-import { PropertyWithCalculations } from '@/lib/calculations';
-
-interface PropertyTableProps {
-  properties: PropertyWithCalculations[];
-  onPropertyClick?: (property: PropertyWithCalculations) => void;
+interface Props {
+  properties: Property[];
 }
 
-export default function PropertyTable({
-  properties,
-  onPropertyClick,
-}: PropertyTableProps) {
-  const [sorting, setSorting] = useState<SortingState>([]);
-
-  const columns = useMemo(() => [...], [dependencies]);
-
-  return <table>...</table>;
+export default function PropertyList({ properties }: Props) {
+  const sorted = useMemo(() => [...properties].sort(), [properties]);
+  return <div>{sorted.map(p => <Card key={p.id} property={p} />)}</div>;
 }
 ```
 
-### Database Patterns
+---
 
-- Supabase uses snake_case for columns (`list_price`, `created_at`)
-- API routes convert between snake_case (DB) and camelCase (client)
-- Use helper functions like `convertSupabaseProperty()` for conversion
-- Always handle null values defensively (`property.listPrice ?? 0`)
+## Database Patterns
+
+- Supabase uses snake_case (`list_price`, `created_at`)
+- API routes convert snake_case ↔ camelCase
+- Handle null values defensively: `property.listPrice ?? 0`
 
 ### Error Handling
-
-- API routes: Return `{ success: false, error: 'message' }` with appropriate HTTP status
-- Use try/catch blocks with console.error for logging
-- Client components: Handle errors with state and display user-friendly messages
-
 ```typescript
-// API route error handling
 try {
   const { data, error } = await supabase.from("properties").select("*");
   if (error) {
     console.error("Supabase error:", error);
     return NextResponse.json(
-      { success: false, error: "Failed to fetch properties" },
-      { status: 500 },
+      { success: false, error: "Failed to fetch" },
+      { status: 500 }
     );
   }
   return NextResponse.json({ success: true, data });
-} catch (error) {
-  console.error("API Error:", error);
+} catch (e) {
+  console.error("API Error:", e);
   return NextResponse.json(
-    { success: false, error: "Internal server error" },
-    { status: 500 },
+    { success: false, error: "Internal error" },
+    { status: 500 }
   );
 }
 ```
 
-### Tailwind CSS
+---
 
-- Use utility classes for styling
-- Use `clsx` or `cn()` for conditional classes
-- Avoid custom CSS; prefer Tailwind utilities
+## UI/UX Guidelines
 
-### Linting
+- **Aesthetic**: Institutional, sharp, data-dense. Bento-box layouts, terminal-style outputs
+- **Styling**: Tailwind CSS exclusively. Use palette: `text-success`, `bg-warning/10`
+- **Formatting**: Currency (`$250,000`), percentages (`15.5%`), `tabular-nums` for tables
 
-- ESLint: Extends `next/core-web-vitals`
-- Stylelint: Extends `stylelint-config-standard`
-- Run `npm run lint` before committing
+---
+
+## AI Analysis Rules
+
+### ARV Waterfall Priority
+1. Actual sold comps → 2. Estimated comps → 3. ZHVI sqft → 4. Knowledge Bundle → 5. Conservative markup
+
+### DOM Scoring
+- < 30 days = caution | 90-180 days = 10% discount | > 180 days = 15% discount
+
+### Narrative Style
+Cold, objective tone: "DECISION LINE: CAUTION. Negotiate toward MAO for margin safety."
 
 ---
 
 ## Key Libraries
 
-| Library                 | Purpose                                         |
-| ----------------------- | ----------------------------------------------- |
-| `@tanstack/react-table` | Data tables with sorting, filtering, pagination |
-| `@dnd-kit`              | Drag and drop functionality                     |
-| `recharts`              | Data visualization                              |
-| `react-leaflet`         | Map components                                  |
-| `supabase`              | Database and auth                               |
-| `prisma`                | ORM for database                                |
+| Library | Purpose |
+|---------|---------|
+| `@tanstack/react-table` | Data tables |
+| `@dnd-kit` | Drag and drop |
+| `recharts` | Data visualization |
+| `react-leaflet` | Maps |
+| `supabase` | Database/auth |
+| `prisma` | ORM |
 
 ---
 
 ## Common Tasks
 
-### Adding a new API route
+**Add API Route**: Create `src/app/api/[resource]/route.ts`, export GET/POST/PUT/DELETE, return `{ success, data?, error? }`
 
-1. Create `src/app/api/[resource]/route.ts`
-2. Export GET, POST, PUT, DELETE functions
-3. Return `{ success: boolean; data?: any; error?: string }` format
+**Add Component**: Create `src/components/Name.tsx`, add interface, use `'use client'` if needed, export default
 
-### Adding a new component
-
-1. Create `src/components/ComponentName.tsx`
-2. Add TypeScript interface for props
-3. Use `'use client'` if using hooks/state
-4. Export as default
-
-### Adding a new calculation
-
-1. Add to `src/lib/calculations.ts`
-2. Export function with proper types
-3. Include in `addCalculations()` function
-4. Update `PropertyWithCalculations` interface
+**Add Calculation**: Add to `src/lib/calculations.ts`, export function, include in `addCalculations()`, update interface
 
 ---
 
 ## Environment Variables
 
-Create `.env.local` for local development:
-
 ```bash
-NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+NEXT_PUBLIC_SUPABASE_URL=your-url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-key
 ```
 
 ---
 
-## Notes
+## Execution Protocol
 
-- The app uses Supabase for real-time data and authentication
-- Property calculations are centralized in `src/lib/calculations.ts`
-- Decision/Strategy types are defined in `src/data/properties.ts`
-- API routes handle conversion between database (snake_case) and client (camelCase) formats
+1. **Plan**: Output 2-3 step plan of files to touch
+2. **Execute**: Write complete, executable code
+3. **Verify**: Check `src/lib` changes flow to `src/components` correctly
+
+**Always run `npm run lint` and `npm run format:check` before committing.**

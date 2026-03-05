@@ -67,6 +67,10 @@ model Property {
   status         PropertyStatus @default(NEW_LEAD) @map("property_status")
   yearBuilt      Int?                     @map("year_built")
 
+  // Days on Market tracking for DOM opportunity scoring
+  daysOnMarket   Int?      @map("days_on_market")
+  listDate       DateTime? @map("list_date")
+
   // Buildium sync (kept if needed for data sync, but rental logic is removed)
   buildiumId String? @unique @map("buildium_id")
 

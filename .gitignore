@@ -139,3 +139,12 @@ jspm_packages/
 plans/
 temp/
 ai_logic_review/
+.kilocode/
+.continue/
+AI_DATA_STRATEGY.md
+VERCEL_DEPLOYMENT_GUIDE.md
+prisma/
+scripts/
+AGENTS.md
+.vscode/
+processed/nul

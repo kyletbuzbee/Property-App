@@ -15,9 +15,13 @@ import {
   Row,
 } from "@tanstack/react-table";
 import clsx from "clsx";
+import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { Decision, Strategy } from "@/data/properties";
 import { PropertyWithCalculations } from "@/lib/calculations";
 import { DecisionBadge } from "@/components/ui/Badge";
+import { JargonTerm, TableHeaderWithTooltip } from "@/components/ui/Tooltip";
+import { TableEmptyState } from "@/components/ui/EmptyState";
+import DOMBadge from "@/components/DOMBadge";
 
 interface PropertyDataTableProps {
   properties: PropertyWithCalculations[];
@@ -86,23 +90,23 @@ export default function PropertyDataTable({
         ),
       }),
       columnHelper.accessor("listPrice", {
-        header: "List Price",
+        header: () => <TableHeaderWithTooltip tooltip="Current asking price listed by seller">List Price</TableHeaderWithTooltip>,
         cell: (info) => <span className="text-slate-900 font-mono tabular-nums font-semibold">${info.getValue().toLocaleString()}</span>,
       }),
       columnHelper.accessor("mao25k", {
-        header: "MAO 25k",
+        header: () => <TableHeaderWithTooltip tooltip="Maximum Allowable Offer for $25K profit target">MAO ($25K)</TableHeaderWithTooltip>,
         cell: (info) => <span className="text-success font-mono tabular-nums font-bold">${info.getValue().toLocaleString()}</span>,
       }),
       columnHelper.accessor("mao50k", {
-        header: "MAO 50k",
+        header: () => <TableHeaderWithTooltip tooltip="Maximum Allowable Offer for $50K profit target">MAO ($50K)</TableHeaderWithTooltip>,
         cell: (info) => <span className="text-info font-mono tabular-nums font-bold">${info.getValue().toLocaleString()}</span>,
       }),
       columnHelper.accessor("afterRepairValue", {
-        header: "ARV",
+        header: () => <TableHeaderWithTooltip tooltip="After Repair Value - Estimated market value after renovations">ARV</TableHeaderWithTooltip>,
         cell: (info) => <span className="text-slate-600 font-mono tabular-nums font-medium">${info.getValue().toLocaleString()}</span>,
       }),
       columnHelper.accessor("rehabTier", {
-        header: "Tier",
+        header: () => <TableHeaderWithTooltip tooltip="Rehab scope: Light ($15/sqft), Standard ($35/sqft), Heavy ($55/sqft), Down to Studs ($85/sqft)">Tier</TableHeaderWithTooltip>,
         cell: (info) => <span className="text-[9px] font-bold uppercase text-slate-500 bg-slate-100 px-1.5 py-0.5 rounded-sm border border-slate-200">{info.getValue()}</span>,
       }),
       columnHelper.accessor("decision", {
@@ -113,8 +117,17 @@ export default function PropertyDataTable({
         },
         filterFn: decisionFilterFn,
       }),
+      // TODO: daysOnMarket needs to be added to database schema (listDate or daysOnMarket field)
+      // For now, this will show "-" until the data is available
+      columnHelper.accessor("daysOnMarket", {
+        header: () => <TableHeaderWithTooltip tooltip="Days on Market - Higher DOM indicates potential seller motivation">DOM</TableHeaderWithTooltip>,
+        cell: (info) => {
+          const dom = info.getValue() as number | undefined;
+          return dom && dom > 0 ? <DOMBadge daysOnMarket={dom} size="sm" /> : <span className="text-slate-400">-</span>;
+        },
+      }),
       columnHelper.accessor("equityGap", {
-        header: "Equity Gap",
+        header: () => <TableHeaderWithTooltip tooltip="Spread between ARV and list price - potential profit margin before rehab costs">Equity Gap</TableHeaderWithTooltip>,
         cell: (info) => <span className="text-warning font-mono tabular-nums font-bold">${info.getValue().toLocaleString()}</span>,
       }),
     ],
@@ -182,15 +195,28 @@ export default function PropertyDataTable({
             ))}
           </thead>
           <tbody className="divide-y divide-slate-100">
-            {table.getRowModel().rows.map((row) => (
-              <tr key={row.id} onClick={() => onPropertyClick?.(row.original)} className="hover:bg-slate-50/80 cursor-pointer transition-colors group">
-                {row.getVisibleCells().map((cell) => (
-                  <td key={cell.id} className="px-3 py-2 border-b border-slate-50 text-xs text-slate-600">
-                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                  </td>
-                ))}
+            {table.getRowModel().rows.length === 0 ? (
+              <tr>
+                <td colSpan={columns.length} className="p-0">
+                  <TableEmptyState
+                    searchTerm={globalFilter}
+                    filterCount={columnFilters.length}
+                    onClearSearch={() => setGlobalFilter("")}
+                    onClearFilters={() => setColumnFilters([])}
+                  />
+                </td>
               </tr>
-            ))}
+            ) : (
+              table.getRowModel().rows.map((row) => (
+                <tr key={row.id} onClick={() => onPropertyClick?.(row.original)} className="hover:bg-slate-50/80 cursor-pointer transition-colors group">
+                  {row.getVisibleCells().map((cell) => (
+                    <td key={cell.id} className="px-3 py-2 border-b border-slate-50 text-xs text-slate-600">
+                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                    </td>
+                  ))}
+                </tr>
+              ))
+            )}
           </tbody>
         </table>
       </div>
@@ -219,5 +245,3 @@ export default function PropertyDataTable({
     </div>
   );
 }
-
-import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";

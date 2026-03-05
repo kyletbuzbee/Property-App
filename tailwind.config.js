@@ -17,6 +17,17 @@ export default {
           bg: "#f8fafc", // Slate-50
           card: "#ffffff",
         },
+        // Dark theme colors used in components
+        dark: {
+          950: "#0a0a0f", // Very dark background
+          900: "#141419", // Dark background
+          800: "#1e1e24", // Card background
+          700: "#2a2a32", // Border
+          600: "#3f3f4a", // Muted text
+          500: "#6b6b7b", // Secondary text
+          400: "#9ca3af", // Light text on dark
+          300: "#d1d5db", // Lighter text
+        },
         primary: {
           50: "#f0f9ff",
           100: "#e0f2fe",

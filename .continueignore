@@ -1,0 +1,28 @@
+# .continueignore
+
+# Ignore massive Node modules and build outputs
+node_modules/
+.next/
+dist/
+build/
+out/
+
+# Ignore auto-generated database client files and runtimes
+src/generated/
+
+# Ignore lock files (they are huge and useless to the AI)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Keep your environment variables secure
+.env
+.env.*
+
+# Ignore media files
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.heic
+*.mp4

@@ -2,6 +2,7 @@
 
 import { useState, useMemo, useEffect } from "react";
 import dynamic from "next/dynamic";
+import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 import Sidebar, { ViewType } from "@/components/Sidebar";
 import {
   useProperties,
@@ -22,6 +23,9 @@ import MarketAnalysis from "@/components/MarketAnalysis";
 import AIDealScoring from "@/components/AIDealScoring";
 import ExportReports from "@/components/ExportReports";
 import CollaborationHub from "@/components/CollaborationHub";
+import ManualPropertyInput from "@/components/ManualPropertyInput";
+import WhatIfAnalyzer from "@/components/WhatIfAnalyzer";
+import BulkPropertyImport from "@/components/BulkPropertyImport";
 
 // Dynamic import for the map component - critical for bundle size optimization
 // Heavy mapping libraries (like Leaflet) shouldn't block initial page load
@@ -91,7 +95,7 @@ export default function DashboardClient() {
       return <PropertyTableSkeleton />;
     }
 
-    const activeProperty = selectedProperty || filteredProperties[0] || null;
+    const activeProperty = selectedProperty || (filteredProperties.length > 0 ? filteredProperties[0] : null);
 
     switch (currentView) {
       case "map":
@@ -150,6 +154,41 @@ export default function DashboardClient() {
         return <ExportReports properties={filteredProperties} />;
       case "collaboration":
         return <CollaborationHub properties={filteredProperties} />;
+      case "addProperty":
+        return (
+          <div className="max-w-3xl mx-auto">
+            <ManualPropertyInput
+              onClose={() => setCurrentView("table")}
+              onSuccess={() => {
+                // Refresh properties after adding
+                window.location.reload();
+              }}
+            />
+          </div>
+        );
+      case "whatIf":
+        return activeProperty ? (
+          <WhatIfAnalyzer
+            propertyId={activeProperty.id}
+            propertyAddress={activeProperty.address}
+          />
+        ) : (
+          <div className="flex items-center justify-center h-full text-slate-500">
+            Select a property first to run what-if analysis
+          </div>
+        );
+      case "bulkImport":
+        return (
+          <div className="max-w-3xl mx-auto h-full overflow-y-auto">
+            <BulkPropertyImport
+              onClose={() => setCurrentView("table")}
+              onImportComplete={() => {
+                // Refresh properties after importing
+                window.location.reload();
+              }}
+            />
+          </div>
+        );
       default:
         return null;
     }
@@ -189,6 +228,12 @@ export default function DashboardClient() {
         return "Export Reports";
       case "collaboration":
         return "Collaboration Hub";
+      case "addProperty":
+        return "Add a new property manually for analysis";
+      case "whatIf":
+        return "Run what-if scenarios to maximize flip profits";
+      case "bulkImport":
+        return "Bulk Import Properties";
       default:
         return "";
     }
@@ -228,6 +273,12 @@ export default function DashboardClient() {
         return "Export property data and reports in various formats.";
       case "collaboration":
         return "Collaborate with team members on investment deals.";
+      case "addProperty":
+        return "Manually enter property details for AI analysis.";
+      case "whatIf":
+        return "Model renovation scenarios to optimize your flip strategy.";
+      case "bulkImport":
+        return "Import multiple properties from CSV or JSON files.";
       default:
         return "";
     }
@@ -292,8 +343,6 @@ export default function DashboardClient() {
     </div>
   );
 }
-
-import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 
 /**
  * Skeleton component for the property table.

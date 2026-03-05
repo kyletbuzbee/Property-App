@@ -23,6 +23,9 @@ import {
   DocumentArrowDownIcon,
   UsersIcon,
   BriefcaseIcon,
+  PlusIcon,
+  CalculatorIcon,
+  ArrowUpTrayIcon,
 } from "@heroicons/react/24/outline";
 
 export type ViewType =
@@ -41,7 +44,10 @@ export type ViewType =
   | "market"
   | "ai"
   | "export"
-  | "collaboration";
+  | "collaboration"
+  | "addProperty"
+  | "whatIf"
+  | "bulkImport";
 
 interface SidebarProps {
   currentView: ViewType;
@@ -104,6 +110,21 @@ const navigationItems = [
     id: "collaboration" as ViewType,
     name: "Collaboration Hub",
     icon: UsersIcon,
+  },
+  {
+    id: "addProperty" as ViewType,
+    name: "Add Property",
+    icon: PlusIcon,
+  },
+  {
+    id: "whatIf" as ViewType,
+    name: "What-If Analysis",
+    icon: CalculatorIcon,
+  },
+  {
+    id: "bulkImport" as ViewType,
+    name: "Bulk Import",
+    icon: ArrowUpTrayIcon,
   },
 ];
 

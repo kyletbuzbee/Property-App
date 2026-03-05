@@ -11,3 +11,6 @@ export * from "./externalAPIs";
 
 // React Hook
 export * from "./useEnhancedScoring";
+
+// Market Forecast
+export * from "./marketForecast";
